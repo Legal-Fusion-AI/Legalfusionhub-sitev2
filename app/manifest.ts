@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Legal Fusion Hub",
     short_name: "Legal Fusion",
-    description: "Done-for-you client acquisition for bankruptcy law firms.",
+    description: "Technology for a stronger practice. One company. A complete client journey.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

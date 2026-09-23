@@ -1,10 +1,11 @@
 export const siteConfig = {
   name: "Legal Fusion Hub",
   shortName: "Legal Fusion",
-  tagline: "Done-for-you client acquisition for bankruptcy firms",
+  tagline: "Technology for a stronger practice",
   description:
-    "Legal Fusion Hub answers, qualifies, books, nurtures, and follows up with every lead for bankruptcy law firms.",
+    "One company. A complete client journey. Legal Fusion Hub answers the call and books the client. Legal Fusion Portal carries the matter after they are retained.",
   url: "https://legalfusionhub.com",
+  portalPath: "/portal",
   portalUrl: "https://file.legalfusionhub.com",
   email: "info@legalfusion.ai",
   demoPath: "/demo",

@@ -151,12 +151,12 @@ export function LeadForm() {
         </label>
       </div>
       <label className="field">
-        <span>What should we know about your lead flow?</span>
+        <span>What should we know about your client journey?</span>
         <textarea
           name="notes"
           value={values.notes}
           onChange={(event) => update("notes", event.target.value)}
-          placeholder="Call volume, current tools, or where follow-up breaks down"
+          placeholder="Calls, consultations, or what happens after a client is retained"
           rows={4}
         />
       </label>

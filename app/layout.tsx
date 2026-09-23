@@ -9,7 +9,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Client acquisition for bankruptcy firms`,
+    default: `${siteConfig.name} | ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -25,12 +25,13 @@ export default function RootLayout({
     url: siteConfig.url,
     email: siteConfig.email,
     description: siteConfig.description,
+    logo: new URL("/logo-wordmark.png", siteConfig.url).toString(),
   };
 
   return (
     <html lang="en">
       <body>
-        {/* THESIS: A managed dispatch board makes every lead and handoff visible; it refuses the generic centered SaaS manifesto. OWN-WORLD: white operational field, ink type, blue routing, coral action, green completion. STORY: see the leak, watch Hub route the journey, book a demo. FIRST VIEWPORT: split promise and live dispatch board with the CTA left. FORM: grounded direction 5, seed b21d2ad1. FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance. */}
+        {/* THESIS: One company covers a complete client journey. OWN-WORLD: white operational field, ink type, blue routing, coral action, green completion. STORY: engage the call, acquire the client, serve for the long term, book a demo. FIRST VIEWPORT: centered serif headline, subheadline, and demo CTA on a pale abstract field, with the live journey board beneath. */}
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>

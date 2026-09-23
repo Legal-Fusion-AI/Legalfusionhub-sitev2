@@ -205,7 +205,7 @@ Components feel precise, responsive, and managed: each exposes its state with a 
 - **Error / Disabled:** Error borders and messages turn restrained red; disabled actions retain their shape and reduce opacity.
 
 ### Navigation
-- The sticky white header uses a translucent surface, bottom hairline, and subtle blur. Desktop links are compact and darken to routing blue on hover. At 1020px, navigation moves into a bordered, lifted dropdown with the primary action retained.
+- At the top of the page, the sticky header is a full-width, square frosted bar. As the page scrolls, it eases into a centered 60px capsule floating 16px below the viewport edge. Its translucent neutral surface and deep blur contain the brand mark, compact links, and a glassy navy demo action that becomes solid on hover; portal access remains in the footer rather than the header. At 1020px, navigation moves into a bordered, lifted dropdown with the primary action retained.
 
 ### Dispatch Board
 - A bordered 16px panel combines live status chrome, route tabs, a continuous progress line, an updating message, and a nested lead ticket.

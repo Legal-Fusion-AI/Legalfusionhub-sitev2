@@ -1,8 +1,8 @@
 # Legal Fusion Hub marketing site
 
-Public marketing site for Legal Fusion Hub, the done-for-you client acquisition system for bankruptcy law firms.
+Public marketing site for Legal Fusion Hub, one company for a complete client journey. Hub answers the call and books the client. Legal Fusion Portal, introduced at `/portal`, is the bankruptcy filing application for questionnaires, documents, case data, and forms after a client is retained.
 
-Legal Fusion Portal, the separate bankruptcy filing application, is linked at [file.legalfusionhub.com](https://file.legalfusionhub.com).
+The live Portal app is at [file.legalfusionhub.com](https://file.legalfusionhub.com).
 
 ## Stack
 

@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Legal Fusion Hub was built from more than 24 years inside bankruptcy practice.",
+    "Legal Fusion Hub was built from more than 24 years inside bankruptcy practice to cover a complete client journey.",
 };
 
 export default function AboutPage() {
@@ -14,14 +14,14 @@ export default function AboutPage() {
       <section className="subpage-hero about-hero">
         <div className="shell about-hero-grid">
           <div>
-            <h1>Built by people who know what happens after the lead arrives.</h1>
+            <h1>Technology for a stronger practice, built inside one.</h1>
           </div>
           <div>
             <p>
-              Legal Fusion began inside a high-volume bankruptcy practice—not
-              inside a generic marketing playbook. That operating experience
-              shapes how we think about response, qualification, intake,
-              signing, and the work your team must carry next.
+              Legal Fusion began inside a high-volume bankruptcy practice.
+              That experience is why the company covers the whole client
+              journey — from the first call to a retained client and the work
+              that follows.
             </p>
           </div>
         </div>
@@ -37,29 +37,26 @@ export default function AboutPage() {
             <span>of legal practice</span>
           </div>
           <div>
-            <strong>One principle</strong>
-            <span>automation handles repetition; people handle judgment</span>
+            <strong>One company</strong>
+            <span>a complete client journey</span>
           </div>
         </div>
       </section>
       <section className="section about-story">
         <div className="shell about-story-grid">
-          <h2>The system should respect both sides of the conversation.</h2>
+          <h2>The same company should still be there after the client hires you.</h2>
           <div>
             <p>
-              A prospective client deserves a prompt, clear next step. A firm
-              team deserves complete context and fewer repetitive tasks. Hub is
-              designed to serve both without pretending that every conversation
-              should be automated.
+              Legal Fusion Hub answers the call and turns bankruptcy leads
+              into retained clients. Legal Fusion Portal is where the firm and
+              the client continue: questionnaires, documents, case data, and
+              bankruptcy forms.
             </p>
             <p>
-              We use automation where consistency matters, define human
-              handoffs where judgment matters, and manage the connections in
-              between.
+              More than software. A stronger tomorrow for law firms.
             </p>
             <Link className="inline-link" href="/demo">
-              Talk through your firm’s process{" "}
-              <ArrowRight size={16} aria-hidden="true" />
+              Book a demo <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </div>
         </div>

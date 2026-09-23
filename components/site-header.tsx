@@ -1,31 +1,39 @@
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
+import { useEffect, useState } from "react";
+import blackLogo from "@/blacklogo.png";
 
 export function Brand() {
   return (
     <Link className="brand" href="/" aria-label="Legal Fusion Hub home">
-      <span className="brand-mark" aria-hidden="true">
-        <span />
-        <span />
-        <span />
-      </span>
-      <span>
-        Legal Fusion <strong>Hub</strong>
-      </span>
+      <Image className="brand-logo" src={blackLogo} alt="" priority />
     </Link>
   );
 }
 
 const links = [
-  { href: "/#system", label: "The system" },
+  { href: "/#products", label: "Products" },
   { href: "/how-it-works", label: "How it works" },
   { href: "/about", label: "About" },
 ];
 
 export function SiteHeader() {
+  const [isCompact, setIsCompact] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setIsCompact(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="site-header">
-      <div className="shell header-inner">
+    <header className={`site-header${isCompact ? " is-compact" : ""}`}>
+      <div className="header-capsule">
+        <div className="header-veil" aria-hidden="true" />
         <Brand />
         <nav className="desktop-nav" aria-label="Primary navigation">
           {links.map((link) => (
@@ -35,15 +43,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="header-actions">
-          <a
-            className="portal-link"
-            href="https://file.legalfusionhub.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Portal login <ArrowUpRight size={14} aria-hidden="true" />
-          </a>
-          <Link className="button button-small" href="/demo">
+          <Link className="button button-accent button-small" href="/demo">
             Book a demo
           </Link>
         </div>
@@ -57,8 +57,7 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
-            <a href="https://file.legalfusionhub.com">Portal login</a>
-            <Link className="button" href="/demo">
+            <Link className="button button-accent" href="/demo">
               Book a demo
             </Link>
           </nav>

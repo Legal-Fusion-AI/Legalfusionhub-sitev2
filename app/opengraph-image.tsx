@@ -1,10 +1,19 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
-export const alt = "Legal Fusion Hub — client acquisition for bankruptcy firms";
+export const alt = "Legal Fusion Hub — one company, a complete client journey";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpenGraphImage() {
+export default async function OpenGraphImage() {
+  const [wordmark, mark] = await Promise.all([
+    readFile(join(process.cwd(), "public/logo-wordmark.png")),
+    readFile(join(process.cwd(), "public/logo-mark.png")),
+  ]);
+  const wordmarkSrc = `data:image/png;base64,${wordmark.toString("base64")}`;
+  const markSrc = `data:image/png;base64,${mark.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -15,32 +24,12 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           background: "#ffffff",
-          color: "#0c1e3b",
+          color: "#0b213f",
           padding: "68px 76px",
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-          <div
-            style={{
-              display: "flex",
-              width: 46,
-              height: 46,
-              alignItems: "flex-end",
-              gap: 5,
-              borderRadius: 10,
-              background: "#0c1e3b",
-              padding: 9,
-            }}
-          >
-            <span style={{ width: 7, height: 14, background: "#fff" }} />
-            <span style={{ width: 7, height: 28, background: "#78a2ff" }} />
-            <span style={{ width: 7, height: 20, background: "#ff8f80" }} />
-          </div>
-          <span style={{ fontSize: 28, fontWeight: 700 }}>
-            Legal Fusion <b style={{ color: "#175cff" }}>Hub</b>
-          </span>
-        </div>
+        <img src={wordmarkSrc} alt="" width={394} height={48} />
         <div style={{ display: "flex", alignItems: "flex-end", gap: 80 }}>
           <div
             style={{
@@ -50,22 +39,14 @@ export default function OpenGraphImage() {
               gap: 22,
             }}
           >
-            <strong style={{ fontSize: 72, lineHeight: 0.98, letterSpacing: -4 }}>
-              Every lead answered. Every next step handled.
+            <strong style={{ fontSize: 64, lineHeight: 0.98, letterSpacing: -3 }}>
+              One company. A complete client journey.
             </strong>
-            <span style={{ color: "#53627a", fontSize: 25 }}>
-              Done-for-you client acquisition for bankruptcy law firms.
+            <span style={{ color: "#4a5a6e", fontSize: 25 }}>
+              Technology for a stronger practice.
             </span>
           </div>
-          <div
-            style={{
-              width: 82,
-              height: 82,
-              border: "18px solid #eaf1ff",
-              borderRadius: 100,
-              background: "#175cff",
-            }}
-          />
+          <img src={markSrc} alt="" width={138} height={160} />
         </div>
       </div>
     ),

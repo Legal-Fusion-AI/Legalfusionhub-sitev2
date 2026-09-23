@@ -21,8 +21,7 @@ export default function TermsPage() {
         </p>
         <h2>No legal advice</h2>
         <p>
-          Legal Fusion Hub provides technology and managed operational
-          services to law firms. This website does not provide legal advice,
+          Legal Fusion Hub provides technology for law firms. This website does not provide legal advice,
           create an attorney-client relationship, or accept debtor cases.
         </p>
         <h2>Information and availability</h2>
