@@ -316,7 +316,7 @@ export function JourneyProcess() {
         while (current && current !== track) {
           left += current.offsetLeft;
           top += current.offsetTop;
-          const parent = current.offsetParent;
+          const parent: Element | null = current.offsetParent;
           current = parent instanceof HTMLElement ? parent : null;
         }
         const width = node.offsetWidth;
