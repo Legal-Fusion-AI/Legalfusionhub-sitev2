@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-23T03:30:00Z",
+  "title": "Design System: Legal Fusion Hub",
+  "extensions": {
+    "colorMeta": {
+      "white": {
+        "role": "neutral",
+        "displayName": "Operational White",
+        "canonical": "#ffffff",
+        "tonalRamp": ["oklch(15% 0 0)", "oklch(27% 0 0)", "oklch(39% 0 0)", "oklch(51% 0 0)", "oklch(63% 0 0)", "oklch(75% 0 0)", "oklch(87% 0 0)", "oklch(95% 0 0)"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "#f7f9fc",
+        "tonalRamp": ["oklch(15% 0.006 250)", "oklch(27% 0.006 250)", "oklch(39% 0.006 250)", "oklch(51% 0.006 250)", "oklch(63% 0.006 250)", "oklch(75% 0.006 250)", "oklch(87% 0.006 250)", "oklch(95% 0.006 250)"]
+      },
+      "paper-blue": {
+        "role": "neutral",
+        "displayName": "Blue Paper",
+        "canonical": "#f1f6ff",
+        "tonalRamp": ["oklch(15% 0.015 255)", "oklch(27% 0.015 255)", "oklch(39% 0.015 255)", "oklch(51% 0.015 255)", "oklch(63% 0.015 255)", "oklch(75% 0.015 255)", "oklch(87% 0.015 255)", "oklch(95% 0.015 255)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Deep Ink",
+        "canonical": "#0c1e3b",
+        "tonalRamp": ["oklch(15% 0.045 255)", "oklch(27% 0.045 255)", "oklch(39% 0.045 255)", "oklch(51% 0.045 255)", "oklch(63% 0.045 255)", "oklch(75% 0.045 255)", "oklch(87% 0.045 255)", "oklch(95% 0.045 255)"]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#53627a",
+        "tonalRamp": ["oklch(15% 0.025 255)", "oklch(27% 0.025 255)", "oklch(39% 0.025 255)", "oklch(51% 0.025 255)", "oklch(63% 0.025 255)", "oklch(75% 0.025 255)", "oklch(87% 0.025 255)", "oklch(95% 0.025 255)"]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#dce3ed",
+        "tonalRamp": ["oklch(15% 0.012 250)", "oklch(27% 0.012 250)", "oklch(39% 0.012 250)", "oklch(51% 0.012 250)", "oklch(63% 0.012 250)", "oklch(75% 0.012 250)", "oklch(87% 0.012 250)", "oklch(95% 0.012 250)"]
+      },
+      "line-dark": {
+        "role": "neutral",
+        "displayName": "Firm Hairline",
+        "canonical": "#c8d2e0",
+        "tonalRamp": ["oklch(15% 0.016 250)", "oklch(27% 0.016 250)", "oklch(39% 0.016 250)", "oklch(51% 0.016 250)", "oklch(63% 0.016 250)", "oklch(75% 0.016 250)", "oklch(87% 0.016 250)", "oklch(95% 0.016 250)"]
+      },
+      "routing-blue": {
+        "role": "primary",
+        "displayName": "Routing Blue",
+        "canonical": "#175cff",
+        "tonalRamp": ["oklch(15% 0.21 260)", "oklch(27% 0.21 260)", "oklch(39% 0.21 260)", "oklch(51% 0.21 260)", "oklch(63% 0.21 260)", "oklch(75% 0.18 260)", "oklch(87% 0.11 260)", "oklch(95% 0.04 260)"]
+      },
+      "routing-blue-dark": {
+        "role": "primary",
+        "displayName": "Deep Routing Blue",
+        "canonical": "#0d42bd",
+        "tonalRamp": ["oklch(15% 0.17 260)", "oklch(27% 0.17 260)", "oklch(39% 0.17 260)", "oklch(51% 0.17 260)", "oklch(63% 0.16 260)", "oklch(75% 0.14 260)", "oklch(87% 0.09 260)", "oklch(95% 0.035 260)"]
+      },
+      "routing-blue-soft": {
+        "role": "primary",
+        "displayName": "Soft Routing Blue",
+        "canonical": "#eaf1ff",
+        "tonalRamp": ["oklch(15% 0.03 260)", "oklch(27% 0.03 260)", "oklch(39% 0.03 260)", "oklch(51% 0.03 260)", "oklch(63% 0.03 260)", "oklch(75% 0.03 260)", "oklch(87% 0.03 260)", "oklch(95% 0.03 260)"]
+      },
+      "action-coral": {
+        "role": "secondary",
+        "displayName": "Action Coral",
+        "canonical": "#f05b47",
+        "tonalRamp": ["oklch(15% 0.17 28)", "oklch(27% 0.17 28)", "oklch(39% 0.17 28)", "oklch(51% 0.17 28)", "oklch(63% 0.17 28)", "oklch(75% 0.15 28)", "oklch(87% 0.09 28)", "oklch(95% 0.035 28)"]
+      },
+      "action-coral-dark": {
+        "role": "secondary",
+        "displayName": "Deep Action Coral",
+        "canonical": "#c94333",
+        "tonalRamp": ["oklch(15% 0.14 28)", "oklch(27% 0.14 28)", "oklch(39% 0.14 28)", "oklch(51% 0.14 28)", "oklch(63% 0.13 28)", "oklch(75% 0.11 28)", "oklch(87% 0.07 28)", "oklch(95% 0.03 28)"]
+      },
+      "completion-green": {
+        "role": "tertiary",
+        "displayName": "Completion Green",
+        "canonical": "#13865f",
+        "tonalRamp": ["oklch(15% 0.115 160)", "oklch(27% 0.115 160)", "oklch(39% 0.115 160)", "oklch(51% 0.115 160)", "oklch(63% 0.11 160)", "oklch(75% 0.09 160)", "oklch(87% 0.055 160)", "oklch(95% 0.025 160)"]
+      },
+      "completion-green-soft": {
+        "role": "tertiary",
+        "displayName": "Soft Completion Green",
+        "canonical": "#e7f7f0",
+        "tonalRamp": ["oklch(15% 0.03 160)", "oklch(27% 0.03 160)", "oklch(39% 0.03 160)", "oklch(51% 0.03 160)", "oklch(63% 0.03 160)", "oklch(75% 0.03 160)", "oklch(87% 0.03 160)", "oklch(95% 0.03 160)"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page-level promises and hero headlines."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Major section introductions and closing calls to action."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Operational modules, steps, and card-level ideas."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Explanations, supporting copy, and reading text."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Fields, statuses, metadata, and navigation."
+      }
+    },
+    "shadows": [
+      {
+        "name": "panel-lift",
+        "value": "0 24px 70px -36px rgba(19, 46, 88, 0.35)",
+        "purpose": "Dispatch boards, form panels, and floating mobile navigation."
+      },
+      {
+        "name": "card-lift",
+        "value": "0 14px 34px -24px rgba(19, 46, 88, 0.42)",
+        "purpose": "Nested tickets and document-like cards."
+      },
+      {
+        "name": "action-lift",
+        "value": "0 10px 25px -16px rgba(177, 47, 29, 0.8)",
+        "purpose": "Primary actions at rest."
+      },
+      {
+        "name": "action-lift-hover",
+        "value": "0 16px 34px -18px rgba(177, 47, 29, 0.9)",
+        "purpose": "Primary actions on hover."
+      }
+    ],
+    "motion": [
+      {
+        "name": "control-standard",
+        "value": "180ms ease",
+        "purpose": "Buttons and operational row feedback."
+      },
+      {
+        "name": "route-emphasized",
+        "value": "500ms cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Journey route progress."
+      },
+      {
+        "name": "panel-change",
+        "value": "350ms cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Dispatch message opacity, vertical movement, and blur."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "navigation-stack",
+        "value": "1020px"
+      },
+      {
+        "name": "mobile",
+        "value": "720px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The coral conversion action used for booking a demo.",
+      "html": "<button class=\"ds-btn-primary\">Book a demo <span aria-hidden=\"true\">→</span></button>",
+      "css": ".ds-btn-primary { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 9px; border: 1px solid var(--coral, #f05b47); border-radius: 9px; background: var(--coral, #f05b47); box-shadow: 0 10px 25px -16px rgba(177, 47, 29, 0.8); color: var(--white, #fff); padding: 12px 20px; font-family: \"Manrope Variable\", sans-serif; font-size: .91rem; font-weight: 750; transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease; } .ds-btn-primary:hover { border-color: var(--coral-dark, #c94333); background: var(--coral-dark, #c94333); box-shadow: 0 16px 34px -18px rgba(177, 47, 29, 0.9); transform: translateY(-1px); } .ds-btn-primary:focus-visible { outline: 3px solid rgba(23, 92, 255, .28); outline-offset: 3px; } .ds-btn-primary:active { transform: translateY(0); }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "A compact labeled field for demo-request details.",
+      "html": "<label class=\"ds-field\"><span>Work email</span><input type=\"email\" placeholder=\"you@firm.com\"></label>",
+      "css": ".ds-field { display: grid; gap: 7px; color: #34445e; font-family: \"Manrope Variable\", sans-serif; font-size: .75rem; font-weight: 700; } .ds-field input { width: 100%; min-height: 47px; border: 1px solid var(--line-dark, #c8d2e0); border-radius: 8px; background: var(--white, #fff); color: var(--ink, #0c1e3b); padding: 12px 13px; font: 500 .84rem \"Manrope Variable\", sans-serif; outline: none; transition: border-color 160ms ease, box-shadow 160ms ease; } .ds-field input:hover { border-color: #aebcd0; } .ds-field input:focus-visible { border-color: var(--blue, #175cff); box-shadow: 0 0 0 3px rgba(23, 92, 255, .11); }"
+    },
+    {
+      "name": "Navigation Link",
+      "kind": "nav",
+      "description": "Compact header navigation with routing-blue feedback.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">The system</a><a href=\"#\">How it works</a><a href=\"#\">About</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 30px; font-family: \"Manrope Variable\", sans-serif; } .ds-nav a { color: #34445f; font-size: .86rem; font-weight: 650; text-decoration: none; transition: color 160ms ease; } .ds-nav a:hover { color: var(--blue, #175cff); } .ds-nav a:focus-visible { border-radius: 4px; outline: 3px solid rgba(23, 92, 255, .28); outline-offset: 3px; } .ds-nav a:active { color: var(--blue-dark, #0d42bd); }"
+    },
+    {
+      "name": "Routing Status Pill",
+      "kind": "chip",
+      "refersTo": "status-pill",
+      "description": "A compact current-stage marker for routed operational states.",
+      "html": "<span class=\"ds-status-pill\">Qualified</span>",
+      "css": ".ds-status-pill { display: inline-flex; border-radius: 100px; background: var(--blue-soft, #eaf1ff); color: var(--blue-dark, #0d42bd); padding: 5px 8px; font-family: \"Manrope Variable\", sans-serif; font-size: .59rem; font-weight: 800; }"
+    },
+    {
+      "name": "Lead Ticket",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "The nested artifact that exposes lead identity, current action, ownership, and synchronization.",
+      "html": "<article class=\"ds-ticket\"><header><span class=\"ds-avatar\">AJ</span><div><strong>New prospective client</strong><small>Bankruptcy inquiry</small></div><span class=\"ds-status\">Qualified</span></header><p><span>Current action</span><strong>Location and case fit confirmed</strong></p><footer>✓ Synced to your firm’s workflow</footer></article>",
+      "css": ".ds-ticket { overflow: hidden; border: 1px solid var(--line, #dce3ed); border-radius: 12px; background: var(--white, #fff); box-shadow: 0 14px 34px -24px rgba(19, 46, 88, .42); color: var(--ink, #0c1e3b); font-family: \"Manrope Variable\", sans-serif; } .ds-ticket header { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; border-bottom: 1px solid var(--line, #dce3ed); padding: 15px; } .ds-ticket header strong, .ds-ticket header small { display: block; } .ds-ticket header strong { font-size: .73rem; } .ds-ticket header small { margin-top: 2px; color: #7c8899; font-size: .64rem; } .ds-avatar { display: grid; width: 35px; height: 35px; place-items: center; border-radius: 50%; background: var(--ink, #0c1e3b); color: var(--white, #fff); font-size: .68rem; font-weight: 800; } .ds-status { border-radius: 100px; background: var(--blue-soft, #eaf1ff); color: var(--blue-dark, #0d42bd); padding: 5px 8px; font-size: .59rem; font-weight: 800; } .ds-ticket p { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0; padding: 13px 15px; font-size: .66rem; } .ds-ticket p span { color: #7a8799; } .ds-ticket p strong { text-align: right; } .ds-ticket footer { background: var(--green-soft, #e7f7f0); color: #0f7050; padding: 11px 15px; font-size: .63rem; font-weight: 750; }"
+    },
+    {
+      "name": "Operational Row",
+      "kind": "custom",
+      "description": "A bordered capability row that keeps the system legible without card-grid repetition.",
+      "html": "<article class=\"ds-operation-row\"><span class=\"ds-operation-name\"><i aria-hidden=\"true\">01</i> Qualify</span><h3>Your criteria guide the conversation.</h3><p>Hub captures the facts your team needs before a consultation reaches the calendar.</p><b aria-label=\"Complete\">✓</b></article>",
+      "css": ".ds-operation-row { display: grid; grid-template-columns: .55fr 1fr 1.2fr auto; align-items: center; gap: 32px; border-top: 1px solid var(--line-dark, #c8d2e0); border-bottom: 1px solid var(--line-dark, #c8d2e0); padding: 26px 4px; color: var(--ink, #0c1e3b); font-family: \"Manrope Variable\", sans-serif; transition: background 180ms ease; } .ds-operation-row:hover { background: var(--white, #fff); } .ds-operation-name { display: flex; align-items: center; gap: 12px; font-weight: 800; } .ds-operation-name i { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid #cbd8f8; border-radius: 8px; background: var(--white, #fff); color: var(--blue, #175cff); font-size: .65rem; font-style: normal; } .ds-operation-row h3 { margin: 0; font: 650 1.22rem/1.06 \"Bricolage Grotesque Variable\", sans-serif; letter-spacing: -.035em; } .ds-operation-row p { margin: 0; color: var(--ink-soft, #53627a); font-size: .85rem; } .ds-operation-row b { color: var(--green, #13865f); } .ds-operation-row:focus-within { outline: 3px solid rgba(23, 92, 255, .28); outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Managed Dispatch Board",
+    "overview": "Legal Fusion Hub presents acquisition as visible operations: a bright working field where routes, owners, states, and handoffs can be understood at a glance. The system is crisp, calm, and commercially direct rather than cinematic or editorial. White space supplies confidence; dense operational modules supply specificity.\n\nThe visual language pairs strongly shaped grotesque headings with highly legible body copy, then assigns color by job. Blue routes and focuses, coral asks for action, and green confirms completion. Hairline boundaries, pale work surfaces, and selectively lifted panels make the experience feel managed without turning it into a generic dashboard.",
+    "keyCharacteristics": [
+      "White-first operational fields with pale blue or cool-gray work zones.",
+      "Split layouts that place plain-language explanation beside visible system behavior.",
+      "Color used semantically: blue routing, coral action, green completion.",
+      "Fine dividers, compact labels, and structured rows that expose handoffs.",
+      "Restrained motion that communicates progression and respects reduced-motion preferences."
+    ],
+    "rules": [
+      {
+        "name": "The Color Has a Job Rule",
+        "body": "Blue routes, coral asks, and green confirms; do not exchange these roles for decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The White Owns the Field Rule",
+        "body": "White or near-white remains the dominant ground, while signal colors occupy controls, states, and small route details.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Voice Rule",
+        "body": "Bricolage names the promise or operation; Manrope explains it and carries every control.",
+        "section": "typography"
+      },
+      {
+        "name": "The Operational Uppercase Rule",
+        "body": "Uppercase belongs to timestamps, statuses, indexes, and compact system labels—not to marketing headlines.",
+        "section": "typography"
+      },
+      {
+        "name": "The Explanation Beside Evidence Rule",
+        "body": "On wide screens, pair the claim with the mechanism, structured proof, or workflow that demonstrates it.",
+        "section": "layout"
+      },
+      {
+        "name": "The Lift the Working Surface Rule",
+        "body": "Elevation belongs to an actionable panel, floating menu, or contained working artifact; ordinary content sections stay flat.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Radius Shows Hierarchy Rule",
+        "body": "Controls are tighter than cards, and cards are tighter than major panels.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do keep white or near-white dominant and use pale fields to separate working zones.",
+      "Do pair claims with a visible route, state, handoff, structured row, or working panel.",
+      "Do preserve blue for routing and focus, coral for the primary action, and green for completion.",
+      "Do use hairlines and spacing before introducing elevation.",
+      "Do keep motion short, functional, and reduced-motion safe."
+    ],
+    "donts": [
+      "Don't turn the experience into a dark-first, warm paper, or image-led visual world.",
+      "Don't scatter coral across decoration, secondary links, or status states.",
+      "Don't convert every piece of content into a floating card or bento grid.",
+      "Don't use uppercase display copy or replace the established two-family type hierarchy.",
+      "Don't introduce atmospheric AI meshes, stock imagery, or ornamental effects that obscure the operating model."
+    ]
+  }
+}
