@@ -229,4 +229,4 @@ Components feel precise, responsive, and managed: each exposes its state with a 
 - **Don't** scatter coral across decoration, secondary links, or status states.
 - **Don't** convert every piece of content into a floating card or bento grid.
 - **Don't** use uppercase display copy or replace the established two-family type hierarchy.
-- **Don't** introduce atmospheric AI meshes, stock imagery, or ornamental effects that obscure the operating model.
+- **Don't** introduce atmospheric AI meshes, stock imagery, or ornamental effects that obscure the operating model. Photographic wallpapers are allowed only inside the homepage showcase cards, behind the product screens.

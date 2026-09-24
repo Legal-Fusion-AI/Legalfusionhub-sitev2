@@ -1,32 +1,74 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, FolderOpen, ListChecks, PhoneIncoming } from "lucide-react";
 import { JourneyBoard } from "@/components/journey-board";
 import { JourneyProcess } from "@/components/journey-process";
+import { ProductScreen } from "@/components/product-screen";
+import { ShowcaseVisibility } from "@/components/showcase-visibility";
 import coloredLogo from "@/coloredlogo.png";
+import engageWallpaper from "@/public/wallpapers/engage.webp";
+import acquireWallpaper from "@/public/wallpapers/acquire.webp";
+import serveWallpaper from "@/public/wallpapers/serve.webp";
 
+// TODO(copy): FAQ answers are placeholders until real objection copy is written.
 const faqs = [
   {
-    question: "How do the call and the consultation stay together?",
-    answer:
-      "Legal Fusion Hub answers calls 24/7, handles inquiries, and captures the lead. It then qualifies by your criteria, follows up, schedules consultations, and helps convert bankruptcy leads into retained clients.",
+    question: "Does Hub replace my intake staff?",
+    answer: "[PLACEHOLDER: answer — Hub supports intake; it does not replace the firm’s staff.]",
   },
   {
-    question: "Is this only for bankruptcy firms?",
-    answer:
-      "Hub is built to convert bankruptcy leads into retained clients. Legal Fusion Portal continues that work with questionnaires, documents, case data, and bankruptcy forms.",
+    question: "How does Hub know my firm’s qualification criteria?",
+    answer: "[PLACEHOLDER: answer — the firm sets the criteria Hub uses to qualify a lead.]",
   },
   {
-    question: "What happens after a client is retained?",
-    answer:
-      "Legal Fusion Portal is where the firm and the client continue: questionnaires, documents, case data, and bankruptcy forms.",
+    question: "What happens when someone calls outside office hours?",
+    answer: "[PLACEHOLDER: answer — Hub answers 24/7 and captures the inquiry.]",
   },
   {
-    question: "What will the demo cover?",
+    question: "How long does setup take?",
+    answer: "[PLACEHOLDER: answer — setup timeline, covered in the demo.]",
+  },
+  {
+    question: "Do I have to use Portal to use Hub?",
+    answer: "[PLACEHOLDER: answer — Hub and Portal are separate parts of the journey.]",
+  },
+  {
+    question: "What does it cost?",
     answer:
-      "Your demo is a look at the complete client journey for your firm: how Hub answers calls, how leads become consultations, and how Portal carries the matter after the client is retained.",
+      "[PLACEHOLDER: answer — pricing is covered in the demo. No public pricing.]",
   },
 ];
+
+const showcases = [
+  {
+    id: "engage",
+    verb: "Engage.",
+    caption: "Hub answers the call 24/7, handles the inquiry, and captures the lead.",
+    icon: PhoneIncoming,
+    wallpaper: engageWallpaper,
+    bleed: "none",
+    href: "/how-it-works",
+  },
+  {
+    id: "acquire",
+    verb: "Acquire.",
+    caption: "Hub qualifies by your criteria, follows up, and books the consultation.",
+    icon: ListChecks,
+    wallpaper: acquireWallpaper,
+    bleed: "none",
+    href: "/how-it-works",
+  },
+  {
+    id: "serve",
+    verb: "Serve.",
+    caption:
+      "After a client is retained, Portal carries the questionnaire, documents, case data, and forms.",
+    icon: FolderOpen,
+    wallpaper: serveWallpaper,
+    bleed: "right",
+    href: "/portal",
+  },
+] as const;
 
 export function HomePage() {
   return (
@@ -35,7 +77,7 @@ export function HomePage() {
         <div className="shell hero-stack">
           <Link className="hero-pill" href="/how-it-works">
             <Image className="hero-pill-mark" src={coloredLogo} alt="" />
-            <span className="hero-pill-ai">AI</span> systems for a stronger practice
+            Technology for a stronger practice
             <ArrowRight size={14} aria-hidden="true" />
           </Link>
           <h1>
@@ -57,16 +99,24 @@ export function HomePage() {
         <JourneyBoard />
       </div>
 
-      <section className="section products-section" id="products">
-        <div className="shell">
-          <div className="section-heading section-heading-wide">
-            <h2>Follow the inquiry from call to matter.</h2>
-            <p>
-              Hub answers, qualifies, and books. Portal is where the firm and
-              the client continue.
-            </p>
-          </div>
-          <JourneyProcess />
+      <section className="proof-band">
+        <div className="shell proof-grid">
+          <p>
+            <strong>Built inside a bankruptcy practice</strong>
+            <span>Where the company started</span>
+          </p>
+          <p>
+            <strong>8,000+</strong>
+            <span>bankruptcy cases filed</span>
+          </p>
+          <p>
+            <strong>24+ years</strong>
+            <span>of legal practice</span>
+          </p>
+          <p>
+            <strong>One company</strong>
+            <span>a complete client journey</span>
+          </p>
         </div>
       </section>
 
@@ -99,19 +149,57 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section journey-section" id="journey">
-        <div className="shell journey-layout">
-          <div className="journey-copy">
-            <h2>Watch one inquiry move across the company.</h2>
+      <section className="section product-cards-section" id="products">
+        <div className="shell">
+          <div className="section-heading section-heading-wide">
+            <h2>One company. Three parts of the journey.</h2>
             <p>
-              Hub answers the call and books the consultation. Legal Fusion
-              Portal covers what comes after a client is retained.
+              Hub engages the call and acquires the client. Portal is where the
+              firm and the client continue.
             </p>
-            <Link className="inline-link" href="/how-it-works">
-              Explore the journey <ArrowRight size={16} aria-hidden="true" />
-            </Link>
           </div>
-          <JourneyBoard compact />
+          <ShowcaseVisibility>
+            {showcases.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article className="showcase" key={item.id}>
+                  <Link
+                    className="showcase-card"
+                    data-bleed={item.bleed}
+                    href={item.href}
+                    aria-label={`${item.verb} ${item.caption}`}
+                  >
+                    <Image
+                      src={item.wallpaper}
+                      alt=""
+                      fill
+                      sizes="(max-width: 1020px) 100vw, 33vw"
+                    />
+                    <ProductScreen kind={item.id} />
+                  </Link>
+                  <p className="showcase-caption">
+                    <Icon size={16} aria-hidden="true" />
+                    <span>
+                      <strong>{item.verb}</strong> {item.caption}
+                    </span>
+                  </p>
+                </article>
+              );
+            })}
+          </ShowcaseVisibility>
+        </div>
+      </section>
+
+      <section className="section products-section">
+        <div className="shell">
+          <div className="section-heading section-heading-wide">
+            <h2>Follow the inquiry from call to matter.</h2>
+            <p>
+              Hub answers, qualifies, and books. Portal is where the firm and
+              the client continue.
+            </p>
+          </div>
+          <JourneyProcess />
         </div>
       </section>
 

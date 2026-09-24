@@ -218,7 +218,6 @@ export function JourneyBoard({ compact = false }: JourneyBoardProps) {
       }, HOLD_MS);
     };
 
-    setLit(true);
     schedule();
 
     return () => {
@@ -256,6 +255,9 @@ export function JourneyBoard({ compact = false }: JourneyBoardProps) {
               );
             })}
           </div>
+          <p className="journey-sources-caption" aria-hidden="true">
+            {sources[activeSource].label}
+          </p>
           <JourneyWires
             activeSource={activeSource}
             lit={lit && !reduceMotion}
@@ -320,7 +322,7 @@ export function JourneyBoard({ compact = false }: JourneyBoardProps) {
           </div>
 
           <div className="dispatch-content">
-            <AnimatePresence mode="wait" initial={false}>
+            <AnimatePresence mode="popLayout" initial={false}>
               <motion.div
                 className="dispatch-message"
                 key={stage.id}

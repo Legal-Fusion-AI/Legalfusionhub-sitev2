@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Brand } from "@/components/site-header";
+import { siteConfig } from "@/lib/site-config";
 
 export function SiteFooter() {
   return (
@@ -26,6 +27,7 @@ export function SiteFooter() {
           <span>Engage and acquire</span>
           <Link href="/portal">Legal Fusion Portal</Link>
           <span>Serve, manage, and grow</span>
+          <a href={siteConfig.portalUrl}>Sign in to Portal</a>
         </div>
         <div>
           <h2>Legal</h2>

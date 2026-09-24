@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import { useEffect, useState } from "react";
 import blackLogo from "@/blacklogo.png";
+import { siteConfig } from "@/lib/site-config";
 
 export function Brand() {
   return (
@@ -18,6 +19,7 @@ const links = [
   { href: "/#products", label: "Products" },
   { href: "/how-it-works", label: "How it works" },
   { href: "/about", label: "About" },
+  { href: "/portal", label: "Portal" },
 ];
 
 export function SiteHeader() {
@@ -43,6 +45,9 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="header-actions">
+          <a className="header-signin" href={siteConfig.portalUrl}>
+            Sign in
+          </a>
           <Link className="button button-accent button-small" href="/demo">
             Book a demo
           </Link>
@@ -57,6 +62,7 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
+            <a href={siteConfig.portalUrl}>Sign in</a>
             <Link className="button button-accent" href="/demo">
               Book a demo
             </Link>

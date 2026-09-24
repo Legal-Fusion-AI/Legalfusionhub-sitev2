@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion, useReducedMotion, useScroll } from "motion/react";
 import {
   CalendarCheck,
@@ -277,7 +276,6 @@ function Copy({ step }: { step: Step }) {
 export function JourneyProcess() {
   const trackRef = useRef<HTMLDivElement>(null);
   const promptRef = useRef<HTMLDivElement>(null);
-  const closeRef = useRef<HTMLDivElement>(null);
   const pillRefs = useRef<(HTMLHeadingElement | null)[]>([]);
   const groupRefs = useRef<(HTMLElement | null)[]>([]);
   const [line, setLine] = useState<LineModel>({ d: "", labels: [], width: 0, height: 0 });
@@ -296,12 +294,10 @@ export function JourneyProcess() {
       const width = track.clientWidth;
       const height = track.clientHeight;
       const prompt = promptRef.current;
-      const close = closeRef.current;
       const pills = pillRefs.current.filter((node): node is HTMLHeadingElement => node !== null);
       const groups = groupRefs.current.filter((node): node is HTMLElement => node !== null);
       if (
         !prompt ||
-        !close ||
         pills.length !== steps.length ||
         groups.length !== steps.length ||
         width < 1
@@ -335,17 +331,13 @@ export function JourneyProcess() {
       const pillBoxes = pills.map(box);
       const groupBoxes = groups.map(box);
       const narrow = window.matchMedia("(max-width: 1020px)").matches;
-
-      const closeBox = box(close);
-      const button = close.querySelector("a");
-      if (!button) return;
-      const buttonBox = box(button);
+      const lastPillBox = pillBoxes[pillBoxes.length - 1];
 
       if (narrow) {
         const spine = 14;
         let path = fillet([
           { x: spine, y: Math.max(0, promptBox.top - 12) },
-          { x: spine, y: buttonBox.midY },
+          { x: spine, y: lastPillBox.midY },
         ]);
         const spur = (y: number, x: number) => {
           const radius = Math.min(CORNER, Math.abs(x - spine) / 2);
@@ -353,7 +345,6 @@ export function JourneyProcess() {
         };
         path += spur(promptBox.midY, promptBox.left);
         for (const pill of pillBoxes) path += spur(pill.midY, pill.left - 8);
-        path += spur(buttonBox.midY, buttonBox.left);
         setLine({ d: path, labels: [], width, height });
         return;
       }
@@ -388,13 +379,7 @@ export function JourneyProcess() {
         });
       }
 
-      const lastPill = pillBoxes[pillBoxes.length - 1];
-      const lastGroup = groupBoxes[groupBoxes.length - 1];
-      const closeY = (lastGroup.bottom + closeBox.top) / 2;
-      points.push({ x: lastPill.cx, y: lastPill.bottom });
-      points.push({ x: lastPill.cx, y: closeY });
-      points.push({ x: buttonBox.cx, y: closeY });
-      points.push({ x: buttonBox.cx, y: closeBox.top });
+      points.push({ x: lastPillBox.cx, y: lastPillBox.bottom });
 
       setLine({ d: fillet(points), labels, width, height });
     };
@@ -490,16 +475,6 @@ export function JourneyProcess() {
         );
       })}
 
-      <div className="zigzag-close" ref={closeRef}>
-        <h2>See the whole journey.</h2>
-        <p>
-          Book a demo and follow one inquiry from the first call to a retained
-          client.
-        </p>
-        <Link className="button" href="/demo">
-          Book a demo
-        </Link>
-      </div>
     </div>
   );
 }
