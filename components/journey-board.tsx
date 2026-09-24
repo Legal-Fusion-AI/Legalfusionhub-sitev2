@@ -4,6 +4,7 @@ import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { CalendarCheck, Check, FolderOpen, PhoneIncoming } from "lucide-react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { Avatar, MacWindow } from "@/components/mac-window";
 import coloredLogo from "@/coloredlogo.png";
 
 const sources = [
@@ -280,96 +281,95 @@ export function JourneyBoard({ compact = false }: JourneyBoardProps) {
           </div>
         )}
 
-        <div className="dispatch-board">
-          <div className="dispatch-topbar">
-            <div>
+        <MacWindow
+          title="Client journey"
+          aside={
+            <span className="mac-pill">
               <span className="live-dot" />
-              Client journey
+              Live
+            </span>
+          }
+        >
+          <div className="mac-body">
+            <div className="mac-segment" role="tablist" aria-label="Client journey">
+              <motion.span
+                className="mac-segment-thumb"
+                animate={{ x: `${active * 100}%` }}
+                transition={{
+                  duration: reduceMotion ? 0 : 0.45,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                aria-hidden="true"
+              />
+              {stages.map((item, index) => (
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={active === index}
+                  onClick={() =>
+                    selectSource(
+                      sources.findIndex((source) => source.stage === index),
+                    )
+                  }
+                  key={item.id}
+                >
+                  {item.short}
+                </button>
+              ))}
             </div>
-            <span>Live</span>
-          </div>
 
-          <div className="route-tabs" role="tablist" aria-label="Client journey">
-            <span className="route-line" aria-hidden="true" />
-            <motion.span
-              className="route-progress"
-              animate={{ width: `${(active / (stages.length - 1)) * 68}%` }}
-              transition={{
-                duration: reduceMotion ? 0 : 0.5,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              aria-hidden="true"
-            />
-            {stages.map((item, index) => (
-              <button
-                type="button"
-                role="tab"
-                aria-selected={active === index}
-                className={
-                  active >= index ? "route-tab route-tab-passed" : "route-tab"
-                }
-                onClick={() =>
-                  selectSource(
-                    sources.findIndex((source) => source.stage === index),
-                  )
-                }
-                key={item.id}
-              >
-                <span>{active > index ? <Check size={12} /> : index + 1}</span>
-                {item.short}
-              </button>
-            ))}
-          </div>
+            <div className="dispatch-content">
+              <AnimatePresence mode="popLayout" initial={false}>
+                <motion.div
+                  className="dispatch-message"
+                  key={stage.id}
+                  initial={
+                    reduceMotion ? false : { opacity: 0, y: 8, filter: "blur(4px)" }
+                  }
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  exit={
+                    reduceMotion
+                      ? undefined
+                      : { opacity: 0, y: -6, filter: "blur(3px)" }
+                  }
+                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <div className="dispatch-icon">
+                    <Icon size={22} strokeWidth={1.8} aria-hidden="true" />
+                  </div>
+                  <p className="dispatch-time">{stage.meta}</p>
+                  <h3>{stage.title}</h3>
+                  <p>{stage.body}</p>
+                </motion.div>
+              </AnimatePresence>
 
-          <div className="dispatch-content">
-            <AnimatePresence mode="popLayout" initial={false}>
-              <motion.div
-                className="dispatch-message"
-                key={stage.id}
-                initial={
-                  reduceMotion ? false : { opacity: 0, y: 8, filter: "blur(4px)" }
-                }
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                exit={
-                  reduceMotion
-                    ? undefined
-                    : { opacity: 0, y: -6, filter: "blur(3px)" }
-                }
-                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <div className="dispatch-icon">
-                  <Icon size={22} strokeWidth={1.8} aria-hidden="true" />
+              <div className="mac-card">
+                <div className="mac-card-head">
+                  <Avatar who="jordan" />
+                  <span>
+                    <strong>New prospective client</strong>
+                    <em>Bankruptcy inquiry</em>
+                  </span>
+                  <span className="mac-pill">{stage.short}</span>
                 </div>
-                <p className="dispatch-time">{stage.meta}</p>
-                <h3>{stage.title}</h3>
-                <p>{stage.body}</p>
-              </motion.div>
-            </AnimatePresence>
-
-            <div className="lead-ticket">
-              <div className="ticket-head">
-                <div className="avatar">AJ</div>
-                <div>
-                  <strong>New prospective client</strong>
-                  <span>Bankruptcy inquiry</span>
+                <ul className="mac-rows">
+                  <li>
+                    <span>Current action</span>
+                    <strong>{stage.detail}</strong>
+                  </li>
+                  <li>
+                    <span>Product</span>
+                    <strong>{stage.owner}</strong>
+                  </li>
+                </ul>
+                <div className="mac-card-foot">
+                  <Check size={14} aria-hidden="true" />
+                  One company. A complete client journey.
                 </div>
-                <span className="status-pill">{stage.short}</span>
-              </div>
-              <div className="ticket-row">
-                <span>Current action</span>
-                <strong>{stage.detail}</strong>
-              </div>
-              <div className="ticket-row">
-                <span>Product</span>
-                <strong>{stage.owner}</strong>
-              </div>
-              <div className="ticket-footer">
-                <Check size={14} aria-hidden="true" />
-                One company. A complete client journey.
               </div>
             </div>
           </div>
-        </div>
+        </MacWindow>
       </div>
     </div>
   );

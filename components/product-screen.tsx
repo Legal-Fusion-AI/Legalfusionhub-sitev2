@@ -1,27 +1,6 @@
-import Image from "next/image";
-import alvarezAvatar from "@/public/avatars/alvarez.webp";
-import jordanAvatar from "@/public/avatars/jordan.webp";
-import kellerAvatar from "@/public/avatars/keller.webp";
-import nguyenAvatar from "@/public/avatars/nguyen.webp";
-import reedAvatar from "@/public/avatars/reed.webp";
+import { Avatar, HubMark } from "@/components/mac-window";
 
 type ScreenKind = "engage" | "acquire" | "serve";
-
-const avatars = {
-  alvarez: alvarezAvatar,
-  jordan: jordanAvatar,
-  keller: kellerAvatar,
-  nguyen: nguyenAvatar,
-  reed: reedAvatar,
-};
-
-function Avatar({ who }: { who: keyof typeof avatars }) {
-  return (
-    <span className="mac-avatar">
-      <Image src={avatars[who]} alt="" width={64} height={64} />
-    </span>
-  );
-}
 
 const titles: Record<ScreenKind, string> = {
   engage: "Inbox",
@@ -91,45 +70,111 @@ function EngageScreen() {
           </span>
         </header>
         <div className="mac-log">
-          <p className="mac-bubble is-in" data-anim="sms-in-1">
-            I need to talk to someone about filing bankruptcy.
-          </p>
-          <div className="mac-slot">
-            <p className="mac-bubble is-out mac-typing" data-anim="sms-type-1">
-              <i />
-              <i />
-              <i />
+          <div className="mac-turn is-in" data-anim="sms-in-1">
+            <Avatar who="jordan" />
+            <p className="mac-bubble">
+              I need to talk to someone about filing bankruptcy.
             </p>
-            <p className="mac-bubble is-out" data-anim="sms-out-1">
+          </div>
+          <div className="mac-slot">
+            <div className="mac-turn is-out mac-typing" data-anim="sms-type-1">
+              <p className="mac-bubble">
+                <i />
+                <i />
+                <i />
+              </p>
+              <HubMark />
+            </div>
+            <div className="mac-turn is-out" data-anim="sms-out-1">
+              <p className="mac-bubble">
+                I can help with that. Is this a personal filing, or a business one?
+              </p>
+              <HubMark />
+            </div>
+          </div>
+          <div className="mac-turn is-in" data-anim="sms-in-2">
+            <Avatar who="jordan" />
+            <p className="mac-bubble">
+              Personal. Credit cards, and a car payment I’m behind on.
+            </p>
+          </div>
+          <div className="mac-slot">
+            <div className="mac-turn is-out mac-typing" data-anim="sms-type-2">
+              <p className="mac-bubble">
+                <i />
+                <i />
+                <i />
+              </p>
+              <HubMark />
+            </div>
+            <div className="mac-turn is-out" data-anim="sms-out-2">
+              <p className="mac-bubble">Saved. When works for a consultation?</p>
+              <HubMark />
+            </div>
+          </div>
+          <div className="mac-turn is-in" data-anim="sms-in-3">
+            <Avatar who="jordan" />
+            <p className="mac-bubble">Thursday at 10:30 AM.</p>
+          </div>
+          <div className="mac-slot">
+            <div className="mac-turn is-out mac-typing" data-anim="sms-type-3">
+              <p className="mac-bubble">
+                <i />
+                <i />
+                <i />
+              </p>
+              <HubMark />
+            </div>
+            <div className="mac-turn is-out" data-anim="sms-out-3">
+              <p className="mac-bubble">You’re booked for Thursday, 10:30 AM.</p>
+              <HubMark />
+            </div>
+          </div>
+        </div>
+        <div className="mac-composer">
+          <span className="mac-composer-field">
+            <span className="mac-composer-placeholder" data-anim="composer-placeholder">
+              Message
+            </span>
+            <span className="mac-draft" data-anim="draft-1">
               I can help with that. Is this a personal filing, or a business one?
-            </p>
-          </div>
-          <p className="mac-bubble is-in" data-anim="sms-in-2">
-            Personal. Credit cards, and a car payment I’m behind on.
-          </p>
-          <div className="mac-slot">
-            <p className="mac-bubble is-out mac-typing" data-anim="sms-type-2">
-              <i />
-              <i />
-              <i />
-            </p>
-            <p className="mac-bubble is-out" data-anim="sms-out-2">
+            </span>
+            <span className="mac-draft" data-anim="draft-2">
               Saved. When works for a consultation?
-            </p>
-          </div>
-          <p className="mac-bubble is-in" data-anim="sms-in-3">
-            Thursday at 10:30 AM.
-          </p>
-          <div className="mac-slot">
-            <p className="mac-bubble is-out mac-typing" data-anim="sms-type-3">
-              <i />
-              <i />
-              <i />
-            </p>
-            <p className="mac-bubble is-out" data-anim="sms-out-3">
+            </span>
+            <span className="mac-draft" data-anim="draft-3">
               You’re booked for Thursday, 10:30 AM.
-            </p>
-          </div>
+            </span>
+          </span>
+          <span className="mac-composer-mic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+              <path
+                d="M12 15a3 3 0 0 0 3-3V7a3 3 0 1 0-6 0v5a3 3 0 0 0 3 3Z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.7"
+              />
+              <path
+                d="M7 11a5 5 0 0 0 10 0M12 16v3"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.7"
+                strokeLinecap="round"
+              />
+            </svg>
+          </span>
+          <span className="mac-composer-send" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="14" height="14">
+              <path
+                d="M12 18V7M7.5 11.5 12 6.5l4.5 5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
         </div>
       </div>
     </div>
@@ -154,7 +199,6 @@ function AcquireScreen() {
       <div className="mac-kanban">
         <section>
           <h4>New</h4>
-          <article className="is-ghost" />
         </section>
         <section>
           <h4>Qualified</h4>
@@ -163,7 +207,6 @@ function AcquireScreen() {
             <strong>S. Reed</strong>
             <em>Criteria met</em>
           </article>
-          <article className="is-ghost" />
         </section>
         <section className="is-booked">
           <h4>Consultation booked</h4>
@@ -182,7 +225,6 @@ function AcquireScreen() {
             <strong>P. Alvarez</strong>
             <em>Fri 11:00 AM</em>
           </article>
-          <article className="is-ghost is-landing" />
         </section>
         <article className="mac-mover" data-anim="mover">
           <Avatar who="jordan" />

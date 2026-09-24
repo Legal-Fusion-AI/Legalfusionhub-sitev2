@@ -7,8 +7,10 @@ import {
   ClipboardList,
   FolderOpen,
   ListChecks,
+  Phone,
   PhoneIncoming,
 } from "lucide-react";
+import { Avatar, MacWindow } from "@/components/mac-window";
 import { useLayoutEffect, useRef, useState } from "react";
 
 const steps = [
@@ -78,123 +80,160 @@ function useReveal(delay = 0) {
 
 function Scene({ step }: { step: Step }) {
   const reveal = useReveal(0.08);
+
   if (step.id === "answer") {
     return (
-      <motion.div className="process-scene-card" {...reveal}>
-        <div className="process-scene-icon">
-          <PhoneIncoming size={22} strokeWidth={1.8} aria-hidden="true" />
-        </div>
-        <p className="process-scene-kicker">Incoming call</p>
-        <h4>Answered immediately</h4>
-        <ul>
-          <li>
-            <span>Caller</span>
-            <strong>Prospective client</strong>
-          </li>
-          <li>
-            <span>Matter</span>
-            <strong>Bankruptcy</strong>
-          </li>
-          <li>
-            <span>Response</span>
-            <strong>24/7</strong>
-          </li>
-        </ul>
+      <motion.div {...reveal}>
+        <MacWindow title="Phone">
+          <div className="mac-body mac-panel">
+            <div className="mac-card">
+              <div className="mac-card-head">
+                <Avatar who="jordan" />
+                <span>
+                  <strong>Prospective client</strong>
+                  <em>Incoming call</em>
+                </span>
+                <span className="mac-pill">Answered</span>
+              </div>
+              <ul className="mac-rows">
+                <li>
+                  <span>Matter</span>
+                  <strong>Bankruptcy</strong>
+                </li>
+                <li>
+                  <span>Response</span>
+                  <strong>24/7</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </MacWindow>
       </motion.div>
     );
   }
 
   if (step.id === "capture") {
     return (
-      <motion.div className="process-scene-card" {...reveal}>
-        <div className="ticket-head">
-          <div className="avatar">AJ</div>
-          <div>
-            <strong>New prospective client</strong>
-            <span>Bankruptcy inquiry</span>
+      <motion.div {...reveal}>
+        <MacWindow title="Lead">
+          <div className="mac-body mac-panel">
+            <div className="mac-card">
+              <div className="mac-card-head">
+                <Avatar who="jordan" />
+                <span>
+                  <strong>A. Jordan</strong>
+                  <em>Bankruptcy inquiry</em>
+                </span>
+                <span className="mac-pill">Captured</span>
+              </div>
+              <ul className="mac-rows">
+                <li>
+                  <span>Current action</span>
+                  <strong>Inquiry saved</strong>
+                </li>
+                <li>
+                  <span>Product</span>
+                  <strong>Legal Fusion Hub</strong>
+                </li>
+              </ul>
+            </div>
           </div>
-          <span className="status-pill">Captured</span>
-        </div>
-        <ul>
-          <li>
-            <span>Current action</span>
-            <strong>Inquiry saved</strong>
-          </li>
-          <li>
-            <span>Product</span>
-            <strong>Legal Fusion Hub</strong>
-          </li>
-        </ul>
+        </MacWindow>
       </motion.div>
     );
   }
 
   if (step.id === "qualify") {
     return (
-      <motion.div className="process-scene-card" {...reveal}>
-        <p className="process-scene-kicker">Firm criteria</p>
-        <h4>Lead qualified</h4>
-        <ul className="process-checks">
-          <li>
-            <Check size={14} aria-hidden="true" />
-            Practice fit confirmed
-          </li>
-          <li>
-            <Check size={14} aria-hidden="true" />
-            Criteria matched
-          </li>
-          <li>
-            <Check size={14} aria-hidden="true" />
-            Follow-up underway
-          </li>
-        </ul>
+      <motion.div {...reveal}>
+        <MacWindow title="Pipeline">
+          <div className="mac-body mac-panel">
+            <div className="mac-card">
+              <div className="mac-card-head">
+                <Avatar who="jordan" />
+                <span>
+                  <strong>A. Jordan</strong>
+                  <em>Lead qualified</em>
+                </span>
+                <span className="mac-pill">Criteria met</span>
+              </div>
+              <ul className="mac-rows mac-checks">
+                <li>
+                  <Check size={14} aria-hidden="true" />
+                  Practice fit confirmed
+                </li>
+                <li>
+                  <Check size={14} aria-hidden="true" />
+                  Criteria matched
+                </li>
+                <li>
+                  <Check size={14} aria-hidden="true" />
+                  Follow-up underway
+                </li>
+              </ul>
+            </div>
+          </div>
+        </MacWindow>
       </motion.div>
     );
   }
 
   if (step.id === "book") {
     return (
-      <motion.div className="process-scene-card" {...reveal}>
-        <div className="process-scene-icon">
-          <CalendarCheck size={22} strokeWidth={1.8} aria-hidden="true" />
-        </div>
-        <p className="process-scene-kicker">Consultation</p>
-        <h4>Thursday, 10:30 AM</h4>
-        <ul>
-          <li>
-            <span>With</span>
-            <strong>The firm</strong>
-          </li>
-          <li>
-            <span>Status</span>
-            <strong>Scheduled</strong>
-          </li>
-        </ul>
+      <motion.div {...reveal}>
+        <MacWindow title="Calendar">
+          <div className="mac-body mac-panel">
+            <div className="mac-card">
+              <div className="mac-when">
+                <span>Thursday</span>
+                <strong>10:30 AM</strong>
+              </div>
+              <ul className="mac-rows">
+                <li>
+                  <span>With</span>
+                  <strong>The firm</strong>
+                </li>
+                <li>
+                  <span>Status</span>
+                  <strong>Scheduled</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </MacWindow>
       </motion.div>
     );
   }
 
   return (
-    <motion.div className="process-scene-card" {...reveal}>
-      <div className="process-scene-icon">
-        <FolderOpen size={22} strokeWidth={1.8} aria-hidden="true" />
-      </div>
-      <p className="process-scene-kicker">Legal Fusion Portal</p>
-      <h4>Case file ready</h4>
-      <ul>
-        <li>
-          <span>Questionnaire</span>
-          <strong>In progress</strong>
-        </li>
-        <li>
-          <span>Documents</span>
-          <strong>On file</strong>
-        </li>
-        <li>
-          <span>Bankruptcy forms</span>
-          <strong>Ready</strong>
-        </li>
-      </ul>
+    <motion.div {...reveal}>
+      <MacWindow title="Case file">
+        <div className="mac-body mac-panel">
+          <div className="mac-card">
+            <div className="mac-case-head">
+              <div>
+                <h4>Harbor & Stone Law</h4>
+                <p>Case 24-10311</p>
+              </div>
+              <span className="mac-pill">Retained</span>
+            </div>
+            <ul className="mac-rows">
+              <li>
+                <span>Questionnaire</span>
+                <strong>In progress</strong>
+              </li>
+              <li>
+                <span>Documents</span>
+                <strong>On file</strong>
+              </li>
+              <li>
+                <span>Bankruptcy forms</span>
+                <strong>Ready</strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </MacWindow>
     </motion.div>
   );
 }
@@ -428,7 +467,12 @@ export function JourneyProcess() {
       >
         <div className="zigzag-lead">
           <motion.div className="zigzag-prompt" ref={promptRef} {...promptReveal}>
-            <span className="avatar">AJ</span>
+            <span className="zigzag-avatar">
+              <Avatar who="jordan" />
+              <span className="zigzag-chat" aria-hidden="true">
+                <Phone strokeWidth={2.5} />
+              </span>
+            </span>
             <p>I need to talk to someone about filing bankruptcy.</p>
           </motion.div>
           <Pill

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowRight, ChevronDown, FolderOpen, ListChecks, PhoneIncoming } from "lucide-react";
 import { JourneyBoard } from "@/components/journey-board";
 import { JourneyProcess } from "@/components/journey-process";
+import { ProblemScenes } from "@/components/problem-scenes";
 import { ProductScreen } from "@/components/product-screen";
 import { ShowcaseVisibility } from "@/components/showcase-visibility";
 import coloredLogo from "@/coloredlogo.png";
@@ -121,31 +122,11 @@ export function HomePage() {
       </section>
 
       <section className="section problem-section">
-        <div className="shell problem-grid">
-          <div className="section-heading">
-            <h2>The journey breaks when each step lives somewhere else.</h2>
+        <div className="shell">
+          <div className="problem-heading">
+            <h2>Where clients slip away.</h2>
           </div>
-          <div className="problem-copy">
-            <p>
-              A call goes unanswered. A lead never becomes a consultation. After
-              someone hires the firm, the tools for serving that client sit in
-              another place entirely.
-            </p>
-            <p>
-              One company covers the path. Legal Fusion Hub answers the call
-              and turns bankruptcy leads into retained clients. Legal Fusion
-              Portal is where the firm and the client continue.
-            </p>
-            <div className="problem-equation" aria-label="Client journey">
-              <span>Engage</span>
-              <b>+</b>
-              <span>Acquire</span>
-              <b>+</b>
-              <span>Serve</span>
-              <b>=</b>
-              <strong>a complete client journey</strong>
-            </div>
-          </div>
+          <ProblemScenes />
         </div>
       </section>
 
