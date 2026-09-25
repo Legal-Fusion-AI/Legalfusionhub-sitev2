@@ -19,6 +19,10 @@ next-env.d.ts
 /.impeccable/mocks
 /.impeccable/config.local.json
 
+# generated voice-demo sources
+/scripts/voice-demo/raw/
+/scripts/voice-demo/work/
+
 # logs
 npm-debug.log*
 yarn-debug.log*

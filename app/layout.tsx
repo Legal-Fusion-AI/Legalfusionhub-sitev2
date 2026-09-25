@@ -4,6 +4,7 @@ import "@fontsource-variable/bricolage-grotesque";
 import "./globals.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { VoiceDemoWidget } from "@/components/voice-demo-widget";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -38,6 +39,7 @@ export default function RootLayout({
         <SiteHeader />
         <div id="main-content">{children}</div>
         <SiteFooter />
+        <VoiceDemoWidget />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
