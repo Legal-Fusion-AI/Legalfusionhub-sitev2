@@ -3723,6 +3723,44 @@ h3 {
     padding-inline: 16px;
   }
 
+  .showcase-card {
+    aspect-ratio: 3 / 4;
+  }
+
+  .showcase-card[data-bleed="left"] .mac-window,
+  .showcase-card[data-bleed="right"] .mac-window,
+  .showcase-card[data-bleed="none"] .mac-window {
+    top: 8%;
+    right: 4%;
+    left: 4%;
+    height: min(78%, 300px);
+  }
+
+  .showcase:first-child .showcase-card .mac-window {
+    top: 4%;
+    height: 92%;
+  }
+
+  .mac-log .mac-turn,
+  .mac-log .mac-slot {
+    flex-shrink: 0;
+  }
+
+  .mac-log .mac-turn {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .mac-log .mac-bubble {
+    max-width: min(196px, 100%);
+    min-width: 0;
+  }
+
+  .mac-stage-modal {
+    top: 16px;
+    width: min(92%, 250px);
+  }
+
   .zigzag-lead,
   .zigzag-follow,
   .zigzag-beat,
@@ -3802,6 +3840,12 @@ h3 {
 
   .zigzag .mac-checks li {
     flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 400px) {
+  .showcase:first-child .showcase-card {
+    aspect-ratio: 3 / 5;
   }
 }
 
