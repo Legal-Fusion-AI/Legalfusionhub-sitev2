@@ -3442,12 +3442,28 @@ h3 {
     position: static;
   }
 
+  .zigzag {
+    overflow-x: clip;
+  }
+
   .zigzag-lead,
   .zigzag-follow,
   .zigzag-beat {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     column-gap: 0;
+    min-width: 0;
     padding-left: 36px;
+  }
+
+  .zigzag-lead > *,
+  .zigzag-follow > *,
+  .zigzag-beat > * {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .zigzag-pill {
+    max-width: 100%;
   }
 
   .zigzag-follow .zigzag-main,
@@ -3705,6 +3721,87 @@ h3 {
     border-bottom: 1px solid var(--line);
     border-left: 0 !important;
     padding-inline: 16px;
+  }
+
+  .zigzag-lead,
+  .zigzag-follow,
+  .zigzag-beat,
+  .zigzag-close {
+    padding-left: 28px;
+  }
+
+  .zigzag-beat {
+    margin-top: 36px;
+  }
+
+  .zigzag-prompt {
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .zigzag-prompt p {
+    font-size: 0.9rem;
+  }
+
+  .zigzag-pill {
+    align-items: flex-start;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+
+  .zigzag-pill svg {
+    flex: none;
+    margin-top: 0.15em;
+  }
+
+  .zigzag-main {
+    gap: 10px;
+  }
+
+  .zigzag-body {
+    max-width: 100%;
+  }
+
+  .zigzag .mac-window,
+  .zigzag .mac-window-plain {
+    max-width: 100%;
+  }
+
+  .zigzag .mac-card-head {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .zigzag .mac-card-head > span:not(.mac-pill) {
+    min-width: 0;
+  }
+
+  .zigzag .mac-card-head > .mac-pill {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .zigzag .mac-case-head {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .zigzag .mac-case-head > div {
+    min-width: 0;
+  }
+
+  .zigzag .mac-rows li {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+
+  .zigzag .mac-rows li span,
+  .zigzag .mac-rows li strong {
+    min-width: 0;
+  }
+
+  .zigzag .mac-checks li {
+    flex-wrap: nowrap;
   }
 }
 

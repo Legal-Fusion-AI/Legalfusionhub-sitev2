@@ -318,12 +318,21 @@ export function JourneyProcess() {
   const pillRefs = useRef<(HTMLHeadingElement | null)[]>([]);
   const groupRefs = useRef<(HTMLElement | null)[]>([]);
   const [line, setLine] = useState<LineModel>({ d: "", labels: [], width: 0, height: 0 });
+  const [phone, setPhone] = useState(false);
   const reduce = useReducedMotion();
   const promptReveal = useReveal(0);
   const { scrollYProgress } = useScroll({
     target: trackRef,
     offset: ["start 0.92", "end 0.7"],
   });
+
+  useLayoutEffect(() => {
+    const query = window.matchMedia("(max-width: 720px)");
+    const sync = () => setPhone(query.matches);
+    sync();
+    query.addEventListener("change", sync);
+    return () => query.removeEventListener("change", sync);
+  }, []);
 
   useLayoutEffect(() => {
     const track = trackRef.current;
@@ -445,7 +454,7 @@ export function JourneyProcess() {
           <motion.path
             className="zigzag-path-draw"
             d={line.d}
-            style={{ pathLength: reduce ? 1 : scrollYProgress }}
+            style={{ pathLength: reduce || phone ? 1 : scrollYProgress }}
           />
         </svg>
       )}
