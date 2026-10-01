@@ -6,7 +6,7 @@ import { JourneyBoard } from "@/components/journey-board";
 export const metadata: Metadata = {
   title: "How it works",
   description:
-    "How Legal Fusion Hub answers the call, books the consultation, and hands a retained client to Legal Fusion Portal.",
+    "How Legal Fusion Hub answers the call, qualifies the lead, and books the consultation that turns it into a retained client.",
 };
 
 const phases = [
@@ -20,11 +20,6 @@ const phases = [
     text: "Hub qualifies by your firm’s criteria, follows up, schedules consultations, and helps convert bankruptcy leads into retained clients.",
     points: ["Qualification", "Follow up", "Scheduled consultations", "Retained bankruptcy clients"],
   },
-  {
-    title: "Portal carries the matter forward.",
-    text: "After a client is retained, Legal Fusion Portal is where the firm and the client continue: questionnaires, documents, case data, and bankruptcy forms.",
-    points: ["Questionnaires", "Documents", "Case data", "Bankruptcy forms"],
-  },
 ];
 
 export default function HowItWorksPage() {
@@ -32,11 +27,11 @@ export default function HowItWorksPage() {
     <main>
       <section className="subpage-hero">
         <div className="shell narrow-hero">
-          <h1>One company. A complete client journey.</h1>
+          <h1>From first call to retained client.</h1>
           <p>
-            Legal Fusion Hub answers the call and books the consultation.
-            Legal Fusion Portal is where the firm and the client continue
-            after someone is retained.
+            Legal Fusion Hub answers the call, qualifies the lead, and books
+            the consultation that turns a bankruptcy inquiry into a retained
+            client.
           </p>
           <Link className="button" href="/demo">
             Book a demo <ArrowRight size={17} aria-hidden="true" />
@@ -70,7 +65,7 @@ export default function HowItWorksPage() {
       </section>
       <section className="page-cta">
         <div className="shell page-cta-inner">
-          <h2>More than software. A stronger tomorrow for law firms.</h2>
+          <h2>Every call answered. More clients retained.</h2>
           <Link className="button" href="/demo">
             Book a demo <ArrowRight size={17} aria-hidden="true" />
           </Link>

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Brand } from "@/components/site-header";
-import { siteConfig } from "@/lib/site-config";
 
 export function SiteFooter() {
   return (
@@ -9,14 +8,13 @@ export function SiteFooter() {
         <div className="footer-brand">
           <Brand />
           <p>
-            Technology for a stronger practice. One company. A complete client
-            journey.
+            Technology for a stronger practice. From the first call to a
+            retained client.
           </p>
         </div>
         <div>
           <h2>Explore</h2>
           <Link href="/#products">Products</Link>
-          <Link href="/portal">Portal</Link>
           <Link href="/how-it-works">How it works</Link>
           <Link href="/about">About</Link>
           <Link href="/demo">Book a demo</Link>
@@ -25,9 +23,6 @@ export function SiteFooter() {
           <h2>Products</h2>
           <Link href="/#products">Legal Fusion Hub</Link>
           <span>Engage and acquire</span>
-          <Link href="/portal">Legal Fusion Portal</Link>
-          <span>Serve, manage, and grow</span>
-          <a href={siteConfig.portalUrl}>Sign in to Portal</a>
         </div>
         <div>
           <h2>Legal</h2>

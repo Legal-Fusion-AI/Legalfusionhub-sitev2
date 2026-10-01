@@ -5,7 +5,7 @@ import { LeadForm } from "@/components/lead-form";
 export const metadata: Metadata = {
   title: "Book a demo",
   description:
-    "See how Legal Fusion Hub covers calls, retained clients, and what comes next for your firm.",
+    "See how Legal Fusion Hub answers calls and turns bankruptcy leads into retained clients.",
 };
 
 export default function DemoPage() {
@@ -13,10 +13,10 @@ export default function DemoPage() {
     <main className="demo-page">
       <div className="shell demo-grid">
         <div className="demo-copy">
-          <h1>See the complete client journey for your firm.</h1>
+          <h1>See how your firm turns calls into retained clients.</h1>
           <p>
-            A working look at how calls are answered, how bankruptcy leads
-            become retained clients, and what comes next.
+            A working look at how calls are answered and how bankruptcy leads
+            become retained clients.
           </p>
           <ul>
             <li>
@@ -29,7 +29,7 @@ export default function DemoPage() {
             </li>
             <li>
               <Check size={17} aria-hidden="true" />
-              See how Portal carries the matter after a client is retained
+              Hear how Hub handles a real bankruptcy intake call
             </li>
           </ul>
           <div className="demo-duration">

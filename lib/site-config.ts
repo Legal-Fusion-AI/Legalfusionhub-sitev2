@@ -3,10 +3,8 @@ export const siteConfig = {
   shortName: "Legal Fusion",
   tagline: "Technology for a stronger practice",
   description:
-    "One company. A complete client journey. Legal Fusion Hub answers the call and books the client. Legal Fusion Portal carries the matter after they are retained.",
+    "Legal Fusion Hub answers every call, qualifies bankruptcy leads, and books the consultation that turns them into retained clients.",
   url: "https://legalfusionhub.com",
-  portalPath: "/portal",
-  portalUrl: "https://file.legalfusionhub.com",
   email: "info@legalfusion.ai",
   demoPath: "/demo",
   forms: {

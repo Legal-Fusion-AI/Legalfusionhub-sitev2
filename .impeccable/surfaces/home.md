@@ -2,32 +2,33 @@
 
 ## Job and audience
 
-- Persuade law-firm owners and intake leaders who need one company for the whole client journey.
-- Make the product map clear: Legal Fusion Hub engages the call and acquires the client. Legal Fusion Portal serves, manages, and grows the relationship after a client is retained.
+- Persuade law-firm owners and intake leaders who need every call answered and more of those calls to become retained clients.
+- Make the product map clear: Legal Fusion Hub engages the call, then acquires the client. The public story stops when the client is retained.
 
 ## Outcome and proof
 
-- Primary action: **Book a demo**.
-- Prove the mechanism by showing one inquiry move from Engage to Acquire to Serve.
-- Company lines: Technology for a stronger practice. One company. A complete client journey. More than software. A stronger tomorrow for law firms.
-- Practice evidence (8,000+ cases, 24+ years) stays on About. It is not the homepage promise.
+- Primary action: **Book a demo**. The header and hero buttons are larger than body text so the action is easy to find.
+- Prove the mechanism by showing one inquiry move from Engage to Acquire, then to a retained client.
+- Company lines: Technology for a stronger practice. One company. From first call to retained client. Every call answered. More clients retained.
+- Practice evidence (8,000+ cases, 24+ years) appears in the homepage proof band and on About.
+- A recorded bankruptcy intake call sits on the homepage, with a play control, waveform, and the full transcript.
 
 ## Selected direction
 
 - Bright white operational field, deep ink type, blue routing, coral primary action, and green completion.
-- The hero is split copy plus a live journey surface. One inquiry travels across products.
-- Signature interaction: selecting a journey stage updates the active panel.
-- Product cards run Engage, Acquire, then Portal: green Engage, blue Acquire, ink Serve | Manage | Grow.
+- The hero is centered copy plus a live journey surface. One inquiry travels from the call to a booked consultation.
+- Signature interaction: selecting a journey source updates the Engage or Acquire panel.
+- Product cards are Engage and Acquire only.
 
 ## Scope and boundaries
 
-- Routes: `/`, `/demo`, `/how-it-works`, `/portal`, `/about`, `/privacy`, `/terms`.
-- Light-only and heavily white. No stock photography, generated atmosphere, dark hero, bento grid, pricing, testimonials, or customer logos.
-- Legal Fusion Portal is introduced at `/portal`. The live app stays a secondary link on that page.
+- Routes: `/`, `/demo`, `/how-it-works`, `/about`, `/privacy`, `/terms`. `/portal` redirects to `/`.
+- Light-only and heavily white. No stock photography, generated atmosphere, dark hero, bento grid, dollar pricing, testimonials, or customer logos.
+- Do not mention a client portal, questionnaires, case files, forms, or work after retention.
 
 ## Interaction and layout
 
-- Desktop hero: message left, journey surface right; mobile stacks with the action before the demonstration.
-- One orchestrated journey interaction plus restrained control/hover feedback.
+- Desktop hero: centered message, journey surface below; mobile stacks with the action before the demonstration.
+- One orchestrated journey interaction plus restrained control/hover feedback. Motion uses an ease-out curve and stays under 300ms for UI. Marketing scroll reveals may be slightly longer.
 - Content stays visible with JavaScript disabled and honors reduced motion.
-- HTML/CSS/SVG are the asset medium; no shipping rasters are planned.
+- HTML/CSS/SVG are the asset medium; wallpaper rasters already ship with the product cards.

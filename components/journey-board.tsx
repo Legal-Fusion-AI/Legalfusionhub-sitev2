@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { CalendarCheck, Check, FolderOpen, PhoneIncoming } from "lucide-react";
+import { CalendarCheck, Check, PhoneIncoming } from "lucide-react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Avatar, MacWindow } from "@/components/mac-window";
 import coloredLogo from "@/coloredlogo.png";
@@ -12,8 +12,6 @@ const sources = [
   { label: "Inquiries", glyph: "chat", stage: 0, tone: "ink" },
   { label: "Follow-up", glyph: "calendar", stage: 1, tone: "coral" },
   { label: "Consultations", glyph: "calendarCheck", stage: 1, tone: "lime" },
-  { label: "Documents", glyph: "folder", stage: 2, tone: "teal" },
-  { label: "Forms", glyph: "form", stage: 2, tone: "coral" },
 ] as const;
 
 const stages = [
@@ -36,16 +34,6 @@ const stages = [
     detail: "Consultation scheduled",
     owner: "Legal Fusion Hub",
     icon: CalendarCheck,
-  },
-  {
-    id: "serve",
-    short: "Serve",
-    title: "Keep the client for the long term.",
-    body: "Legal Fusion Portal is where the firm and the client continue: questionnaires, documents, case data, and bankruptcy forms.",
-    meta: "Retained",
-    detail: "Case file ready",
-    owner: "Legal Fusion Portal",
-    icon: FolderOpen,
   },
 ];
 
@@ -75,12 +63,10 @@ const solidGlyphs = {
   chat: "M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z",
   calendar: "M8 3.1V1.2h2.2V3.1h3.6V1.2H16V3.1h3.2a2 2 0 0 1 2 2V19.2a2 2 0 0 1-2 2H4.8a2 2 0 0 1-2-2V5.1a2 2 0 0 1 2-2H8zm-.6 9.2h2.15v2.15H7.4V12.3zm3.7 0h2.15v2.15h-2.15V12.3zm3.7 0h2.15v2.15H14.8V12.3zM7.4 15.7h2.15v2.15H7.4V15.7zm3.7 0h2.15v2.15h-2.15V15.7zm3.7 0h2.15v2.15H14.8V15.7z",
   calendarCheck: "M8 3.1V1.2h2.2V3.1h3.6V1.2H16V3.1h3.2a2 2 0 0 1 2 2V19.2a2 2 0 0 1-2 2H4.8a2 2 0 0 1-2-2V5.1a2 2 0 0 1 2-2H8zm1.1 9.3 1.9 1.9 4.7-4.6 1.5 1.5-6.2 6.1-3.4-3.4 1.5-1.5z",
-  folder: "M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z",
-  form: "M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm2.2 11h7.6v1.7H8.2V13zm0 3.6h7.6V18H8.2v-1.4z",
 } as const;
 
 function SolidGlyph({ name }: { name: keyof typeof solidGlyphs }) {
-  const punched = name === "calendar" || name === "calendarCheck" || name === "form";
+  const punched = name === "calendar" || name === "calendarCheck";
   return (
     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
       <path
@@ -296,7 +282,7 @@ export function JourneyBoard({ compact = false }: JourneyBoardProps) {
                 className="mac-segment-thumb"
                 animate={{ x: `${active * 100}%` }}
                 transition={{
-                  duration: reduceMotion ? 0 : 0.45,
+                  duration: reduceMotion ? 0 : 0.28,
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 aria-hidden="true"
@@ -323,16 +309,10 @@ export function JourneyBoard({ compact = false }: JourneyBoardProps) {
                 <motion.div
                   className="dispatch-message"
                   key={stage.id}
-                  initial={
-                    reduceMotion ? false : { opacity: 0, y: 8, filter: "blur(4px)" }
-                  }
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  exit={
-                    reduceMotion
-                      ? undefined
-                      : { opacity: 0, y: -6, filter: "blur(3px)" }
-                  }
-                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                  initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={reduceMotion ? undefined : { opacity: 0, y: -6 }}
+                  transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <div className="dispatch-icon">
                     <Icon size={22} strokeWidth={1.8} aria-hidden="true" />
@@ -364,7 +344,7 @@ export function JourneyBoard({ compact = false }: JourneyBoardProps) {
                 </ul>
                 <div className="mac-card-foot">
                   <Check size={14} aria-hidden="true" />
-                  One company. A complete client journey.
+                  One company. From first call to retained client.
                 </div>
               </div>
             </div>

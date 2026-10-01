@@ -5,10 +5,10 @@ import {
   CalendarCheck,
   Check,
   ClipboardList,
-  FolderOpen,
   ListChecks,
   Phone,
   PhoneIncoming,
+  UserCheck,
 } from "lucide-react";
 import { Avatar, MacWindow } from "@/components/mac-window";
 import { useLayoutEffect, useRef, useState } from "react";
@@ -43,11 +43,11 @@ const steps = [
     icon: CalendarCheck,
   },
   {
-    id: "portal",
-    status: "Continuing the matter",
-    title: "Legal Fusion Portal",
-    body: "After a client is retained, Portal is where the firm and the client continue: questionnaires, documents, case data, and bankruptcy forms.",
-    icon: FolderOpen,
+    id: "retained",
+    status: "Retaining the client",
+    title: "The client signs with your firm",
+    body: "The consultation happens with the full inquiry in hand, and the lead becomes a retained client.",
+    icon: UserCheck,
   },
 ] as const;
 
@@ -207,28 +207,25 @@ function Scene({ step }: { step: Step }) {
 
   return (
     <motion.div {...reveal}>
-      <MacWindow title="Case file">
+      <MacWindow title="Client">
         <div className="mac-body mac-panel">
           <div className="mac-card">
-            <div className="mac-case-head">
-              <div>
-                <h4>Harbor & Stone Law</h4>
-                <p>Case 24-10311</p>
-              </div>
+            <div className="mac-card-head">
+              <Avatar who="jordan" />
+              <span>
+                <strong>A. Jordan</strong>
+                <em>Bankruptcy inquiry</em>
+              </span>
               <span className="mac-pill">Retained</span>
             </div>
             <ul className="mac-rows">
               <li>
-                <span>Questionnaire</span>
-                <strong>In progress</strong>
+                <span>Consultation</span>
+                <strong>Completed</strong>
               </li>
               <li>
-                <span>Documents</span>
-                <strong>On file</strong>
-              </li>
-              <li>
-                <span>Bankruptcy forms</span>
-                <strong>Ready</strong>
+                <span>Status</span>
+                <strong>Retained client</strong>
               </li>
             </ul>
           </div>

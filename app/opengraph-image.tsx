@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
-export const alt = "Legal Fusion Hub — one company, a complete client journey";
+export const alt = "Legal Fusion Hub — from first call to retained client";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -40,7 +40,7 @@ export default async function OpenGraphImage() {
             }}
           >
             <strong style={{ fontSize: 64, lineHeight: 0.98, letterSpacing: -3 }}>
-              One company. A complete client journey.
+              From first call to retained client.
             </strong>
             <span style={{ color: "#4a5a6e", fontSize: 25 }}>
               Technology for a stronger practice.

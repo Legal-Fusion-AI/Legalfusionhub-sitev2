@@ -156,7 +156,7 @@ export function LeadForm() {
           name="notes"
           value={values.notes}
           onChange={(event) => update("notes", event.target.value)}
-          placeholder="Calls, consultations, or what happens after a client is retained"
+          placeholder="Missed calls, follow-up, or booking consultations"
           rows={4}
         />
       </label>

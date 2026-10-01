@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ChevronDown, FolderOpen, ListChecks, PhoneIncoming } from "lucide-react";
+import { ArrowRight, ChevronDown, ListChecks, PhoneIncoming } from "lucide-react";
+import { CallSample } from "@/components/call-sample";
 import { JourneyBoard } from "@/components/journey-board";
 import { JourneyProcess } from "@/components/journey-process";
 import { ProblemScenes } from "@/components/problem-scenes";
@@ -9,7 +10,6 @@ import { ShowcaseVisibility } from "@/components/showcase-visibility";
 import coloredLogo from "@/coloredlogo.png";
 import engageWallpaper from "@/public/wallpapers/engage.webp";
 import acquireWallpaper from "@/public/wallpapers/acquire.webp";
-import serveWallpaper from "@/public/wallpapers/serve.webp";
 
 // TODO(copy): FAQ answers are placeholders until real objection copy is written.
 const faqs = [
@@ -30,13 +30,10 @@ const faqs = [
     answer: "[PLACEHOLDER: answer — setup timeline, covered in the demo.]",
   },
   {
-    question: "Do I have to use Portal to use Hub?",
-    answer: "[PLACEHOLDER: answer — Hub and Portal are separate parts of the journey.]",
-  },
-  {
+    // TODO(copy): Jeff to confirm pricing wording.
     question: "What does it cost?",
     answer:
-      "[PLACEHOLDER: answer — pricing is covered in the demo. No public pricing.]",
+      "Pricing fits how your firm works: a monthly subscription, or pay per retained client instead of paying for leads that never sign. We will walk through both on your demo.",
   },
 ];
 
@@ -59,16 +56,6 @@ const showcases = [
     bleed: "none",
     href: "/how-it-works",
   },
-  {
-    id: "serve",
-    verb: "Serve.",
-    caption:
-      "After a client is retained, Portal carries the questionnaire, documents, case data, and forms.",
-    icon: FolderOpen,
-    wallpaper: serveWallpaper,
-    bleed: "right",
-    href: "/portal",
-  },
 ] as const;
 
 export function HomePage() {
@@ -83,11 +70,12 @@ export function HomePage() {
           </Link>
           <h1>
             One company.
-            <span className="hero-title-line">A complete client journey.</span>
+            <span className="hero-title-line">From first call to retained client.</span>
           </h1>
           <p>
-            Legal Fusion Hub connects how your firm answers every call, turns
-            bankruptcy leads into retained clients, and keeps serving them.
+            Legal Fusion Hub answers every call, qualifies bankruptcy leads by
+            your criteria, and books the consultation that turns them into
+            retained clients.
           </p>
           <div className="hero-actions">
             <Link className="button button-accent" href="/demo">
@@ -116,7 +104,7 @@ export function HomePage() {
           </p>
           <p>
             <strong>One company</strong>
-            <span>a complete client journey</span>
+            <span>from first call to retained client</span>
           </p>
         </div>
       </section>
@@ -133,10 +121,10 @@ export function HomePage() {
       <section className="section product-cards-section" id="products">
         <div className="shell">
           <div className="section-heading section-heading-wide">
-            <h2>One company. Three parts of the journey.</h2>
+            <h2>Engage the call. Acquire the client.</h2>
             <p>
-              Hub engages the call and acquires the client. Portal is where the
-              firm and the client continue.
+              Hub answers, qualifies, follows up, and books, so more inquiries
+              become retained clients.
             </p>
           </div>
           <ShowcaseVisibility>
@@ -154,7 +142,7 @@ export function HomePage() {
                       src={item.wallpaper}
                       alt=""
                       fill
-                      sizes="(max-width: 1020px) 100vw, 33vw"
+                      sizes="(max-width: 1020px) 100vw, 50vw"
                     />
                     <ProductScreen kind={item.id} />
                   </Link>
@@ -174,28 +162,26 @@ export function HomePage() {
       <section className="section products-section">
         <div className="shell">
           <div className="section-heading section-heading-wide">
-            <h2>Follow the inquiry from call to matter.</h2>
-            <p>
-              Hub answers, qualifies, and books. Portal is where the firm and
-              the client continue.
-            </p>
+            <h2>Follow the inquiry from call to retained client.</h2>
+            <p>Hub answers, qualifies, and books the consultation.</p>
           </div>
           <JourneyProcess />
         </div>
       </section>
+
+      <CallSample />
 
       <section className="section faq-section">
         <div className="shell faq-grid">
           <div className="faq-intro">
             <h2>Questions before the conversation.</h2>
             <p>
-              Your demo is a look at the complete client journey for your
-              firm—not a tour of a single tool.
+              Your demo shows how your firm turns calls into retained clients.
             </p>
           </div>
           <div className="faq-list">
             {faqs.map((faq, index) => (
-              <details key={faq.question} open={index === 0}>
+              <details key={faq.question} open={index === faqs.length - 1}>
                 <summary>
                   <span>{faq.question}</span>
                   <ChevronDown size={20} aria-hidden="true" />
@@ -216,10 +202,10 @@ export function HomePage() {
         </div>
         <div className="shell closing-inner">
           <div>
-            <h2>More than software. A stronger tomorrow for law firms.</h2>
+            <h2>Every call answered. More clients retained.</h2>
             <p>
-              See how one company covers the journey from the first call to a
-              retained client.
+              See how one company takes a bankruptcy inquiry from the first
+              call to a retained client.
             </p>
           </div>
           <Link className="button" href="/demo">

@@ -8,9 +8,10 @@ import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { siteConfig } from "@/lib/site-config";
 import { audioSrc, duration, peaks, turns } from "@/components/voice-demo-data";
+import { useCallAudio } from "@/components/use-call-audio";
 
 const BUBBLE_KEY = "lfh-voice-bubble-dismissed";
-const HIDDEN_PREFIXES = ["/portal", "/demo"];
+const HIDDEN_PREFIXES = ["/demo"];
 
 function formatTime(seconds: number) {
   const safe = Math.max(0, Math.floor(seconds));
@@ -23,15 +24,23 @@ export function VoiceDemoWidget() {
   const pathname = usePathname();
   const reducedMotion = useReducedMotion();
   const titleId = useId();
-  const audioRef = useRef<HTMLAudioElement>(null);
   const launcherRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const transcriptRef = useRef<HTMLDivElement>(null);
   const waveformRef = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
-  const [playing, setPlaying] = useState(false);
-  const [time, setTime] = useState(0);
   const [showBubble, setShowBubble] = useState(false);
+  const {
+    audioRef,
+    bindAudio,
+    playing,
+    time,
+    progress,
+    activeIndex,
+    togglePlayback,
+    seekToRatio,
+    seekFromClientX,
+  } = useCallAudio();
 
   const hidden = HIDDEN_PREFIXES.some(
     (prefix) => pathname === prefix || pathname?.startsWith(`${prefix}/`),
@@ -45,43 +54,6 @@ export function VoiceDemoWidget() {
   }, [hidden, open]);
 
   useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    let frame = 0;
-
-    const tick = () => {
-      setTime(audio.currentTime);
-      frame = window.requestAnimationFrame(tick);
-    };
-
-    const onPlay = () => {
-      setPlaying(true);
-      window.cancelAnimationFrame(frame);
-      frame = window.requestAnimationFrame(tick);
-    };
-    const onPause = () => {
-      setPlaying(false);
-      window.cancelAnimationFrame(frame);
-      setTime(audio.currentTime);
-    };
-    const onEnded = () => {
-      setPlaying(false);
-      window.cancelAnimationFrame(frame);
-      setTime(audio.duration || duration);
-    };
-
-    audio.addEventListener("play", onPlay);
-    audio.addEventListener("pause", onPause);
-    audio.addEventListener("ended", onEnded);
-    return () => {
-      window.cancelAnimationFrame(frame);
-      audio.removeEventListener("play", onPlay);
-      audio.removeEventListener("pause", onPause);
-      audio.removeEventListener("ended", onEnded);
-    };
-  }, []);
-
-  useEffect(() => {
     if (!open) return;
     closeRef.current?.focus();
     const onKey = (event: KeyboardEvent) => {
@@ -93,7 +65,7 @@ export function VoiceDemoWidget() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open]);
+  }, [open, audioRef]);
 
   useEffect(() => {
     const current = transcriptRef.current?.querySelector<HTMLElement>("[data-current='true']");
@@ -114,41 +86,11 @@ export function VoiceDemoWidget() {
     window.sessionStorage.setItem(BUBBLE_KEY, "1");
   }
 
-  function togglePlayback() {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (audio.paused) {
-      void audio.play();
-    } else {
-      audio.pause();
-    }
-  }
-
-  function seekToRatio(ratio: number) {
-    const audio = audioRef.current;
-    if (!audio) return;
-    const next = Math.min(1, Math.max(0, ratio)) * (audio.duration || duration);
-    audio.currentTime = next;
-    setTime(next);
-  }
-
-  function seekFromClientX(clientX: number) {
-    const bounds = waveformRef.current?.getBoundingClientRect();
-    if (!bounds || bounds.width === 0) return;
-    seekToRatio((clientX - bounds.left) / bounds.width);
-  }
-
   if (hidden) return null;
-
-  let activeIndex = -1;
-  for (let index = 0; index < turns.length; index += 1) {
-    if (time >= turns[index].start) activeIndex = index;
-  }
-  const progress = duration > 0 ? Math.min(1, time / duration) : 0;
 
   return (
     <div className="voice-widget">
-      <audio ref={audioRef} preload="none" src={audioSrc} />
+      <audio ref={bindAudio} preload="none" src={audioSrc} />
       <AnimatePresence>
         {showBubble && !open ? (
           <motion.div
@@ -158,6 +100,7 @@ export function VoiceDemoWidget() {
             initial={reducedMotion ? false : { opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={reducedMotion ? undefined : { opacity: 0, y: 8 }}
+            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <p>Hear our AI take a bankruptcy call</p>
             <button type="button" aria-label="Dismiss" onClick={dismissBubble}>
@@ -178,7 +121,7 @@ export function VoiceDemoWidget() {
             initial={reducedMotion ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             exit={reducedMotion ? undefined : { opacity: 0, y: 12 }}
-            transition={{ duration: 0.22 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
           >
             <header className="voice-widget-head">
               <Image src="/logo-mark.png" alt="" width={26} height={30} />
@@ -212,11 +155,11 @@ export function VoiceDemoWidget() {
                 aria-valuetext={`${formatTime(time)} of ${formatTime(duration)}`}
                 onPointerDown={(event) => {
                   event.currentTarget.setPointerCapture(event.pointerId);
-                  seekFromClientX(event.clientX);
+                  seekFromClientX(event.clientX, waveformRef.current);
                 }}
                 onPointerMove={(event) => {
                   if (event.currentTarget.hasPointerCapture(event.pointerId)) {
-                    seekFromClientX(event.clientX);
+                    seekFromClientX(event.clientX, waveformRef.current);
                   }
                 }}
                 onKeyDown={(event) => {

@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* THESIS: One company covers a complete client journey. OWN-WORLD: white operational field, ink type, blue routing, coral action, green completion. STORY: engage the call, acquire the client, serve for the long term, book a demo. FIRST VIEWPORT: centered serif headline, subheadline, and demo CTA on a pale abstract field, with the live journey board beneath. */}
+        {/* THESIS: One company takes a bankruptcy inquiry from the first call to a retained client. OWN-WORLD: white operational field, ink type, blue routing, coral action, green completion. STORY: engage the call, acquire the client, book a demo. FIRST VIEWPORT: centered serif headline, subheadline, and demo CTA on a pale abstract field, with the live journey board beneath. */}
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>

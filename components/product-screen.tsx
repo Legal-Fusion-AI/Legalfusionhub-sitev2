@@ -1,11 +1,10 @@
 import { Avatar, HubMark } from "@/components/mac-window";
 
-type ScreenKind = "engage" | "acquire" | "serve";
+type ScreenKind = "engage" | "acquire";
 
 const titles: Record<ScreenKind, string> = {
   engage: "Inbox",
   acquire: "Pipeline",
-  serve: "Case file",
 };
 
 export function ProductScreen({ kind }: { kind: ScreenKind }) {
@@ -23,7 +22,6 @@ export function ProductScreen({ kind }: { kind: ScreenKind }) {
         </div>
         {kind === "engage" && <EngageScreen />}
         {kind === "acquire" && <AcquireScreen />}
-        {kind === "serve" && <ServeScreen />}
       </div>
     </>
   );
@@ -268,67 +266,6 @@ function AcquireScreen() {
             <span>2:00</span>
           </div>
         </div>
-      </div>
-    </div>
-  );
-}
-
-function ServeScreen() {
-  return (
-    <div className="mac-body mac-case">
-      <nav>
-        <span>Cases</span>
-        <span>My Dashboard</span>
-        <span className="is-on">Questionnaire</span>
-        <span>Documents</span>
-      </nav>
-      <div className="mac-case-main">
-        <header>
-          <h4>Harbor & Stone Law</h4>
-          <p>Case 24-10311</p>
-          <span className="mac-pill">Retained</span>
-        </header>
-        <div className="mac-file-tabs">
-          <span className="is-on">Schedule A/B</span>
-          <span>Schedule J</span>
-          <span>Debts & Creditors</span>
-          <span>Business Info</span>
-          <span>Bankruptcy forms</span>
-        </div>
-        <ul>
-          <li>
-            <span>Questionnaire</span>
-            <Flip before="In progress" after="Complete" />
-          </li>
-          <li>
-            <span>Documents</span>
-            <strong className="mac-flip">
-              <span className="mac-flip-before" data-anim="tick">
-                <span className="mac-tick">
-                  <i>3 uploads</i>
-                  <i>5 uploads</i>
-                  <i>7 uploads</i>
-                  <i>9 uploads</i>
-                  <i>11 uploads</i>
-                  <i>12 uploads</i>
-                </span>
-              </span>
-              <span className="mac-flip-after" data-anim="flip-after">
-                On file · 12 uploads
-              </span>
-            </strong>
-          </li>
-          <li>
-            <span>Bankruptcy forms</span>
-            <Flip before="Pending" after="Ready" />
-          </li>
-        </ul>
-        <div className="mac-progress">
-          <i data-anim="fill" />
-        </div>
-        <span className="mac-continue" data-anim="continue">
-          Continue
-        </span>
       </div>
     </div>
   );

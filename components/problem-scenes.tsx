@@ -1,7 +1,6 @@
 import Image from "next/image";
 import engageWallpaper from "@/public/wallpapers/abstract-engage.webp";
 import acquireWallpaper from "@/public/wallpapers/abstract-acquire.webp";
-import serveWallpaper from "@/public/wallpapers/abstract-serve.webp";
 
 const scenes = [
   {
@@ -22,16 +21,6 @@ const scenes = [
     flip: true,
     wallpaper: acquireWallpaper,
     art: <LeadScene />,
-  },
-  {
-    id: "serve",
-    title: "Serving the client lives somewhere else.",
-    break:
-      "After someone is retained, questionnaires, documents, case data, and bankruptcy forms sit in another place.",
-    answer: "Portal is where the firm and the client continue.",
-    flip: false,
-    wallpaper: serveWallpaper,
-    art: <CaseScene />,
   },
 ] as const;
 
@@ -211,59 +200,6 @@ function LeadScene() {
       )}
       <text x="318" y="262" fill="var(--green)" fontSize="12" fontWeight="700">
         Consultation booked
-      </text>
-    </svg>
-  );
-}
-
-function CaseScene() {
-  return (
-    <svg viewBox="0 0 520 340" aria-hidden="true">
-      <g transform="rotate(-7 110 78)">
-        <rect x="28" y="36" width="164" height="72" rx="12" fill="var(--white)" stroke="var(--line)" />
-        <text x="42" y="64" fill="var(--ink)" fontSize="13" fontWeight="700">
-          Questionnaire
-        </text>
-        <rect x="42" y="76" width="110" height="6" rx="3" fill="var(--paper)" />
-      </g>
-      <g transform="rotate(5 118 168)">
-        <rect x="36" y="132" width="164" height="72" rx="12" fill="var(--white)" stroke="var(--coral)" />
-        <text x="50" y="160" fill="var(--ink)" fontSize="13" fontWeight="700">
-          Forms
-        </text>
-        <rect x="50" y="172" width="100" height="6" rx="3" fill="var(--green-soft)" />
-      </g>
-      <g transform="rotate(-4 110 258)">
-        <rect x="28" y="222" width="164" height="72" rx="12" fill="var(--white)" stroke="var(--line)" />
-        <text x="42" y="250" fill="var(--ink)" fontSize="13" fontWeight="700">
-          Documents
-        </text>
-        <rect x="42" y="262" width="110" height="6" rx="3" fill="var(--blue-soft)" />
-      </g>
-      <path
-        d="M206 168C248 168 260 170 292 170"
-        fill="none"
-        stroke="var(--blue)"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-      />
-      <path d="M284 164l10 6-10 6" fill="var(--blue)" />
-      <rect x="304" y="46" width="184" height="248" rx="16" fill="var(--white)" stroke="var(--line)" />
-      <rect x="324" y="28" width="92" height="28" rx="8" fill="var(--ink)" />
-      <text x="370" y="47" textAnchor="middle" fill="white" fontSize="12" fontWeight="700">
-        Case file
-      </text>
-      <rect x="324" y="84" width="144" height="48" rx="8" fill="var(--paper)" />
-      <text x="338" y="112" fill="var(--ink)" fontSize="12" fontWeight="700">
-        Questionnaire
-      </text>
-      <rect x="324" y="144" width="144" height="48" rx="8" fill="var(--blue-soft)" />
-      <text x="338" y="172" fill="var(--ink)" fontSize="12" fontWeight="700">
-        Documents
-      </text>
-      <rect x="324" y="204" width="144" height="48" rx="8" fill="var(--green-soft)" />
-      <text x="338" y="232" fill="var(--ink)" fontSize="12" fontWeight="700">
-        Forms
       </text>
     </svg>
   );
