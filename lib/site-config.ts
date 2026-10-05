@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Legal Fusion Hub",
   shortName: "Legal Fusion",
-  tagline: "Technology for a stronger practice",
+  tagline: "Bankruptcy intake, answered 24/7",
   description:
     "Legal Fusion Hub answers every call, qualifies bankruptcy leads, and books the consultation that turns them into retained clients.",
   url: "https://legalfusionhub.com",

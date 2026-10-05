@@ -159,6 +159,21 @@ h3 {
   transform: none;
 }
 
+.demo-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 22px;
+  margin-top: 28px;
+}
+
+.demo-cta p {
+  margin: 0;
+  max-width: 36rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
 .button-small {
   min-height: 41px;
   padding: 9px 16px;
@@ -229,9 +244,9 @@ h3 {
   margin-inline: auto;
   padding: 0 32px;
   transition:
-    width 280ms var(--ease-out),
-    max-width 280ms var(--ease-out),
-    padding 280ms var(--ease-out);
+    width 480ms var(--ease-out),
+    max-width 480ms var(--ease-out),
+    padding 480ms var(--ease-out);
 }
 
 .header-veil {
@@ -260,7 +275,7 @@ h3 {
 
 @media (min-width: 1021px) {
   .site-header.is-compact .header-capsule {
-    width: min(1040px, calc(100% - 32px));
+    width: 60%;
     padding: 0 12px 0 20px;
   }
 }
@@ -462,7 +477,7 @@ h3 {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   justify-items: center;
   align-items: center;
 }
@@ -547,6 +562,11 @@ h3 {
   color: #0b213f;
 }
 
+.journey-source-teal-dark {
+  background: #e5f4ec;
+  color: #0b5c42;
+}
+
 .journey-source.is-active {
   z-index: 3;
   width: auto;
@@ -625,6 +645,11 @@ h3 {
   color: #0b213f;
 }
 
+.journey-spark-teal-dark {
+  background: #0b5c42;
+  color: #0b5c42;
+}
+
 @keyframes journey-spark-travel {
   from {
     offset-distance: 0%;
@@ -657,6 +682,10 @@ h3 {
 
 .journey-wire-ink {
   stroke: #0b213f;
+}
+
+.journey-wire-teal-dark {
+  stroke: #1f8a62;
 }
 
 .journey-wire.is-active {
@@ -715,6 +744,10 @@ h3 {
 
 .journey-node-pulse-ink {
   box-shadow: 0 0 0 5px #fff, 0 0 22px #0b213f;
+}
+
+.journey-node-pulse-teal-dark {
+  box-shadow: 0 0 0 5px #fff, 0 0 22px #1f8a62;
 }
 
 @keyframes journey-node-pulse {
@@ -1018,8 +1051,8 @@ h3 {
 
 .showcase-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .showcase-card {
@@ -1095,22 +1128,41 @@ h3 {
   background: rgba(247, 250, 251, 0.9);
 }
 
-.mac-dots {
+.mac-titlebar-labeled {
   display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding-inline: 10px;
+}
+
+.mac-titlebar-label {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.mac-titlebar-label svg {
+  flex: none;
+}
+
+.mac-titlebar-live {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
   gap: 5px;
-  padding-left: 10px;
+  color: var(--ink-soft);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
-.mac-dots i {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #d7e2de;
+.mac-titlebar-live .live-dot {
+  box-shadow: 0 0 0 3px rgba(184, 216, 59, 0.28);
 }
-
-.mac-dots i:nth-child(1) { background: #ff5f57; }
-.mac-dots i:nth-child(2) { background: #febc2e; }
-.mac-dots i:nth-child(3) { background: #28c840; }
 
 .mac-title {
   text-align: center;
@@ -1330,6 +1382,175 @@ h3 {
   position: relative;
   grid-template-columns: 1fr;
   overflow: hidden;
+}
+
+.mac-call {
+  position: relative;
+  overflow: hidden;
+  background: #f4f6f5;
+}
+
+.mac-call-live {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 12px;
+  padding: 64px 16px 18px;
+}
+
+.mac-call-person {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  color: #0b213f;
+}
+
+.mac-call-person > strong {
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.mac-call-bubbles {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  display: grid;
+  width: max-content;
+  max-width: 124px;
+  justify-items: center;
+  transform: translateX(-50%);
+}
+
+.mac-call-chathead {
+  position: relative;
+  grid-area: 1 / 1;
+  width: max-content;
+  max-width: 124px;
+  margin: 0;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+  padding: 7px 9px;
+  color: var(--ink);
+  font-size: 10px;
+  line-height: 1.35;
+  text-align: center;
+  opacity: 0;
+}
+
+.mac-call-chathead::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: inherit;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.mac-call-person.is-hub .mac-call-chathead {
+  background: #2c3138;
+  color: white;
+}
+
+.mac-call-face {
+  position: relative;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+}
+
+.mac-call-face .mac-avatar {
+  width: 58px;
+  height: 58px;
+}
+
+.mac-call-halo {
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px currentColor;
+  opacity: 0;
+}
+
+.mac-call-person.is-hub {
+  color: #0c6a5c;
+}
+
+.mac-call-wave {
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  height: 16px;
+  border-radius: 999px;
+  background: white;
+  box-shadow: 0 2px 6px rgba(11, 33, 63, 0.16);
+  padding: 3px 5px 3px;
+  transform: translateX(-50%);
+}
+
+.mac-call-face > [data-anim] {
+  opacity: 0;
+}
+
+.mac-call-wave i {
+  width: 2px;
+  height: 10px;
+  transform-origin: center bottom;
+  border-radius: 2px;
+  background: currentColor;
+  animation: mac-wave-bar 720ms ease-in-out infinite;
+}
+
+.mac-call-wave i:nth-child(2) { animation-delay: 120ms; height: 12px; }
+.mac-call-wave i:nth-child(3) { animation-delay: 240ms; height: 7px; }
+.mac-call-wave i:nth-child(4) { animation-delay: 80ms; height: 11px; }
+
+.mac-call-incoming {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 4px;
+  background: #f7fafb;
+  text-align: center;
+}
+
+.mac-call-incoming .mac-avatar {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+}
+
+.mac-call-incoming strong,
+.mac-call-incoming em {
+  font-style: normal;
+}
+
+.mac-call-incoming em {
+  color: var(--ink-soft);
+  font-size: 11px;
+}
+
+.mac-call-status {
+  margin-top: 10px;
+  border-radius: 999px;
+  background: var(--coral);
+  color: white;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 800;
 }
 
 .mac-thread {
@@ -1771,7 +1992,11 @@ h3 {
 }
 
 .showcase:nth-child(2) {
-  --loop-offset: 0.4s;
+  --loop-offset: 0.45s;
+}
+
+.showcase:nth-child(3) {
+  --loop-offset: 0.9s;
 }
 
 [data-anim] {
@@ -1782,9 +2007,13 @@ h3 {
   animation-delay: var(--loop-offset);
 }
 
-.mac-window-engage [data-anim],
-.showcase:first-child .mac-notice {
+.mac-window-text [data-anim],
+.showcase:nth-child(2) .mac-notice {
   animation-duration: 20s;
+}
+
+.mac-window-engage [data-anim] {
+  animation-duration: 16s;
 }
 
 .mac-window-acquire [data-anim] {
@@ -1843,6 +2072,15 @@ h3 {
 [data-anim="sms-in-3"] { animation-name: mac-sms-72; }
 [data-anim="sms-type-3"] { animation-name: mac-type-78; }
 [data-anim="sms-out-3"] { animation-name: mac-sms-82; }
+
+[data-anim="call-incoming"] { animation-name: mac-call-incoming; }
+[data-anim="call-live"] { animation-name: mac-call-live; }
+[data-anim="call-say-1"] { animation-name: mac-call-say-1; }
+[data-anim="call-say-2"] { animation-name: mac-call-say-2; }
+[data-anim="call-say-3"] { animation-name: mac-call-say-3; }
+[data-anim="call-say-4"] { animation-name: mac-call-say-4; }
+[data-anim="call-wave-caller"] { animation-name: mac-call-wave-caller; }
+[data-anim="call-wave-hub"] { animation-name: mac-call-wave-hub; }
 
 .mac-kanban {
   position: relative;
@@ -1940,8 +2178,8 @@ h3 {
 }
 @keyframes mac-sms-62 {
   0%, 58% { opacity: 0; max-height: 0; margin-bottom: 0; transform: translateY(6px); }
-  62%, 93% { opacity: 1; max-height: 80px; margin-bottom: 8px; transform: none; }
-  99% { opacity: 0; max-height: 80px; margin-bottom: 8px; transform: translateY(-36px); }
+  62%, 93% { opacity: 1; max-height: 120px; margin-bottom: 8px; transform: none; }
+  99% { opacity: 0; max-height: 120px; margin-bottom: 8px; transform: translateY(-36px); }
   100% { opacity: 0; max-height: 0; margin-bottom: 0; transform: translateY(-36px); }
 }
 @keyframes mac-sms-72 {
@@ -1990,8 +2228,8 @@ h3 {
 }
 @keyframes mac-draft-2 {
   0%, 47% { width: 0; opacity: 0; }
-  48% { width: 0; opacity: 1; animation-timing-function: steps(37, end); }
-  60% { width: 37ch; opacity: 1; animation-timing-function: linear; }
+  48% { width: 0; opacity: 1; animation-timing-function: steps(73, end); }
+  60% { width: 73ch; opacity: 1; animation-timing-function: linear; }
   62%, 100% { width: 0; opacity: 0; }
 }
 @keyframes mac-draft-3 {
@@ -2004,6 +2242,63 @@ h3 {
 @keyframes mac-typing-dot {
   0%, 100% { transform: translateY(0); opacity: 0.5; }
   50% { transform: translateY(-3px); opacity: 1; }
+}
+
+@keyframes mac-call-incoming {
+  0% { opacity: 0; }
+  3%, 14% { opacity: 1; }
+  20%, 100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes mac-call-live {
+  0%, 16% { opacity: 0; }
+  22%, 92% { opacity: 1; }
+  98%, 100% { opacity: 0; }
+}
+
+@keyframes mac-call-say-1 {
+  0%, 20% { opacity: 0; transform: translateY(6px); }
+  24%, 36% { opacity: 1; transform: none; }
+  40%, 100% { opacity: 0; transform: translateY(-4px); }
+}
+
+@keyframes mac-call-say-2 {
+  0%, 38% { opacity: 0; transform: translateY(6px); }
+  42%, 54% { opacity: 1; transform: none; }
+  58%, 100% { opacity: 0; transform: translateY(-4px); }
+}
+
+@keyframes mac-call-say-3 {
+  0%, 56% { opacity: 0; transform: translateY(6px); }
+  60%, 72% { opacity: 1; transform: none; }
+  76%, 100% { opacity: 0; transform: translateY(-4px); }
+}
+
+@keyframes mac-call-say-4 {
+  0%, 74% { opacity: 0; transform: translateY(6px); }
+  78%, 90% { opacity: 1; transform: none; }
+  94%, 100% { opacity: 0; transform: translateY(-4px); }
+}
+
+@keyframes mac-call-wave-caller {
+  0%, 20% { opacity: 0; }
+  24%, 36% { opacity: 1; }
+  40%, 56% { opacity: 0; }
+  60%, 72% { opacity: 1; }
+  76%, 100% { opacity: 0; }
+}
+
+@keyframes mac-call-wave-hub {
+  0%, 38% { opacity: 0; }
+  42%, 54% { opacity: 1; }
+  58%, 74% { opacity: 0; }
+  78%, 90% { opacity: 1; }
+  94%, 100% { opacity: 0; }
+}
+
+@keyframes mac-wave-bar {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
 }
 
 @keyframes mac-fade-18 {
@@ -2122,9 +2417,16 @@ h3 {
 
   .mac-typing,
   .mac-notice,
+  .mac-call-incoming,
   .mac-stage-modal,
   .mac-flip-before {
     display: none;
+  }
+
+  .mac-call-chathead[data-anim="call-say-4"],
+  .mac-call-person.is-hub .mac-call-halo,
+  .mac-call-person.is-hub .mac-call-face > [data-anim] {
+    opacity: 1;
   }
 
   .mac-mover {
@@ -2864,6 +3166,35 @@ h3 {
   color: var(--ink-soft);
 }
 
+.confirm-page {
+  max-width: 640px;
+}
+
+.confirm-mark {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 22px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.confirm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 22px;
+  margin-top: 8px;
+}
+
+@media (max-width: 720px) {
+  .confirm-actions .button {
+    width: 100%;
+  }
+}
+
 .spin {
   animation: spin 0.8s linear infinite;
 }
@@ -3502,7 +3833,7 @@ h3 {
     height: min(78%, 300px);
   }
 
-  .showcase:first-child .showcase-card .mac-window {
+  .showcase:nth-child(-n + 2) .showcase-card .mac-window {
     top: 4%;
     height: 92%;
   }
@@ -3601,7 +3932,7 @@ h3 {
 }
 
 @media (max-width: 400px) {
-  .showcase:first-child .showcase-card {
+  .showcase:nth-child(-n + 2) .showcase-card {
     aspect-ratio: 3 / 5;
   }
 }

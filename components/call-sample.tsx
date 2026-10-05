@@ -4,6 +4,7 @@ import { Pause, Play, Sparkles } from "lucide-react";
 import { useReducedMotion } from "motion/react";
 import { useEffect, useRef } from "react";
 import { audioSrc, duration, peaks, turns } from "@/components/voice-demo-data";
+import { DemoCta } from "@/components/demo-cta";
 import { useCallAudio } from "@/components/use-call-audio";
 
 function formatTime(seconds: number) {
@@ -49,6 +50,7 @@ export function CallSample() {
             A recorded intake conversation, from the first hello through a
             booked consultation.
           </p>
+          <DemoCta lead="This is the call. The demo shows it on your line." />
         </div>
         <div className="call-sample-card">
           <audio ref={bindAudio} preload="none" src={audioSrc} />

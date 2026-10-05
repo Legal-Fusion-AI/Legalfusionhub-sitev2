@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
+import { DemoCta } from "@/components/demo-cta";
 import { JourneyBoard } from "@/components/journey-board";
 
 export const metadata: Metadata = {
@@ -41,6 +42,7 @@ export default function HowItWorksPage() {
       <section className="section">
         <div className="shell">
           <JourneyBoard compact />
+          <DemoCta lead="See the path from a bankruptcy call to a retained client." />
         </div>
       </section>
       <section className="section phase-section">
@@ -61,6 +63,9 @@ export default function HowItWorksPage() {
               </ul>
             </article>
           ))}
+        </div>
+        <div className="shell">
+          <DemoCta lead="Hub answers, qualifies, and books. The demo shows it on your matters." />
         </div>
       </section>
       <section className="page-cta">

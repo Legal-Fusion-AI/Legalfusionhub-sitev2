@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ChevronDown, ListChecks, PhoneIncoming } from "lucide-react";
+import { ArrowRight, ChevronDown, ListChecks, MessageSquareText, PhoneIncoming } from "lucide-react";
 import { CallSample } from "@/components/call-sample";
+import { DemoCta } from "@/components/demo-cta";
 import { JourneyBoard } from "@/components/journey-board";
 import { JourneyProcess } from "@/components/journey-process";
 import { ProblemScenes } from "@/components/problem-scenes";
@@ -9,25 +10,29 @@ import { ProductScreen } from "@/components/product-screen";
 import { ShowcaseVisibility } from "@/components/showcase-visibility";
 import coloredLogo from "@/coloredlogo.png";
 import engageWallpaper from "@/public/wallpapers/engage.webp";
+import serveWallpaper from "@/public/wallpapers/serve.webp";
 import acquireWallpaper from "@/public/wallpapers/acquire.webp";
 
-// TODO(copy): FAQ answers are placeholders until real objection copy is written.
 const faqs = [
   {
     question: "Does Hub replace my intake staff?",
-    answer: "[PLACEHOLDER: answer — Hub supports intake; it does not replace the firm’s staff.]",
+    answer:
+      "No. Hub answers the call, qualifies the lead, and books the consultation. Your staff still meets the client and decides who the firm retains.",
   },
   {
     question: "How does Hub know my firm’s qualification criteria?",
-    answer: "[PLACEHOLDER: answer — the firm sets the criteria Hub uses to qualify a lead.]",
+    answer:
+      "Your firm sets them. Hub uses those criteria to qualify a bankruptcy lead, follow up, and book the consultation.",
   },
   {
     question: "What happens when someone calls outside office hours?",
-    answer: "[PLACEHOLDER: answer — Hub answers 24/7 and captures the inquiry.]",
+    answer:
+      "Hub still answers. The inquiry is captured the same way it is during the day, and the consultation gets booked.",
   },
   {
     question: "How long does setup take?",
-    answer: "[PLACEHOLDER: answer — setup timeline, covered in the demo.]",
+    answer:
+      "Setup is part of the demo. We configure Hub around your firm’s criteria before it takes a live call.",
   },
   {
     // TODO(copy): Jeff to confirm pricing wording.
@@ -44,6 +49,15 @@ const showcases = [
     caption: "Hub answers the call 24/7, handles the inquiry, and captures the lead.",
     icon: PhoneIncoming,
     wallpaper: engageWallpaper,
+    bleed: "none",
+    href: "/how-it-works",
+  },
+  {
+    id: "text",
+    verb: "Text.",
+    caption: "Hub texts back in seconds, answers questions, and keeps the lead warm.",
+    icon: MessageSquareText,
+    wallpaper: serveWallpaper,
     bleed: "none",
     href: "/how-it-works",
   },
@@ -65,17 +79,17 @@ export function HomePage() {
         <div className="shell hero-stack">
           <Link className="hero-pill" href="/how-it-works">
             <Image className="hero-pill-mark" src={coloredLogo} alt="" />
-            Technology for a stronger practice
+            Bankruptcy intake, answered 24/7
             <ArrowRight size={14} aria-hidden="true" />
           </Link>
           <h1>
-            One company.
+            Bankruptcy intake that never misses a call.
             <span className="hero-title-line">From first call to retained client.</span>
           </h1>
           <p>
-            Legal Fusion Hub answers every call, qualifies bankruptcy leads by
-            your criteria, and books the consultation that turns them into
-            retained clients.
+            Hub answers every call, qualifies bankruptcy leads by your
+            criteria, and books the consultation that turns them into retained
+            clients.
           </p>
           <div className="hero-actions">
             <Link className="button button-accent" href="/demo">
@@ -95,7 +109,7 @@ export function HomePage() {
             <span>Where the company started</span>
           </p>
           <p>
-            <strong>8,000+</strong>
+            <strong>10,000+</strong>
             <span>bankruptcy cases filed</span>
           </p>
           <p>
@@ -103,8 +117,8 @@ export function HomePage() {
             <span>of legal practice</span>
           </p>
           <p>
-            <strong>One company</strong>
-            <span>from first call to retained client</span>
+            <strong>24/7</strong>
+            <span>calls and texts answered</span>
           </p>
         </div>
       </section>
@@ -115,16 +129,17 @@ export function HomePage() {
             <h2>Where clients slip away.</h2>
           </div>
           <ProblemScenes />
+          <DemoCta lead="See how Hub answers the calls and texts that never reach your staff." />
         </div>
       </section>
 
       <section className="section product-cards-section" id="products">
         <div className="shell">
           <div className="section-heading section-heading-wide">
-            <h2>Engage the call. Acquire the client.</h2>
+            <h2>Engage the call. Answer the text. Acquire the client.</h2>
             <p>
-              Hub answers, qualifies, follows up, and books, so more inquiries
-              become retained clients.
+              Hub answers, texts back, qualifies, follows up, and books, so more
+              inquiries become retained clients.
             </p>
           </div>
           <ShowcaseVisibility>
@@ -156,6 +171,7 @@ export function HomePage() {
               );
             })}
           </ShowcaseVisibility>
+          <DemoCta lead="See bankruptcy intake answer, qualify, and book the consultation." />
         </div>
       </section>
 
@@ -166,6 +182,7 @@ export function HomePage() {
             <p>Hub answers, qualifies, and books the consultation.</p>
           </div>
           <JourneyProcess />
+          <DemoCta lead="From the first inquiry to a client who signs." />
         </div>
       </section>
 
@@ -178,6 +195,7 @@ export function HomePage() {
             <p>
               Your demo shows how your firm turns calls into retained clients.
             </p>
+            <DemoCta lead="Bring one recent inquiry to the demo." />
           </div>
           <div className="faq-list">
             {faqs.map((faq, index) => (

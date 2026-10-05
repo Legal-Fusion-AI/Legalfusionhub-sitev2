@@ -1,26 +1,33 @@
+import { ListChecks, MessageSquareText, Phone } from "lucide-react";
 import { Avatar, HubMark } from "@/components/mac-window";
 
-type ScreenKind = "engage" | "acquire";
+type ScreenKind = "engage" | "text" | "acquire";
 
-const titles: Record<ScreenKind, string> = {
-  engage: "Inbox",
-  acquire: "Pipeline",
+const screens: Record<ScreenKind, { title: string; icon: typeof Phone }> = {
+  engage: { title: "Phone call", icon: Phone },
+  text: { title: "Text message", icon: MessageSquareText },
+  acquire: { title: "Pipeline", icon: ListChecks },
 };
 
 export function ProductScreen({ kind }: { kind: ScreenKind }) {
+  const Icon = screens[kind].icon;
+
   return (
     <>
-      {kind === "engage" && <EngageNotice />}
+      {kind === "text" && <TextNotice />}
       <div className={`mac-window mac-window-${kind}`} aria-hidden="true">
-        <div className="mac-titlebar">
-          <span className="mac-dots">
-            <i />
-            <i />
-            <i />
+        <div className="mac-titlebar mac-titlebar-labeled">
+          <span className="mac-titlebar-label">
+            <Icon size={13} aria-hidden="true" />
+            {screens[kind].title}
           </span>
-          <span className="mac-title">{titles[kind]}</span>
+          <span className="mac-titlebar-live">
+            <span className="live-dot" />
+            Live
+          </span>
         </div>
-        {kind === "engage" && <EngageScreen />}
+        {kind === "engage" && <EngageCallScreen />}
+        {kind === "text" && <TextScreen />}
         {kind === "acquire" && <AcquireScreen />}
       </div>
     </>
@@ -40,7 +47,69 @@ function Flip({ before, after }: { before: string; after: string }) {
   );
 }
 
-function EngageNotice() {
+function SoundWave() {
+  return (
+    <span className="mac-call-wave" aria-hidden="true">
+      <i />
+      <i />
+      <i />
+      <i />
+    </span>
+  );
+}
+
+function EngageCallScreen() {
+  return (
+    <div className="mac-body mac-call">
+      <div className="mac-call-incoming" data-anim="call-incoming">
+        <Avatar who="jordan" />
+        <strong>Daniel Brooks</strong>
+        <em>Incoming call</em>
+        <span className="mac-call-status">Ringing</span>
+      </div>
+      <div className="mac-call-live" data-anim="call-live">
+        <div className="mac-call-person">
+          <span className="mac-call-face">
+            <span className="mac-call-bubbles">
+              <p className="mac-call-chathead" data-anim="call-say-1">
+                I need to talk about bankruptcy.
+              </p>
+              <p className="mac-call-chathead" data-anim="call-say-3">
+                Filing with my wife, Maria.
+              </p>
+            </span>
+            <span className="mac-call-halo" data-anim="call-wave-caller" />
+            <Avatar who="jordan" />
+            <span data-anim="call-wave-caller">
+              <SoundWave />
+            </span>
+          </span>
+          <strong>Daniel</strong>
+        </div>
+        <div className="mac-call-person is-hub">
+          <span className="mac-call-face">
+            <span className="mac-call-bubbles">
+              <p className="mac-call-chathead" data-anim="call-say-2">
+                You called the right place.
+              </p>
+              <p className="mac-call-chathead" data-anim="call-say-4">
+                Thursday at 5:30 p.m.?
+              </p>
+            </span>
+            <span className="mac-call-halo" data-anim="call-wave-hub" />
+            <HubMark />
+            <span data-anim="call-wave-hub">
+              <SoundWave />
+            </span>
+          </span>
+          <strong>Hub</strong>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TextNotice() {
   return (
     <div className="mac-notice" data-anim="notice">
       <span className="mac-notice-icon">
@@ -56,7 +125,7 @@ function EngageNotice() {
   );
 }
 
-function EngageScreen() {
+function TextScreen() {
   return (
     <div className="mac-body mac-inbox">
       <div className="mac-thread">
@@ -106,7 +175,7 @@ function EngageScreen() {
               <HubMark />
             </div>
             <div className="mac-turn is-out" data-anim="sms-out-2">
-              <p className="mac-bubble">Saved. When works for a consultation?</p>
+              <p className="mac-bubble">Thanks, that helps. When works for a free consultation with the attorney?</p>
               <HubMark />
             </div>
           </div>
@@ -138,7 +207,7 @@ function EngageScreen() {
               I can help with that. Is this a personal filing, or a business one?
             </span>
             <span className="mac-draft" data-anim="draft-2">
-              Saved. When works for a consultation?
+              Thanks, that helps. When works for a free consultation with the attorney?
             </span>
             <span className="mac-draft" data-anim="draft-3">
               You’re booked for Thursday, 10:30 AM.

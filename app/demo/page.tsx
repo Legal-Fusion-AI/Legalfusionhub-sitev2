@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Check } from "lucide-react";
-import { LeadForm } from "@/components/lead-form";
 
 export const metadata: Metadata = {
   title: "Book a demo",
@@ -33,16 +33,27 @@ export default function DemoPage() {
             </li>
           </ul>
           <div className="demo-duration">
-            <strong>30 minutes</strong>
+            <strong>45 minutes</strong>
             <span>No pressure. A look at your firm’s journey.</span>
           </div>
         </div>
         <div className="form-panel">
           <div className="form-panel-head">
             <h2>Book your demo</h2>
-            <p>Tell us who you are and which part of the journey needs attention.</p>
+            <p>Pick a time that works for you.</p>
           </div>
-          <LeadForm />
+          <iframe
+            src="https://link.legalfusionhub.com/widget/booking/VIkP0t3qGITBDSeHxeGs"
+            allow="payment"
+            style={{ width: "100%", border: "none", overflow: "hidden" }}
+            scrolling="no"
+            id="VIkP0t3qGITBDSeHxeGs_1791207135940"
+            title="Book a demo with Legal Fusion Hub"
+          />
+          <Script
+            src="https://link.legalfusionhub.com/js/form_embed.js"
+            strategy="afterInteractive"
+          />
         </div>
       </div>
     </main>

@@ -43,7 +43,7 @@ export default async function OpenGraphImage() {
               From first call to retained client.
             </strong>
             <span style={{ color: "#4a5a6e", fontSize: 25 }}>
-              Technology for a stronger practice.
+              Bankruptcy intake, answered 24/7.
             </span>
           </div>
           <img src={markSrc} alt="" width={138} height={160} />

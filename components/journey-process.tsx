@@ -129,11 +129,11 @@ function Scene({ step }: { step: Step }) {
               <ul className="mac-rows">
                 <li>
                   <span>Current action</span>
-                  <strong>Inquiry saved</strong>
+                  <strong>Inquiry captured</strong>
                 </li>
                 <li>
-                  <span>Product</span>
-                  <strong>Legal Fusion Hub</strong>
+                  <span>Handled by</span>
+                  <strong>Hub intake</strong>
                 </li>
               </ul>
             </div>

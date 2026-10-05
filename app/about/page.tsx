@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { DemoCta } from "@/components/demo-cta";
 
 export const metadata: Metadata = {
   title: "About",
@@ -14,7 +13,7 @@ export default function AboutPage() {
       <section className="subpage-hero about-hero">
         <div className="shell about-hero-grid">
           <div>
-            <h1>Technology for a stronger practice.</h1>
+            <h1>Bankruptcy intake, answered 24/7.</h1>
           </div>
           <div>
             <p>
@@ -28,7 +27,7 @@ export default function AboutPage() {
       <section className="about-proof">
         <div className="shell about-proof-grid">
           <div>
-            <strong>8,000+</strong>
+            <strong>10,000+</strong>
             <span>bankruptcy cases filed</span>
           </div>
           <div>
@@ -39,6 +38,9 @@ export default function AboutPage() {
             <strong>One company</strong>
             <span>focused on signing the client</span>
           </div>
+        </div>
+        <div className="shell">
+          <DemoCta lead="Bankruptcy intake, from the first call to a retained client." />
         </div>
       </section>
       <section className="section about-story">
@@ -51,9 +53,7 @@ export default function AboutPage() {
               into retained clients.
             </p>
             <p>Every call answered. More clients retained.</p>
-            <Link className="inline-link" href="/demo">
-              Book a demo <ArrowRight size={16} aria-hidden="true" />
-            </Link>
+            <DemoCta lead="See how a missed call becomes a booked consultation." />
           </div>
         </div>
       </section>

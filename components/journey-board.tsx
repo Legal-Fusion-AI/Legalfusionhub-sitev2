@@ -12,6 +12,7 @@ const sources = [
   { label: "Inquiries", glyph: "chat", stage: 0, tone: "ink" },
   { label: "Follow-up", glyph: "calendar", stage: 1, tone: "coral" },
   { label: "Consultations", glyph: "calendarCheck", stage: 1, tone: "lime" },
+  { label: "Retained", glyph: "retained", stage: 1, tone: "teal-dark" },
 ] as const;
 
 const stages = [
@@ -22,7 +23,7 @@ const stages = [
     body: "Hub answers calls 24/7, handles inquiries, and captures the lead.",
     meta: "24/7",
     detail: "New inquiry captured",
-    owner: "Legal Fusion Hub",
+    owner: "Hub intake",
     icon: PhoneIncoming,
   },
   {
@@ -32,7 +33,7 @@ const stages = [
     body: "Hub qualifies by the firm’s criteria, follows up, and schedules the consultation.",
     meta: "Qualified",
     detail: "Consultation scheduled",
-    owner: "Legal Fusion Hub",
+    owner: "Hub intake",
     icon: CalendarCheck,
   },
 ];
@@ -63,6 +64,7 @@ const solidGlyphs = {
   chat: "M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z",
   calendar: "M8 3.1V1.2h2.2V3.1h3.6V1.2H16V3.1h3.2a2 2 0 0 1 2 2V19.2a2 2 0 0 1-2 2H4.8a2 2 0 0 1-2-2V5.1a2 2 0 0 1 2-2H8zm-.6 9.2h2.15v2.15H7.4V12.3zm3.7 0h2.15v2.15h-2.15V12.3zm3.7 0h2.15v2.15H14.8V12.3zM7.4 15.7h2.15v2.15H7.4V15.7zm3.7 0h2.15v2.15h-2.15V15.7zm3.7 0h2.15v2.15H14.8V15.7z",
   calendarCheck: "M8 3.1V1.2h2.2V3.1h3.6V1.2H16V3.1h3.2a2 2 0 0 1 2 2V19.2a2 2 0 0 1-2 2H4.8a2 2 0 0 1-2-2V5.1a2 2 0 0 1 2-2H8zm1.1 9.3 1.9 1.9 4.7-4.6 1.5 1.5-6.2 6.1-3.4-3.4 1.5-1.5z",
+  retained: "M8.2 11.1a2.85 2.85 0 1 0 0-5.7 2.85 2.85 0 0 0 0 5.7zM2.4 18.7v-.75c0-1.95 2.6-3.5 5.8-3.5s5.8 1.55 5.8 3.5v.75H2.4zm12.15-4.15 1.25-1.25 2.15 2.15 3.55-3.55 1.25 1.25-4.8 4.8-3.4-3.4z",
 } as const;
 
 function SolidGlyph({ name }: { name: keyof typeof solidGlyphs }) {
@@ -338,13 +340,13 @@ export function JourneyBoard({ compact = false }: JourneyBoardProps) {
                     <strong>{stage.detail}</strong>
                   </li>
                   <li>
-                    <span>Product</span>
+                    <span>Handled by</span>
                     <strong>{stage.owner}</strong>
                   </li>
                 </ul>
                 <div className="mac-card-foot">
                   <Check size={14} aria-hidden="true" />
-                  One company. From first call to retained client.
+                  From first call to retained client.
                 </div>
               </div>
             </div>
