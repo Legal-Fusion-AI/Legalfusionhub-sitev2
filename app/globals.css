@@ -946,6 +946,10 @@ h3 {
   font-weight: 600;
 }
 
+.faq-cta {
+  margin-top: 14px;
+}
+
 .proof-grid span {
   color: #69778b;
   font-size: 0.76rem;

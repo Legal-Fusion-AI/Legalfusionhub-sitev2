@@ -18,11 +18,42 @@ const proof = [
   { stat: "390", label: "staff hours reclaimed" },
 ];
 
-const faqs = [
+type Faq = {
+  question: string;
+  answer: string;
+  cta?: boolean;
+};
+
+const faqs: Faq[] = [
   {
     question: "Do you replace my intake staff or attorneys?",
     answer:
       "No. We answer the call, qualify the lead, and book the consultation. Your team meets the client and decides who the firm retains. We do not replace your attorneys or your staff.",
+  },
+  {
+    question: "How does setup work?",
+    answer:
+      "Setup is light. We start with a short questionnaire: your firm name, a greeting, and your slogan. We tune the rest with you. Most firms are live in about 5 business days.",
+  },
+  {
+    question: "Does this work with my existing phone system?",
+    answer:
+      "Yes. You keep your current numbers and provider. We use conditional call forwarding, so calls route to us when you want them to. There is no system to replace.",
+  },
+  {
+    question: "What counts as a lead?",
+    answer:
+      "A lead is a new prospective client who reaches out about bankruptcy and gives us enough to follow up: a name and a way to reach them. We capture it, qualify it by your criteria, and work to book the consultation.",
+  },
+  {
+    question: "Do you offer Spanish support?",
+    answer:
+      "Yes. Sofia answers in Spanish, handles the inquiry, and books the consultation the same way, so Spanish-speaking callers get a real answer.",
+  },
+  {
+    question: "Do callers know they are talking to an AI?",
+    answer:
+      "Yes. The greeting states that they are speaking with an AI assistant. We built this to respect bar rules on disclosure, and your firm reviews the greeting during setup.",
   },
   {
     question: "How do you know my firm's criteria?",
@@ -30,25 +61,15 @@ const faqs = [
       "Your firm sets them. We qualify bankruptcy leads by your criteria, follow up, and book the consultation.",
   },
   {
-    question: "What happens when someone calls after hours?",
-    answer:
-      "We still answer. A call at 4 a.m. is handled the same way as one at 2 p.m. The lead is captured and the consultation gets booked.",
-  },
-  {
-    question: "How long does setup take?",
-    answer:
-      "Setup is light. We start with your firm name, a greeting, and your slogan. We tune the rest with you on the demo.",
-  },
-  {
     question: "Do you gather case details before the consultation?",
     answer:
       "Yes. We gather a few details so the attorney can weigh Chapter 7 against other options before the meeting. That is to help the attorney, not to qualify the lead.",
   },
   {
-    // TODO(copy): Jeff to confirm pricing wording.
     question: "What does it cost?",
     answer:
-      "Pricing fits how your firm works: a monthly subscription, or pay per retained client instead of paying for leads that never sign. We walk through both on your demo.",
+      "We walk through pricing on the demo, matched to how your firm works. Nothing to read into here.",
+    cta: true,
   },
 ];
 
@@ -183,6 +204,11 @@ export function HomePage() {
                   <ChevronDown size={20} aria-hidden="true" />
                 </summary>
                 <p>{faq.answer}</p>
+                {faq.cta ? (
+                  <Link className="button button-accent faq-cta" href="/demo">
+                    Book a demo
+                  </Link>
+                ) : null}
               </details>
             ))}
           </div>
