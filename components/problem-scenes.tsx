@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CallVideo } from "@/components/call-video";
 import engageWallpaper from "@/public/wallpapers/abstract-engage.webp";
 import acquireWallpaper from "@/public/wallpapers/abstract-acquire.webp";
 
@@ -24,30 +25,51 @@ const scenes = [
   },
 ] as const;
 
+function Scene({ scene }: { scene: (typeof scenes)[number] }) {
+  return (
+    <article className={scene.flip ? "problem-scene is-flip" : "problem-scene"}>
+      <div className="problem-art">
+        <Image
+          src={scene.wallpaper}
+          alt=""
+          fill
+          sizes="(max-width: 1020px) 100vw, 50vw"
+        />
+        {scene.art}
+      </div>
+      <div className="problem-copy">
+        <h3>{scene.title}</h3>
+        <p>{scene.break}</p>
+        <p className="problem-answer">{scene.answer}</p>
+      </div>
+    </article>
+  );
+}
+
+function CallVideoScene() {
+  return (
+    <article className="problem-scene problem-scene-video">
+      <div className="problem-video">
+        <span className="problem-video-tag">Real call · no human touched it</span>
+        <CallVideo />
+      </div>
+      <div className="problem-copy">
+        <h3>Hear it answer a real call.</h3>
+        <p>
+          A first-time caller, after hours. Screened, qualified, and booked for
+          a free consultation in under four minutes, with no staff involved.
+        </p>
+      </div>
+    </article>
+  );
+}
+
 export function ProblemScenes() {
   return (
     <div className="problem-scenes">
-      {scenes.map((scene) => (
-        <article
-          className={scene.flip ? "problem-scene is-flip" : "problem-scene"}
-          key={scene.id}
-        >
-          <div className="problem-art">
-            <Image
-              src={scene.wallpaper}
-              alt=""
-              fill
-              sizes="(max-width: 1020px) 100vw, 50vw"
-            />
-            {scene.art}
-          </div>
-          <div className="problem-copy">
-            <h3>{scene.title}</h3>
-            <p>{scene.break}</p>
-            <p className="problem-answer">{scene.answer}</p>
-          </div>
-        </article>
-      ))}
+      <Scene scene={scenes[0]} />
+      <CallVideoScene />
+      <Scene scene={scenes[1]} />
     </div>
   );
 }
