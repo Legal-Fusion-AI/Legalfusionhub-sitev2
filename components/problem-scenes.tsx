@@ -6,8 +6,8 @@ const scenes = [
   {
     id: "engage",
     title: "Calls go unanswered.",
-    break: "A call or inquiry gets no response, including outside office hours.",
-    answer: "Hub answers 24/7, handles the inquiry, and captures the lead.",
+    break: "A call or text gets no response, including after hours.",
+    answer: "Owen answers day or night, handles the inquiry, and captures the lead.",
     flip: false,
     wallpaper: engageWallpaper,
     art: <CallScene />,
@@ -17,7 +17,7 @@ const scenes = [
     title: "A lead never becomes a consultation.",
     break: "The inquiry is captured and then stalls.",
     answer:
-      "Hub qualifies by the firm’s criteria, follows up, and books the consultation.",
+      "We qualify bankruptcy leads by your criteria, follow up, and book the consultation.",
     flip: true,
     wallpaper: acquireWallpaper,
     art: <LeadScene />,

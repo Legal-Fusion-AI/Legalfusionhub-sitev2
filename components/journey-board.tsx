@@ -18,22 +18,22 @@ const sources = [
 const stages = [
   {
     id: "engage",
-    short: "Engage",
+    short: "Answer",
     title: "Never miss a call.",
-    body: "Hub answers calls 24/7, handles inquiries, and captures the lead.",
+    body: "Owen answers calls and texts around the clock, handles the inquiry, and captures the lead.",
     meta: "24/7",
     detail: "New inquiry captured",
-    owner: "Hub intake",
+    owner: "Owen on intake",
     icon: PhoneIncoming,
   },
   {
     id: "acquire",
     short: "Acquire",
     title: "Turn the lead into a client.",
-    body: "Hub qualifies by the firm’s criteria, follows up, and schedules the consultation.",
+    body: "We qualify bankruptcy leads by your criteria, follow up, and book the consultation.",
     meta: "Qualified",
-    detail: "Consultation scheduled",
-    owner: "Hub intake",
+    detail: "Consultation booked",
+    owner: "Owen on intake",
     icon: CalendarCheck,
   },
 ];

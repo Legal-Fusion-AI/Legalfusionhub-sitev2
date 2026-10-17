@@ -1,76 +1,56 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ChevronDown, ListChecks, MessageSquareText, PhoneIncoming } from "lucide-react";
-import { CallSample } from "@/components/call-sample";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { AiEmployees } from "@/components/ai-employees";
 import { DemoCta } from "@/components/demo-cta";
+import { Examples } from "@/components/examples";
 import { JourneyBoard } from "@/components/journey-board";
-import { JourneyProcess } from "@/components/journey-process";
+import { Pipeline } from "@/components/pipeline";
 import { ProblemScenes } from "@/components/problem-scenes";
-import { ProductScreen } from "@/components/product-screen";
-import { ShowcaseVisibility } from "@/components/showcase-visibility";
+import { SuccessStories } from "@/components/success-stories";
 import coloredLogo from "@/coloredlogo.png";
-import engageWallpaper from "@/public/wallpapers/engage.webp";
-import serveWallpaper from "@/public/wallpapers/serve.webp";
-import acquireWallpaper from "@/public/wallpapers/acquire.webp";
+import { siteConfig } from "@/lib/site-config";
+
+const proof = [
+  { stat: "4,681", label: "calls answered, none sent to voicemail" },
+  { stat: "2.4 sec", label: "average pickup, versus 25 to 35 seconds for a person" },
+  { stat: "56", label: "consultations booked by our AI" },
+  { stat: "390", label: "staff hours reclaimed" },
+];
 
 const faqs = [
   {
-    question: "Does Hub replace my intake staff?",
+    question: "Do you replace my intake staff or attorneys?",
     answer:
-      "No. Hub answers the call, qualifies the lead, and books the consultation. Your staff still meets the client and decides who the firm retains.",
+      "No. We answer the call, qualify the lead, and book the consultation. Your team meets the client and decides who the firm retains. We do not replace your attorneys or your staff.",
   },
   {
-    question: "How does Hub know my firm’s qualification criteria?",
+    question: "How do you know my firm's criteria?",
     answer:
-      "Your firm sets them. Hub uses those criteria to qualify a bankruptcy lead, follow up, and book the consultation.",
+      "Your firm sets them. We qualify bankruptcy leads by your criteria, follow up, and book the consultation.",
   },
   {
-    question: "What happens when someone calls outside office hours?",
+    question: "What happens when someone calls after hours?",
     answer:
-      "Hub still answers. The inquiry is captured the same way it is during the day, and the consultation gets booked.",
+      "We still answer. A call at 4 a.m. is handled the same way as one at 2 p.m. The lead is captured and the consultation gets booked.",
   },
   {
     question: "How long does setup take?",
     answer:
-      "Setup is part of the demo. We configure Hub around your firm’s criteria before it takes a live call.",
+      "Setup is light. We start with your firm name, a greeting, and your slogan. We tune the rest with you on the demo.",
+  },
+  {
+    question: "Do you gather case details before the consultation?",
+    answer:
+      "Yes. We gather a few details so the attorney can weigh Chapter 7 against other options before the meeting. That is to help the attorney, not to qualify the lead.",
   },
   {
     // TODO(copy): Jeff to confirm pricing wording.
     question: "What does it cost?",
     answer:
-      "Pricing fits how your firm works: a monthly subscription, or pay per retained client instead of paying for leads that never sign. We will walk through both on your demo.",
+      "Pricing fits how your firm works: a monthly subscription, or pay per retained client instead of paying for leads that never sign. We walk through both on your demo.",
   },
 ];
-
-const showcases = [
-  {
-    id: "engage",
-    verb: "Engage.",
-    caption: "Hub answers the call 24/7, handles the inquiry, and captures the lead.",
-    icon: PhoneIncoming,
-    wallpaper: engageWallpaper,
-    bleed: "none",
-    href: "/how-it-works",
-  },
-  {
-    id: "text",
-    verb: "Text.",
-    caption: "Hub texts back in seconds, answers questions, and keeps the lead warm.",
-    icon: MessageSquareText,
-    wallpaper: serveWallpaper,
-    bleed: "none",
-    href: "/how-it-works",
-  },
-  {
-    id: "acquire",
-    verb: "Acquire.",
-    caption: "Hub qualifies by your criteria, follows up, and books the consultation.",
-    icon: ListChecks,
-    wallpaper: acquireWallpaper,
-    bleed: "none",
-    href: "/how-it-works",
-  },
-] as const;
 
 export function HomePage() {
   return (
@@ -83,13 +63,13 @@ export function HomePage() {
             <ArrowRight size={14} aria-hidden="true" />
           </Link>
           <h1>
-            Bankruptcy intake that never misses a call.
-            <span className="hero-title-line">From first call to retained client.</span>
+            Answer every call.
+            <span className="hero-title-line">Book more consultations.</span>
           </h1>
+          <p className="hero-lede">{siteConfig.positioning}</p>
           <p>
-            Hub answers every call, qualifies bankruptcy leads by your
-            criteria, and books the consultation that turns them into retained
-            clients.
+            In a 90-day pilot we answered 4,681 calls. None went to voicemail.
+            Average pickup was 2.4 seconds.
           </p>
           <div className="hero-actions">
             <Link className="button button-accent" href="/demo">
@@ -103,22 +83,17 @@ export function HomePage() {
       </div>
 
       <section className="proof-band">
-        <div className="shell proof-grid">
-          <p>
-            <strong>Built inside a bankruptcy practice</strong>
-            <span>Where the company started</span>
-          </p>
-          <p>
-            <strong>10,000+</strong>
-            <span>bankruptcy cases filed</span>
-          </p>
-          <p>
-            <strong>24+ years</strong>
-            <span>of legal practice</span>
-          </p>
-          <p>
-            <strong>24/7</strong>
-            <span>calls and texts answered</span>
+        <div className="shell">
+          <div className="proof-grid">
+            {proof.map((item) => (
+              <p key={item.label}>
+                <strong>{item.stat}</strong>
+                <span>{item.label}</span>
+              </p>
+            ))}
+          </div>
+          <p className="proof-source">
+            Morrison Law Group. 90-day pilot, June 12 to September 9, 2026.
           </p>
         </div>
       </section>
@@ -129,77 +104,80 @@ export function HomePage() {
             <h2>Where clients slip away.</h2>
           </div>
           <ProblemScenes />
-          <DemoCta lead="See how Hub answers the calls and texts that never reach your staff." />
+          <DemoCta lead="See how we answer the calls and texts that never reach your staff." />
         </div>
       </section>
 
-      <section className="section product-cards-section" id="products">
+      <section className="section examples-section" id="products">
         <div className="shell">
           <div className="section-heading section-heading-wide">
-            <h2>Engage the call. Answer the text. Acquire the client.</h2>
+            <h2>See it in action.</h2>
             <p>
-              Hub answers, texts back, qualifies, follows up, and books, so more
-              inquiries become retained clients.
+              Click any feature to open a short real-life example. Each clip
+              stays under 15 seconds, split by what is happening: the greeting,
+              gathering information, and booking the time.
             </p>
           </div>
-          <ShowcaseVisibility>
-            {showcases.map((item) => {
-              const Icon = item.icon;
-              return (
-                <article className="showcase" key={item.id}>
-                  <Link
-                    className="showcase-card"
-                    data-bleed={item.bleed}
-                    href={item.href}
-                    aria-label={`${item.verb} ${item.caption}`}
-                  >
-                    <Image
-                      src={item.wallpaper}
-                      alt=""
-                      fill
-                      sizes="(max-width: 1020px) 100vw, 50vw"
-                    />
-                    <ProductScreen kind={item.id} />
-                  </Link>
-                  <p className="showcase-caption">
-                    <Icon size={16} aria-hidden="true" />
-                    <span>
-                      <strong>{item.verb}</strong> {item.caption}
-                    </span>
-                  </p>
-                </article>
-              );
-            })}
-          </ShowcaseVisibility>
-          <DemoCta lead="See bankruptcy intake answer, qualify, and book the consultation." />
+          <Examples />
+          <DemoCta lead="Bring one recent call or text to the demo. We will show it answered." />
         </div>
       </section>
 
-      <section className="section products-section">
+      <section className="section pipeline-section">
         <div className="shell">
           <div className="section-heading section-heading-wide">
-            <h2>Follow the inquiry from call to retained client.</h2>
-            <p>Hub answers, qualifies, and books the consultation.</p>
+            <h2>Follow every lead through the pipeline.</h2>
+            <p>
+              A lead moves from New to Retained. Missed appointments and no-shows
+              move into Nurture, so nobody is forgotten.
+            </p>
           </div>
-          <JourneyProcess />
-          <DemoCta lead="From the first inquiry to a client who signs." />
+          <Pipeline />
+          <p className="pipeline-aside">
+            Before the consultation we gather a few details so the attorney can
+            weigh Chapter 7 against other options. That is to help the attorney,
+            not to qualify the lead.
+          </p>
+          <DemoCta lead="From the first call to a retained client." />
         </div>
       </section>
 
-      <CallSample />
+      <section className="section employees-section">
+        <div className="shell">
+          <div className="section-heading section-heading-wide">
+            <h2>Meet Owen and Donna.</h2>
+            <p>
+              Our AI employees carry the moments that used to slip. They work
+              around your team, not in place of it.
+            </p>
+          </div>
+          <AiEmployees />
+        </div>
+      </section>
+
+      <section className="section stories-section">
+        <div className="shell">
+          <div className="section-heading section-heading-wide">
+            <h2>What founding firms say.</h2>
+            <p>
+              We are gathering stories from our 10 founding firms. Their words
+              will live here.
+            </p>
+          </div>
+          <SuccessStories />
+        </div>
+      </section>
 
       <section className="section faq-section">
         <div className="shell faq-grid">
           <div className="faq-intro">
             <h2>Questions before the conversation.</h2>
-            <p>
-              Your demo shows how your firm turns calls into retained clients.
-            </p>
+            <p>Your demo shows how your firm turns calls into retained clients.</p>
             <DemoCta lead="Bring one recent inquiry to the demo." />
           </div>
           <div className="faq-list">
             {faqs.map((faq, index) => (
-              <details key={faq.question} open={index === faqs.length - 1}>
+              <details key={faq.question} open={index === 0}>
                 <summary>
                   <span>{faq.question}</span>
                   <ChevronDown size={20} aria-hidden="true" />
@@ -222,8 +200,8 @@ export function HomePage() {
           <div>
             <h2>Every call answered. More clients retained.</h2>
             <p>
-              See how one company takes a bankruptcy inquiry from the first
-              call to a retained client.
+              See how we take a bankruptcy inquiry from the first call to a
+              retained client.
             </p>
           </div>
           <Link className="button" href="/demo">
