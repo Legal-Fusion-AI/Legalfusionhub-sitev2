@@ -1050,6 +1050,13 @@ h3 {
   color: var(--ink);
 }
 
+.problem-copy .problem-play-prompt {
+  margin-top: 14px;
+  color: var(--blue-dark);
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
 .system-section {
   border-block: 1px solid var(--line);
   background: var(--paper);
@@ -5109,7 +5116,7 @@ h3 {
 }
 
 /* ===========================================================================
-   Real-call video row inside "Where clients slip away"
+   Combined unanswered-call video card inside "Where clients slip away"
    =========================================================================== */
 
 .problem-video {

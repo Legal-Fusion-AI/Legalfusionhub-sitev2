@@ -3,9 +3,9 @@
 import { Play } from "lucide-react";
 import { useRef, useState } from "react";
 
-const MP4 = "/media/unanswered-call.mp4";
-const VTT = "/media/unanswered-call.vtt";
-const POSTER = "/media/unanswered-poster.jpg";
+const MP4 = "/media/unanswered-combined.mp4";
+const VTT = "/media/unanswered-combined.vtt";
+const POSTER = "/media/unanswered-combined-poster.jpg";
 
 export function CallVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
