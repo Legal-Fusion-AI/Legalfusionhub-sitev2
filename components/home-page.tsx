@@ -2,8 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { AiEmployees } from "@/components/ai-employees";
+import { AndrewJourney } from "@/components/andrew-journey";
 import { DemoCta } from "@/components/demo-cta";
-import { Examples } from "@/components/examples";
 import { JourneyBoard } from "@/components/journey-board";
 import { Pipeline } from "@/components/pipeline";
 import { ProblemScenes } from "@/components/problem-scenes";
@@ -134,12 +134,12 @@ export function HomePage() {
           <div className="section-heading section-heading-wide">
             <h2>See it in action.</h2>
             <p>
-              Click any feature to open a short real-life example. Each clip
-              stays under 15 seconds, split by what is happening: the greeting,
-              gathering information, and booking the time.
+              One real lead, start to finish. A Morrison Law Group client we
+              will call Andrew found us at 4 a.m. and retained the firm the next
+              day. Names and details are anonymized.
             </p>
           </div>
-          <Examples />
+          <AndrewJourney />
           <DemoCta lead="Bring one recent call or text to the demo. We will show it answered." />
         </div>
       </section>
@@ -166,7 +166,7 @@ export function HomePage() {
       <section className="section employees-section">
         <div className="shell">
           <div className="section-heading section-heading-wide">
-            <h2>Meet Owen and Donna.</h2>
+            <h2>Meet Donna and Nikki.</h2>
             <p>
               Our AI employees carry the moments that used to slip. They work
               around your team, not in place of it.

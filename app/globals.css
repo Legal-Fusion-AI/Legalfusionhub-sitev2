@@ -4917,3 +4917,193 @@ h3 {
     width: 100%;
   }
 }
+
+/* ===========================================================================
+   Andrew journey: one real lead told as a stylized, anonymized timeline
+   =========================================================================== */
+
+.lead-journey {
+  max-width: 760px;
+}
+
+.lj-beats {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 26px;
+  list-style: none;
+}
+
+.lj-beats::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 5px;
+  width: 2px;
+  background: var(--line);
+}
+
+.lj-beat {
+  position: relative;
+  padding-bottom: 26px;
+}
+
+.lj-beat:last-child {
+  padding-bottom: 0;
+}
+
+.lj-beat::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -26px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 4px var(--white);
+}
+
+.lj-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin-bottom: 10px;
+}
+
+.lj-stage {
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.lj-stage.is-new {
+  background: color-mix(in srgb, var(--ink) 12%, white);
+  color: var(--ink);
+}
+.lj-stage.is-qualified {
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+}
+.lj-stage.is-booked {
+  background: color-mix(in srgb, var(--coral) 14%, white);
+  color: var(--coral-dark);
+}
+.lj-stage.is-retained {
+  background: var(--blue-dark);
+  color: var(--white);
+}
+
+.lj-time {
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.lj-by {
+  margin-left: auto;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+  color: var(--blue-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.lj-by.is-firm {
+  color: var(--ink-soft);
+}
+
+.lj-note {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.lj-lines {
+  display: grid;
+  gap: 8px;
+}
+
+.lj-line {
+  display: grid;
+  gap: 2px;
+  max-width: 85%;
+  margin: 0;
+  border-radius: 14px;
+  padding: 10px 13px;
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+.lj-line.is-in {
+  justify-self: start;
+  border: 1px solid var(--line);
+  background: var(--gray-soft);
+  border-bottom-left-radius: 5px;
+}
+
+.lj-line.is-out {
+  justify-self: end;
+  background: var(--blue-soft);
+  border: 1px solid color-mix(in srgb, var(--blue) 28%, white);
+  border-bottom-right-radius: 5px;
+}
+
+.lj-who {
+  font-size: 0.66rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+}
+
+.lj-line.is-out .lj-who {
+  color: var(--blue-dark);
+}
+
+.lj-text {
+  color: var(--ink);
+}
+
+.lj-quote {
+  display: grid;
+  gap: 10px;
+  margin: 28px 0 0;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--blue);
+  border-radius: 14px;
+  background: var(--white);
+  padding: 22px 24px;
+  color: var(--blue-dark);
+}
+
+.lj-quote blockquote {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.lj-quote figcaption {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .lj-by {
+    margin-left: 0;
+  }
+
+  .lj-line {
+    max-width: 100%;
+  }
+}
