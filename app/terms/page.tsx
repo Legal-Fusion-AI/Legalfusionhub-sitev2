@@ -33,7 +33,7 @@ export default function TermsPage() {
         <h2>Contact</h2>
         <p>
           Questions about these terms can be sent to{" "}
-          <a href="mailto:info@legalfusion.ai">info@legalfusion.ai</a>.
+          <a href="mailto:jeff@legalfusionhub.com">jeff@legalfusionhub.com</a>.
         </p>
       </article>
     </main>

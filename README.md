@@ -39,7 +39,7 @@ NEXT_PUBLIC_GHL_DEMO_ENDPOINT=
 NEXT_PUBLIC_GHL_DEMO_FORM_ID=
 ```
 
-Without an endpoint, the form opens a pre-addressed email to `info@legalfusion.ai` with the submitted fields.
+Without an endpoint, the form opens a pre-addressed email to `jeff@legalfusionhub.com` with the submitted fields.
 
 ## Product and design authority
 

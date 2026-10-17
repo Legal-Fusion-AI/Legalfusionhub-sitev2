@@ -7,7 +7,7 @@ export const siteConfig = {
   description:
     "Legal Fusion Hub answers every call, qualifies bankruptcy leads by your criteria, and books the consultation that turns them into retained clients.",
   url: "https://legalfusionhub.com",
-  email: "info@legalfusion.ai",
+  email: "jeff@legalfusionhub.com",
   demoPath: "/demo",
   forms: {
     demo: {
@@ -28,9 +28,13 @@ export const siteConfig = {
  * literal "Retainer Pro" through the UI, the name resolves from this single
  * place. A future experiment can set `NEXT_PUBLIC_PRODUCT_LINE_VARIANT` per
  * cohort (or swap `getProductLineVariant` for a flags SDK read) without
- * touching copy anywhere else. retainerpro.com is taken, so the name is never
- * rendered as a link.
+ * touching copy anywhere else.
+ *
+ * retainerpro.com is taken, so wherever the product line links or points, send
+ * people to `productLineUrl` (legalfusionhub.com) for now.
  */
+export const productLineUrl = "https://legalfusionhub.com";
+
 export type ProductLineVariant = "retainer-pro" | "control";
 
 const productLineNames: Record<ProductLineVariant, string> = {

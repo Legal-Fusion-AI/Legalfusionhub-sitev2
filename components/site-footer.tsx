@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Brand } from "@/components/site-header";
-import { productLineName, siteConfig } from "@/lib/site-config";
+import { productLineName, productLineUrl, siteConfig } from "@/lib/site-config";
 
 export function SiteFooter() {
   return (
@@ -22,13 +22,15 @@ export function SiteFooter() {
         <div>
           <h2>Products</h2>
           <Link href="/#products">Legal Fusion Hub</Link>
-          <span>{productLineName()}, our intake and retention product line</span>
+          <a href={productLineUrl}>
+            {productLineName()}, our intake and retention product line
+          </a>
         </div>
         <div>
           <h2>Legal</h2>
           <Link href="/privacy">Privacy</Link>
           <Link href="/terms">Terms</Link>
-          <a href="mailto:info@legalfusion.ai">info@legalfusion.ai</a>
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
         </div>
       </div>
       <div className="shell footer-bottom">

@@ -39,7 +39,7 @@ Legal Fusion Hub is the company and the system that answers the call and turns t
 ## Product Family
 
 - **Legal Fusion Hub:** the company and the umbrella brand. This site and everything on it sits under Legal Fusion Hub.
-- **Retainer Pro:** a product-line name under Legal Fusion Hub. The team is split testing this name. There is no A/B framework in the repo yet, so the name resolves from one place (`productLineName()` in `lib/site-config.ts`, switchable via `NEXT_PUBLIC_PRODUCT_LINE_VARIANT`). retainerpro.com is taken, so never render the name as a link.
+- **Retainer Pro:** a product-line name under Legal Fusion Hub. The team is split testing this name. There is no A/B framework in the repo yet, so the name resolves from one place (`productLineName()` in `lib/site-config.ts`, switchable via `NEXT_PUBLIC_PRODUCT_LINE_VARIANT`). retainerpro.com is taken, so wherever the product line links or points, send people to `productLineUrl` (legalfusionhub.com) for now.
 
 The former public name “Legal Fusion AI” is retired. Do not publish Client Booker, AI Receptionist, Additional Products, Closebot, or GHL Voice AI. Those names stay internal.
 
@@ -94,6 +94,6 @@ We speak as "we". Lead with proof and numbers. Warm and plain. Short sentences. 
 - Setup may be described as a light questionnaire (firm name, greeting, slogan). Keep the exact phrase "qualifies bankruptcy leads by your criteria".
 - Make clear that information gathered before the consultation helps the attorney weigh Chapter 7 against other options. It is to help the attorney, not to qualify the lead.
 - Do not mention a client portal, case files, or bankruptcy forms. The public story ends when the client is retained. `/portal` redirects to `/`.
-- Do not publish dollar amounts. The FAQ may say pricing is a monthly subscription or pay per retained client, with the details covered on the demo.
+- No pricing anywhere on the public site: no dollar amounts, no plan names, no pricing structures (not even "subscription" or "pay per retained client"). Pricing is only discussed on the demo. The FAQ may say pricing is walked through on the demo and link to Book a demo.
 - Accessibility, responsive behavior, reduced-motion support, and production-ready form states are required.
 - Do not publish vendor or retired product names. The public name is Legal Fusion Hub.

@@ -35,7 +35,7 @@ export default function PrivacyPage() {
         <h2>Contact</h2>
         <p>
           Questions about this policy can be sent to{" "}
-          <a href="mailto:info@legalfusion.ai">info@legalfusion.ai</a>.
+          <a href="mailto:jeff@legalfusionhub.com">jeff@legalfusionhub.com</a>.
         </p>
       </article>
     </main>
