@@ -20,10 +20,10 @@ const stages = [
     id: "engage",
     short: "Answer",
     title: "Never miss a call.",
-    body: "Owen answers calls and texts around the clock, handles the inquiry, and captures the lead.",
+    body: "Donna answers calls and texts around the clock, handles the inquiry, and captures the lead.",
     meta: "24/7",
     detail: "New inquiry captured",
-    owner: "Owen on intake",
+    owner: "Donna on intake",
     icon: PhoneIncoming,
   },
   {
@@ -33,7 +33,7 @@ const stages = [
     body: "We qualify bankruptcy leads by your criteria, follow up, and book the consultation.",
     meta: "Qualified",
     detail: "Consultation booked",
-    owner: "Owen on intake",
+    owner: "Donna on intake",
     icon: CalendarCheck,
   },
 ];

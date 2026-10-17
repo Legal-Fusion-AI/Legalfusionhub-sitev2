@@ -60,18 +60,18 @@ export function productLineName(
  */
 export const aiEmployees = [
   {
-    id: "owen",
-    name: "Owen",
-    role: "Intake",
-    blurb:
-      "Owen answers every call and text, day or night, handles the inquiry, and captures the lead.",
-  },
-  {
     id: "donna",
     name: "Donna",
+    role: "Intake",
+    blurb:
+      "Donna answers every call and text, day or night, handles the inquiry, captures the lead, and books the consultation.",
+  },
+  {
+    id: "nikki",
+    name: "Nikki",
     role: "Follow-up",
     blurb:
-      "Donna follows up, books the consultation, and keeps missed appointments and no-shows from going cold.",
+      "Nikki confirms the appointment, follows up, and keeps missed appointments and no-shows from going cold.",
   },
 ] as const;
 

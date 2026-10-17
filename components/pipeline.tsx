@@ -13,7 +13,7 @@ const stages: Stage[] = [
   {
     id: "new",
     title: "New",
-    note: "Owen answers the call or text and captures the lead.",
+    note: "Donna answers the call or text and captures the lead.",
     lead: { who: "jordan", name: "A. Jordan", meta: "Bankruptcy inquiry" },
     tone: "new",
   },
@@ -67,7 +67,7 @@ export function Pipeline() {
         <div>
           <h3>Nurture</h3>
           <p>
-            Missed a consultation or did not show? Donna follows up, keeps the
+            Missed a consultation or did not show? Nikki follows up, keeps the
             lead warm, and books a new time. Nobody falls through.
           </p>
         </div>

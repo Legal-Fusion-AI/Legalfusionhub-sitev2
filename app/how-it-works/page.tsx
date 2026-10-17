@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const phases = [
   {
     title: "We answer the call.",
-    text: "Owen answers calls and texts day or night, handles the inquiry, and captures the lead. No call goes to voicemail.",
+    text: "Donna answers calls and texts day or night, handles the inquiry, and captures the lead. No call goes to voicemail.",
     points: ["Calls and texts answered 24/7", "Inquiry handled", "New lead captured"],
   },
   {
@@ -23,7 +23,7 @@ const phases = [
   },
   {
     title: "We nurture the misses.",
-    text: "When someone misses a consultation or does not show, Donna follows up, keeps the lead warm, and books a new time.",
+    text: "When someone misses a consultation or does not show, Nikki follows up, keeps the lead warm, and books a new time.",
     points: ["No-show follow-up", "Lead kept warm", "New time booked"],
   },
 ];

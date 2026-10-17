@@ -29,7 +29,7 @@ export default function DemoPage() {
             </li>
             <li>
               <Check size={17} aria-hidden="true" />
-              Meet Owen on intake and Donna on follow-up
+              Meet Donna on intake and Nikki on follow-up
             </li>
           </ul>
           <div className="demo-duration">

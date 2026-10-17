@@ -52,8 +52,8 @@ export default function AboutPage() {
           <div>
             <p>
               We answer the call, qualify bankruptcy leads by your criteria, and
-              book the consultation that turns them into retained clients. Owen
-              handles intake. Donna handles follow-up and the misses.
+              book the consultation that turns them into retained clients. Donna
+              handles intake. Nikki handles follow-up and the misses.
             </p>
             <p>Every call answered. More clients retained.</p>
             <DemoCta lead="See how a missed call becomes a booked consultation." />

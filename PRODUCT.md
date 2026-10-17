@@ -47,8 +47,9 @@ The former public name “Legal Fusion AI” is retired. Do not publish Client B
 
 AI employees are named as a brand. Use the name only, never a title from any show.
 
-- **Owen** handles intake: answers every call and text, handles the inquiry, captures the lead.
-- **Donna** handles follow-up: follows up, books the consultation, and nurtures missed appointments and no-shows. The name is a nod to the legal TV show; the show title is never used.
+- **Donna** handles intake: answers every call and text, handles the inquiry, captures the lead, and books the consultation. The name is a nod to the legal TV show; the show title is never used.
+- **Nikki** handles follow-up: confirms the appointment, follows up, and nurtures missed appointments and no-shows.
+- **Sofia** handles Spanish-language intake.
 
 Never promise unlimited voice minutes. Never claim the product replaces attorneys or staff.
 
