@@ -4,7 +4,7 @@ import { DemoCta } from "@/components/demo-cta";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Legal Fusion Hub was built from more than 24 years inside bankruptcy practice to turn the first call into a retained client.",
+    "Legal Fusion Hub was built inside bankruptcy practice to turn the first call into a retained client, so your firm stays human where it counts.",
 };
 
 export default function AboutPage() {
@@ -17,9 +17,9 @@ export default function AboutPage() {
           </div>
           <div>
             <p>
-              Legal Fusion began inside a high-volume bankruptcy practice.
-              That experience is why the company covers the path from the
-              first call to a retained client.
+              We began inside a high-volume bankruptcy practice. We saw what a
+              missed call costs. We automate the moments that matter so your
+              firm stays human where it counts.
             </p>
           </div>
         </div>
@@ -27,19 +27,22 @@ export default function AboutPage() {
       <section className="about-proof">
         <div className="shell about-proof-grid">
           <div>
-            <strong>10,000+</strong>
-            <span>bankruptcy cases filed</span>
+            <strong>4,681</strong>
+            <span>calls answered, none sent to voicemail</span>
           </div>
           <div>
-            <strong>24+ years</strong>
-            <span>of legal practice</span>
+            <strong>2.4 sec</strong>
+            <span>average pickup, versus 25 to 35 seconds for a person</span>
           </div>
           <div>
-            <strong>One company</strong>
-            <span>focused on signing the client</span>
+            <strong>390 hours</strong>
+            <span>of staff time reclaimed</span>
           </div>
         </div>
         <div className="shell">
+          <p className="source-note">
+            Morrison Law Group. 90-day pilot, June 12 to September 9, 2026.
+          </p>
           <DemoCta lead="Bankruptcy intake, from the first call to a retained client." />
         </div>
       </section>
@@ -48,9 +51,9 @@ export default function AboutPage() {
           <h2>Built by people who know what a missed call costs.</h2>
           <div>
             <p>
-              Legal Fusion Hub answers the call, qualifies bankruptcy leads by
-              your firm’s criteria, and books the consultation that turns them
-              into retained clients.
+              We answer the call, qualify bankruptcy leads by your criteria, and
+              book the consultation that turns them into retained clients. Owen
+              handles intake. Donna handles follow-up and the misses.
             </p>
             <p>Every call answered. More clients retained.</p>
             <DemoCta lead="See how a missed call becomes a booked consultation." />

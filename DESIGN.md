@@ -3,45 +3,44 @@ name: Legal Fusion Hub
 description: A bright operational system for visible lead routing and managed handoffs.
 colors:
   white: "#ffffff"
-  paper: "#f7f9fc"
-  paper-blue: "#f1f6ff"
-  ink: "#0c1e3b"
-  ink-soft: "#53627a"
-  line: "#dce3ed"
-  line-dark: "#c8d2e0"
-  routing-blue: "#175cff"
-  routing-blue-dark: "#0d42bd"
-  routing-blue-soft: "#eaf1ff"
-  action-coral: "#f05b47"
-  action-coral-dark: "#c94333"
-  completion-green: "#13865f"
-  completion-green-soft: "#e7f7f0"
+  gray: "#e7e8e4"
+  paper: "#f3f4f1"
+  paper-blue: "#e7f4f1"
+  ink: "#0b213f"
+  ink-soft: "#4a5a6e"
+  line: "#dcdfd9"
+  line-dark: "#c7cbc3"
+  teal: "#33b89f"
+  teal-dark: "#0c6a5c"
+  teal-soft: "#e5f6f3"
+  action-orange: "#f2421b"
+  action-orange-dark: "#c3330f"
 typography:
   display:
-    fontFamily: "Bricolage Grotesque Variable, sans-serif"
-    fontSize: "clamp(3.2rem, 6.4vw, 5.8rem)"
-    fontWeight: 650
-    lineHeight: 1.06
-    letterSpacing: "-0.035em"
+    fontFamily: "Montserrat Variable, sans-serif"
+    fontSize: "clamp(42px, 5.4vw, 78px)"
+    fontWeight: 700
+    lineHeight: 1.02
+    letterSpacing: "-0.03em"
   headline:
-    fontFamily: "Bricolage Grotesque Variable, sans-serif"
+    fontFamily: "Montserrat Variable, sans-serif"
     fontSize: "clamp(2.15rem, 4vw, 3.7rem)"
-    fontWeight: 650
-    lineHeight: 1.06
-    letterSpacing: "-0.035em"
+    fontWeight: 700
+    lineHeight: 1.1
+    letterSpacing: "-0.02em"
   title:
-    fontFamily: "Bricolage Grotesque Variable, sans-serif"
+    fontFamily: "Montserrat Variable, sans-serif"
     fontSize: "1.22rem"
-    fontWeight: 650
-    lineHeight: 1.06
-    letterSpacing: "-0.035em"
+    fontWeight: 700
+    lineHeight: 1.1
+    letterSpacing: "-0.02em"
   body:
-    fontFamily: "Manrope Variable, sans-serif"
+    fontFamily: "Open Sans Variable, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.65
   label:
-    fontFamily: "Manrope Variable, sans-serif"
+    fontFamily: "Open Sans Variable, sans-serif"
     fontSize: "0.75rem"
     fontWeight: 700
     lineHeight: 1.65
@@ -59,13 +58,13 @@ spacing:
   xl: "32px"
 components:
   button-primary:
-    backgroundColor: "{colors.action-coral}"
+    backgroundColor: "{colors.action-orange}"
     textColor: "{colors.white}"
     rounded: "{rounded.button}"
     padding: "12px 20px"
     height: "50px"
   button-primary-hover:
-    backgroundColor: "{colors.action-coral-dark}"
+    backgroundColor: "{colors.action-orange-dark}"
     textColor: "{colors.white}"
     rounded: "{rounded.button}"
     padding: "12px 20px"
@@ -81,13 +80,15 @@ components:
     textColor: "{colors.ink}"
     rounded: "{rounded.panel}"
   status-pill:
-    backgroundColor: "{colors.routing-blue-soft}"
-    textColor: "{colors.routing-blue-dark}"
+    backgroundColor: "{colors.teal-soft}"
+    textColor: "{colors.teal-dark}"
     rounded: "{rounded.pill}"
     padding: "5px 8px"
 ---
 
 # Design System: Legal Fusion Hub
+
+> Brand update (launch): the palette is Deep Navy `#0B213F`, Modern Teal `#33B89F`, Orange `#F2421B` for company CTAs, and Light Gray `#E7E8E4`. Headlines use Montserrat, body uses Open Sans. In the shipped CSS the teal is stored in the `--blue*` tokens and the orange in the `--coral*` tokens, so prose below that says "blue" means teal and "coral" means orange. Never use gradients, glossy mockups, or robot imagery.
 
 ## Overview
 

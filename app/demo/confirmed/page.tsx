@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const next = [
   "Check your inbox for the calendar invite.",
-  "We’ll show how Hub answers calls, qualifies bankruptcy leads, and books the consultation.",
+  "We’ll show how we answer calls, qualify bankruptcy leads by your criteria, and book the consultation.",
   "Bring one place in your firm’s journey where leads stall.",
 ];
 

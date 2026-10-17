@@ -21,15 +21,15 @@ export default function DemoPage() {
           <ul>
             <li>
               <Check size={17} aria-hidden="true" />
-              See how Hub answers calls and captures leads
+              See how we answer calls and capture leads
             </li>
             <li>
               <Check size={17} aria-hidden="true" />
-              See how Hub qualifies leads and books consultations
+              See how we qualify leads by your criteria and book consultations
             </li>
             <li>
               <Check size={17} aria-hidden="true" />
-              Hear how Hub handles a real bankruptcy intake call
+              Meet Owen on intake and Donna on follow-up
             </li>
           </ul>
           <div className="demo-duration">

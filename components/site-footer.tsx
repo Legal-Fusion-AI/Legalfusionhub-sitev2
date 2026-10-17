@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Brand } from "@/components/site-header";
-import { siteConfig } from "@/lib/site-config";
+import { productLineName, siteConfig } from "@/lib/site-config";
 
 export function SiteFooter() {
   return (
@@ -22,7 +22,7 @@ export function SiteFooter() {
         <div>
           <h2>Products</h2>
           <Link href="/#products">Legal Fusion Hub</Link>
-          <span>Engage and acquire</span>
+          <span>{productLineName()}, our intake and retention product line</span>
         </div>
         <div>
           <h2>Legal</h2>
