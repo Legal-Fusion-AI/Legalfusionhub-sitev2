@@ -17,7 +17,7 @@ import { StickyDemoBar } from "@/components/sticky-demo-bar";
 import coloredLogo from "@/coloredlogo.png";
 import { getCallTranscript } from "@/lib/call-transcript";
 import { faqs } from "@/lib/faqs";
-import { morrisonProof } from "@/lib/proof";
+import { morrisonProof, practiceEvidence } from "@/lib/proof";
 import { faqPageJsonLd, videoObjectJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -70,17 +70,17 @@ export function HomePage() {
       </section>
       <StickyDemoBar />
 
-      <section className="proof-band">
-        <div className="shell">
-          <div className="proof-grid">
-            {morrisonProof.stats.map((item) => (
-              <p key={item.label}>
-                <strong>{item.stat}</strong>
-                <span>{item.label}</span>
-              </p>
-            ))}
-          </div>
-          <p className="proof-source">{morrisonProof.sentence}</p>
+      <div className="shell hero-stage">
+        <JourneyBoard />
+      </div>
+      <section className="proof-band" aria-label="Practice evidence">
+        <div className="shell proof-grid">
+          {practiceEvidence.map((item) => (
+            <p key={item.label}>
+              <strong>{item.stat}</strong>
+              <span>{item.label}</span>
+            </p>
+          ))}
         </div>
       </section>
 
@@ -103,7 +103,6 @@ export function HomePage() {
               the client retains.
             </p>
           </div>
-          <JourneyBoard compact />
           <div className="how-pipeline">
             <h3 className="how-subhead">Follow every lead through the pipeline.</h3>
             <p>

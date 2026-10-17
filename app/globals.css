@@ -33,11 +33,13 @@
 
 html {
   background: #f2f7f7;
+  overflow-x: clip;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  overflow-x: clip;
   background: #f2f7f7;
   color: var(--ink);
   font-family: var(--font-body);
@@ -530,12 +532,10 @@ h3 {
 
 .journey-source {
   position: relative;
-  display: flex;
+  display: grid;
   width: 46px;
   height: 46px;
-  max-width: 46px;
-  align-items: center;
-  justify-content: center;
+  place-items: center;
   overflow: hidden;
   border: 2.5px solid currentColor;
   border-radius: 999px;
@@ -543,9 +543,7 @@ h3 {
   padding: 0;
   line-height: 0;
   transition:
-    max-width 280ms var(--ease-out),
     box-shadow 280ms var(--ease-out),
-    padding 280ms var(--ease-out),
     transform 140ms var(--ease-out);
 }
 
@@ -560,32 +558,6 @@ h3 {
 .journey-source-icon {
   display: grid;
   place-items: center;
-}
-
-.journey-source:not(.is-active) .journey-source-icon {
-  position: absolute;
-  inset: 0;
-}
-
-.journey-source.is-active .journey-source-icon {
-  width: 41px;
-  height: 100%;
-  flex: none;
-}
-
-.journey-source-label {
-  min-width: 0;
-  max-width: 0;
-  overflow: hidden;
-  opacity: 0;
-  font-size: 0.78rem;
-  font-weight: 750;
-  letter-spacing: -0.01em;
-  line-height: 1;
-  white-space: nowrap;
-  transition:
-    max-width 280ms var(--ease-out),
-    opacity 160ms var(--ease-out);
 }
 
 .journey-source-teal {
@@ -615,17 +587,9 @@ h3 {
 
 .journey-source.is-active {
   z-index: 3;
-  width: auto;
-  max-width: 180px;
-  padding-right: 14px;
   box-shadow:
     0 0 0 4px #fff,
     0 0 18px color-mix(in srgb, currentColor 55%, transparent);
-}
-
-.journey-source.is-active .journey-source-label {
-  max-width: 9rem;
-  opacity: 1;
 }
 
 .journey-sources-caption {
@@ -901,10 +865,6 @@ h3 {
   .journey-flow {
     padding-bottom: 76px;
   }
-
-  .journey-source.is-active {
-    max-width: 156px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -922,7 +882,6 @@ h3 {
     transform: none;
   }
   .journey-source,
-  .journey-source-label,
   .journey-node-pulse,
   .journey-spark {
     transition: none;
@@ -939,7 +898,7 @@ h3 {
 
 .proof-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1.35fr repeat(3, 1fr);
 }
 
 .proof-grid p {
@@ -961,13 +920,13 @@ h3 {
 }
 
 .proof-grid strong {
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   color: var(--ink);
   font-family: var(--font-display);
-  font-size: 1.9rem;
+  font-size: 1.12rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1.05;
+  line-height: 1.2;
 }
 
 .proof-source {
@@ -3766,17 +3725,6 @@ h3 {
     margin-bottom: 48px;
   }
 
-  .journey-source.is-active {
-    width: 46px;
-    max-width: 46px;
-    padding-right: 0;
-  }
-
-  .journey-source-label,
-  .journey-source.is-active .journey-source-label {
-    display: none;
-  }
-
   .journey-flow {
     padding-bottom: 96px;
   }
@@ -4129,6 +4077,7 @@ h3 {
   right: 20px;
   bottom: 20px;
   display: flex;
+  max-width: calc(100vw - 24px);
   flex-direction: column;
   align-items: flex-end;
   gap: 8px;

@@ -1,3 +1,14 @@
+/** Restored from the pre-Morrison homepage proof strip (commit 39c4463). */
+export const practiceEvidence = [
+  {
+    stat: "Built inside a bankruptcy practice",
+    label: "Where the company started",
+  },
+  { stat: "10,000+", label: "bankruptcy cases filed" },
+  { stat: "24+ years", label: "of legal practice" },
+  { stat: "24/7", label: "calls and texts answered" },
+] as const;
+
 export const morrisonProof = {
   firm: "Morrison Law Group",
   range: "June 12 to September 9, 2026",

@@ -135,7 +135,7 @@ function Scene({ step }: { step: Step }) {
                 </li>
                 <li>
                   <span>Handled by</span>
-                  <strong>Hub intake</strong>
+                  <strong>Donna · Intake</strong>
                 </li>
               </ul>
             </div>
