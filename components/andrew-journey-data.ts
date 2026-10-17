@@ -138,3 +138,43 @@ export const journeyBeats: JourneyBeat[] = [
 
 export const journeyClosingQuote =
   "I was terrified, and today was not what I thought it would be. It was calm, and she made me feel like everything was going to be okay.";
+
+/**
+ * Flattened view of the same journey for the text-thread modal. This keeps the
+ * timeline and the modal on one source of data. An "event" is an automation
+ * note (lead captured, booking, retained marker); a "msg" is a chat bubble.
+ */
+export type ThreadItem = {
+  kind: "event" | "msg";
+  stage: JourneyStage;
+  who: JourneyWho;
+  text: string;
+};
+
+export const threadItems: ThreadItem[] = journeyBeats.flatMap((beat): ThreadItem[] => {
+  if (beat.lines) {
+    return beat.lines.map(
+      (line): ThreadItem => ({
+        kind: "msg",
+        stage: beat.stage,
+        who: line.who,
+        text: line.text,
+      }),
+    );
+  }
+  return [
+    {
+      kind: "event",
+      stage: beat.stage,
+      who: beat.by ?? "donna",
+      text: beat.note ?? "",
+    },
+  ];
+});
+
+/** Index of the first inbound text, where the "text" entry point starts. */
+export const threadTextStartIndex = Math.max(
+  0,
+  threadItems.findIndex((item) => item.kind === "msg" && item.who === "andrew"),
+);
+

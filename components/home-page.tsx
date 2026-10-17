@@ -5,6 +5,7 @@ import { AiEmployees } from "@/components/ai-employees";
 import { AndrewJourney } from "@/components/andrew-journey";
 import { DemoCta } from "@/components/demo-cta";
 import { JourneyBoard } from "@/components/journey-board";
+import { JourneyProcess } from "@/components/journey-process";
 import { Pipeline } from "@/components/pipeline";
 import { ProblemScenes } from "@/components/problem-scenes";
 import { SuccessStories } from "@/components/success-stories";
@@ -160,6 +161,17 @@ export function HomePage() {
             not to qualify the lead.
           </p>
           <DemoCta lead="From the first call to a retained client." />
+        </div>
+      </section>
+
+      <section className="section products-section">
+        <div className="shell">
+          <div className="section-heading section-heading-wide">
+            <h2>Follow the inquiry from call to retained client.</h2>
+            <p>Hub answers, qualifies, and books the consultation.</p>
+          </div>
+          <JourneyProcess />
+          <DemoCta lead="Tap the first step to watch a real lead become a retained client." />
         </div>
       </section>
 
