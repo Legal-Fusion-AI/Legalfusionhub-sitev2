@@ -28,7 +28,7 @@ export const faqs: Faq[] = [
   {
     question: "How does setup work?",
     answer:
-      "Setup is light. We start with a short questionnaire: your firm name, a greeting, and your slogan. We tune the rest with you. Most firms are live in about 5 business days.",
+      "Setup is light. We start with a short questionnaire: your firm name, a greeting, and your slogan. We tune the rest with you. Setup timing is covered on the demo.",
   },
   {
     question: "Does this work with my existing phone system?",
@@ -39,6 +39,11 @@ export const faqs: Faq[] = [
     question: "What counts as a lead?",
     answer:
       "A lead is a new prospective client who reaches out about bankruptcy and gives us enough to follow up: a name and a way to reach them. We capture it, qualify it by your criteria, and work to book the consultation.",
+  },
+  {
+    question: "Do you offer Spanish support?",
+    answer:
+      "Yes. Sofia answers in Spanish, handles the inquiry, and books the consultation the same way, so Spanish-speaking callers get a real answer.",
   },
   {
     question: "Do callers know they are talking to an AI?",

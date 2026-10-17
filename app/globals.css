@@ -3462,6 +3462,29 @@ h3 {
   font-size: 1.01rem;
 }
 
+.about-entity {
+  padding-top: 0;
+}
+
+.about-entity-card {
+  max-width: 42rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-small);
+}
+
+.about-entity-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.35rem;
+}
+
+.about-entity-card p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
 .legal-page {
   background: var(--paper);
   padding-block: 80px 120px;

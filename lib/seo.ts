@@ -44,6 +44,13 @@ export function pageMetadata({
 export function organizationGraph() {
   const orgId = absoluteUrl("/#org");
   const siteId = absoluteUrl("/#site");
+  const founders = siteConfig.founders.map((founder) => ({
+    "@type": "Person" as const,
+    "@id": absoluteUrl(`/#${founder.id}`),
+    name: founder.name,
+    jobTitle: "Founder",
+    worksFor: { "@id": orgId },
+  }));
 
   return {
     "@context": "https://schema.org",
@@ -52,11 +59,18 @@ export function organizationGraph() {
         "@type": "Organization",
         "@id": orgId,
         name: siteConfig.name,
+        legalName: siteConfig.legalName,
         url: siteConfig.url,
         email: siteConfig.email,
         description: siteConfig.description,
         logo: absoluteUrl("/logo-wordmark.png"),
+        address: {
+          "@type": "PostalAddress",
+          addressRegion: "UT",
+          addressCountry: "US",
+        },
         areaServed: "US",
+        founder: founders.map((founder) => ({ "@id": founder["@id"] })),
         knowsAbout: [
           "bankruptcy law firm intake",
           "AI receptionist",
@@ -69,6 +83,7 @@ export function organizationGraph() {
           url: absoluteUrl("/demo"),
         },
       },
+      ...founders,
       {
         "@type": "WebSite",
         "@id": siteId,
@@ -147,9 +162,9 @@ export const routeMeta = {
     path: "/how-it-works",
   },
   about: {
-    title: "About Legal Fusion Hub | Bankruptcy Intake Built Inside a Practice",
+    title: "About Legal Fusion Hub, Utah | Bankruptcy Intake Built Inside a Practice",
     description:
-      "Legal Fusion Hub was built inside a high-volume bankruptcy practice. We answer the first call, qualify by your criteria, and book the consultation.",
+      "Legal Fusion Hub LLC is a Utah company founded by Mara Ream and Theron D. Morrison. Built inside a high-volume bankruptcy practice.",
     path: "/about",
   },
   demo: {

@@ -1,6 +1,7 @@
 import { DemoCta } from "@/components/demo-cta";
 import { morrisonProof } from "@/lib/proof";
 import { pageMetadata, routeMeta } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata = pageMetadata(routeMeta.about);
 
@@ -39,6 +40,16 @@ export default function AboutPage() {
             <p>Every call answered. More clients retained.</p>
             <DemoCta lead="See how a missed call becomes a booked consultation." />
           </div>
+        </div>
+      </section>
+      <section className="section about-entity">
+        <div className="shell about-entity-card">
+          <h2>{siteConfig.legalName}</h2>
+          <p>
+            {siteConfig.legalName} is a {siteConfig.jurisdiction} limited
+            liability company, founded by {siteConfig.founders[0].name} and{" "}
+            {siteConfig.founders[1].name}.
+          </p>
         </div>
       </section>
     </main>

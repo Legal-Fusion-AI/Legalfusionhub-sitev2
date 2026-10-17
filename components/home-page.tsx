@@ -148,7 +148,8 @@ export function HomePage() {
             <p>
               {siteConfig.positioning} They work around your team, not in place
               of it. Callers are told they are speaking with an AI assistant.
-              Your firm approves the greeting.
+              Your firm approves the greeting. Sofia answers Spanish-language
+              intake the same way.
             </p>
           </div>
           <AiEmployees />

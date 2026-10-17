@@ -8,6 +8,12 @@ export const siteConfig = {
     "Donna answers every call, text, and web form for consumer bankruptcy firms, qualifies by your criteria, and books the consultation. Nikki follows up until the client retains.",
   url: "https://www.legalfusionhub.com",
   email: "jeff@legalfusionhub.com",
+  legalName: "Legal Fusion Hub LLC",
+  jurisdiction: "Utah",
+  founders: [
+    { id: "mara-ream", name: "Mara Ream" },
+    { id: "theron-morrison", name: "Theron D. Morrison" },
+  ],
   demoPath: "/demo",
   forms: {
     demo: {

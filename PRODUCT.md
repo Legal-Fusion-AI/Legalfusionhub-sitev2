@@ -72,7 +72,7 @@ Do not invent customer logos, testimonials, pricing, certifications, conversion 
 
 Use the exact label **Book a demo** throughout the site. It leads to `/demo`.
 
-The demo request captures name, work email, firm, role, and optional notes. It sends to a configured GoHighLevel endpoint when available and otherwise opens a pre-addressed email.
+The demo request captures name, work email, firm, role, and optional notes. It sends to the configured booking endpoint when available and otherwise opens a pre-addressed email.
 
 ## Brand Commitments
 

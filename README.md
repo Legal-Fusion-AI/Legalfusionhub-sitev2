@@ -32,7 +32,7 @@ npm run build
 
 ## Demo form
 
-The demo form posts JSON to GoHighLevel when these public environment variables are configured:
+The demo form posts JSON to the configured booking endpoint when these public environment variables are set:
 
 ```bash
 NEXT_PUBLIC_GHL_DEMO_ENDPOINT=
