@@ -3,120 +3,84 @@ import Image from "next/image";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { AiEmployees } from "@/components/ai-employees";
 import { AndrewJourney } from "@/components/andrew-journey";
+import { BuiltForBankruptcy } from "@/components/built-for-bankruptcy";
+import { CallTranscript } from "@/components/call-transcript";
+import { CallVideo } from "@/components/call-video";
 import { DemoCta } from "@/components/demo-cta";
+import { HeroActions } from "@/components/hero-actions";
 import { JourneyBoard } from "@/components/journey-board";
 import { JourneyProcess } from "@/components/journey-process";
+import { JsonLd } from "@/components/json-ld";
 import { Pipeline } from "@/components/pipeline";
 import { ProblemScenes } from "@/components/problem-scenes";
-import { SuccessStories } from "@/components/success-stories";
+import { StickyDemoBar } from "@/components/sticky-demo-bar";
 import coloredLogo from "@/coloredlogo.png";
+import { getCallTranscript } from "@/lib/call-transcript";
+import { faqs } from "@/lib/faqs";
+import { morrisonProof } from "@/lib/proof";
+import { faqPageJsonLd, videoObjectJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
-const proof = [
-  { stat: "4,681", label: "calls answered, none sent to voicemail" },
-  { stat: "2.4 sec", label: "average pickup, versus 25 to 35 seconds for a person" },
-  { stat: "56", label: "consultations booked by our AI" },
-  { stat: "390", label: "staff hours reclaimed" },
-];
-
-type Faq = {
-  question: string;
-  answer: string;
-  cta?: boolean;
-};
-
-const faqs: Faq[] = [
-  {
-    question: "Do you replace my intake staff or attorneys?",
-    answer:
-      "No. We answer the call, qualify the lead, and book the consultation. Your team meets the client and decides who the firm retains. We do not replace your attorneys or your staff.",
-  },
-  {
-    question: "How does setup work?",
-    answer:
-      "Setup is light. We start with a short questionnaire: your firm name, a greeting, and your slogan. We tune the rest with you. Most firms are live in about 5 business days.",
-  },
-  {
-    question: "Does this work with my existing phone system?",
-    answer:
-      "Yes. You keep your current numbers and provider. We use conditional call forwarding, so calls route to us when you want them to. There is no system to replace.",
-  },
-  {
-    question: "What counts as a lead?",
-    answer:
-      "A lead is a new prospective client who reaches out about bankruptcy and gives us enough to follow up: a name and a way to reach them. We capture it, qualify it by your criteria, and work to book the consultation.",
-  },
-  {
-    question: "Do you offer Spanish support?",
-    answer:
-      "Yes. Sofia answers in Spanish, handles the inquiry, and books the consultation the same way, so Spanish-speaking callers get a real answer.",
-  },
-  {
-    question: "Do callers know they are talking to an AI?",
-    answer:
-      "Yes. The greeting states that they are speaking with an AI assistant. We built this to respect bar rules on disclosure, and your firm reviews the greeting during setup.",
-  },
-  {
-    question: "How do you know my firm's criteria?",
-    answer:
-      "Your firm sets them. We qualify bankruptcy leads by your criteria, follow up, and book the consultation.",
-  },
-  {
-    question: "Do you gather case details before the consultation?",
-    answer:
-      "Yes. We gather a few details so the attorney can weigh Chapter 7 against other options before the meeting. That is to help the attorney, not to qualify the lead.",
-  },
-  {
-    question: "What does it cost?",
-    answer:
-      "We walk through pricing on the demo, matched to how your firm works. Nothing to read into here.",
-    cta: true,
-  },
+const chips = [
+  "24/7 calls, texts, forms",
+  "2.4 s average pickup",
+  "Books into your calendar",
 ];
 
 export function HomePage() {
+  const transcript = getCallTranscript();
+
   return (
     <main>
       <section className="hero">
-        <div className="shell hero-stack">
-          <Link className="hero-pill" href="/how-it-works">
-            <Image className="hero-pill-mark" src={coloredLogo} alt="" />
-            Bankruptcy intake, answered 24/7
-            <ArrowRight size={14} aria-hidden="true" />
-          </Link>
-          <h1>
-            Answer every call.
-            <span className="hero-title-line">Book more consultations.</span>
-          </h1>
-          <p className="hero-lede">{siteConfig.positioning}</p>
-          <p>
-            In a 90-day pilot we answered 4,681 calls. None went to voicemail.
-            Average pickup was 2.4 seconds.
-          </p>
-          <div className="hero-actions">
-            <Link className="button button-accent" href="/demo">
-              Book a demo
+        <div className="shell hero-layout">
+          <div className="hero-copy">
+            <Link className="hero-pill" href="/how-it-works">
+              <Image className="hero-pill-mark" src={coloredLogo} alt="" />
+              For consumer bankruptcy firms
+              <ArrowRight size={14} aria-hidden="true" />
             </Link>
+            <h1>The AI receptionist for bankruptcy law firms.</h1>
+            <p className="hero-subhead">
+              Donna answers every call, text, and web form, day or night,
+              qualifies by your criteria, and books the consultation. Nikki
+              follows up until the client retains.
+            </p>
+            <HeroActions />
+            <p className="hero-proof">{morrisonProof.heroLine}</p>
+            <p className="hero-trust">
+              Callers are told they are speaking with an AI assistant.
+            </p>
           </div>
+          <div className="hero-visual" id="hear-a-real-call">
+            <div className="problem-video hero-video">
+              <span className="problem-video-tag">
+                Real call. No human touched it. 3:28.
+              </span>
+              <CallVideo />
+            </div>
+            <CallTranscript />
+          </div>
+          <ul className="hero-chips">
+            {chips.map((chip) => (
+              <li key={chip}>{chip}</li>
+            ))}
+          </ul>
         </div>
       </section>
-      <div className="shell hero-stage">
-        <JourneyBoard />
-      </div>
+      <StickyDemoBar />
 
       <section className="proof-band">
         <div className="shell">
           <div className="proof-grid">
-            {proof.map((item) => (
+            {morrisonProof.stats.map((item) => (
               <p key={item.label}>
                 <strong>{item.stat}</strong>
                 <span>{item.label}</span>
               </p>
             ))}
           </div>
-          <p className="proof-source">
-            Morrison Law Group. 90-day pilot, June 12 to September 9, 2026.
-          </p>
+          <p className="proof-source">{morrisonProof.sentence}</p>
         </div>
       </section>
 
@@ -130,7 +94,39 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section examples-section" id="products">
+      <section className="section how-section" id="how-it-works-overview">
+        <div className="shell">
+          <div className="section-heading section-heading-wide">
+            <h2>How it works.</h2>
+            <p>
+              Donna answers. We book the consultation. Nikki follows up until
+              the client retains.
+            </p>
+          </div>
+          <JourneyBoard compact />
+          <div className="how-pipeline">
+            <h3 className="how-subhead">Follow every lead through the pipeline.</h3>
+            <p>
+              A lead moves from New to Retained. Missed appointments and no-shows
+              move into Nurture, so nobody is forgotten.
+            </p>
+            <Pipeline />
+            <p className="pipeline-aside">
+              Before the consultation we gather a few details so the attorney can
+              weigh Chapter 7 against other options. That is to help the attorney,
+              not to qualify the lead.
+            </p>
+          </div>
+          <div className="how-journey">
+            <h3 className="how-subhead">Follow the inquiry from call to retained client.</h3>
+            <p>Hub answers, qualifies, and books the consultation.</p>
+            <JourneyProcess />
+          </div>
+          <DemoCta lead="Tap the first step to watch a real lead become a retained client." />
+        </div>
+      </section>
+
+      <section className="section examples-section" id="see-it-in-action">
         <div className="shell">
           <div className="section-heading section-heading-wide">
             <h2>See it in action.</h2>
@@ -145,59 +141,30 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section pipeline-section">
-        <div className="shell">
-          <div className="section-heading section-heading-wide">
-            <h2>Follow every lead through the pipeline.</h2>
-            <p>
-              A lead moves from New to Retained. Missed appointments and no-shows
-              move into Nurture, so nobody is forgotten.
-            </p>
-          </div>
-          <Pipeline />
-          <p className="pipeline-aside">
-            Before the consultation we gather a few details so the attorney can
-            weigh Chapter 7 against other options. That is to help the attorney,
-            not to qualify the lead.
-          </p>
-          <DemoCta lead="From the first call to a retained client." />
-        </div>
-      </section>
-
-      <section className="section products-section">
-        <div className="shell">
-          <div className="section-heading section-heading-wide">
-            <h2>Follow the inquiry from call to retained client.</h2>
-            <p>Hub answers, qualifies, and books the consultation.</p>
-          </div>
-          <JourneyProcess />
-          <DemoCta lead="Tap the first step to watch a real lead become a retained client." />
-        </div>
-      </section>
-
       <section className="section employees-section">
         <div className="shell">
           <div className="section-heading section-heading-wide">
             <h2>Meet Donna and Nikki.</h2>
             <p>
-              Our AI employees carry the moments that used to slip. They work
-              around your team, not in place of it.
+              {siteConfig.positioning} They work around your team, not in place
+              of it. Callers are told they are speaking with an AI assistant.
+              Your firm approves the greeting.
             </p>
           </div>
           <AiEmployees />
         </div>
       </section>
 
-      <section className="section stories-section">
+      <section className="section bankruptcy-section">
         <div className="shell">
           <div className="section-heading section-heading-wide">
-            <h2>What founding firms say.</h2>
+            <h2>Built for bankruptcy firms.</h2>
             <p>
-              We are gathering stories from our 10 founding firms. Their words
-              will live here.
+              Donna handles consumer bankruptcy intake. She collects what your
+              attorney needs and leaves the legal judgment to your team.
             </p>
           </div>
-          <SuccessStories />
+          <BuiltForBankruptcy />
         </div>
       </section>
 
@@ -247,6 +214,8 @@ export function HomePage() {
           </Link>
         </div>
       </section>
+      <JsonLd data={faqPageJsonLd()} />
+      <JsonLd data={videoObjectJsonLd(transcript)} />
     </main>
   );
 }

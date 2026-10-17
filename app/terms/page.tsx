@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+import { pageMetadata, routeMeta } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Terms of service" };
+export const metadata = pageMetadata(routeMeta.terms);
 
 export default function TermsPage() {
   return (

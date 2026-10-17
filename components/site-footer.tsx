@@ -14,14 +14,14 @@ export function SiteFooter() {
         </div>
         <div>
           <h2>Explore</h2>
-          <Link href="/#products">Products</Link>
+          <Link href="/#hear-a-real-call">See a real call</Link>
           <Link href="/how-it-works">How it works</Link>
           <Link href="/about">About</Link>
           <Link href="/demo">Book a demo</Link>
         </div>
         <div>
           <h2>Products</h2>
-          <Link href="/#products">Legal Fusion Hub</Link>
+          <Link href="/">Legal Fusion Hub</Link>
           <a href={productLineUrl}>
             {productLineName()}, our intake and retention product line
           </a>

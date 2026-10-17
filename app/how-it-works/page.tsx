@@ -1,19 +1,15 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { DemoCta } from "@/components/demo-cta";
 import { JourneyBoard } from "@/components/journey-board";
+import { pageMetadata, routeMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "How it works",
-  description:
-    "How Legal Fusion Hub answers the call, qualifies bankruptcy leads by your criteria, and books the consultation that turns them into retained clients.",
-};
+export const metadata = pageMetadata(routeMeta.howItWorks);
 
 const phases = [
   {
     title: "We answer the call.",
-    text: "Donna answers calls and texts day or night, handles the inquiry, and captures the lead. No call goes to voicemail.",
+    text: "Donna answers calls and texts day or night, handles the inquiry, and captures the lead.",
     points: ["Calls and texts answered 24/7", "Inquiry handled", "New lead captured"],
   },
   {

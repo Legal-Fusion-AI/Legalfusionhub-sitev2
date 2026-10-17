@@ -1,7 +1,7 @@
 import { Quote } from "lucide-react";
 
 /**
- * Reserved space for success stories and reviews from the 10 founding firms.
+ * Reserved space for success stories and reviews from the 5 founding firms.
  * The cards are intentionally empty placeholders. Do not invent testimonials;
  * fill these in with real quotes and firm names once they are approved.
  */
@@ -11,7 +11,7 @@ export function SuccessStories() {
   return (
     <div className="stories">
       <p className="stories-flag" role="note">
-        Reserved for success stories and reviews from our 10 founding firms. Real
+        Reserved for success stories and reviews from our 5 founding firms. Real
         quotes go here once approved.
       </p>
       <div className="stories-grid">

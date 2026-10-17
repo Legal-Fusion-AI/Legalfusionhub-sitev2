@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+import { pageMetadata, routeMeta } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Privacy policy" };
+export const metadata = pageMetadata(routeMeta.privacy);
 
 export default function PrivacyPage() {
   return (

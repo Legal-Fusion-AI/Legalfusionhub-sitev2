@@ -1,16 +1,8 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
+import { pageMetadata, routeMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "You're booked",
-  description:
-    "Your Legal Fusion Hub demo is booked. A confirmation and calendar invite are on the way.",
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
+export const metadata = pageMetadata({ ...routeMeta.demoConfirmed, index: false });
 
 const next = [
   "Check your inbox for the calendar invite.",

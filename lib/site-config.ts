@@ -5,8 +5,8 @@ export const siteConfig = {
   positioning:
     "We automate the moments that matter so your firm stays human where it counts.",
   description:
-    "Legal Fusion Hub answers every call, qualifies bankruptcy leads by your criteria, and books the consultation that turns them into retained clients.",
-  url: "https://legalfusionhub.com",
+    "Donna answers every call, text, and web form for consumer bankruptcy firms, qualifies by your criteria, and books the consultation. Nikki follows up until the client retains.",
+  url: "https://www.legalfusionhub.com",
   email: "jeff@legalfusionhub.com",
   demoPath: "/demo",
   forms: {
@@ -33,7 +33,7 @@ export const siteConfig = {
  * retainerpro.com is taken, so wherever the product line links or points, send
  * people to `productLineUrl` (legalfusionhub.com) for now.
  */
-export const productLineUrl = "https://legalfusionhub.com";
+export const productLineUrl = "https://www.legalfusionhub.com";
 
 export type ProductLineVariant = "retainer-pro" | "control";
 

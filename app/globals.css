@@ -333,10 +333,25 @@ h3 {
 }
 
 .hero-actions .button-accent,
+.hero-actions .button-outline,
 .closing-inner .button {
   min-height: 50px;
   padding: 12px 24px;
   font-size: 1.05rem;
+}
+
+.button-outline {
+  border: 1px solid var(--ink);
+  background: var(--white);
+  box-shadow: none;
+  color: var(--ink);
+}
+
+.button-outline:hover {
+  border-color: var(--ink);
+  background: var(--gray-soft);
+  box-shadow: none;
+  color: var(--ink);
 }
 
 .mobile-menu {
@@ -346,42 +361,95 @@ h3 {
 /* Hero */
 .hero {
   position: relative;
-  display: grid;
   overflow: hidden;
-  min-height: 80vh;
-  align-items: center;
   margin: 12px;
   border: 1px solid #e8ecec;
   border-radius: 16px;
-  background:
-    linear-gradient(180deg, #ffffff 0 46%, #f4f8f8 100%);
+  background: var(--white);
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(620px 280px at 12% 80%, rgba(186, 214, 224, 0.45), transparent 70%),
-    radial-gradient(520px 260px at 88% 70%, rgba(198, 220, 212, 0.5), transparent 68%),
-    url("/hero-field.svg") center 40% / min(1400px, 130%) auto no-repeat;
-  opacity: 0.9;
-  pointer-events: none;
-}
-
-.hero-stack {
+.hero-layout {
   position: relative;
   z-index: 1;
-  display: flex;
-  width: min(760px, calc(100% - 40px));
-  box-sizing: border-box;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   align-items: center;
-  justify-content: center;
-  gap: 22px;
-  margin-inline: auto;
-  padding: 72px 0 24px;
-  text-align: center;
+  gap: 28px 56px;
+  padding: 56px 0 40px;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.hero-copy h1 {
+  max-width: 14em;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.05rem, 3.6vw, 3.35rem);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+.hero-subhead {
+  max-width: 42rem;
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.hero-proof {
+  max-width: 44rem;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.hero-trust {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+}
+
+.hero-visual {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-chips li {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  padding: 8px 14px;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 100%;
 }
 
 .hero-pill {
@@ -426,34 +494,8 @@ h3 {
   color: #8a8a8a;
 }
 
-.hero-stack h1 {
-  max-width: 14em;
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(42px, 5.4vw, 78px);
-  font-weight: 520;
-  letter-spacing: -0.03em;
-  line-height: 1.02;
-}
-
 .hero-title-line {
   display: block;
-}
-
-.hero-stack > p {
-  max-width: 38rem;
-  margin: 0;
-  color: #515a63;
-  font-size: 16px;
-  line-height: 1.55;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
 }
 
 .hero-stage {
@@ -3518,12 +3560,13 @@ h3 {
     margin: 8px;
   }
 
-  .hero-stack {
-    width: min(760px, calc(100% - 32px));
-    padding-top: 64px;
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 36px 0 28px;
   }
 
-  .hero-stack h1 {
+  .hero-copy h1 {
     max-width: 100%;
   }
 
@@ -3660,17 +3703,40 @@ h3 {
     font-size: clamp(2.8rem, 13vw, 4.4rem);
   }
 
-  .hero-stack {
-    gap: 18px;
-    padding-top: 48px;
+  .hero-copy h1 {
+    font-size: clamp(1.7rem, 8.2vw, 2.05rem);
+    line-height: 1.14;
   }
 
-  .hero-stack h1 {
-    font-size: clamp(44px, 12vw, 56px);
+  .hero-subhead {
+    font-size: 0.98rem;
   }
 
-  .hero-stack > p {
-    font-size: 16px;
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .button-accent {
+    width: 100%;
+  }
+
+  .hero-actions .button-outline {
+    width: 100%;
+    min-height: auto;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 4px 0;
+    color: var(--ink);
+    font-size: 0.98rem;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
+  .hero-actions .button-outline:hover {
+    background: transparent;
+    transform: none;
   }
 
   .hero-stage {
@@ -5531,5 +5597,126 @@ h3 {
   .zigzag-pill-caret,
   .zigzag-pill-interactive {
     transition: none;
+  }
+}
+
+.call-transcript {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+}
+
+.call-transcript summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 12px 16px;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.call-transcript summary::-webkit-details-marker {
+  display: none;
+}
+
+.call-transcript-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  border-top: 1px solid var(--line);
+  padding: 14px 16px 16px;
+  list-style: none;
+}
+
+.call-transcript-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.call-transcript-speaker {
+  color: var(--ink);
+}
+
+.call-transcript-list p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.how-pipeline,
+.how-journey {
+  margin-top: 48px;
+}
+
+.how-subhead {
+  margin: 0 0 10px;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+}
+
+.how-pipeline > p,
+.how-journey > p {
+  max-width: 48rem;
+  margin: 0 0 24px;
+  color: var(--ink-soft);
+}
+
+.bankruptcy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.bankruptcy-card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+  padding: 24px;
+  box-shadow: var(--shadow-small);
+}
+
+.bankruptcy-card h3 {
+  margin: 0 0 14px;
+}
+
+.bankruptcy-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink-soft);
+}
+
+.bankruptcy-card li + li {
+  margin-top: 8px;
+}
+
+.sticky-demo-bar {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .sticky-demo-bar.is-visible {
+    position: fixed;
+    z-index: 40;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    border-top: 1px solid var(--line);
+    background: var(--white);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    box-shadow: 0 -10px 28px -18px rgba(11, 33, 63, 0.4);
+  }
+
+  .sticky-demo-bar .button {
+    width: 100%;
+  }
+
+  .bankruptcy-grid {
+    grid-template-columns: 1fr;
   }
 }

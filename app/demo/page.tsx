@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
 import Script from "next/script";
 import { Check } from "lucide-react";
+import { pageMetadata, routeMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Book a demo",
-  description:
-    "See how Legal Fusion Hub answers calls and turns bankruptcy leads into retained clients.",
-};
+export const metadata = pageMetadata(routeMeta.demo);
 
 export default function DemoPage() {
   return (

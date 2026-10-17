@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
 import { DemoCta } from "@/components/demo-cta";
+import { morrisonProof } from "@/lib/proof";
+import { pageMetadata, routeMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Legal Fusion Hub was built inside bankruptcy practice to turn the first call into a retained client, so your firm stays human where it counts.",
-};
+export const metadata = pageMetadata(routeMeta.about);
 
 export default function AboutPage() {
   return (
@@ -25,24 +22,8 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="about-proof">
-        <div className="shell about-proof-grid">
-          <div>
-            <strong>4,681</strong>
-            <span>calls answered, none sent to voicemail</span>
-          </div>
-          <div>
-            <strong>2.4 sec</strong>
-            <span>average pickup, versus 25 to 35 seconds for a person</span>
-          </div>
-          <div>
-            <strong>390 hours</strong>
-            <span>of staff time reclaimed</span>
-          </div>
-        </div>
         <div className="shell">
-          <p className="source-note">
-            Morrison Law Group. 90-day pilot, June 12 to September 9, 2026.
-          </p>
+          <p className="source-note">{morrisonProof.sentence}</p>
           <DemoCta lead="Bankruptcy intake, from the first call to a retained client." />
         </div>
       </section>
