@@ -34,7 +34,7 @@ The primary website outcome is a qualified firm visitor booking a demo.
 
 ## Positioning
 
-Legal Fusion Hub is the company and the system that answers the call and turns the lead into a retained client. The company was built from experience inside a bankruptcy practice that has filed more than 8,000 cases across more than 24 years of legal practice. That evidence appears on the homepage proof band and on About.
+Legal Fusion Hub is the company and the system that answers the call and turns the lead into a retained client. The company was built from experience inside a bankruptcy practice that has filed more than 10,000 cases across more than 24 years of legal practice. That evidence appears on the homepage proof band and on About.
 
 ## Product Family
 

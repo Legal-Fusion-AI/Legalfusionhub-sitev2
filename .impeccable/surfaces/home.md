@@ -10,7 +10,7 @@
 - Primary action: **Book a demo**. The header and hero buttons are larger than body text so the action is easy to find.
 - Prove the mechanism by showing one inquiry move from Engage to Acquire, then to a retained client.
 - Company lines: Technology for a stronger practice. One company. From first call to retained client. Every call answered. More clients retained.
-- Practice evidence (8,000+ cases, 24+ years) appears in the homepage proof band and on About.
+- Practice evidence (10,000+ cases, 24+ years) appears in the homepage proof band and on About.
 - A recorded bankruptcy intake call sits on the homepage, with a play control, waveform, and the full transcript.
 
 ## Selected direction
