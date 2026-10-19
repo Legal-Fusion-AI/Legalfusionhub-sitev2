@@ -7,7 +7,21 @@ const MP4 = "/media/unanswered-combined.mp4";
 const VTT = "/media/unanswered-combined.vtt";
 const POSTER = "/media/unanswered-combined-poster.jpg";
 
-export function CallVideo() {
+type CallVideoProps = {
+  src?: string;
+  captions?: string;
+  poster?: string;
+  ariaLabel?: string;
+  listenForHeroPlay?: boolean;
+};
+
+export function CallVideo({
+  src = MP4,
+  captions = VTT,
+  poster = POSTER,
+  ariaLabel = "Recorded after-hours call answered by AI, with captions",
+  listenForHeroPlay = true,
+}: CallVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [started, setStarted] = useState(false);
 
@@ -21,26 +35,27 @@ export function CallVideo() {
   }, []);
 
   useEffect(() => {
+    if (!listenForHeroPlay) return;
     function onPlayRequest() {
       start();
     }
     window.addEventListener("play-call-video", onPlayRequest);
     return () => window.removeEventListener("play-call-video", onPlayRequest);
-  }, [start]);
+  }, [listenForHeroPlay, start]);
 
   return (
     <div className="call-video-frame">
       <video
         ref={videoRef}
         className="call-video-el"
-        poster={POSTER}
+        poster={poster}
         preload="metadata"
         playsInline
         controls={started}
-        aria-label="Recorded after-hours call answered by AI, with captions"
+        aria-label={ariaLabel}
       >
-        <source src={MP4} type="video/mp4" />
-        <track kind="captions" src={VTT} srcLang="en" label="English" default />
+        <source src={src} type="video/mp4" />
+        <track kind="captions" src={captions} srcLang="en" label="English" default />
       </video>
       {started ? null : (
         <button

@@ -167,6 +167,12 @@ export const routeMeta = {
       "Legal Fusion Hub LLC is a Utah company founded by Mara Ream and Theron D. Morrison. Built inside a high-volume bankruptcy practice.",
     path: "/about",
   },
+  caseStudies: {
+    title: "Case Studies | Real Conversations, Real Results | Legal Fusion Hub",
+    description:
+      "Recorded bankruptcy intake calls answered by Legal Fusion Hub. Listen to a real after-hours inquiry, with a role-labeled transcript and no staff involved.",
+    path: "/case-studies",
+  },
   demo: {
     title: "Book a Demo | Legal Fusion Hub",
     description:

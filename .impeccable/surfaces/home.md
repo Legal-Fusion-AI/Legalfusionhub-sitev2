@@ -22,7 +22,7 @@
 
 ## Scope and boundaries
 
-- Routes: `/`, `/demo`, `/how-it-works`, `/about`, `/privacy`, `/terms`. `/portal` redirects to `/`.
+- Routes: `/`, `/demo`, `/how-it-works`, `/about`, `/case-studies`, `/privacy`, `/terms`. `/portal` redirects to `/`.
 - Light-only and heavily white. No stock photography, generated atmosphere, dark hero, bento grid, dollar pricing, testimonials, or customer logos.
 - Do not mention a client portal, questionnaires, case files, forms, or work after retention.
 

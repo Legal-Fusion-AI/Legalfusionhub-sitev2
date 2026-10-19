@@ -15,9 +15,10 @@ export function Brand() {
 }
 
 const links = [
-  { href: "/#hear-a-real-call", label: "See a real call" },
-  { href: "/how-it-works", label: "How it works" },
-  { href: "/about", label: "About" },
+  { href: "/#why-use-ai", label: "Why Use AI" },
+  { href: "/case-studies", label: "Case Studies" },
+  { href: "/about", label: "Team + Vision" },
+  { href: "/demo", label: "Contact" },
 ];
 
 export function SiteHeader() {

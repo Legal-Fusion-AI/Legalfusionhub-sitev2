@@ -59,7 +59,7 @@ export function HomePage() {
               </span>
               <CallVideo />
             </div>
-            <CallTranscript />
+            <CallTranscript turns={transcript} />
           </div>
           <ul className="hero-chips">
             {chips.map((chip) => (
@@ -84,7 +84,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section problem-section">
+      <section className="section problem-section" id="why-use-ai">
         <div className="shell">
           <div className="problem-heading">
             <h2>Where clients slip away.</h2>

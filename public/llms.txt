@@ -17,4 +17,5 @@
 - [Home](https://www.legalfusionhub.com/): overview, real call recording with transcript, FAQ
 - [How it works](https://www.legalfusionhub.com/how-it-works)
 - [About](https://www.legalfusionhub.com/about)
+- [Case studies](https://www.legalfusionhub.com/case-studies)
 - [Book a demo](https://www.legalfusionhub.com/demo)
