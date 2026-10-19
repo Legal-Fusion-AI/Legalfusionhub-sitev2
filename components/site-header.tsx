@@ -4,13 +4,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { useEffect, useState } from "react";
-import blackLogo from "@/blacklogo.png";
+import wordmark from "@/public/brand/retainer-pro-wordmark.png";
 import { siteConfig } from "@/lib/site-config";
 
-export function Brand() {
+export function Brand({ plated = false }: { plated?: boolean }) {
   return (
-    <Link className="brand" href="/" aria-label="Retainer Pro home">
-      <Image className="brand-logo" src={blackLogo} alt="" priority />
+    <Link
+      className={plated ? "brand brand-plated" : "brand"}
+      href="/"
+      aria-label="Retainer Pro home"
+    >
+      <Image
+        className="brand-logo"
+        src={wordmark}
+        alt=""
+        width={146}
+        height={48}
+        priority={!plated}
+        quality={100}
+        unoptimized
+        sizes="180px"
+      />
     </Link>
   );
 }

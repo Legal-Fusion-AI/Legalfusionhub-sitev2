@@ -26,7 +26,7 @@ export default async function OpenGraphImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <img src={markSrc} alt="" width={42} height={48} />
+          <img src={markSrc} alt="" width={52} height={52} />
           <span
             style={{
               fontSize: 28,
@@ -53,7 +53,7 @@ export default async function OpenGraphImage() {
               Bankruptcy intake, answered 24/7.
             </span>
           </div>
-          <img src={markSrc} alt="" width={138} height={160} />
+          <img src={markSrc} alt="" width={148} height={148} />
         </div>
       </div>
     ),

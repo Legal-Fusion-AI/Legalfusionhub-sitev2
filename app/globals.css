@@ -290,6 +290,7 @@ h3 {
 .brand {
   display: inline-flex;
   width: fit-content;
+  flex-shrink: 0;
   align-items: center;
   justify-self: start;
   color: var(--ink);
@@ -298,9 +299,25 @@ h3 {
 
 .brand-logo {
   display: block;
-  width: 32px;
-  height: 32px;
+  width: auto !important;
+  height: 40px !important;
+  max-width: 170px;
   object-fit: contain;
+}
+
+.brand-plated {
+  background: #fff;
+  border-radius: 10px;
+  padding: 7px 12px 6px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
+}
+
+.brand-plated .brand-logo {
+  height: 42px;
+}
+
+.site-header.is-compact .brand-logo {
+  height: 36px !important;
 }
 
 .desktop-nav {
@@ -476,8 +493,8 @@ h3 {
 }
 
 .hero-pill-mark {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   flex: none;
   object-fit: contain;
 }
@@ -2908,7 +2925,8 @@ h3 {
 
 /* Footer */
 .site-footer {
-  background: var(--white);
+  background: var(--ink);
+  color: #c5ced8;
 }
 
 .footer-main {
@@ -2921,7 +2939,7 @@ h3 {
 .footer-brand p {
   max-width: 48ch;
   margin: 22px 0 0;
-  color: var(--ink-soft);
+  color: #aeb8c4;
   font-size: 0.86rem;
 }
 
@@ -2934,7 +2952,7 @@ h3 {
 
 .footer-main h2 {
   margin-bottom: 8px;
-  color: #8590a0;
+  color: #8b97a8;
   font-family: var(--font-body);
   font-size: 0.68rem;
   letter-spacing: 0.08em;
@@ -2945,13 +2963,14 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: 3px;
+  color: #f3f6f9;
   font-size: 0.82rem;
   font-weight: 650;
   text-decoration: none;
 }
 
 .footer-main a:hover {
-  color: var(--blue-dark);
+  color: var(--blue);
 }
 
 .footer-main span {
@@ -2960,7 +2979,7 @@ h3 {
 }
 
 .footer-product {
-  color: var(--ink);
+  color: #f3f6f9;
   font-size: 0.82rem;
   font-weight: 650;
 }
@@ -2968,9 +2987,9 @@ h3 {
 .footer-bottom {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding-block: 22px 30px;
-  color: #7b8798;
+  color: #8b97a8;
   font-size: 0.7rem;
 }
 
@@ -3723,7 +3742,7 @@ h3 {
   .hero-layout {
     grid-template-columns: 1fr;
     gap: 22px;
-    padding: 36px 0 28px;
+    padding: 80px 0 28px;
   }
 
   .hero-copy h1 {
@@ -3852,8 +3871,13 @@ h3 {
   }
 
   .brand-logo {
-    width: 32px;
-    height: 32px;
+    width: auto !important;
+    height: 30px !important;
+    max-width: 128px;
+  }
+
+  .brand-plated .brand-logo {
+    height: 34px !important;
   }
 
   h1 {

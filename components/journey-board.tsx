@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Avatar, MacWindow } from "@/components/mac-window";
-import coloredLogo from "@/coloredlogo.png";
+import logoMark from "@/public/logo-mark.png";
 
 const sourceIcons = {
   phone: Phone,
@@ -261,7 +261,7 @@ export function JourneyBoard({ compact = false }: JourneyBoardProps) {
                 style={{ animationDelay: `${TRAVEL_MS}ms` }}
               />
             )}
-            <Image src={coloredLogo} alt="" width={36} height={36} />
+            <Image src={logoMark} alt="" width={36} height={36} />
           </div>
         )}
 

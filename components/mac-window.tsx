@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import coloredLogo from "@/coloredlogo.png";
+import logoMark from "@/public/logo-mark.png";
 import alvarezAvatar from "@/public/avatars/alvarez.webp";
 import jordanAvatar from "@/public/avatars/jordan.webp";
 import kellerAvatar from "@/public/avatars/keller.webp";
@@ -28,7 +28,7 @@ export function Avatar({ who }: { who: AvatarName }) {
 export function HubMark() {
   return (
     <span className="mac-avatar mac-avatar-mark">
-      <Image src={coloredLogo} alt="" width={48} height={48} />
+      <Image src={logoMark} alt="" width={48} height={48} />
     </span>
   );
 }

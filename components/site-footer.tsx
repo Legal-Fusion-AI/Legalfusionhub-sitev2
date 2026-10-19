@@ -7,7 +7,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="shell footer-main">
         <div className="footer-brand">
-          <Brand />
+          <Brand plated />
           <p>
             {siteConfig.tagline}. From the first call to a retained client.
           </p>

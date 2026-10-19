@@ -12,7 +12,7 @@ import { JourneyProcess } from "@/components/journey-process";
 import { JsonLd } from "@/components/json-ld";
 import { ProblemScenes } from "@/components/problem-scenes";
 import { StickyDemoBar } from "@/components/sticky-demo-bar";
-import coloredLogo from "@/coloredlogo.png";
+import logoMark from "@/public/logo-mark.png";
 import { getCallTranscript } from "@/lib/call-transcript";
 import { faqs } from "@/lib/faqs";
 import { morrisonProof, practiceEvidence } from "@/lib/proof";
@@ -34,7 +34,7 @@ export function HomePage() {
         <div className="shell hero-layout">
           <div className="hero-copy">
             <Link className="hero-pill" href="/how-it-works">
-              <Image className="hero-pill-mark" src={coloredLogo} alt="" />
+              <Image className="hero-pill-mark" src={logoMark} alt="" />
               For consumer bankruptcy firms
               <ArrowRight size={14} aria-hidden="true" />
             </Link>
