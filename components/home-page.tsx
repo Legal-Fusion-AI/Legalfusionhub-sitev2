@@ -10,7 +10,6 @@ import { HeroActions } from "@/components/hero-actions";
 import { JourneyBoard } from "@/components/journey-board";
 import { JourneyProcess } from "@/components/journey-process";
 import { JsonLd } from "@/components/json-ld";
-import { Pipeline } from "@/components/pipeline";
 import { ProblemScenes } from "@/components/problem-scenes";
 import { StickyDemoBar } from "@/components/sticky-demo-bar";
 import coloredLogo from "@/coloredlogo.png";
@@ -89,37 +88,18 @@ export function HomePage() {
             <h2>Where clients slip away.</h2>
           </div>
           <ProblemScenes />
-          <DemoCta lead="See how we answer the calls and texts that never reach your staff." />
         </div>
       </section>
 
       <section className="section how-section" id="how-it-works-overview">
         <div className="shell">
           <div className="section-heading section-heading-wide">
-            <h2>How it works.</h2>
+            <h2>Follow the inquiry from call to retained client.</h2>
             <p>
-              Donna answers. We book the consultation. Nikki follows up until
-              the client retains.
+              Retainer Pro answers, qualifies, and books the consultation.
             </p>
           </div>
-          <div className="how-pipeline">
-            <h3 className="how-subhead">Follow every lead through the pipeline.</h3>
-            <p>
-              A lead moves from New to Retained. Missed appointments and no-shows
-              move into Nurture, so nobody is forgotten.
-            </p>
-            <Pipeline />
-            <p className="pipeline-aside">
-              Before the consultation we gather a few details so the attorney can
-              weigh Chapter 7 against other options. That is to help the attorney,
-              not to qualify the lead.
-            </p>
-          </div>
-          <div className="how-journey">
-            <h3 className="how-subhead">Follow the inquiry from call to retained client.</h3>
-            <p>Hub answers, qualifies, and books the consultation.</p>
-            <JourneyProcess />
-          </div>
+          <JourneyProcess />
           <DemoCta lead="Tap the first step to watch a real lead become a retained client." />
         </div>
       </section>

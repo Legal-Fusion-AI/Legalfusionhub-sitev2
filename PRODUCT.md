@@ -27,8 +27,8 @@ Supporting lines:
 
 The site presents two parts of that path:
 
-- **Retainer Pro — Engage.** Calls and inquiries get an immediate response 24/7. Hub answers, handles the inquiry, and captures the lead.
-- **Retainer Pro — Acquire.** Hub qualifies by the firm’s criteria, follows up, schedules consultations, and helps convert bankruptcy leads into retained clients.
+- **Retainer Pro — Engage.** Calls and inquiries get an immediate response 24/7. Retainer Pro answers, handles the inquiry, and captures the lead.
+- **Retainer Pro — Acquire.** Retainer Pro qualifies by the firm’s criteria, follows up, schedules consultations, and helps convert bankruptcy leads into retained clients.
 
 The primary website outcome is a qualified firm visitor booking a demo.
 

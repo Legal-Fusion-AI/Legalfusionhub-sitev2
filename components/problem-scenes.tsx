@@ -4,38 +4,42 @@ import acquireWallpaper from "@/public/wallpapers/abstract-acquire.webp";
 
 export function ProblemScenes() {
   return (
-    <div className="problem-scenes">
-      <article className="problem-scene">
-        <div className="problem-art">
-          <Image
-            src={engageWallpaper}
-            alt=""
-            fill
-            sizes="(max-width: 1020px) 100vw, 50vw"
-          />
-          <CallScene />
-        </div>
-        <div className="problem-copy">
+    <div className="problem-rows">
+      <article className="problem-row">
+        <div className="problem-col">
+          <div className="problem-art">
+            <Image
+              src={engageWallpaper}
+              alt=""
+              fill
+              sizes="(max-width: 720px) 100vw, 50vw"
+            />
+            <CallScene />
+          </div>
           <h3>Calls go unanswered.</h3>
           <p>A call or text gets no response, including after hours.</p>
+        </div>
+        <div className="problem-col is-fix">
           <p className="problem-answer">
             Donna answers day or night, handles the inquiry, and captures the lead.
           </p>
         </div>
       </article>
-      <article className="problem-scene is-flip">
-        <div className="problem-art">
-          <Image
-            src={acquireWallpaper}
-            alt=""
-            fill
-            sizes="(max-width: 1020px) 100vw, 50vw"
-          />
-          <LeadScene />
-        </div>
-        <div className="problem-copy">
+      <article className="problem-row">
+        <div className="problem-col">
+          <div className="problem-art">
+            <Image
+              src={acquireWallpaper}
+              alt=""
+              fill
+              sizes="(max-width: 720px) 100vw, 50vw"
+            />
+            <LeadScene />
+          </div>
           <h3>A lead never becomes a consultation.</h3>
           <p>The inquiry is captured and then stalls.</p>
+        </div>
+        <div className="problem-col is-fix">
           <p className="problem-answer">
             We qualify bankruptcy leads by your criteria, follow up, and book the
             consultation.
