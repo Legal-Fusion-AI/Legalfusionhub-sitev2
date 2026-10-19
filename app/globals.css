@@ -3859,6 +3859,14 @@ h3 {
     padding-block: 75px;
   }
 
+  .case-studies-hero {
+    padding-block: 76px 16px;
+  }
+
+  .case-studies-section {
+    padding-block: 16px 72px;
+  }
+
   .narrow-hero {
     margin-inline: auto;
   }
@@ -5667,11 +5675,32 @@ h3 {
   margin-top: 8px;
 }
 
+.case-studies-hero {
+  background: white;
+  padding-block: 96px 20px;
+}
+
+.case-studies-hero h1 {
+  max-width: 18em;
+  margin: 0 0 10px;
+}
+
+.case-studies-hero p {
+  max-width: 40rem;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+.case-studies-section {
+  padding-block: 24px 88px;
+}
+
 .case-study-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 36px;
+  margin-bottom: 20px;
 }
 
 .case-study-filter {

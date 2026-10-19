@@ -15,8 +15,8 @@ export default function CaseStudiesPage() {
   return (
     <main>
       <JsonLd data={videoObjectJsonLd(transcript)} />
-      <section className="subpage-hero">
-        <div className="shell narrow-hero">
+      <section className="subpage-hero case-studies-hero">
+        <div className="shell">
           <h1>Real conversations. Real results.</h1>
           <p>
             Recorded bankruptcy intake calls. Speakers are labeled by role.

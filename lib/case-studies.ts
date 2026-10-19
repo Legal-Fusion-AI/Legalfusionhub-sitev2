@@ -44,7 +44,7 @@ export const caseStudies: CaseStudy[] = [
     id: "after-hours-new-lead",
     title: "After-hours new-lead call",
     summary:
-      "A first-time caller after hours. The receptionist answers, the intake assistant handles the inquiry, and a consultation is booked. No staff took the call.",
+      "A first-time caller after hours. The receptionist answers and connects them to the intake assistant, who gathers a few details and books a Zoom consultation. The caller asks to meet in person, and the intake assistant notes that for the team to follow up.",
     tags: ["Reception", "New lead", "After-hours"],
     roles: ["Receptionist", "Intake assistant", "Caller"],
     media: {
