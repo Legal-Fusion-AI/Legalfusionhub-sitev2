@@ -28,8 +28,8 @@ export default function CaseStudiesPage() {
           </p>
         </div>
       </section>
-      <RealProblem />
       <CaseStudiesBoard studies={studies} />
+      <RealProblem />
       <section className="page-cta">
         <div className="shell page-cta-inner">
           <h2>Every call answered. More clients retained.</h2>

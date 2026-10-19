@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowDown, ArrowRight, Check, X } from "lucide-react";
 
 const beforeItems = [
@@ -30,18 +31,20 @@ export function RealProblem() {
         <div className="real-problem-compare">
           <article className="real-problem-card is-before">
             <h3>Before Retainer Pro</h3>
-            <div className="real-problem-visual" aria-hidden="true">
-              <svg viewBox="0 0 280 56" role="presentation">
-                <polyline
-                  points="8,18 48,26 88,16 128,34 168,38 208,30 248,46 272,50"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
+            <figure className="real-problem-visual">
+              <Image
+                src="/media/before-aug2025.png"
+                alt="August 2025 dashboard. 523 total calls and 1,813 actions triggered."
+                width={1632}
+                height={433}
+                sizes="(max-width: 980px) calc(100vw - 48px), 540px"
+                className="real-problem-dash"
+                style={{ width: "100%", height: "auto" }}
+              />
+              <figcaption>
+                August 2025: 523 calls, 1,813 actions triggered
+              </figcaption>
+            </figure>
             <ul>
               {beforeItems.map((item) => (
                 <li key={item}>
@@ -59,18 +62,20 @@ export function RealProblem() {
           </div>
           <article className="real-problem-card is-after">
             <h3>After Retainer Pro</h3>
-            <div className="real-problem-visual" aria-hidden="true">
-              <svg viewBox="0 0 280 56" role="presentation">
-                <polyline
-                  points="8,34 48,30 88,28 128,24 168,22 208,20 248,18 272,16"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
+            <figure className="real-problem-visual">
+              <Image
+                src="/media/after-sep2025.png"
+                alt="September 2025 dashboard. 1,843 total calls and 7,673 actions triggered."
+                width={1653}
+                height={444}
+                sizes="(max-width: 980px) calc(100vw - 48px), 540px"
+                className="real-problem-dash"
+                style={{ width: "100%", height: "auto" }}
+              />
+              <figcaption>
+                September 2025: 1,843 calls, 7,673 actions triggered
+              </figcaption>
+            </figure>
             <ul>
               {afterItems.map((item) => (
                 <li key={item}>

@@ -5769,7 +5769,7 @@ h3 {
 }
 
 .real-problem {
-  padding: 28px 0 12px;
+  padding: 8px 0 88px;
   text-align: center;
 }
 
@@ -5840,25 +5840,28 @@ h3 {
 
 .real-problem-visual {
   display: grid;
-  margin: 16px 18px 6px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--paper);
-  padding: 18px 16px 14px;
+  gap: 8px;
+  margin: 14px 14px 4px;
 }
 
-.real-problem-visual svg {
+.real-problem-dash {
   display: block;
   width: 100%;
-  height: 44px;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
 }
 
-.real-problem-card.is-before .real-problem-visual {
-  color: var(--coral);
-}
-
-.real-problem-card.is-after .real-problem-visual {
-  color: var(--blue-dark);
+.real-problem-visual figcaption {
+  margin: 0 2px;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  text-align: left;
 }
 
 .real-problem-card ul {
