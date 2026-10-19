@@ -170,7 +170,7 @@ export const routeMeta = {
   caseStudies: {
     title: "Case Studies | Real Conversations, Real Results | Legal Fusion Hub",
     description:
-      "Recorded bankruptcy intake calls answered by Legal Fusion Hub. Listen to a real after-hours inquiry, with a role-labeled transcript and no staff involved.",
+      "Recorded bankruptcy intake calls answered by Legal Fusion Hub. After-hours intake, returning clients, warm handoffs, and messages taken, shown with permission.",
     path: "/case-studies",
   },
   demo: {

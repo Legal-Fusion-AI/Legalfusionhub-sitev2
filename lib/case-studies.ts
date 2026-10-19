@@ -12,11 +12,13 @@ export const caseStudyFilters = [
 export type CaseStudyFilter = (typeof caseStudyFilters)[number];
 export type CaseStudyTag = Exclude<CaseStudyFilter, "All Cases">;
 export type CaseStudyRole = "Receptionist" | "Intake assistant" | "Caller";
+export type CaseStudyTranscriptSource = "unanswered-combined";
 
 type CaseStudyMedia = {
   src: string;
-  captions: string;
+  captions?: string;
   poster: string;
+  square?: boolean;
 };
 
 export type PublishedCaseStudy = {
@@ -27,7 +29,7 @@ export type PublishedCaseStudy = {
   tags: CaseStudyTag[];
   roles: CaseStudyRole[];
   media: CaseStudyMedia;
-  transcriptSource: "unanswered-combined";
+  transcriptSource?: CaseStudyTranscriptSource;
 };
 
 export type UpcomingCaseStudy = {
@@ -54,15 +56,65 @@ export const caseStudies: CaseStudy[] = [
     },
     transcriptSource: "unanswered-combined",
   },
-  // TODO(case-studies): add recorded call 2
+  {
+    status: "published",
+    id: "new-lead-warm-handoff",
+    title: "New lead: intake to warm handoff.",
+    summary:
+      "The intake assistant gathers the caller's details and hands him to the team. The caller says he thought he was talking to a real person.",
+    tags: ["New Lead", "Routed"],
+    roles: ["Intake assistant", "Caller"],
+    media: {
+      src: "/media/new-lead-warm-handoff.mp4",
+      poster: "/media/new-lead-warm-handoff-poster.jpg",
+      square: true,
+    },
+  },
+  {
+    status: "published",
+    id: "after-hours-message",
+    title: "After-hours message.",
+    summary:
+      "The receptionist explains the staff member's hours and takes a detailed message about the client's questionnaire.",
+    tags: ["Returning Client", "After-Hours", "Message Taken"],
+    roles: ["Receptionist", "Caller"],
+    media: {
+      src: "/media/after-hours-message.mp4",
+      poster: "/media/after-hours-message-poster.jpg",
+      square: true,
+    },
+  },
+  {
+    status: "published",
+    id: "returning-client-routed",
+    title: "Returning client routed to case manager.",
+    summary:
+      "The receptionist routes a past client to his office's case manager.",
+    tags: ["Returning Client", "Routed"],
+    roles: ["Receptionist", "Caller"],
+    media: {
+      src: "/media/returning-client-routed.mp4",
+      poster: "/media/returning-client-routed-poster.jpg",
+      square: true,
+    },
+  },
+  {
+    status: "published",
+    id: "new-lead-cost-question",
+    title: "Cost question from a new lead.",
+    summary:
+      "The intake assistant answers the intake questions and starts the transfer to staff.",
+    tags: ["New Lead", "Routed"],
+    roles: ["Intake assistant", "Caller"],
+    media: {
+      src: "/media/new-lead-cost-question.mp4",
+      poster: "/media/new-lead-cost-question-poster.jpg",
+      square: true,
+    },
+  },
+  // TODO(case-studies): add a follow-up call recording
   { status: "todo", id: "todo-follow-up", tags: ["Follow-up"] },
-  // TODO(case-studies): add recorded call 3
-  { status: "todo", id: "todo-returning-client", tags: ["Returning Client"] },
-  // TODO(case-studies): add recorded call 4
-  { status: "todo", id: "todo-routed", tags: ["Routed"] },
-  // TODO(case-studies): add recorded call 5
-  { status: "todo", id: "todo-message-taken", tags: ["Message Taken"] },
-  // TODO(case-studies): add recorded call 6
+  // TODO(case-studies): add a reception + follow-up call recording
   { status: "todo", id: "todo-reception-follow-up", tags: ["Reception", "Follow-up"] },
 ];
 

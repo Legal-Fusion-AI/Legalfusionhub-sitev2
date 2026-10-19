@@ -25,6 +25,10 @@ export default function CaseStudiesPage() {
             See how our AI front desk handles real bankruptcy intake calls:
             politely, accurately, and without missed steps.
           </p>
+          <p className="case-studies-note">
+            Sage and Samantha are Morrison Law Group&apos;s AI assistants, shown
+            with permission.
+          </p>
         </div>
       </section>
       <CaseStudiesBoard

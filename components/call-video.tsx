@@ -11,19 +11,24 @@ type CallVideoProps = {
   src?: string;
   captions?: string;
   poster?: string;
+  square?: boolean;
   ariaLabel?: string;
+  playLabel?: string;
   listenForHeroPlay?: boolean;
 };
 
 export function CallVideo({
   src = MP4,
-  captions = VTT,
+  captions,
   poster = POSTER,
+  square = false,
   ariaLabel = "Recorded after-hours call answered by AI, with captions",
+  playLabel = "Play the recorded after-hours call",
   listenForHeroPlay = true,
 }: CallVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [started, setStarted] = useState(false);
+  const trackSrc = captions ?? (src === MP4 ? VTT : undefined);
 
   const start = useCallback(() => {
     const video = videoRef.current;
@@ -47,7 +52,7 @@ export function CallVideo({
     <div className="call-video-frame">
       <video
         ref={videoRef}
-        className="call-video-el"
+        className={square ? "call-video-el is-square" : "call-video-el"}
         poster={poster}
         preload="metadata"
         playsInline
@@ -55,13 +60,21 @@ export function CallVideo({
         aria-label={ariaLabel}
       >
         <source src={src} type="video/mp4" />
-        <track kind="captions" src={captions} srcLang="en" label="English" default />
+        {trackSrc ? (
+          <track
+            kind="captions"
+            src={trackSrc}
+            srcLang="en"
+            label="English"
+            default
+          />
+        ) : null}
       </video>
       {started ? null : (
         <button
           type="button"
           className="call-video-play"
-          aria-label="Play the recorded after-hours call"
+          aria-label={playLabel}
           onClick={start}
         >
           <Play size={26} fill="currentColor" strokeWidth={0} aria-hidden="true" />

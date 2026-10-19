@@ -7,6 +7,7 @@ import {
   caseStudyFilters,
   filterCaseStudies,
   type CaseStudyFilter,
+  type CaseStudyTranscriptSource,
   type PublishedCaseStudy,
 } from "@/lib/case-studies";
 
@@ -15,7 +16,7 @@ export function CaseStudiesBoard({
   turnsBySource,
 }: {
   studies: PublishedCaseStudy[];
-  turnsBySource: Record<PublishedCaseStudy["transcriptSource"], CallTurn[]>;
+  turnsBySource: Partial<Record<CaseStudyTranscriptSource, CallTurn[]>>;
 }) {
   const [tag, setTag] = useState<CaseStudyFilter>("All Cases");
   const visible = useMemo(
@@ -56,7 +57,11 @@ export function CaseStudiesBoard({
                 <CaseStudyCard
                   key={study.id}
                   study={study}
-                  turns={turnsBySource[study.transcriptSource]}
+                  turns={
+                    study.transcriptSource
+                      ? turnsBySource[study.transcriptSource]
+                      : undefined
+                  }
                 />
               ))}
             </div>
