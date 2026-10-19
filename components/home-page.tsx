@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { AiEmployees } from "@/components/ai-employees";
-import { AndrewJourney } from "@/components/andrew-journey";
 import { BuiltForBankruptcy } from "@/components/built-for-bankruptcy";
 import { CallTranscript } from "@/components/call-transcript";
 import { CallVideo } from "@/components/call-video";
@@ -122,21 +121,6 @@ export function HomePage() {
             <JourneyProcess />
           </div>
           <DemoCta lead="Tap the first step to watch a real lead become a retained client." />
-        </div>
-      </section>
-
-      <section className="section examples-section" id="see-it-in-action">
-        <div className="shell">
-          <div className="section-heading section-heading-wide">
-            <h2>See it in action.</h2>
-            <p>
-              One real lead, start to finish. A Morrison Law Group client we
-              will call Andrew found us at 4 a.m. and retained the firm the next
-              day. Names and details are anonymized.
-            </p>
-          </div>
-          <AndrewJourney />
-          <DemoCta lead="Bring one recent call or text to the demo. We will show it answered." />
         </div>
       </section>
 
