@@ -63,7 +63,7 @@ export function organizationGraph() {
         url: siteConfig.url,
         email: siteConfig.email,
         description: siteConfig.description,
-        logo: absoluteUrl("/logo-wordmark.png"),
+        logo: absoluteUrl("/logo-mark.png"),
         address: {
           "@type": "PostalAddress",
           addressRegion: "UT",
@@ -150,51 +150,51 @@ export function videoObjectJsonLd(transcript: CallTurn[]) {
 
 export const routeMeta = {
   home: {
-    title: "AI Receptionist for Bankruptcy Law Firms, 24/7 | Legal Fusion Hub",
+    title: "AI Receptionist for Bankruptcy Law Firms, 24/7 | Retainer Pro",
     description:
       "Donna answers every call, text, and web form for consumer bankruptcy firms, qualifies by your criteria, and books the consultation. 4,681 calls answered in a 90-day pilot.",
     path: "/",
   },
   howItWorks: {
-    title: "How AI Intake Works for Bankruptcy Firms | Legal Fusion Hub",
+    title: "How AI Intake Works for Bankruptcy Firms | Retainer Pro",
     description:
       "From first ring to retained client: how Donna handles intake, Nikki handles follow-up and no-shows, and your team meets the client.",
     path: "/how-it-works",
   },
   about: {
-    title: "About Legal Fusion Hub, Utah | Bankruptcy Intake Built Inside a Practice",
+    title: "About Retainer Pro, Utah | Bankruptcy Intake Built Inside a Practice",
     description:
-      "Legal Fusion Hub LLC is a Utah company founded by Mara Ream and Theron D. Morrison. Built inside a high-volume bankruptcy practice.",
+      "Retainer Pro by Legal Fusion Hub, LLC is a Utah company founded by Mara Ream and Theron D. Morrison. Built inside a high-volume bankruptcy practice.",
     path: "/about",
   },
   caseStudies: {
-    title: "Case Studies | Real Conversations, Real Results | Legal Fusion Hub",
+    title: "Case Studies | Real Conversations, Real Results | Retainer Pro",
     description:
-      "Recorded bankruptcy intake calls answered by Legal Fusion Hub. After-hours intake, returning clients, warm handoffs, and messages taken, shown with permission.",
+      "Recorded bankruptcy intake calls answered by Retainer Pro. After-hours intake, returning clients, warm handoffs, and messages taken, shown with permission.",
     path: "/case-studies",
   },
   demo: {
-    title: "Book a Demo | Legal Fusion Hub",
+    title: "Book a Demo | Retainer Pro",
     description:
       "See a real bankruptcy call answered and booked. Bring one recent inquiry and we will show it handled.",
     path: "/demo",
   },
   demoConfirmed: {
-    title: "You're booked | Legal Fusion Hub",
+    title: "You're booked | Retainer Pro",
     description:
-      "Your Legal Fusion Hub demo is booked. A confirmation and calendar invite are on the way.",
+      "Your Retainer Pro demo is booked. A confirmation and calendar invite are on the way.",
     path: "/demo/confirmed",
   },
   privacy: {
-    title: "Privacy policy | Legal Fusion Hub",
+    title: "Privacy policy | Retainer Pro",
     description:
-      "How Legal Fusion Hub collects and uses information submitted through this website.",
+      "How Retainer Pro collects and uses information submitted through this website.",
     path: "/privacy",
   },
   terms: {
-    title: "Terms of service | Legal Fusion Hub",
+    title: "Terms of service | Retainer Pro",
     description:
-      "Terms that govern use of the Legal Fusion Hub public website.",
+      "Terms that govern use of the Retainer Pro public website.",
     path: "/terms",
   },
 } as const;

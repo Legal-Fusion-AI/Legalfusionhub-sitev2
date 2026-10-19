@@ -44,7 +44,7 @@ export default function AboutPage() {
       </section>
       <section className="section about-entity">
         <div className="shell about-entity-card">
-          <h2>{siteConfig.legalName}</h2>
+          <h2>{siteConfig.ownerLine}</h2>
           <p>
             {siteConfig.legalName} is a {siteConfig.jurisdiction} limited
             liability company, founded by {siteConfig.founders[0].name} and{" "}

@@ -9,7 +9,7 @@ export default function PrivacyPage() {
         <h1>Privacy policy</h1>
         <p className="legal-updated">Last updated September 22, 2026</p>
         <p>
-          This policy explains how Legal Fusion Hub collects and uses
+          This policy explains how Retainer Pro collects and uses
           information submitted through this website.
         </p>
         <h2>Information we collect</h2>
@@ -22,7 +22,7 @@ export default function PrivacyPage() {
         <h2>How we use information</h2>
         <p>
           We use submitted information to respond to your request, evaluate
-          whether Legal Fusion Hub fits your firm, operate this website, and
+          whether Retainer Pro fits your firm, operate this website, and
           improve our services. We do not sell personal information.
         </p>
         <h2>Service providers</h2>

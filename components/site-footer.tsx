@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Brand } from "@/components/site-header";
-import { productLineName, productLineUrl, siteConfig } from "@/lib/site-config";
+import { siteConfig } from "@/lib/site-config";
 
 export function SiteFooter() {
   return (
@@ -21,10 +21,7 @@ export function SiteFooter() {
         </div>
         <div>
           <h2>Products</h2>
-          <Link href="/">Legal Fusion Hub</Link>
-          <a href={productLineUrl}>
-            {productLineName()}, our intake and retention product line
-          </a>
+          <Link href="/">{siteConfig.name}</Link>
         </div>
         <div>
           <h2>Legal</h2>
@@ -34,7 +31,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="shell footer-bottom">
-        <span>© {new Date().getFullYear()} Legal Fusion Hub</span>
+        <span>© {new Date().getFullYear()} {siteConfig.ownerLine}</span>
         <span>For law firms. We do not provide legal advice.</span>
       </div>
     </footer>

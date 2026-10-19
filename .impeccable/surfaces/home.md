@@ -3,7 +3,7 @@
 ## Job and audience
 
 - Persuade law-firm owners and intake leaders who need every call answered and more of those calls to become retained clients.
-- Make the product map clear: Legal Fusion Hub engages the call, then acquires the client. The public story stops when the client is retained.
+- Make the product map clear: Retainer Pro engages the call, then acquires the client. The public story stops when the client is retained.
 
 ## Outcome and proof
 

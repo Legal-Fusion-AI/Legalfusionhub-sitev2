@@ -8,7 +8,7 @@ import blackLogo from "@/blacklogo.png";
 
 export function Brand() {
   return (
-    <Link className="brand" href="/" aria-label="Legal Fusion Hub home">
+    <Link className="brand" href="/" aria-label="Retainer Pro home">
       <Image className="brand-logo" src={blackLogo} alt="" priority />
     </Link>
   );

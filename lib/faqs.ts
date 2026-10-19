@@ -8,7 +8,7 @@ export const faqs: Faq[] = [
   {
     question: "What is an AI receptionist for a bankruptcy firm?",
     answer:
-      "An AI receptionist answers a bankruptcy firm's calls, texts, and web forms at any hour, asks the firm's intake questions, and books the consultation. Legal Fusion Hub's is named Donna. Nikki follows up until the client retains.",
+      "An AI receptionist answers a bankruptcy firm's calls, texts, and web forms at any hour, asks the firm's intake questions, and books the consultation. Retainer Pro's is named Donna. Nikki follows up until the client retains.",
   },
   {
     question: "Does it give legal advice?",
@@ -18,7 +18,7 @@ export const faqs: Faq[] = [
   {
     question: "Is it an answering service?",
     answer:
-      "No. An answering service takes a message. Legal Fusion Hub books the consultation and follows up until the lead retains or moves to Nurture.",
+      "No. An answering service takes a message. Retainer Pro books the consultation and follows up until the lead retains or moves to Nurture.",
   },
   {
     question: "Do you replace my intake staff or attorneys?",

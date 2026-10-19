@@ -2,16 +2,12 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
-export const alt = "Legal Fusion Hub. From first call to retained client.";
+export const alt = "Retainer Pro. From first call to retained client.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function OpenGraphImage() {
-  const [wordmark, mark] = await Promise.all([
-    readFile(join(process.cwd(), "public/logo-wordmark.png")),
-    readFile(join(process.cwd(), "public/logo-mark.png")),
-  ]);
-  const wordmarkSrc = `data:image/png;base64,${wordmark.toString("base64")}`;
+  const mark = await readFile(join(process.cwd(), "public/logo-mark.png"));
   const markSrc = `data:image/png;base64,${mark.toString("base64")}`;
 
   return new ImageResponse(
@@ -29,7 +25,18 @@ export default async function OpenGraphImage() {
           fontFamily: "sans-serif",
         }}
       >
-        <img src={wordmarkSrc} alt="" width={394} height={48} />
+        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <img src={markSrc} alt="" width={42} height={48} />
+          <span
+            style={{
+              fontSize: 28,
+              fontWeight: 700,
+              letterSpacing: -0.8,
+            }}
+          >
+            Retainer Pro
+          </span>
+        </div>
         <div style={{ display: "flex", alignItems: "flex-end", gap: 80 }}>
           <div
             style={{

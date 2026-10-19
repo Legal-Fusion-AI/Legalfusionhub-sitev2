@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: "Legal Fusion Hub",
-  shortName: "Legal Fusion Hub",
+  name: "Retainer Pro",
+  shortName: "Retainer Pro",
   tagline: "Bankruptcy intake, answered 24/7",
   positioning:
     "We automate the moments that matter so your firm stays human where it counts.",
@@ -9,6 +9,7 @@ export const siteConfig = {
   url: "https://www.legalfusionhub.com",
   email: "jeff@legalfusionhub.com",
   legalName: "Legal Fusion Hub LLC",
+  ownerLine: "Retainer Pro by Legal Fusion Hub, LLC",
   jurisdiction: "Utah",
   founders: [
     { id: "mara-ream", name: "Mara Ream" },
@@ -22,43 +23,6 @@ export const siteConfig = {
     },
   },
 } as const;
-
-/**
- * Product-line naming.
- *
- * Legal Fusion Hub is the company and the umbrella brand. "Retainer Pro" is a
- * product-line name that sits under it. The team is split testing that name.
- *
- * There is no A/B / feature-flag framework in this repo yet (no middleware, no
- * cookie or query-param variant logic, no flags SDK). Rather than scatter the
- * literal "Retainer Pro" through the UI, the name resolves from this single
- * place. A future experiment can set `NEXT_PUBLIC_PRODUCT_LINE_VARIANT` per
- * cohort (or swap `getProductLineVariant` for a flags SDK read) without
- * touching copy anywhere else.
- *
- * retainerpro.com is taken, so wherever the product line links or points, send
- * people to `productLineUrl` (legalfusionhub.com) for now.
- */
-export const productLineUrl = "https://www.legalfusionhub.com";
-
-export type ProductLineVariant = "retainer-pro" | "control";
-
-const productLineNames: Record<ProductLineVariant, string> = {
-  "retainer-pro": "Retainer Pro",
-  control: "Legal Fusion Hub",
-};
-
-export function getProductLineVariant(): ProductLineVariant {
-  return process.env.NEXT_PUBLIC_PRODUCT_LINE_VARIANT === "control"
-    ? "control"
-    : "retainer-pro";
-}
-
-export function productLineName(
-  variant: ProductLineVariant = getProductLineVariant(),
-): string {
-  return productLineNames[variant];
-}
 
 /**
  * AI employees are named as a brand. Use the name only. "Donna" is a nod to the

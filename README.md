@@ -1,6 +1,6 @@
-# Legal Fusion Hub marketing site
+# Retainer Pro marketing site
 
-Public marketing site for Legal Fusion Hub. Hub answers the call, qualifies the lead, and books the consultation that turns a bankruptcy inquiry into a retained client.
+Public marketing site for Retainer Pro, owned by Legal Fusion Hub, LLC. Hub answers the call, qualifies the lead, and books the consultation that turns a bankruptcy inquiry into a retained client.
 
 ## Stack
 

@@ -1,4 +1,4 @@
-# Legal Fusion Hub
+# Retainer Pro
 
 <!-- impeccable:product-schema 1 -->
 
@@ -16,7 +16,7 @@ Owners, attorneys, intake leaders, and firm administrators at US law firms, espe
 
 ## Product Purpose
 
-Legal Fusion Hub takes a bankruptcy inquiry from the first call to a retained client. The positioning line is:
+Retainer Pro takes a bankruptcy inquiry from the first call to a retained client. The positioning line is:
 
 - We automate the moments that matter so your firm stays human where it counts.
 
@@ -27,21 +27,21 @@ Supporting lines:
 
 The site presents two parts of that path:
 
-- **Legal Fusion Hub — Engage.** Calls and inquiries get an immediate response 24/7. Hub answers, handles the inquiry, and captures the lead.
-- **Legal Fusion Hub — Acquire.** Hub qualifies by the firm’s criteria, follows up, schedules consultations, and helps convert bankruptcy leads into retained clients.
+- **Retainer Pro — Engage.** Calls and inquiries get an immediate response 24/7. Hub answers, handles the inquiry, and captures the lead.
+- **Retainer Pro — Acquire.** Hub qualifies by the firm’s criteria, follows up, schedules consultations, and helps convert bankruptcy leads into retained clients.
 
 The primary website outcome is a qualified firm visitor booking a demo.
 
 ## Positioning
 
-Legal Fusion Hub is the company and the system that answers the call and turns the lead into a retained client. The company was built from experience inside a bankruptcy practice that has filed more than 10,000 cases across more than 24 years of legal practice. That evidence appears on the homepage proof band and on About.
+Retainer Pro is the public brand for the system that answers the call and turns the lead into a retained client. Legal Fusion Hub, LLC is the legal owner. The company was built from experience inside a bankruptcy practice that has filed more than 10,000 cases across more than 24 years of legal practice. That evidence appears on the homepage proof band and on About.
 
 ## Product Family
 
-- **Legal Fusion Hub:** the company and the umbrella brand. This site and everything on it sits under Legal Fusion Hub.
-- **Retainer Pro:** a product-line name under Legal Fusion Hub. The team is split testing this name. There is no A/B framework in the repo yet, so the name resolves from one place (`productLineName()` in `lib/site-config.ts`, switchable via `NEXT_PUBLIC_PRODUCT_LINE_VARIANT`). retainerpro.com is taken, so wherever the product line links or points, send people to `productLineUrl` (legalfusionhub.com) for now.
+- **Retainer Pro:** the public product brand on this site. Customer-facing copy, titles, and CTAs use this name.
+- **Legal Fusion Hub, LLC:** the legal owner. Footer and About state "Retainer Pro by Legal Fusion Hub, LLC". Canonical URLs and contact email stay on legalfusionhub.com.
 
-The former public name “Legal Fusion AI” is retired. Do not publish Client Booker, AI Receptionist, Additional Products, Closebot, or GHL Voice AI. Those names stay internal.
+The former public names “Legal Fusion Hub” (as the product brand) and “Legal Fusion AI” are retired from customer-facing copy. Do not publish Client Booker, AI Receptionist, Additional Products, Closebot, or GHL Voice AI. Those names stay internal.
 
 ## AI Employees
 
@@ -97,4 +97,4 @@ We speak as "we". Lead with proof and numbers. Warm and plain. Short sentences. 
 - Do not mention a client portal, case files, or bankruptcy forms. The public story ends when the client is retained. `/portal` redirects to `/`.
 - No pricing anywhere on the public site: no dollar amounts, no plan names, no pricing structures (not even "subscription" or "pay per retained client"). Pricing is only discussed on the demo. The FAQ may say pricing is walked through on the demo and link to Book a demo.
 - Accessibility, responsive behavior, reduced-motion support, and production-ready form states are required.
-- Do not publish vendor or retired product names. The public name is Legal Fusion Hub.
+- Do not publish vendor or retired product names. The public brand is Retainer Pro. The legal owner is Legal Fusion Hub, LLC.

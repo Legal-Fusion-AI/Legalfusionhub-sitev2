@@ -29,7 +29,7 @@ export function RealProblem() {
         </p>
         <div className="real-problem-compare">
           <article className="real-problem-card is-before">
-            <h3>Before Legal Fusion Hub</h3>
+            <h3>Before Retainer Pro</h3>
             <div className="real-problem-visual" aria-hidden="true">
               <svg viewBox="0 0 280 56" role="presentation">
                 <polyline
@@ -58,7 +58,7 @@ export function RealProblem() {
             <ArrowDown className="real-problem-arrow-mobile" size={28} strokeWidth={2.4} />
           </div>
           <article className="real-problem-card is-after">
-            <h3>After Legal Fusion Hub</h3>
+            <h3>After Retainer Pro</h3>
             <div className="real-problem-visual" aria-hidden="true">
               <svg viewBox="0 0 280 56" role="presentation">
                 <polyline

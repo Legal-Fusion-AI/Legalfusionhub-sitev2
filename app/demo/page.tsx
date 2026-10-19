@@ -44,7 +44,7 @@ export default function DemoPage() {
             style={{ width: "100%", border: "none", overflow: "hidden" }}
             scrolling="no"
             id="VIkP0t3qGITBDSeHxeGs_1791207135940"
-            title="Book a demo with Legal Fusion Hub"
+            title="Book a demo with Retainer Pro"
           />
           <Script
             src="https://link.legalfusionhub.com/js/form_embed.js"

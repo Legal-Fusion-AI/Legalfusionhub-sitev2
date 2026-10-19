@@ -11,7 +11,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "AI Receptionist for Bankruptcy Law Firms, 24/7 | Legal Fusion Hub",
+    default: "AI Receptionist for Bankruptcy Law Firms, 24/7 | Retainer Pro",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,

@@ -9,19 +9,19 @@ export default function TermsPage() {
         <h1>Terms of service</h1>
         <p className="legal-updated">Last updated September 22, 2026</p>
         <p>
-          These terms govern your use of the Legal Fusion Hub public website.
+          These terms govern your use of the Retainer Pro public website.
           Product services are governed by the agreement entered into with each
           client firm.
         </p>
         <h2>Website use</h2>
         <p>
-          You may use this website to learn about Legal Fusion Hub and contact
+          You may use this website to learn about Retainer Pro and contact
           us about services. You may not interfere with the website, attempt
           unauthorized access, or use its content in a misleading manner.
         </p>
         <h2>No legal advice</h2>
         <p>
-          Legal Fusion Hub provides technology for law firms. This website does not provide legal advice,
+          Retainer Pro provides technology for law firms. This website does not provide legal advice,
           create an attorney-client relationship, or accept debtor cases.
         </p>
         <h2>Information and availability</h2>

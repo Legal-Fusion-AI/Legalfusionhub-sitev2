@@ -1,9 +1,10 @@
-# Legal Fusion Hub
+# Retainer Pro
 
-> Legal Fusion Hub is a Utah limited liability company that runs an AI front desk for consumer bankruptcy law firms. Its AI employees, Donna (intake) and Nikki (follow-up), answer calls, texts, and web forms 24/7, qualify leads by each firm's criteria, book consultations, and follow up through to a retained client. Sofia answers Spanish-language intake.
+> Retainer Pro is the AI front desk for consumer bankruptcy law firms, owned by Legal Fusion Hub, LLC, a Utah limited liability company. Its AI employees, Donna (intake) and Nikki (follow-up), answer calls, texts, and web forms 24/7, qualify leads by each firm's criteria, book consultations, and follow up through to a retained client. Sofia answers Spanish-language intake.
 
 ## Key facts
-- Legal name: Legal Fusion Hub LLC, a Utah limited liability company.
+- Public brand: Retainer Pro.
+- Legal owner: Retainer Pro by Legal Fusion Hub, LLC. Legal name: Legal Fusion Hub LLC, a Utah limited liability company.
 - Founders: Mara Ream and Theron D. Morrison.
 - Who it serves: consumer bankruptcy law firms in the United States.
 - What it does: answers every call and text, qualifies, books the consultation, confirms, and works no-shows in a Nurture stage. Attorneys and staff meet the client and decide who the firm retains.
