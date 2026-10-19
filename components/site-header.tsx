@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import { useEffect, useState } from "react";
 import blackLogo from "@/blacklogo.png";
+import { siteConfig } from "@/lib/site-config";
 
 export function Brand() {
   return (
@@ -44,7 +45,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="header-actions">
-          <Link className="button button-accent button-small" href="/demo">
+          <Link className="button button-accent button-small" href={siteConfig.bookPath}>
             Book a demo
           </Link>
         </div>
@@ -58,7 +59,7 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
-            <Link className="button button-accent" href="/demo">
+            <Link className="button button-accent" href={siteConfig.bookPath}>
               Book a demo
             </Link>
           </nav>

@@ -26,6 +26,15 @@ export const siteConfig = {
     },
   ],
   demoPath: "/demo",
+  bookPath: "/demo#contact-options",
+  // TODO: Confirm the published contact number.
+  PHONE_NUMBER: "+1 (435) 999-2539",
+  booking: {
+    calendarId: "VIkP0t3qGITBDSeHxeGs",
+    embedSrc: "https://api.leadconnectorhq.com/widget/booking/VIkP0t3qGITBDSeHxeGs",
+    iframeId: "VIkP0t3qGITBDSeHxeGs_booking",
+    scriptSrc: "https://link.msgsndr.com/js/form_embed.js",
+  },
   forms: {
     demo: {
       formId: process.env.NEXT_PUBLIC_GHL_DEMO_FORM_ID ?? "",
@@ -60,4 +69,8 @@ export type AiEmployee = (typeof aiEmployees)[number];
 export function absoluteUrl(path = "/"): string {
   const normalized = path.startsWith("/") ? path : `/${path}`;
   return new URL(normalized, siteConfig.url).toString();
+}
+
+export function phoneTelHref(number = siteConfig.PHONE_NUMBER): string {
+  return `tel:${number.replace(/[^\d+]/g, "")}`;
 }

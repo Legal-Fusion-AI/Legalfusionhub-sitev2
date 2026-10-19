@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { siteConfig } from "@/lib/site-config";
 
 export function StickyDemoBar() {
   const [visible, setVisible] = useState(false);
@@ -23,7 +24,7 @@ export function StickyDemoBar() {
       className={visible ? "sticky-demo-bar is-visible" : "sticky-demo-bar"}
       hidden={!visible}
     >
-      <Link className="button button-accent" href="/demo">
+      <Link className="button button-accent" href={siteConfig.bookPath}>
         Book a demo
       </Link>
     </div>

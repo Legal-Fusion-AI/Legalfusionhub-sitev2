@@ -70,9 +70,7 @@ Do not invent customer logos, testimonials, pricing, certifications, conversion 
 
 ## Primary Action
 
-Use the exact label **Book a demo** throughout the site. It leads to `/demo`.
-
-The demo request captures name, work email, firm, role, and optional notes. It sends to the configured booking endpoint when available and otherwise opens a pre-addressed email.
+Use the exact label **Book a demo** throughout the site. It leads to the three-option contact section on Contact (`/demo#contact-options`): send an inquiry, call us, or book a live demo. Do not name the booking vendor in visible copy.
 
 ## Brand Commitments
 

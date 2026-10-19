@@ -3,6 +3,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { DemoCta } from "@/components/demo-cta";
 import { JourneyBoard } from "@/components/journey-board";
 import { pageMetadata, routeMeta } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata = pageMetadata(routeMeta.howItWorks);
 
@@ -35,7 +36,7 @@ export default function HowItWorksPage() {
             book the consultation. Setup is light. We start with your firm name,
             a greeting, and your slogan.
           </p>
-          <Link className="button" href="/demo">
+          <Link className="button" href={siteConfig.bookPath}>
             Book a demo <ArrowRight size={17} aria-hidden="true" />
           </Link>
         </div>
@@ -72,7 +73,7 @@ export default function HowItWorksPage() {
       <section className="page-cta">
         <div className="shell page-cta-inner">
           <h2>Every call answered. More clients retained.</h2>
-          <Link className="button" href="/demo">
+          <Link className="button" href={siteConfig.bookPath}>
             Book a demo <ArrowRight size={17} aria-hidden="true" />
           </Link>
         </div>

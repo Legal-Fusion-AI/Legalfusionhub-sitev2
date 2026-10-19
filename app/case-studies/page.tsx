@@ -6,6 +6,7 @@ import { DemoCta } from "@/components/demo-cta";
 import { RealProblem } from "@/components/real-problem";
 import { publishedCaseStudies } from "@/lib/case-studies";
 import { pageMetadata, routeMeta } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata = pageMetadata(routeMeta.caseStudies);
 
@@ -49,7 +50,7 @@ export default function CaseStudiesPage() {
       <section className="page-cta">
         <div className="shell page-cta-inner">
           <h2>Every call answered. More clients retained.</h2>
-          <Link className="button" href="/demo">
+          <Link className="button" href={siteConfig.bookPath}>
             Book a demo <ArrowRight size={17} aria-hidden="true" />
           </Link>
         </div>

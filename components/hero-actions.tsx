@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { siteConfig } from "@/lib/site-config";
 
 export function HeroActions() {
   function hearCall(event: React.MouseEvent<HTMLAnchorElement>) {
@@ -18,7 +19,7 @@ export function HeroActions() {
       <Link
         id="hero-primary-cta"
         className="button button-accent"
-        href="/demo"
+        href={siteConfig.bookPath}
       >
         Book a demo
       </Link>

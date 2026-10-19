@@ -148,7 +148,7 @@ export function HomePage() {
                 </summary>
                 <p>{faq.answer}</p>
                 {faq.cta ? (
-                  <Link className="button button-accent faq-cta" href="/demo">
+                  <Link className="button button-accent faq-cta" href={siteConfig.bookPath}>
                     Book a demo
                   </Link>
                 ) : null}
@@ -173,7 +173,7 @@ export function HomePage() {
               retained client.
             </p>
           </div>
-          <Link className="button" href="/demo">
+          <Link className="button" href={siteConfig.bookPath}>
             Book a demo <ArrowRight size={17} aria-hidden="true" />
           </Link>
         </div>

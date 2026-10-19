@@ -17,7 +17,7 @@ export function SiteFooter() {
           <Link href="/#hear-a-real-call">See a real call</Link>
           <Link href="/how-it-works">How it works</Link>
           <Link href="/about">Team + Vision</Link>
-          <Link href="/demo">Book a demo</Link>
+          <Link href={siteConfig.bookPath}>Book a demo</Link>
         </div>
         <div>
           <h2>Products</h2>

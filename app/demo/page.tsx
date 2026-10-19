@@ -1,14 +1,14 @@
-import Script from "next/script";
 import { Check } from "lucide-react";
+import { ContactWays } from "@/components/contact-ways";
 import { pageMetadata, routeMeta } from "@/lib/seo";
 
 export const metadata = pageMetadata(routeMeta.demo);
 
 export default function DemoPage() {
   return (
-    <main className="demo-page">
-      <div className="shell demo-grid">
-        <div className="demo-copy">
+    <main>
+      <section className="demo-page">
+        <div className="shell demo-copy">
           <h1>See how your firm turns calls into retained clients.</h1>
           <p>
             A working look at how calls are answered and how bankruptcy leads
@@ -33,25 +33,16 @@ export default function DemoPage() {
             <span>No pressure. A look at your firm’s journey.</span>
           </div>
         </div>
-        <div className="form-panel">
-          <div className="form-panel-head">
-            <h2>Book your demo</h2>
-            <p>Pick a time that works for you.</p>
+      </section>
+      <section className="section booking-section" id="contact-options">
+        <div className="shell">
+          <div className="section-heading section-heading-wide">
+            <h2>Get in touch.</h2>
+            <p>Send an inquiry, call us, or pick a time on the calendar.</p>
           </div>
-          <iframe
-            src="https://link.legalfusionhub.com/widget/booking/VIkP0t3qGITBDSeHxeGs"
-            allow="payment"
-            style={{ width: "100%", border: "none", overflow: "hidden" }}
-            scrolling="no"
-            id="VIkP0t3qGITBDSeHxeGs_1791207135940"
-            title="Book a demo with Retainer Pro"
-          />
-          <Script
-            src="https://link.legalfusionhub.com/js/form_embed.js"
-            strategy="afterInteractive"
-          />
+          <ContactWays />
         </div>
-      </div>
+      </section>
     </main>
   );
 }
