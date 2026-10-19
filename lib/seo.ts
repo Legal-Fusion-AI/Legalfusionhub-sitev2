@@ -48,7 +48,8 @@ export function organizationGraph() {
     "@type": "Person" as const,
     "@id": absoluteUrl(`/#${founder.id}`),
     name: founder.name,
-    jobTitle: "Founder",
+    jobTitle: founder.jobTitle,
+    image: absoluteUrl(founder.image),
     worksFor: { "@id": orgId },
   }));
 
@@ -162,9 +163,9 @@ export const routeMeta = {
     path: "/how-it-works",
   },
   about: {
-    title: "About Retainer Pro, Utah | Bankruptcy Intake Built Inside a Practice",
+    title: "Team + Vision | Retainer Pro",
     description:
-      "Retainer Pro by Legal Fusion Hub, LLC is a Utah company founded by Mara Ream and Theron D. Morrison. Built inside a high-volume bankruptcy practice.",
+      "Meet Mara Ream and Theron Morrison, the legal professionals behind Retainer Pro. Retainer Pro by Legal Fusion Hub, LLC is a Utah company built inside a high-volume bankruptcy practice.",
     path: "/about",
   },
   caseStudies: {

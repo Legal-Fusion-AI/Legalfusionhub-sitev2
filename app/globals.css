@@ -3445,6 +3445,115 @@ h3 {
   color: var(--ink-soft);
 }
 
+.team-hero {
+  text-align: center;
+  padding: 108px 0 64px;
+}
+
+.team-hero-title {
+  margin: 0 auto 18px;
+  font-size: clamp(2.15rem, 5.2vw, 3.7rem);
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  background-image: linear-gradient(
+    90deg,
+    #c3330f 0%,
+    #f2421b 46%,
+    #ff7a45 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.team-hero p {
+  max-width: 46rem;
+  margin: 0 auto;
+  color: var(--ink-soft);
+  font-size: 1.06rem;
+  line-height: 1.65;
+}
+
+.team-section {
+  padding: 8px 0 48px;
+  text-align: center;
+}
+
+.team-section h2 {
+  margin: 0 auto 12px;
+  color: var(--ink);
+  font-size: clamp(1.7rem, 3.2vw, 2.35rem);
+}
+
+.team-subhead {
+  max-width: 38rem;
+  margin: 0 auto 36px;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  text-align: center;
+}
+
+.team-card {
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: 0 14px 36px -20px rgba(11, 33, 63, 0.35);
+  padding: 36px 32px 40px;
+}
+
+.team-photo {
+  width: 148px;
+  height: 148px;
+  margin: 0 auto 18px;
+  overflow: hidden;
+  border: 4px solid var(--blue-soft);
+  border-radius: 50%;
+  background: var(--paper);
+}
+
+.team-photo-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.35rem;
+}
+
+.team-role {
+  margin: 0 0 16px;
+  color: var(--blue-dark);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+.team-bio {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.team-page .about-entity {
+  padding-top: 12px;
+  padding-bottom: 24px;
+}
+
+.team-page .about-entity-card {
+  margin-inline: auto;
+  text-align: left;
+}
+
 .legal-page {
   background: var(--paper);
   padding-block: 80px 120px;
@@ -3670,6 +3779,10 @@ h3 {
     grid-template-columns: 1fr;
     gap: 35px;
   }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 720px) {
@@ -3861,6 +3974,18 @@ h3 {
 
   .case-studies-hero {
     padding: 88px 0 18px;
+  }
+
+  .team-hero {
+    padding: 88px 0 40px;
+  }
+
+  .team-hero-title {
+    font-size: 1.9rem;
+  }
+
+  .team-card {
+    padding: 28px 22px 32px;
   }
 
   .case-studies-hero h1 {

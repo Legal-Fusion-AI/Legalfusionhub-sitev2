@@ -12,8 +12,18 @@ export const siteConfig = {
   ownerLine: "Retainer Pro by Legal Fusion Hub, LLC",
   jurisdiction: "Utah",
   founders: [
-    { id: "mara-ream", name: "Mara Ream" },
-    { id: "theron-morrison", name: "Theron D. Morrison" },
+    {
+      id: "mara-ream",
+      name: "Mara Ream",
+      jobTitle: "Co-Founder & Legal Ops Tech Expert",
+      image: "/team/mara.jpg",
+    },
+    {
+      id: "theron-morrison",
+      name: "Theron D. Morrison",
+      jobTitle: "Founder & Legal Strategist",
+      image: "/team/theron.jpg",
+    },
   ],
   demoPath: "/demo",
   forms: {

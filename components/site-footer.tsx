@@ -16,7 +16,7 @@ export function SiteFooter() {
           <h2>Explore</h2>
           <Link href="/#hear-a-real-call">See a real call</Link>
           <Link href="/how-it-works">How it works</Link>
-          <Link href="/about">About</Link>
+          <Link href="/about">Team + Vision</Link>
           <Link href="/demo">Book a demo</Link>
         </div>
         <div>
