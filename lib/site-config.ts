@@ -29,11 +29,17 @@ export const siteConfig = {
   bookPath: "/demo#contact-options",
   // TODO: Confirm the published contact number.
   PHONE_NUMBER: "+1 (435) 999-2539",
+  embedScriptSrc: "https://link.legalfusionhub.com/js/form_embed.js",
   booking: {
     calendarId: "VIkP0t3qGITBDSeHxeGs",
-    embedSrc: "https://api.leadconnectorhq.com/widget/booking/VIkP0t3qGITBDSeHxeGs",
+    embedSrc: "https://link.legalfusionhub.com/widget/booking/VIkP0t3qGITBDSeHxeGs",
     iframeId: "VIkP0t3qGITBDSeHxeGs_booking",
-    scriptSrc: "https://link.msgsndr.com/js/form_embed.js",
+  },
+  inquiry: {
+    formId: "bPMjXE5PcK5rRHyn0Oh4",
+    embedSrc: "https://link.legalfusionhub.com/widget/form/bPMjXE5PcK5rRHyn0Oh4",
+    iframeId: "inline-bPMjXE5PcK5rRHyn0Oh4",
+    name: "Retainer Pro Inquiry",
   },
   forms: {
     demo: {

@@ -3101,25 +3101,19 @@ h3 {
   color: var(--blue);
 }
 
-.inquiry-embed-placeholder {
-  border: 1px dashed var(--line-dark);
-  border-radius: 12px;
-  background: var(--paper);
-  padding: 16px;
+.inquiry-embed {
+  overflow: hidden;
+  min-height: 760px;
+  border-radius: 8px;
 }
 
-.inquiry-embed-note {
-  margin: 0 0 14px;
-  color: var(--ink-soft);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.inquiry-form {
-  display: grid;
-  gap: 14px;
+.inquiry-embed iframe {
+  display: block;
+  width: 100%;
+  min-height: 760px;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
 }
 
 .contact-way .booking-panel {

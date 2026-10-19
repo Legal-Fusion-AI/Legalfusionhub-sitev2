@@ -1,37 +1,32 @@
-"use client";
+import { siteConfig } from "@/lib/site-config";
 
-export function InquiryForm() {
+export function InquiryEmbed() {
+  const { embedSrc, iframeId, formId, name } = siteConfig.inquiry;
+
   return (
-    <form
-      className="inquiry-form"
-      onSubmit={(event) => {
-        event.preventDefault();
-      }}
-      noValidate
-    >
-      <label className="field">
-        <span>Name</span>
-        <input name="name" type="text" autoComplete="name" />
-      </label>
-      <label className="field">
-        <span>Firm</span>
-        <input name="firm" type="text" autoComplete="organization" />
-      </label>
-      <label className="field">
-        <span>Email</span>
-        <input name="email" type="email" autoComplete="email" />
-      </label>
-      <label className="field">
-        <span>Phone</span>
-        <input name="phone" type="tel" autoComplete="tel" />
-      </label>
-      <label className="field">
-        <span>Message</span>
-        <textarea name="message" rows={4} />
-      </label>
-      <button className="button form-submit" type="submit">
-        Send inquiry
-      </button>
-    </form>
+    <div className="inquiry-embed">
+      <iframe
+        src={embedSrc}
+        id={iframeId}
+        title={name}
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name={name}
+        data-height="auto"
+        data-layout-iframe-id={iframeId}
+        data-form-id={formId}
+        style={{
+          width: "100%",
+          height: "100%",
+          border: "none",
+          borderRadius: "8px",
+        }}
+      />
+    </div>
   );
 }

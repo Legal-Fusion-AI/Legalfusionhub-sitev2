@@ -1,6 +1,7 @@
+import Script from "next/script";
 import { CalendarCheck, Mail, Phone } from "lucide-react";
 import { BookingWidget } from "@/components/booking-widget";
-import { InquiryForm } from "@/components/inquiry-form";
+import { InquiryEmbed } from "@/components/inquiry-form";
 import { phoneTelHref, siteConfig } from "@/lib/site-config";
 
 export function ContactWays() {
@@ -11,14 +12,7 @@ export function ContactWays() {
           <Mail size={18} strokeWidth={2} />
         </span>
         <h3>Send an inquiry</h3>
-        {/* TODO: Replace this site form with the GHL form embed. */}
-        <div
-          className="inquiry-embed-placeholder"
-          data-embed-placeholder="ghl-inquiry-form"
-        >
-          <p className="inquiry-embed-note">Placeholder for the inquiry form embed.</p>
-          <InquiryForm />
-        </div>
+        <InquiryEmbed />
       </article>
 
       <article className="contact-way">
@@ -39,6 +33,12 @@ export function ContactWays() {
         <p>Pick a time that works for you.</p>
         <BookingWidget />
       </article>
+
+      <Script
+        id="ghl-form-embed"
+        src={siteConfig.embedScriptSrc}
+        strategy="lazyOnload"
+      />
     </div>
   );
 }

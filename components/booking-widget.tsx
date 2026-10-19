@@ -1,4 +1,3 @@
-import Script from "next/script";
 import { siteConfig } from "@/lib/site-config";
 
 export function BookingWidget() {
@@ -11,7 +10,6 @@ export function BookingWidget() {
         scrolling="no"
         style={{ width: "100%", border: "none", overflow: "hidden" }}
       />
-      <Script src={siteConfig.booking.scriptSrc} strategy="lazyOnload" />
     </div>
   );
 }
