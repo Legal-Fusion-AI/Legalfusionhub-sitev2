@@ -5768,6 +5768,147 @@ h3 {
   padding: 0 0 88px;
 }
 
+.real-problem {
+  padding: 28px 0 12px;
+  text-align: center;
+}
+
+.real-problem h2 {
+  margin: 0 auto 14px;
+  color: var(--ink);
+  font-size: clamp(1.7rem, 3.2vw, 2.35rem);
+}
+
+.real-problem-quote {
+  max-width: 44rem;
+  margin: 0 auto 14px;
+  color: var(--coral);
+  font-family: var(--font-display);
+  font-size: clamp(0.98rem, 1.6vw, 1.12rem);
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+}
+
+.real-problem-line {
+  margin: 0 auto 28px;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.02rem, 1.8vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.real-problem-line span {
+  color: var(--coral);
+}
+
+.real-problem-compare {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: stretch;
+  gap: 18px;
+  text-align: left;
+}
+
+.real-problem-card {
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: 0 14px 36px -20px rgba(11, 33, 63, 0.35);
+}
+
+.real-problem-card h3 {
+  margin: 0;
+  padding: 16px 20px;
+  font-size: 1.12rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.real-problem-card.is-before h3 {
+  background: #fde4de;
+  color: var(--coral-dark);
+}
+
+.real-problem-card.is-after h3 {
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+}
+
+.real-problem-visual {
+  display: grid;
+  margin: 16px 18px 6px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  padding: 18px 16px 14px;
+}
+
+.real-problem-visual svg {
+  display: block;
+  width: 100%;
+  height: 44px;
+}
+
+.real-problem-card.is-before .real-problem-visual {
+  color: var(--coral);
+}
+
+.real-problem-card.is-after .real-problem-visual {
+  color: var(--blue-dark);
+}
+
+.real-problem-card ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 16px 20px 22px;
+  list-style: none;
+}
+
+.real-problem-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 550;
+  line-height: 1.4;
+}
+
+.real-problem-mark {
+  display: grid;
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--white);
+}
+
+.real-problem-card.is-before .real-problem-mark {
+  background: var(--coral);
+}
+
+.real-problem-card.is-after .real-problem-mark {
+  background: var(--blue);
+}
+
+.real-problem-arrow {
+  display: grid;
+  align-self: center;
+  place-items: center;
+  color: var(--blue);
+}
+
+.real-problem-arrow-mobile {
+  display: none;
+}
+
 .case-study-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -5893,10 +6034,36 @@ h3 {
   .bankruptcy-grid {
     grid-template-columns: 1fr;
   }
+
+  .real-problem-compare {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+
+  .real-problem-arrow-desk {
+    display: none;
+  }
+
+  .real-problem-arrow-mobile {
+    display: block;
+  }
 }
 
 @media (max-width: 980px) and (min-width: 721px) {
   .case-study-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .real-problem-compare {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+
+  .real-problem-arrow-desk {
+    display: none;
+  }
+
+  .real-problem-arrow-mobile {
+    display: block;
   }
 }

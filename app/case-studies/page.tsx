@@ -1,20 +1,17 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { CaseStudiesBoard } from "@/components/case-studies-board";
-import { JsonLd } from "@/components/json-ld";
-import { getCallTranscript } from "@/lib/call-transcript";
+import { RealProblem } from "@/components/real-problem";
 import { publishedCaseStudies } from "@/lib/case-studies";
-import { pageMetadata, routeMeta, videoObjectJsonLd } from "@/lib/seo";
+import { pageMetadata, routeMeta } from "@/lib/seo";
 
 export const metadata = pageMetadata(routeMeta.caseStudies);
 
 export default function CaseStudiesPage() {
-  const transcript = getCallTranscript();
   const studies = publishedCaseStudies();
 
   return (
     <main className="case-studies-page">
-      <JsonLd data={videoObjectJsonLd(transcript)} />
       <section className="case-studies-hero">
         <div className="shell">
           <h1>
@@ -31,10 +28,8 @@ export default function CaseStudiesPage() {
           </p>
         </div>
       </section>
-      <CaseStudiesBoard
-        studies={studies}
-        turnsBySource={{ "unanswered-combined": transcript }}
-      />
+      <RealProblem />
+      <CaseStudiesBoard studies={studies} />
       <section className="page-cta">
         <div className="shell page-cta-inner">
           <h2>Every call answered. More clients retained.</h2>

@@ -13,10 +13,10 @@ import {
 
 export function CaseStudiesBoard({
   studies,
-  turnsBySource,
+  turnsBySource = {},
 }: {
   studies: PublishedCaseStudy[];
-  turnsBySource: Partial<Record<CaseStudyTranscriptSource, CallTurn[]>>;
+  turnsBySource?: Partial<Record<CaseStudyTranscriptSource, CallTurn[]>>;
 }) {
   const [tag, setTag] = useState<CaseStudyFilter>("All Cases");
   const visible = useMemo(

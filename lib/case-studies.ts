@@ -43,21 +43,6 @@ export type CaseStudy = PublishedCaseStudy | UpcomingCaseStudy;
 export const caseStudies: CaseStudy[] = [
   {
     status: "published",
-    id: "after-hours-new-lead",
-    title: "After-hours new-lead call",
-    summary:
-      "A first-time caller after hours. The receptionist answers and connects them to the intake assistant, who gathers a few details and books a Zoom consultation. The caller asks to meet in person, and the intake assistant notes that for the team to follow up.",
-    tags: ["Reception", "New Lead", "After-Hours"],
-    roles: ["Receptionist", "Intake assistant", "Caller"],
-    media: {
-      src: "/media/unanswered-combined.mp4",
-      captions: "/media/unanswered-combined.vtt",
-      poster: "/media/unanswered-combined-poster.jpg",
-    },
-    transcriptSource: "unanswered-combined",
-  },
-  {
-    status: "published",
     id: "new-lead-warm-handoff",
     title: "New lead: intake to warm handoff.",
     summary:
