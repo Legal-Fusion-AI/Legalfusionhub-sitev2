@@ -165,7 +165,7 @@ export const routeMeta = {
   about: {
     title: "Team + Vision | Retainer Pro",
     description:
-      "Meet Mara Ream and Theron Morrison, the legal professionals behind Retainer Pro. Retainer Pro by Legal Fusion Hub, LLC is a Utah company built inside a high-volume bankruptcy practice.",
+      "Meet Mara Ream, Theron Morrison, and Jeffrey Willis, the team behind Retainer Pro. Retainer Pro by Legal Fusion Hub, LLC is a Utah company built inside a high-volume bankruptcy practice.",
     path: "/about",
   },
   caseStudies: {

@@ -20,7 +20,7 @@ export const siteConfig = {
     },
     {
       id: "theron-morrison",
-      name: "Theron D. Morrison",
+      name: "Theron Morrison",
       jobTitle: "Founder & Legal Strategist",
       image: "/team/theron.jpg",
     },

@@ -3495,8 +3495,8 @@ h3 {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
   text-align: center;
 }
 
@@ -3504,7 +3504,7 @@ h3 {
   border-radius: 18px;
   background: var(--white);
   box-shadow: 0 14px 36px -20px rgba(11, 33, 63, 0.35);
-  padding: 36px 32px 40px;
+  padding: 28px 20px 32px;
 }
 
 .team-photo {
@@ -3526,7 +3526,7 @@ h3 {
 
 .team-card h3 {
   margin: 0 0 6px;
-  font-size: 1.35rem;
+  font-size: 1.18rem;
 }
 
 .team-role {
@@ -3540,8 +3540,12 @@ h3 {
 .team-bio {
   margin: 0;
   color: var(--ink-soft);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.team-bio + .team-bio {
+  margin-top: 12px;
 }
 
 .team-page .about-entity {
@@ -3779,13 +3783,13 @@ h3 {
     grid-template-columns: 1fr;
     gap: 35px;
   }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 720px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
   .shell {
     width: min(100% - 32px, 1180px);
   }
