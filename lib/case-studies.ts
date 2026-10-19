@@ -100,6 +100,20 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     status: "published",
+    id: "returning-client-books-consult",
+    title: "Returning client books a consult.",
+    summary:
+      "The receptionist routes a returning client to the team, who update her contact details and schedule a Zoom consultation.",
+    tags: ["Returning Client", "Routed", "Follow-up"],
+    roles: ["Receptionist", "Caller"],
+    media: {
+      src: "/media/returning-client-books-consult.mp4",
+      poster: "/media/returning-client-books-consult-poster.jpg",
+      square: true,
+    },
+  },
+  {
+    status: "published",
     id: "new-lead-cost-question",
     title: "Cost question from a new lead.",
     summary:
@@ -112,8 +126,6 @@ export const caseStudies: CaseStudy[] = [
       square: true,
     },
   },
-  // TODO(case-studies): add a follow-up call recording
-  { status: "todo", id: "todo-follow-up", tags: ["Follow-up"] },
   // TODO(case-studies): add a reception + follow-up call recording
   { status: "todo", id: "todo-reception-follow-up", tags: ["Reception", "Follow-up"] },
 ];
