@@ -17,7 +17,7 @@ export function CaseStudiesBoard({
   studies: PublishedCaseStudy[];
   turnsBySource: Record<PublishedCaseStudy["transcriptSource"], CallTurn[]>;
 }) {
-  const [tag, setTag] = useState<CaseStudyFilter>("All");
+  const [tag, setTag] = useState<CaseStudyFilter>("All Cases");
   const visible = useMemo(
     () => filterCaseStudies(studies, tag),
     [studies, tag],
@@ -25,40 +25,48 @@ export function CaseStudiesBoard({
 
   return (
     <>
-      <div
-        className="case-study-filters"
-        role="group"
-        aria-label="Filter recorded calls"
-      >
-        {caseStudyFilters.map((filter) => (
-          <button
-            key={filter}
-            type="button"
-            className={
-              tag === filter ? "case-study-filter is-active" : "case-study-filter"
-            }
-            aria-pressed={tag === filter}
-            onClick={() => setTag(filter)}
-          >
-            {filter}
-          </button>
-        ))}
-      </div>
-      {visible.length > 0 ? (
-        <div className="case-study-grid">
-          {visible.map((study) => (
-            <CaseStudyCard
-              key={study.id}
-              study={study}
-              turns={turnsBySource[study.transcriptSource]}
-            />
+      <div className="case-study-filter-band">
+        <div
+          className="case-study-filters"
+          role="group"
+          aria-label="Filter recorded calls"
+        >
+          {caseStudyFilters.map((filter) => (
+            <button
+              key={filter}
+              type="button"
+              className={
+                tag === filter
+                  ? "case-study-filter is-active"
+                  : "case-study-filter"
+              }
+              aria-pressed={tag === filter}
+              onClick={() => setTag(filter)}
+            >
+              {filter}
+            </button>
           ))}
         </div>
-      ) : (
-        <p className="case-study-empty">
-          No recorded calls in this category yet.
-        </p>
-      )}
+      </div>
+      <section className="case-studies-section">
+        <div className="shell">
+          {visible.length > 0 ? (
+            <div className="case-study-grid">
+              {visible.map((study) => (
+                <CaseStudyCard
+                  key={study.id}
+                  study={study}
+                  turns={turnsBySource[study.transcriptSource]}
+                />
+              ))}
+            </div>
+          ) : (
+            <p className="case-study-empty">
+              No recorded calls in this category yet.
+            </p>
+          )}
+        </div>
+      </section>
     </>
   );
 }

@@ -12,18 +12,6 @@ export function CaseStudyCard({
 }) {
   return (
     <article className="case-study-card">
-      <ul className="case-study-tags">
-        {study.tags.map((tag) => (
-          <li key={tag}>{tag}</li>
-        ))}
-      </ul>
-      <h2>{study.title}</h2>
-      <p>{study.summary}</p>
-      <ul className="case-study-roles" aria-label="Speakers">
-        {study.roles.map((role) => (
-          <li key={role}>{role}</li>
-        ))}
-      </ul>
       <CallVideo
         src={study.media.src}
         captions={study.media.captions}
@@ -31,7 +19,16 @@ export function CaseStudyCard({
         ariaLabel={`${study.title}, with captions`}
         listenForHeroPlay={false}
       />
-      <CallTranscript turns={turns} />
+      <div className="case-study-card-body">
+        <h2>{study.title}</h2>
+        <p>{study.summary}</p>
+        <ul className="case-study-roles" aria-label="Speakers">
+          {study.roles.map((role) => (
+            <li key={role}>{role}</li>
+          ))}
+        </ul>
+        <CallTranscript turns={turns} />
+      </div>
     </article>
   );
 }

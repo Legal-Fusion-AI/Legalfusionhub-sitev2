@@ -13,25 +13,24 @@ export default function CaseStudiesPage() {
   const studies = publishedCaseStudies();
 
   return (
-    <main>
+    <main className="case-studies-page">
       <JsonLd data={videoObjectJsonLd(transcript)} />
-      <section className="subpage-hero case-studies-hero">
+      <section className="case-studies-hero">
         <div className="shell">
-          <h1>Real conversations. Real results.</h1>
+          <h1>
+            <span className="case-studies-accent">Real Conversations.</span>{" "}
+            <span className="case-studies-ink">Real Results.</span>
+          </h1>
           <p>
-            Recorded bankruptcy intake calls. Speakers are labeled by role.
-            Names are not shown.
+            See how our AI front desk handles real bankruptcy intake calls:
+            politely, accurately, and without missed steps.
           </p>
         </div>
       </section>
-      <section className="section case-studies-section">
-        <div className="shell">
-          <CaseStudiesBoard
-            studies={studies}
-            turnsBySource={{ "unanswered-combined": transcript }}
-          />
-        </div>
-      </section>
+      <CaseStudiesBoard
+        studies={studies}
+        turnsBySource={{ "unanswered-combined": transcript }}
+      />
       <section className="page-cta">
         <div className="shell page-cta-inner">
           <h2>Every call answered. More clients retained.</h2>

@@ -1,16 +1,16 @@
 export const caseStudyFilters = [
-  "All",
+  "All Cases",
   "Reception",
   "Follow-up",
-  "New lead",
-  "Returning client",
-  "After-hours",
+  "Returning Client",
+  "New Lead",
+  "After-Hours",
   "Routed",
-  "Message taken",
+  "Message Taken",
 ] as const;
 
 export type CaseStudyFilter = (typeof caseStudyFilters)[number];
-export type CaseStudyTag = Exclude<CaseStudyFilter, "All">;
+export type CaseStudyTag = Exclude<CaseStudyFilter, "All Cases">;
 export type CaseStudyRole = "Receptionist" | "Intake assistant" | "Caller";
 
 type CaseStudyMedia = {
@@ -45,7 +45,7 @@ export const caseStudies: CaseStudy[] = [
     title: "After-hours new-lead call",
     summary:
       "A first-time caller after hours. The receptionist answers and connects them to the intake assistant, who gathers a few details and books a Zoom consultation. The caller asks to meet in person, and the intake assistant notes that for the team to follow up.",
-    tags: ["Reception", "New lead", "After-hours"],
+    tags: ["Reception", "New Lead", "After-Hours"],
     roles: ["Receptionist", "Intake assistant", "Caller"],
     media: {
       src: "/media/unanswered-combined.mp4",
@@ -57,11 +57,11 @@ export const caseStudies: CaseStudy[] = [
   // TODO(case-studies): add recorded call 2
   { status: "todo", id: "todo-follow-up", tags: ["Follow-up"] },
   // TODO(case-studies): add recorded call 3
-  { status: "todo", id: "todo-returning-client", tags: ["Returning client"] },
+  { status: "todo", id: "todo-returning-client", tags: ["Returning Client"] },
   // TODO(case-studies): add recorded call 4
   { status: "todo", id: "todo-routed", tags: ["Routed"] },
   // TODO(case-studies): add recorded call 5
-  { status: "todo", id: "todo-message-taken", tags: ["Message taken"] },
+  { status: "todo", id: "todo-message-taken", tags: ["Message Taken"] },
   // TODO(case-studies): add recorded call 6
   { status: "todo", id: "todo-reception-follow-up", tags: ["Reception", "Follow-up"] },
 ];
@@ -80,6 +80,6 @@ export function filterCaseStudies(
   studies: PublishedCaseStudy[],
   tag: CaseStudyFilter,
 ) {
-  if (tag === "All") return studies;
+  if (tag === "All Cases") return studies;
   return studies.filter((study) => study.tags.includes(tag));
 }
