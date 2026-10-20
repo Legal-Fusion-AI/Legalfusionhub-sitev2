@@ -8,7 +8,13 @@ export function BookingWidget() {
         id={siteConfig.booking.iframeId}
         title="Book a live demo"
         scrolling="no"
-        style={{ width: "100%", border: "none", overflow: "hidden" }}
+        style={{
+          width: "100%",
+          height: 880,
+          minHeight: 880,
+          border: "none",
+          overflow: "hidden",
+        }}
       />
     </div>
   );
