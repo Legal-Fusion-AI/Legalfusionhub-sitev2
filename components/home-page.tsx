@@ -233,7 +233,7 @@ export function HomePage() {
               <Link className="button" href={siteConfig.bookPath}>
                 Book a demo <ArrowRight size={17} aria-hidden="true" />
               </Link>
-              <a className="button button-ghost" href={phoneTelHref(siteConfig.DEMO_LINE)}>
+              <a className="button button-outline" href={phoneTelHref(siteConfig.DEMO_LINE)}>
                 <Phone size={17} aria-hidden="true" />
                 Try Donna now
               </a>

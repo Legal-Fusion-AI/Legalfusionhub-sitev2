@@ -1334,10 +1334,11 @@
 }
 
 .closing-band {
-  margin: 0 14px 14px;
+  margin: 0 14px 20px;
+  border: 1px solid var(--line);
   border-radius: 26px;
-  background: var(--ink);
-  color: var(--white);
+  background: var(--gray);
+  color: var(--ink);
 }
 
 .closing-band-inner {
@@ -1352,7 +1353,7 @@
 }
 
 .closing-kicker {
-  color: var(--blue);
+  color: var(--blue-dark);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -1367,7 +1368,7 @@
 
 .closing-sub {
   max-width: 36rem;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--ink-soft);
   font-size: 1.08rem;
 }
 
@@ -1385,20 +1386,8 @@
   font-size: 1.05rem;
 }
 
-.button-ghost {
-  border-color: rgba(255, 255, 255, 0.4);
-  background: transparent;
-  color: var(--white);
-  box-shadow: none;
-}
-
-.button-ghost:hover {
-  border-color: rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.08);
-}
-
 .closing-line {
-  color: rgba(255, 255, 255, 0.62);
+  color: var(--ink-soft);
   font-size: 0.95rem;
   font-variant-numeric: tabular-nums;
 }
