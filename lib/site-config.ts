@@ -5,7 +5,7 @@ export const siteConfig = {
   positioning:
     "We automate the moments that matter so your firm stays human where it counts.",
   description:
-    "Donna answers every call, text, and web form for consumer bankruptcy firms, qualifies by your criteria, and books the consultation. Nikki follows up until the client retains.",
+    "Donna answers every call for consumer bankruptcy firms. Nikki answers every text and web inquiry and follows up until the client retains. Both qualify by your criteria and book the consultation.",
   url: "https://www.legalfusionhub.com",
   email: "jeff@legalfusionhub.com",
   legalName: "Legal Fusion Hub LLC",
@@ -61,14 +61,14 @@ export const aiEmployees = [
     name: "Donna",
     role: "Intake",
     blurb:
-      "Donna answers every call and text, day or night, handles the inquiry, captures the lead, and books the consultation.",
+      "Donna answers every call, day or night, in English or Spanish, handles the inquiry, captures the lead, and books the consultation.",
   },
   {
     id: "nikki",
     name: "Nikki",
     role: "Follow-up",
     blurb:
-      "Nikki confirms the appointment, follows up, and keeps missed appointments and no-shows from going cold.",
+      "Nikki answers every text and web inquiry instantly, in English or Spanish, confirms the appointment, follows up, and keeps missed appointments and no-shows from going cold.",
   },
 ] as const;
 

@@ -43,7 +43,7 @@ export const faqs: Faq[] = [
   {
     question: "Do you offer Spanish support?",
     answer:
-      "Yes. Sofia answers in Spanish, handles the inquiry, and books the consultation the same way, so Spanish-speaking callers get a real answer.",
+      "Yes. Donna and Nikki both speak Spanish. Spanish-speaking callers get the same intake, follow-up, and booking, so they get a real answer instead of a callback.",
   },
   {
     question: "Do callers know they are talking to an AI?",

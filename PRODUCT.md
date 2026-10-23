@@ -47,9 +47,9 @@ The former public names “Legal Fusion Hub” (as the product brand) and “Leg
 
 AI employees are named as a brand. Use the name only, never a title from any show.
 
-- **Donna** handles intake: answers every call and text, handles the inquiry, captures the lead, and books the consultation. The name is a nod to the legal TV show; the show title is never used.
-- **Nikki** handles follow-up: confirms the appointment, follows up, and nurtures missed appointments and no-shows.
-- **Sofia** handles Spanish-language intake.
+- **Donna** handles the phone: answers every call, handles the inquiry, captures the lead, and books the consultation. Donna does not text. The name is a nod to the legal TV show; the show title is never used.
+- **Nikki** handles texts, web inquiries, and follow-up: responds instantly, confirms the appointment, follows up, and nurtures missed appointments and no-shows.
+- Both Donna and Nikki speak English and Spanish. There is no separate Spanish-language employee (Sofia is retired; confirmed by Mara 2026-10-23).
 
 Never promise unlimited voice minutes. Never claim the product replaces attorneys or staff.
 

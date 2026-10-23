@@ -163,11 +163,12 @@ export function HomePage() {
       <section className="section meet-section" aria-labelledby="meet-heading">
         <div className="shell">
           <Reveal className="meet-head">
-            <h2 id="meet-heading">Meet Donna, Nikki, and Sofia.</h2>
+            <h2 id="meet-heading">Meet Donna and Nikki.</h2>
             <p>
-              Three AI employees with one job: make sure nobody who reaches out
-              to your firm gets lost. They work around your team, not in place
-              of it.
+              Two AI employees with one job: make sure nobody who reaches out
+              to your firm gets lost. Donna takes the calls. Nikki takes the
+              texts and web inquiries and follows up. Both speak English and
+              Spanish, and they work around your team, not in place of it.
             </p>
           </Reveal>
           <AiTeam />

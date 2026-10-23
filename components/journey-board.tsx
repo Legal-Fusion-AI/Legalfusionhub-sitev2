@@ -37,7 +37,7 @@ const stages = [
     id: "engage",
     short: "Engage",
     title: "Someone calls your firm. Donna picks up on the first ring.",
-    body: "She answers calls, texts, and web forms around the clock, finds out what the person needs, and makes sure nothing gets lost before your team sees it.",
+    body: "She answers the phone around the clock, finds out what the person needs, and makes sure nothing gets lost before your team sees it. Nikki picks up the texts and web forms.",
     meta: "Any hour",
     detail: "Donna answered and listened",
     owner: "Finding a time that works",

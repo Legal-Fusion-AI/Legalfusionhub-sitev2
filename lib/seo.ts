@@ -153,7 +153,7 @@ export const routeMeta = {
   home: {
     title: "AI Receptionist for Bankruptcy Law Firms, 24/7 | Retainer Pro",
     description:
-      "Donna answers every call, text, and web form for consumer bankruptcy firms, qualifies by your criteria, and books the consultation. 4,681 calls answered in a 90-day pilot.",
+      "Donna answers every call for consumer bankruptcy firms. Nikki answers every text and web inquiry. Together they qualify by your criteria and book the consultation. 4,681 calls answered in a 90-day pilot.",
     path: "/",
   },
   howItWorks: {
