@@ -344,7 +344,7 @@ h3 {
   position: relative;
   display: grid;
   overflow: hidden;
-  min-height: 80vh;
+  min-height: auto;
   align-items: center;
   margin: 12px;
   border: 1px solid #e8ecec;
@@ -376,7 +376,7 @@ h3 {
   justify-content: center;
   gap: 22px;
   margin-inline: auto;
-  padding: 72px 0 24px;
+  padding: 96px 0 80px;
   text-align: center;
 }
 
@@ -2965,10 +2965,21 @@ h3 {
 .footer-bottom {
   display: flex;
   justify-content: space-between;
+  gap: 16px;
   border-top: 1px solid var(--line);
   padding-block: 22px 30px;
   color: #7b8798;
   font-size: 0.7rem;
+}
+
+.footer-bottom a {
+  color: inherit;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: var(--blue-dark);
 }
 
 /* Demo and forms */
@@ -4292,5 +4303,262 @@ h3 {
   .voice-widget-panel {
     width: min(280px, calc(100vw - 24px));
     max-height: min(360px, calc(100vh - 88px));
+  }
+}
+
+/* Retainer Pro homepage preview */
+.hero-roles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-roles li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: white;
+  padding: 7px 12px;
+}
+
+.hero-roles strong {
+  font-family: "Bricolage Grotesque Variable", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.hero-roles span {
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.hero-helper {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.hero-disclosure {
+  max-width: 36rem;
+  margin: 0;
+  color: #69778b;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.closing-actions {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+}
+
+.call-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 1px solid var(--line);
+  padding: 14px 16px 12px;
+}
+
+.call-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: white;
+  color: var(--ink);
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.call-tabs button.is-active {
+  border-color: var(--blue-dark);
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+}
+
+.call-one-liner {
+  margin: 0 18px 8px;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+.call-try {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+  border-top: 1px solid var(--line);
+  padding: 18px;
+}
+
+.call-try-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line-dark);
+  border-radius: 9px;
+  background: white;
+  color: var(--ink);
+  padding: 11px 16px;
+  font-size: 0.92rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.call-try-link:hover {
+  border-color: var(--blue-dark);
+  color: var(--blue-dark);
+}
+
+.call-try-label {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.call-try-note {
+  max-width: 46rem;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.meet-ais {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.meet-ai {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: white;
+  padding: 24px;
+}
+
+.meet-ai-icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+}
+
+.meet-ai-role {
+  margin: 8px 0 0;
+  color: var(--blue-dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.meet-ai h3 {
+  margin: 0;
+  font-size: 1.7rem;
+}
+
+.meet-ai p:last-child {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.never-answers-section {
+  border-block: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.never-answers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.never-answers-col {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: white;
+  padding: 24px;
+}
+
+.never-answers-col h3 {
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+}
+
+.never-answers-col ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.never-answers-col li {
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.never-answers-col li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.never-answers-line {
+  margin: 28px 0 0;
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.zigzag-still {
+  max-width: 42ch;
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 650;
+}
+
+@media (max-width: 1020px) {
+  .meet-ais,
+  .never-answers {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .call-tabs button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+
+  .closing-actions {
+    width: 100%;
+  }
+
+  .closing-actions .button {
+    width: 100%;
   }
 }

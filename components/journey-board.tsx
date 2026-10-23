@@ -19,8 +19,8 @@ const stages = [
   {
     id: "engage",
     short: "Engage",
-    title: "Never miss a call.",
-    body: "Hub answers calls 24/7, handles inquiries, and captures the lead.",
+    title: "Donna answers the call.",
+    body: "Donna answers calls around the clock, handles inquiries, and captures the lead.",
     meta: "24/7",
     detail: "New inquiry captured",
     owner: "Hub intake",

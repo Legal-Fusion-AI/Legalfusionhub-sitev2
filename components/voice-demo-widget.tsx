@@ -42,9 +42,11 @@ export function VoiceDemoWidget() {
     seekFromClientX,
   } = useCallAudio();
 
-  const hidden = HIDDEN_PREFIXES.some(
-    (prefix) => pathname === prefix || pathname?.startsWith(`${prefix}/`),
-  );
+  const hidden =
+    pathname === "/" ||
+    HIDDEN_PREFIXES.some(
+      (prefix) => pathname === prefix || pathname?.startsWith(`${prefix}/`),
+    );
 
   useEffect(() => {
     if (hidden || open) return;
