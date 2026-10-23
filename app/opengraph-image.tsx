@@ -1,19 +1,10 @@
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
-export const alt = "Legal Fusion Hub — from first call to retained client";
+export const alt = "Monday, 8:05 AM. The voicemail box is full from the weekend.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default async function OpenGraphImage() {
-  const [wordmark, mark] = await Promise.all([
-    readFile(join(process.cwd(), "public/logo-wordmark.png")),
-    readFile(join(process.cwd(), "public/logo-mark.png")),
-  ]);
-  const wordmarkSrc = `data:image/png;base64,${wordmark.toString("base64")}`;
-  const markSrc = `data:image/png;base64,${mark.toString("base64")}`;
-
+export default function OpenGraphImage() {
   return new ImageResponse(
     (
       <div
@@ -23,30 +14,45 @@ export default async function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#ffffff",
-          color: "#0b213f",
-          padding: "68px 76px",
-          fontFamily: "sans-serif",
+          background: "#0B0F14",
+          color: "#F4EFE6",
+          padding: "72px 80px",
         }}
       >
-        <img src={wordmarkSrc} alt="" width={394} height={48} />
-        <div style={{ display: "flex", alignItems: "flex-end", gap: 80 }}>
+        <div
+          style={{
+            display: "flex",
+            color: "#8B95A5",
+            fontSize: 18,
+            letterSpacing: 6,
+            textTransform: "uppercase",
+          }}
+        >
+          Mon 8:05
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
           <div
             style={{
               display: "flex",
-              maxWidth: 820,
-              flexDirection: "column",
-              gap: 22,
+              maxWidth: 920,
+              fontFamily: "Georgia, serif",
+              fontSize: 64,
+              lineHeight: 1.05,
+              letterSpacing: -1,
             }}
           >
-            <strong style={{ fontSize: 64, lineHeight: 0.98, letterSpacing: -3 }}>
-              From first call to retained client.
-            </strong>
-            <span style={{ color: "#4a5a6e", fontSize: 25 }}>
-              Bankruptcy intake, answered 24/7.
-            </span>
+            Monday, 8:05 AM. The voicemail box is full from the weekend.
           </div>
-          <img src={markSrc} alt="" width={138} height={160} />
+          <div
+            style={{
+              width: 72,
+              height: 2,
+              background: "#C4A574",
+            }}
+          />
+          <div style={{ color: "#8B95A5", fontSize: 24 }}>
+            What if Monday started with a list, not a pile?
+          </div>
         </div>
       </div>
     ),
