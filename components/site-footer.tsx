@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Brand } from "@/components/site-header";
-import { siteConfig } from "@/lib/site-config";
 
 export function SiteFooter() {
   return (
@@ -9,7 +8,8 @@ export function SiteFooter() {
         <div className="footer-brand">
           <Brand />
           <p>
-            {siteConfig.tagline}. From the first call to a retained client.
+            Retainer Pro is a product of Legal Fusion Hub. From the first call
+            to a retained client.
           </p>
         </div>
         <div>

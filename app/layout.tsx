@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import "@fontsource-variable/manrope";
 import "@fontsource-variable/bricolage-grotesque";
-import "@fontsource-variable/geist";
-import "@fontsource/instrument-serif/400.css";
 import "./globals.css";
-import "./night-desk.css";
-import { SiteShell } from "@/components/site-shell";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { VoiceDemoWidget } from "@/components/voice-demo-widget";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -31,17 +30,16 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `try{if(location.pathname==="/")document.documentElement.classList.add("is-night-desk")}catch(e){}`,
-          }}
-        />
+        {/* THESIS: One company takes a bankruptcy inquiry from the first call to a retained client. OWN-WORLD: white operational field, ink type, blue routing, coral action, green completion. STORY: engage the call, acquire the client, book a demo. FIRST VIEWPORT: centered serif headline, subheadline, and demo CTA on a pale abstract field, with the live journey board beneath. */}
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>
-        <SiteShell>{children}</SiteShell>
+        <SiteHeader />
+        <div id="main-content">{children}</div>
+        <SiteFooter />
+        <VoiceDemoWidget />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}

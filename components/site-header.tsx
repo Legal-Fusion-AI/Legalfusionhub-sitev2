@@ -4,20 +4,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { useEffect, useState } from "react";
-import blackLogo from "@/blacklogo.png";
+import coloredLogo from "@/coloredlogo.png";
 
 export function Brand() {
   return (
-    <Link className="brand" href="/" aria-label="Legal Fusion Hub home">
-      <Image className="brand-logo" src={blackLogo} alt="" priority />
+    <Link className="brand" href="/" aria-label="Retainer Pro home">
+      <Image className="brand-logo" src={coloredLogo} alt="" priority />
+      <span className="brand-name">
+        Retainer<span>Pro</span>
+      </span>
     </Link>
   );
 }
 
 const links = [
-  { href: "/#products", label: "Products" },
-  { href: "/how-it-works", label: "How it works" },
-  { href: "/about", label: "About" },
+  { href: "/how-it-works", label: "Why Use AI" },
+  { href: "/#call-transcript", label: "Case Studies" },
+  { href: "/about", label: "Team + Vision" },
+  { href: "/demo", label: "Contact" },
 ];
 
 export function SiteHeader() {
