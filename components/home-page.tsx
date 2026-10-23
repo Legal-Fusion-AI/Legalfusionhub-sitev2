@@ -75,6 +75,10 @@ export function HomePage() {
               assistant, answers the firm&apos;s qualifying questions, and has
               a consultation on the calendar before the call ends.
             </p>
+            <p className="call-intro-note">
+              This recording has been redacted to protect the caller&apos;s
+              privacy.
+            </p>
           </div>
           <div className="call-media">
             <CallAudio
