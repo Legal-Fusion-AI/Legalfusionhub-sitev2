@@ -27,6 +27,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Analytics pixel (lspxl). Vendor asks for it in <head> on every page, before other scripts. Added 2026-10-23. */}
+        <script async src="https://px.lspxl.com/c/6977f114-62dd-4fe9-9bb6-dbd0c338520a" />
+      </head>
       <body>
         <a className="skip-link" href="#main-content">
           Skip to content
