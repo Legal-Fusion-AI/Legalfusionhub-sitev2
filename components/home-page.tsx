@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { AiTeam } from "@/components/ai-team";
 import { BuiltForBankruptcy } from "@/components/built-for-bankruptcy";
 import { CallLine } from "@/components/call-line";
