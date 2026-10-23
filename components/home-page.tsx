@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import { AiEmployees } from "@/components/ai-employees";
+import { AiTeam } from "@/components/ai-team";
 import { BuiltForBankruptcy } from "@/components/built-for-bankruptcy";
 import { CallLine } from "@/components/call-line";
 import { CallAudio } from "@/components/call-audio";
@@ -9,6 +9,7 @@ import { CallTranscript } from "@/components/call-transcript";
 import { DemoCta } from "@/components/demo-cta";
 import { FounderBand } from "@/components/founder-band";
 import { HeroActions } from "@/components/hero-actions";
+import { Phone } from "lucide-react";
 import { JourneyBoard } from "@/components/journey-board";
 import { JourneyProcess } from "@/components/journey-process";
 import { JsonLd } from "@/components/json-ld";
@@ -23,7 +24,7 @@ import { demoCall, demoCallTurns } from "@/lib/demo-call";
 import { faqs } from "@/lib/faqs";
 import { morrisonProof } from "@/lib/proof";
 import { audioObjectJsonLd, faqPageJsonLd } from "@/lib/seo";
-import { siteConfig } from "@/lib/site-config";
+import { phoneTelHref, siteConfig } from "@/lib/site-config";
 
 export function HomePage() {
   return (
@@ -59,7 +60,7 @@ export function HomePage() {
               </h1>
               <p className="hero-subhead">
                 <strong>Never miss another potential client.</strong> Donna
-                answers every call, Nikki responds instantly to texts and web
+                answers every call. Nikki responds instantly to texts and web
                 inquiries, and together they keep your intake running 24/7,
                 from the first conversation to a booked consultation and
                 through retention.
@@ -159,42 +160,48 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section employees-section">
+      <section className="section meet-section" aria-labelledby="meet-heading">
         <div className="shell">
-          <div className="section-heading section-heading-wide">
-            <h2>Meet Donna and Nikki.</h2>
+          <Reveal className="meet-head">
+            <h2 id="meet-heading">Meet Donna, Nikki, and Sofia.</h2>
             <p>
-              {siteConfig.positioning} They work around your team, not in place
-              of it. Callers are told they are speaking with an AI assistant.
-              Your firm approves the greeting. Sofia answers Spanish-language
-              intake the same way.
+              Three AI employees with one job: make sure nobody who reaches out
+              to your firm gets lost. They work around your team, not in place
+              of it.
             </p>
-          </div>
-          <AiEmployees />
+          </Reveal>
+          <AiTeam />
+          <p className="meet-note">
+            Callers are told they are speaking with an AI assistant, and your
+            firm approves the greeting before anyone hears it.
+          </p>
         </div>
       </section>
 
-      <section className="section bankruptcy-section">
+      <section className="section bankruptcy-section" aria-labelledby="bankruptcy-heading">
         <div className="shell">
-          <div className="section-heading section-heading-wide">
-            <h2>Built for bankruptcy firms.</h2>
+          <Reveal className="lower-head">
+            <h2 id="bankruptcy-heading">Built for bankruptcy firms, and only bankruptcy firms.</h2>
             <p>
               Donna handles consumer bankruptcy intake. She collects what your
               attorney needs and leaves the legal judgment to your team.
             </p>
-          </div>
+          </Reveal>
           <BuiltForBankruptcy />
         </div>
       </section>
 
-      <section className="section faq-section">
+      <section className="section faq-section" aria-labelledby="faq-heading">
         <div className="shell faq-grid">
-          <div className="faq-intro">
-            <h2>Questions before the conversation.</h2>
-            <p>Your demo shows how your firm turns calls into retained clients.</p>
-            <DemoCta lead="Bring one recent inquiry to the demo." />
-          </div>
-          <div className="faq-list">
+          <Reveal className="faq-intro">
+            <h2 id="faq-heading">Questions before the conversation.</h2>
+            <p>
+              The ones firms ask us first. Bring one recent inquiry to the
+              demo and we&apos;ll walk through exactly how it would have gone.
+            </p>
+            <DemoCta />
+          </Reveal>
+          <Reveal className="faq-list" delay={0.1}>
             {faqs.map((faq, index) => (
               <details key={faq.question} open={index === 0}>
                 <summary>
@@ -209,28 +216,32 @@ export function HomePage() {
                 ) : null}
               </details>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="closing-cta">
-        <div className="closing-route" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className="shell closing-inner">
-          <div>
-            <h2>Every call answered. More clients retained.</h2>
-            <p>
+      <section className="closing-band" aria-labelledby="closing-heading">
+        <div className="shell closing-band-inner">
+          <Reveal>
+            <p className="closing-kicker">The whole promise</p>
+            <h2 id="closing-heading">Every call answered. More clients retained.</h2>
+            <p className="closing-sub">
               See how we take a bankruptcy inquiry from the first call to a
-              retained client.
+              retained client. Or skip the demo and call Donna yourself.
             </p>
-          </div>
-          <Link className="button" href={siteConfig.bookPath}>
-            Book a demo <ArrowRight size={17} aria-hidden="true" />
-          </Link>
+            <div className="closing-actions">
+              <Link className="button" href={siteConfig.bookPath}>
+                Book a demo <ArrowRight size={17} aria-hidden="true" />
+              </Link>
+              <a className="button button-ghost" href={phoneTelHref(siteConfig.DEMO_LINE)}>
+                <Phone size={17} aria-hidden="true" />
+                Try Donna now
+              </a>
+            </div>
+            <p className="closing-line">
+              Or call {siteConfig.DEMO_LINE.replace(/^\+1 /, "")} from your phone.
+            </p>
+          </Reveal>
         </div>
       </section>
       <JsonLd data={faqPageJsonLd()} />
