@@ -12,6 +12,9 @@ import { HeroActions } from "@/components/hero-actions";
 import { JourneyBoard } from "@/components/journey-board";
 import { JourneyProcess } from "@/components/journey-process";
 import { JsonLd } from "@/components/json-ld";
+import BlurText from "@/components/react-bits/BlurText";
+import { Reveal } from "@/components/reveal";
+import { StatCount } from "@/components/stat-count";
 import { ProblemScenes } from "@/components/problem-scenes";
 import { StickyDemoBar } from "@/components/sticky-demo-bar";
 import { TeamStrip } from "@/components/team-strip";
@@ -31,7 +34,28 @@ export function HomePage() {
             <div className="hero-copy">
               <p className="hero-eyebrow"><i aria-hidden="true" />{siteConfig.tagline}</p>
               <h1>
-                From the first call to a <em>retained client.</em>
+                <BlurText
+                  as="span"
+                  text="From the first call to a"
+                  trigger="load"
+                  animateBy="words"
+                  delay={90}
+                  stepDuration={0.32}
+                  blur={8}
+                  distance={18}
+                />{" "}
+                <BlurText
+                  as="span"
+                  className="hero-h1-accent"
+                  text="retained client."
+                  trigger="load"
+                  animateBy="words"
+                  delay={90}
+                  startDelay={420}
+                  stepDuration={0.32}
+                  blur={8}
+                  distance={18}
+                />
               </h1>
               <p className="hero-subhead">
                 <strong>Never miss another potential client.</strong> Donna
@@ -54,9 +78,11 @@ export function HomePage() {
                 </div>
               </div>
               <ul>
-                {morrisonProof.stats.map((item) => (
+                {morrisonProof.stats.map((item, index) => (
                   <li key={item.label}>
-                    <strong>{item.stat}</strong>
+                    <strong>
+                      <StatCount value={item.stat} delay={0.1 * index} />
+                    </strong>
                     <span>{item.label}</span>
                   </li>
                 ))}
@@ -75,7 +101,7 @@ export function HomePage() {
 
       <section className="section call-section" id="hear-a-real-call">
         <div className="shell call-grid">
-          <div className="call-intro">
+          <Reveal className="call-intro">
             <h2>Hear what your callers will hear.</h2>
             <p>
               Two minutes and fifty-five seconds, start to finish. The caller
@@ -94,8 +120,8 @@ export function HomePage() {
                 intake assistant hands a new lead to the team.
               </small>
             </blockquote>
-          </div>
-          <div className="call-media">
+          </Reveal>
+          <Reveal className="call-media" delay={0.12}>
             <CallAudio
               src={demoCall.src}
               captions={demoCall.captions}
@@ -104,7 +130,7 @@ export function HomePage() {
               tag={`Real call · ${demoCall.durationLabel}`}
             />
             <CallTranscript turns={demoCallTurns} />
-          </div>
+          </Reveal>
         </div>
       </section>
 

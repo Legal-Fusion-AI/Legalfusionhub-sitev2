@@ -1,6 +1,8 @@
 import Image from "next/image";
 import theron from "@/public/team/theron-portrait.jpg";
 import { morrisonProof } from "@/lib/proof";
+import { Reveal } from "@/components/reveal";
+import { StatCount } from "@/components/stat-count";
 
 /**
  * Built inside a real firm. Facts only: Theron's experience and the Morrison
@@ -11,6 +13,7 @@ export function FounderBand() {
   return (
     <section className="founder" aria-labelledby="founder-heading">
       <div className="shell founder-inner">
+        <Reveal className="founder-photo-wrap">
         <figure className="founder-photo">
           <Image
             src={theron}
@@ -23,7 +26,8 @@ export function FounderBand() {
             Founder, Morrison Law Group
           </figcaption>
         </figure>
-        <div className="founder-copy">
+        </Reveal>
+        <Reveal className="founder-copy" delay={0.12}>
           <p className="founder-kicker">Built inside a real firm</p>
           <h2 id="founder-heading">
             Donna answered Theron&apos;s phones before she answered anyone
@@ -38,18 +42,18 @@ export function FounderBand() {
           <dl className="founder-stats">
             <div>
               <dt>in bankruptcy law</dt>
-              <dd>24 years</dd>
+              <dd><StatCount value="24 years" /></dd>
             </div>
             <div>
               <dt>bankruptcy cases filed</dt>
-              <dd>10,000+</dd>
+              <dd><StatCount value="10,000+" delay={0.1} /></dd>
             </div>
             <div>
               <dt>on his own phones first</dt>
-              <dd>90 days</dd>
+              <dd><StatCount value="90 days" delay={0.2} /></dd>
             </div>
           </dl>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
