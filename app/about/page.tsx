@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ClosingBand } from "@/components/closing-band";
 import { pageMetadata, routeMeta } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -108,14 +107,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="page-cta">
-        <div className="shell page-cta-inner">
-          <h2>Every call answered. More clients retained.</h2>
-          <Link className="button" href={siteConfig.bookPath}>
-            Book a demo <ArrowRight size={17} aria-hidden="true" />
-          </Link>
-        </div>
-      </section>
+      <ClosingBand lead="Built by people who have run a bankruptcy firm. See it work on one of your own inquiries, or call Donna yourself." />
     </main>
   );
 }
