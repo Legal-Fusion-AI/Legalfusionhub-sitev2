@@ -193,16 +193,18 @@ export function HomePage() {
       </section>
 
       <section className="section faq-section" aria-labelledby="faq-heading">
-        <div className="shell faq-grid">
-          <Reveal className="faq-intro">
+        <div className="shell">
+          <Reveal className="faq-head">
             <h2 id="faq-heading">Questions before the conversation.</h2>
-            <p>
-              The ones firms ask us first. Bring one recent inquiry to the
-              demo and we&apos;ll walk through exactly how it would have gone.
-            </p>
-            <DemoCta />
+            <div>
+              <p>
+                The ones firms ask us first. Bring one recent inquiry to the
+                demo and we&apos;ll walk through exactly how it would have gone.
+              </p>
+              <DemoCta />
+            </div>
           </Reveal>
-          <Reveal className="faq-list" delay={0.1}>
+          <Reveal className="faq-list faq-columns" delay={0.1}>
             {faqs.map((faq, index) => (
               <details key={faq.question} open={index === 0}>
                 <summary>
