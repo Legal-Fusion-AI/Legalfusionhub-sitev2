@@ -110,10 +110,7 @@ export function CallLine() {
       aria-label="One real call, 3 minutes 28 seconds, from answered to consultation booked"
     >
       <div className="call-line-head">
-        <span className="call-line-live">
-          <i aria-hidden="true" />
-          One real call · no human touched it
-        </span>
+        <h2 className="call-line-title">Listen to one real call.</h2>
         <span className="call-line-clock" aria-hidden="true">
           {formatClock(shown)} / {formatClock(CALL_DURATION_SECONDS)}
         </span>
@@ -173,9 +170,9 @@ export function CallLine() {
           <b>
             <Play size={14} fill="currentColor" strokeWidth={0} aria-hidden="true" />
           </b>
-          Play the full call · {formatClock(CALL_DURATION_SECONDS)}
+          Play the whole call · {formatClock(CALL_DURATION_SECONDS)}
         </a>
-        <span>Your calendar sees the booking before anyone on your team hears the phone.</span>
+        <span>Nobody on staff had to pick up. The consultation was on the calendar before the call ended.</span>
       </div>
     </div>
   );

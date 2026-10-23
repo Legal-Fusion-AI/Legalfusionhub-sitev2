@@ -26,7 +26,7 @@ export const callMoments: CallMoment[] = [
     at: 0.2,
     speaker: "intake",
     said: "You're calling Morrison Law Group. This is the firm's virtual intake assistant. How can I help you today?",
-    label: "Answered.",
+    label: "Donna picks up.",
     place: "above",
   },
   { at: 9.15, speaker: "caller", said: "I need to make an appointment for a consultation." },
@@ -35,7 +35,7 @@ export const callMoments: CallMoment[] = [
     at: 24.45,
     speaker: "intake",
     said: "Will you be filing individually or jointly with a spouse?",
-    label: "Qualified by your criteria.",
+    label: "Asks your questions.",
     place: "below",
   },
   { at: 29.25, speaker: "caller", said: "Individually." },
@@ -48,7 +48,7 @@ export const callMoments: CallMoment[] = [
     at: 41.95,
     speaker: "intake",
     said: "Now let's get you a free consultation. What day and time work best for you?",
-    label: "Scheduling.",
+    label: "Finds a time.",
     place: "above",
   },
   { at: 51.05, speaker: "caller", said: "Thursday or Friday would be best." },
@@ -63,7 +63,7 @@ export const callMoments: CallMoment[] = [
     at: 138.55,
     speaker: "intake",
     said: "You're all set for Thursday at four in the afternoon.",
-    label: "Consultation booked.",
+    label: "Books the consultation.",
     place: "above",
   },
   {
@@ -75,7 +75,7 @@ export const callMoments: CallMoment[] = [
 
 export const speakerLabel: Record<CallMoment["speaker"], string> = {
   receptionist: "Receptionist",
-  intake: "Intake assistant",
+  intake: "Donna",
   caller: "Caller",
 };
 

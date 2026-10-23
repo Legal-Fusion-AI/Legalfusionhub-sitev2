@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { AiEmployees } from "@/components/ai-employees";
@@ -6,15 +7,18 @@ import { CallLine } from "@/components/call-line";
 import { CallAudio } from "@/components/call-audio";
 import { CallTranscript } from "@/components/call-transcript";
 import { DemoCta } from "@/components/demo-cta";
+import { FounderBand } from "@/components/founder-band";
 import { HeroActions } from "@/components/hero-actions";
 import { JourneyBoard } from "@/components/journey-board";
 import { JourneyProcess } from "@/components/journey-process";
 import { JsonLd } from "@/components/json-ld";
 import { ProblemScenes } from "@/components/problem-scenes";
 import { StickyDemoBar } from "@/components/sticky-demo-bar";
+import { TeamStrip } from "@/components/team-strip";
+import theronPortrait from "@/public/team/theron-portrait.jpg";
 import { demoCall, demoCallTurns } from "@/lib/demo-call";
 import { faqs } from "@/lib/faqs";
-import { morrisonProof, practiceEvidence } from "@/lib/proof";
+import { morrisonProof } from "@/lib/proof";
 import { audioObjectJsonLd, faqPageJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -25,7 +29,7 @@ export function HomePage() {
         <div className="shell hero-grid">
           <div className="hero-top">
             <div className="hero-copy">
-              <p className="hero-eyebrow">{siteConfig.tagline}</p>
+              <p className="hero-eyebrow"><i aria-hidden="true" />{siteConfig.tagline}</p>
               <h1>
                 From the first call to a <em>retained client.</em>
               </h1>
@@ -39,12 +43,15 @@ export function HomePage() {
               <HeroActions />
             </div>
             <div
-              className="hero-ledger"
+              className="hero-proof-card"
               aria-label={`${morrisonProof.firm} pilot results, ${morrisonProof.range}`}
             >
-              <div className="hero-ledger-head">
-                <span>{morrisonProof.firm}</span>
-                <span>{morrisonProof.rangeShort}</span>
+              <div className="hero-proof-head">
+                <Image src={theronPortrait} alt="" width={44} height={44} sizes="44px" />
+                <div>
+                  <b>{morrisonProof.firm}</b>
+                  <span>Donna&apos;s first 90 days, {morrisonProof.range}</span>
+                </div>
               </div>
               <ul>
                 {morrisonProof.stats.map((item) => (
@@ -54,6 +61,7 @@ export function HomePage() {
                   </li>
                 ))}
               </ul>
+              <p>Not one call went to voicemail.</p>
             </div>
           </div>
           <CallLine />
@@ -68,17 +76,24 @@ export function HomePage() {
       <section className="section call-section" id="hear-a-real-call">
         <div className="shell call-grid">
           <div className="call-intro">
-            <h2>Hear the real call.</h2>
+            <h2>Hear what your callers will hear.</h2>
             <p>
               Two minutes and fifty-five seconds, start to finish. The caller
-              is told they are speaking with the firm&apos;s virtual intake
-              assistant, answers the firm&apos;s qualifying questions, and has
-              a consultation on the calendar before the call ends.
+              is told they&apos;re speaking with the firm&apos;s virtual
+              intake assistant, answers the firm&apos;s qualifying questions,
+              and leaves with a consultation on the calendar.
             </p>
             <p className="call-intro-note">
               This recording has been redacted to protect the caller&apos;s
               privacy.
             </p>
+            <blockquote className="call-pullquote">
+              <b>&ldquo;He thought he was talking to a real person.&rdquo;</b>
+              <small>
+                From a published Morrison Law Group case study, where the
+                intake assistant hands a new lead to the team.
+              </small>
+            </blockquote>
           </div>
           <div className="call-media">
             <CallAudio
@@ -93,16 +108,8 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="proof-band" aria-label="Practice evidence">
-        <div className="shell proof-grid">
-          {practiceEvidence.map((item) => (
-            <p key={item.label}>
-              <strong>{item.stat}</strong>
-              <span>{item.label}</span>
-            </p>
-          ))}
-        </div>
-      </section>
+      <FounderBand />
+      <TeamStrip />
 
       <section className="section problem-section" id="why-use-ai">
         <div className="shell">

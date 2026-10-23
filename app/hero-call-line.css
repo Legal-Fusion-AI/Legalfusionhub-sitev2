@@ -34,11 +34,19 @@
   text-transform: uppercase;
 }
 
-.hero-eyebrow::before {
-  content: "";
-  width: 28px;
-  height: 2px;
+.hero-eyebrow {
+  color: var(--blue-dark);
+  font-size: 0.9rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.hero-eyebrow i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
   background: var(--blue);
+  box-shadow: 0 0 0 4px var(--blue-soft);
 }
 
 .hero-grid .hero-copy h1 {
@@ -135,11 +143,33 @@
   text-transform: uppercase;
 }
 
-.call-line-live {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--blue-dark);
+.call-line-title {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+.call-line-head {
+  align-items: baseline;
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.call-line-label small {
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.74rem;
+}
+
+.call-line-now small,
+.call-audio-now small,
+.call-audio-meta {
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.8rem;
 }
 
 .call-line-live i {
@@ -688,5 +718,309 @@
 
   .call-audio-toggle:hover {
     transform: none;
+  }
+}
+
+/* ===========================================================================
+   Warm pass: proof card, founder band, team strip
+   =========================================================================== */
+
+.hero {
+  border-radius: 22px;
+}
+
+.hero-proof-card {
+  display: grid;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fbfbf8;
+  padding: 22px 24px;
+}
+
+.hero-proof-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-proof-head img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.hero-proof-head b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+}
+
+.hero-proof-head span {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+}
+
+.hero-proof-card ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-proof-card li strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-proof-card li span {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.hero-proof-card > p {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.mac-avatar-icon {
+  display: grid;
+  place-items: center;
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+}
+
+.call-audio-toggle {
+  background: var(--coral);
+  color: var(--white);
+  box-shadow: 0 14px 30px -14px rgba(242, 66, 27, 0.8);
+}
+
+.call-audio-toggle:hover {
+  background: var(--coral-dark);
+}
+
+.call-pullquote {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0 0;
+  border-radius: 14px;
+  background: #fdeae3;
+  padding: 16px 20px;
+  color: var(--coral-dark);
+}
+
+.call-pullquote b {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.call-pullquote small {
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+}
+
+.founder {
+  margin: 80px 14px 0;
+  border-radius: 26px;
+  background: var(--ink);
+  color: var(--white);
+  overflow: hidden;
+}
+
+.founder-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: 32px 64px;
+  padding-block: 48px;
+}
+
+.founder-photo {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1;
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #050f22;
+}
+
+.founder-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.founder-photo figcaption {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 8px 12px;
+  font-size: 0.88rem;
+}
+
+.founder-photo figcaption b {
+  display: block;
+  font-family: var(--font-display);
+}
+
+.founder-copy {
+  display: grid;
+  gap: 20px;
+}
+
+.founder-kicker {
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.founder-copy h2 {
+  max-width: 14em;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  letter-spacing: -0.035em;
+}
+
+.founder-copy > p {
+  max-width: 40rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.08rem;
+}
+
+.founder-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 36px;
+  margin: 0;
+}
+
+.founder-stats div {
+  display: grid;
+}
+
+.founder-stats dd {
+  order: -1;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.founder-stats dt {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9rem;
+}
+
+.team-strip {
+  padding-block: 80px 48px;
+}
+
+.team-strip-head {
+  display: grid;
+  gap: 10px;
+  max-width: 40rem;
+  margin-bottom: 32px;
+}
+
+.team-strip-head h2 {
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  letter-spacing: -0.035em;
+}
+
+.team-strip-head p {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+.team-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.team-strip-person {
+  display: grid;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--white);
+  padding: 16px;
+}
+
+.team-strip-person img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.team-strip-person b {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+}
+
+.team-strip-person span {
+  margin-top: -6px;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.team-strip-person p {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.team-strip-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  color: var(--blue-dark);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.team-strip-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 1020px) {
+  .founder-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .team-strip-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .founder {
+    margin: 56px 8px 0;
+  }
+
+  .team-strip-grid {
+    grid-template-columns: 1fr;
   }
 }

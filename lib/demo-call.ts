@@ -27,7 +27,7 @@ export type DemoCallTurn = CallTurn & {
 
 const LABELS: Record<CallTurn["speaker"], string> = {
   receptionist: "Receptionist",
-  intake: "Intake assistant",
+  intake: "Donna",
   caller: "Caller",
 };
 

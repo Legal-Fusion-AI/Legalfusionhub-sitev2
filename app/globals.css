@@ -33,7 +33,7 @@
 }
 
 html {
-  background: #f2f7f7;
+  background: #f6f6f2;
   overflow-x: clip;
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
@@ -42,7 +42,7 @@ html {
 body {
   margin: 0;
   overflow-x: clip;
-  background: #f2f7f7;
+  background: #f6f6f2;
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;
@@ -769,8 +769,8 @@ h3 {
   color: var(--blue-dark) !important;
   font-size: 0.71rem !important;
   font-weight: 800 !important;
-  letter-spacing: 0.045em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .dispatch-message h3 {

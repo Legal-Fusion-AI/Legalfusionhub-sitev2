@@ -9,10 +9,11 @@ import {
   MessageSquare,
   Phone,
   PhoneIncoming,
+  UserRound,
   UserRoundCheck,
 } from "lucide-react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { Avatar, MacWindow } from "@/components/mac-window";
+import { MacWindow } from "@/components/mac-window";
 import logoMark from "@/public/logo-mark.png";
 
 const sourceIcons = {
@@ -35,21 +36,21 @@ const stages = [
   {
     id: "engage",
     short: "Engage",
-    title: "Never miss a call, text, or lead form that comes in.",
-    body: "Donna answers calls, texts, and web forms 24/7, handles the inquiry, and captures the lead.",
-    meta: "24/7",
-    detail: "New inquiry captured",
-    owner: "Donna · Intake",
+    title: "Someone calls your firm. Donna picks up on the first ring.",
+    body: "She answers calls, texts, and web forms around the clock, finds out what the person needs, and makes sure nothing gets lost before your team sees it.",
+    meta: "Any hour",
+    detail: "Donna answered and listened",
+    owner: "Finding a time that works",
     icon: PhoneIncoming,
   },
   {
     id: "acquire",
     short: "Acquire",
-    title: "Turn the lead into a client.",
-    body: "We qualify bankruptcy leads by your criteria, follow up, and book the consultation.",
+    title: "Then she turns the call into a client.",
+    body: "Donna qualifies bankruptcy leads by your criteria and books the consultation. Nikki follows up so the appointment doesn't go cold.",
     meta: "Qualified",
-    detail: "Consultation booked",
-    owner: "Donna · Intake",
+    detail: "Qualified and booked",
+    owner: "Consultation, Thursday at 4 PM",
     icon: CalendarCheck,
   },
 ];
@@ -266,7 +267,7 @@ export function JourneyBoard({ compact = false }: JourneyBoardProps) {
         )}
 
         <MacWindow
-          title="Client journey"
+          title="One caller's path"
           aside={
             <span className="mac-pill">
               <span className="live-dot" />
@@ -323,26 +324,28 @@ export function JourneyBoard({ compact = false }: JourneyBoardProps) {
 
               <div className="mac-card">
                 <div className="mac-card-head">
-                  <Avatar who="jordan" />
+                  <span className="mac-avatar mac-avatar-icon" aria-hidden="true">
+                    <UserRound size={14} strokeWidth={2.2} />
+                  </span>
                   <span>
-                    <strong>New prospective client</strong>
-                    <em>Bankruptcy inquiry</em>
+                    <strong>A first-time caller</strong>
+                    <em>Wants to talk to someone about bankruptcy</em>
                   </span>
                   <span className="mac-pill">{stage.short}</span>
                 </div>
                 <ul className="mac-rows">
                   <li>
-                    <span>Current action</span>
+                    <span>What happened</span>
                     <strong>{stage.detail}</strong>
                   </li>
                   <li>
-                    <span>Handled by</span>
+                    <span>What&apos;s next</span>
                     <strong>{stage.owner}</strong>
                   </li>
                 </ul>
                 <div className="mac-card-foot">
                   <Check size={14} aria-hidden="true" />
-                  From first call to retained client.
+                  From the first call to a retained client.
                 </div>
               </div>
             </div>
