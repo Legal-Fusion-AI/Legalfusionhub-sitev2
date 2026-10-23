@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { faqs } from "@/lib/faqs";
 import type { CallTurn } from "@/lib/call-transcript";
+import { demoCall } from "@/lib/demo-call";
 
 export function pageMetadata({
   title,
@@ -127,22 +128,21 @@ export function faqPageJsonLd() {
   };
 }
 
-export function videoObjectJsonLd(transcript: CallTurn[]) {
+export function audioObjectJsonLd(transcript: CallTurn[]) {
   const text = transcript
     .map((turn) => `${turn.label}: ${turn.text}`)
     .join("\n");
 
   return {
     "@context": "https://schema.org",
-    "@type": "VideoObject",
-    name: "After-hours bankruptcy call answered and booked",
-    description:
-      "A first-time caller after hours. The AI receptionist screens the inquiry and books a free consultation, with no staff involved.",
-    thumbnailUrl: absoluteUrl("/media/unanswered-combined-poster.jpg"),
-    contentUrl: absoluteUrl("/media/unanswered-combined.mp4"),
+    "@type": "AudioObject",
+    name: demoCall.title,
+    description: demoCall.description,
+    contentUrl: absoluteUrl(demoCall.src),
+    encodingFormat: "audio/mpeg",
     embedUrl: absoluteUrl("/#hear-a-real-call"),
-    uploadDate: "2026-10-17",
-    duration: "PT3M28S",
+    uploadDate: demoCall.recordedOn,
+    duration: demoCall.durationIso,
     transcript: text,
     publisher: { "@id": absoluteUrl("/#org") },
     isFamilyFriendly: true,

@@ -29,6 +29,8 @@ export const siteConfig = {
   bookPath: "/demo#contact-options",
   // TODO: Confirm the published contact number.
   PHONE_NUMBER: "+1 (435) 999-2539",
+  /** Live demo line answered by Donna. Shown in the hero as "Try Donna now". */
+  DEMO_LINE: "+1 (435) 363-3201",
   embedScriptSrc: "https://link.legalfusionhub.com/js/form_embed.js",
   booking: {
     calendarId: "VIkP0t3qGITBDSeHxeGs",
@@ -77,6 +79,6 @@ export function absoluteUrl(path = "/"): string {
   return new URL(normalized, siteConfig.url).toString();
 }
 
-export function phoneTelHref(number = siteConfig.PHONE_NUMBER): string {
+export function phoneTelHref(number: string = siteConfig.PHONE_NUMBER): string {
   return `tel:${number.replace(/[^\d+]/g, "")}`;
 }

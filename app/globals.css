@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./hero-call-line.css";
 
 :root {
   color-scheme: light;
@@ -388,16 +389,6 @@ h3 {
   background: var(--white);
 }
 
-.hero-layout {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  align-items: center;
-  gap: 28px 56px;
-  padding: 56px 0 40px;
-}
-
 .hero-copy {
   display: flex;
   flex-direction: column;
@@ -423,44 +414,10 @@ h3 {
   line-height: 1.55;
 }
 
-.hero-proof {
-  max-width: 44rem;
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 0.92rem;
-  line-height: 1.55;
-}
-
 .hero-trust {
   margin: 0;
   color: var(--ink-soft);
   font-size: 0.86rem;
-}
-
-.hero-visual {
-  display: grid;
-  gap: 12px;
-  min-width: 0;
-}
-
-.hero-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  grid-column: 1 / -1;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.hero-chips li {
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--paper);
-  padding: 8px 14px;
-  color: var(--ink);
-  font-size: 0.82rem;
-  font-weight: 650;
 }
 
 .hero-actions {
@@ -470,52 +427,6 @@ h3 {
   justify-content: flex-start;
   gap: 12px;
   width: 100%;
-}
-
-.hero-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid #e6e6e6;
-  border-radius: 999px;
-  background: #fff;
-  padding: 6px 12px 6px 8px;
-  color: #1a1e23;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1.2;
-  text-decoration: none;
-  transition: border-color 160ms ease;
-}
-
-.hero-pill:hover {
-  border-color: rgba(11, 33, 63, 0.28);
-}
-
-.hero-pill-mark {
-  width: 22px;
-  height: 22px;
-  flex: none;
-  object-fit: contain;
-}
-
-.hero-pill-ai {
-  font-weight: 800;
-  background: linear-gradient(105deg, #1ec8b0 0%, #fa5518 52%, #c6e04a 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  filter:
-    drop-shadow(0 0 5px rgba(30, 200, 176, 0.55))
-    drop-shadow(0 0 7px rgba(250, 85, 24, 0.35));
-}
-
-.hero-pill svg {
-  color: #8a8a8a;
-}
-
-.hero-title-line {
-  display: block;
 }
 
 .hero-stage {
@@ -3879,12 +3790,6 @@ h3 {
 
   .hero {
     margin: 8px;
-  }
-
-  .hero-layout {
-    grid-template-columns: 1fr;
-    gap: 22px;
-    padding: 80px 0 28px;
   }
 
   .hero-copy h1 {

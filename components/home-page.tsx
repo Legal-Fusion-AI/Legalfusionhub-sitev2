@@ -1,10 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { AiEmployees } from "@/components/ai-employees";
 import { BuiltForBankruptcy } from "@/components/built-for-bankruptcy";
+import { CallLine } from "@/components/call-line";
+import { CallAudio } from "@/components/call-audio";
 import { CallTranscript } from "@/components/call-transcript";
-import { CallVideo } from "@/components/call-video";
 import { DemoCta } from "@/components/demo-cta";
 import { HeroActions } from "@/components/hero-actions";
 import { JourneyBoard } from "@/components/journey-board";
@@ -12,58 +12,51 @@ import { JourneyProcess } from "@/components/journey-process";
 import { JsonLd } from "@/components/json-ld";
 import { ProblemScenes } from "@/components/problem-scenes";
 import { StickyDemoBar } from "@/components/sticky-demo-bar";
-import logoMark from "@/public/logo-mark.png";
-import { getCallTranscript } from "@/lib/call-transcript";
+import { demoCall, demoCallTurns } from "@/lib/demo-call";
 import { faqs } from "@/lib/faqs";
 import { morrisonProof, practiceEvidence } from "@/lib/proof";
-import { faqPageJsonLd, videoObjectJsonLd } from "@/lib/seo";
+import { audioObjectJsonLd, faqPageJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
-const chips = [
-  "24/7 calls, texts, forms",
-  "2.4 s average pickup",
-  "Books into your calendar",
-];
-
 export function HomePage() {
-  const transcript = getCallTranscript();
-
   return (
     <main>
       <section className="hero">
-        <div className="shell hero-layout">
-          <div className="hero-copy">
-            <Link className="hero-pill" href="/how-it-works">
-              <Image className="hero-pill-mark" src={logoMark} alt="" />
-              For consumer bankruptcy firms
-              <ArrowRight size={14} aria-hidden="true" />
-            </Link>
-            <h1>The AI receptionist for bankruptcy law firms.</h1>
-            <p className="hero-subhead">
-              Donna answers every call, text, and web form, day or night,
-              qualifies by your criteria, and books the consultation. Nikki
-              follows up until the client retains.
-            </p>
-            <HeroActions />
-            <p className="hero-proof">{morrisonProof.heroLine}</p>
-            <p className="hero-trust">
-              Callers are told they are speaking with an AI assistant.
-            </p>
-          </div>
-          <div className="hero-visual" id="hear-a-real-call">
-            <div className="problem-video hero-video">
-              <span className="problem-video-tag">
-                Real call. No human touched it. 3:28.
-              </span>
-              <CallVideo />
+        <div className="shell hero-grid">
+          <div className="hero-top">
+            <div className="hero-copy">
+              <p className="hero-eyebrow">{siteConfig.tagline}</p>
+              <h1>
+                From the first call to a <em>retained client.</em>
+              </h1>
+              <p className="hero-subhead">
+                <strong>Never miss another potential client.</strong> Donna
+                answers every call, Nikki responds instantly to texts and web
+                inquiries, and together they keep your intake running 24/7,
+                from the first conversation to a booked consultation and
+                through retention.
+              </p>
+              <HeroActions />
             </div>
-            <CallTranscript turns={transcript} />
+            <div
+              className="hero-ledger"
+              aria-label={`${morrisonProof.firm} pilot results, ${morrisonProof.range}`}
+            >
+              <div className="hero-ledger-head">
+                <span>{morrisonProof.firm}</span>
+                <span>{morrisonProof.rangeShort}</span>
+              </div>
+              <ul>
+                {morrisonProof.stats.map((item) => (
+                  <li key={item.label}>
+                    <strong>{item.stat}</strong>
+                    <span>{item.label}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <ul className="hero-chips">
-            {chips.map((chip) => (
-              <li key={chip}>{chip}</li>
-            ))}
-          </ul>
+          <CallLine />
         </div>
       </section>
       <StickyDemoBar />
@@ -71,6 +64,31 @@ export function HomePage() {
       <div className="shell hero-stage">
         <JourneyBoard />
       </div>
+
+      <section className="section call-section" id="hear-a-real-call">
+        <div className="shell call-grid">
+          <div className="call-intro">
+            <h2>Hear the real call.</h2>
+            <p>
+              Two minutes and fifty-five seconds, start to finish. The caller
+              is told they are speaking with the firm&apos;s virtual intake
+              assistant, answers the firm&apos;s qualifying questions, and has
+              a consultation on the calendar before the call ends.
+            </p>
+          </div>
+          <div className="call-media">
+            <CallAudio
+              src={demoCall.src}
+              captions={demoCall.captions}
+              turns={demoCallTurns}
+              durationSeconds={demoCall.durationSeconds}
+              tag={`Real call. No human touched it. ${demoCall.durationLabel}.`}
+            />
+            <CallTranscript turns={demoCallTurns} />
+          </div>
+        </div>
+      </section>
+
       <section className="proof-band" aria-label="Practice evidence">
         <div className="shell proof-grid">
           {practiceEvidence.map((item) => (
@@ -179,7 +197,7 @@ export function HomePage() {
         </div>
       </section>
       <JsonLd data={faqPageJsonLd()} />
-      <JsonLd data={videoObjectJsonLd(transcript)} />
+      <JsonLd data={audioObjectJsonLd(demoCallTurns)} />
     </main>
   );
 }

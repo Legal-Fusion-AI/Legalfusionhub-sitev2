@@ -1,31 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { siteConfig } from "@/lib/site-config";
+import { Phone } from "lucide-react";
+import { phoneTelHref, siteConfig } from "@/lib/site-config";
 
 export function HeroActions() {
-  function hearCall(event: React.MouseEvent<HTMLAnchorElement>) {
-    event.preventDefault();
-    const target = document.getElementById("hear-a-real-call");
-    target?.scrollIntoView({ behavior: "smooth", block: "center" });
-    window.dispatchEvent(new Event("play-call-video"));
-    if (window.location.hash !== "#hear-a-real-call") {
-      history.replaceState(null, "", "#hear-a-real-call");
-    }
-  }
+  const demoLine = siteConfig.DEMO_LINE;
 
   return (
-    <div className="hero-actions">
-      <Link
-        id="hero-primary-cta"
-        className="button button-accent"
-        href={siteConfig.bookPath}
-      >
-        Book a demo
-      </Link>
-      <a className="button button-outline" href="#hear-a-real-call" onClick={hearCall}>
-        Hear a real call
-      </a>
+    <div className="hero-actions-wrap">
+      <div className="hero-actions">
+        <Link
+          id="hero-primary-cta"
+          className="button button-accent"
+          href={siteConfig.bookPath}
+        >
+          Book a demo
+        </Link>
+        <a className="button button-outline" href={phoneTelHref(demoLine)}>
+          <Phone size={17} aria-hidden="true" />
+          Try Donna now
+        </a>
+      </div>
+      <p className="hero-demo-line">
+        Or call <a href={phoneTelHref(demoLine)}>{demoLine.replace(/^\+1 /, "")}</a> from
+        your phone.
+      </p>
     </div>
   );
 }

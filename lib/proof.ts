@@ -12,6 +12,7 @@ export const practiceEvidence = [
 export const morrisonProof = {
   firm: "Morrison Law Group",
   range: "June 12 to September 9, 2026",
+  rangeShort: "June 12 to Sept 9, 2026",
   heroLine:
     "Morrison Law Group, June 12 to September 9, 2026: 4,681 calls answered, 2.4 second average pickup, 56 consultations booked, 390 staff hours reclaimed.",
   sentence:
