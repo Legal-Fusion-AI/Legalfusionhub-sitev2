@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Brand } from "@/components/site-header";
-import { siteConfig } from "@/lib/site-config";
 
 export function SiteFooter() {
   return (
@@ -9,31 +8,37 @@ export function SiteFooter() {
         <div className="footer-brand">
           <Brand />
           <p>
-            {siteConfig.tagline}. From the first call to a retained client.
+            Retainer Pro is a product of Legal Fusion Hub.
           </p>
         </div>
         <div>
           <h2>Explore</h2>
-          <Link href="/#products">Products</Link>
+          <Link href="/#meet-ais">Meet the AIs</Link>
           <Link href="/how-it-works">How it works</Link>
           <Link href="/about">About</Link>
           <Link href="/demo">Book a demo</Link>
         </div>
         <div>
-          <h2>Products</h2>
-          <Link href="/#products">Legal Fusion Hub</Link>
-          <span>Engage and acquire</span>
+          <h2>Product</h2>
+          <Link href="/">Retainer Pro</Link>
+          <span>by Legal Fusion Hub</span>
         </div>
         <div>
           <h2>Legal</h2>
           <Link href="/privacy">Privacy</Link>
           <Link href="/terms">Terms</Link>
-          <a href="mailto:info@legalfusion.ai">info@legalfusion.ai</a>
+          <a href="mailto:jeff@legalfusionhub.com">jeff@legalfusionhub.com</a>
         </div>
       </div>
       <div className="shell footer-bottom">
-        <span>© {new Date().getFullYear()} Legal Fusion Hub</span>
-        <span>For law firms. We do not provide legal advice.</span>
+        <span>Retainer Pro is a product of Legal Fusion Hub.</span>
+        <span>
+          <a href="mailto:jeff@legalfusionhub.com">jeff@legalfusionhub.com</a>
+          {" · "}
+          <Link href="/privacy">Privacy</Link>
+          {" · "}
+          <Link href="/terms">Terms</Link>
+        </span>
       </div>
     </footer>
   );

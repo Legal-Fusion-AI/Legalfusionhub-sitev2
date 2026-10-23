@@ -1,26 +1,36 @@
 import Image from "next/image";
 import engageWallpaper from "@/public/wallpapers/abstract-engage.webp";
 import acquireWallpaper from "@/public/wallpapers/abstract-acquire.webp";
+import serveWallpaper from "@/public/wallpapers/abstract-serve.webp";
 
 const scenes = [
   {
-    id: "engage",
-    title: "Calls go unanswered.",
-    break: "A call or inquiry gets no response, including outside office hours.",
-    answer: "Hub answers 24/7, handles the inquiry, and captures the lead.",
+    id: "unanswered",
+    title: "Calls and texts go unanswered.",
+    break: "After hours, or mid-day when the line is busy, the inquiry never reaches your team.",
+    answer: "Donna answers day and night, handles the inquiry, and captures the lead.",
     flip: false,
     wallpaper: engageWallpaper,
     art: <CallScene />,
   },
   {
-    id: "acquire",
+    id: "stalled",
     title: "A lead never becomes a consultation.",
-    break: "The inquiry is captured and then stalls.",
+    break: "The inquiry is captured, then sits.",
     answer:
-      "Hub qualifies by the firm’s criteria, follows up, and books the consultation.",
+      "Retainer Pro qualifies by your firm’s criteria, follows up, and books the consultation.",
     flip: true,
     wallpaper: acquireWallpaper,
     art: <LeadScene />,
+  },
+  {
+    id: "cold",
+    title: "Missed consults go cold.",
+    break: "Someone books, then no-shows or reschedules into nowhere.",
+    answer: "Nikki follows up, keeps the lead warm, and books a new time.",
+    flip: false,
+    wallpaper: serveWallpaper,
+    art: <ColdScene />,
   },
 ] as const;
 
@@ -200,6 +210,71 @@ function LeadScene() {
       )}
       <text x="318" y="262" fill="var(--green)" fontSize="12" fontWeight="700">
         Consultation booked
+      </text>
+    </svg>
+  );
+}
+
+function ColdScene() {
+  return (
+    <svg viewBox="0 0 520 340" aria-hidden="true">
+      <rect
+        x="48"
+        y="56"
+        width="188"
+        height="228"
+        rx="16"
+        fill="var(--white)"
+        stroke="var(--line)"
+      />
+      <text x="68" y="94" fill="var(--ink)" fontSize="16" fontWeight="700">
+        Consult
+      </text>
+      <rect
+        x="68"
+        y="110"
+        width="86"
+        height="24"
+        rx="12"
+        fill="color-mix(in srgb, var(--coral) 16%, white)"
+      />
+      <text x="111" y="126" textAnchor="middle" fill="var(--coral-dark)" fontSize="11" fontWeight="700">
+        No-show
+      </text>
+      <rect x="68" y="156" width="148" height="8" rx="4" fill="var(--paper)" />
+      <rect x="68" y="176" width="112" height="8" rx="4" fill="var(--paper)" />
+      <text x="68" y="236" fill="var(--ink-soft)" fontSize="12" fontWeight="700">
+        Going cold
+      </text>
+      <path
+        d="M252 170H294"
+        stroke="var(--blue)"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path d="M286 164l10 6-10 6" fill="var(--blue)" />
+      <rect
+        x="308"
+        y="56"
+        width="168"
+        height="228"
+        rx="16"
+        fill="var(--white)"
+        stroke="var(--line)"
+      />
+      <rect x="308" y="56" width="168" height="42" rx="16" fill="var(--blue)" />
+      <rect x="308" y="82" width="168" height="16" fill="var(--blue)" />
+      <text x="392" y="83" textAnchor="middle" fill="white" fontSize="13" fontWeight="700">
+        Nikki
+      </text>
+      <text x="328" y="140" fill="var(--ink)" fontSize="14" fontWeight="700">
+        Follow-up sent
+      </text>
+      <rect x="328" y="158" width="128" height="8" rx="4" fill="var(--paper)" />
+      <rect x="328" y="178" width="96" height="8" rx="4" fill="var(--paper)" />
+      <rect x="328" y="210" width="88" height="24" rx="12" fill="var(--green-soft)" />
+      <text x="372" y="226" textAnchor="middle" fill="var(--green)" fontSize="11" fontWeight="700">
+        New time
       </text>
     </svg>
   );

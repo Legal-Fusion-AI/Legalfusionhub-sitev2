@@ -16,37 +16,42 @@ import { useLayoutEffect, useRef, useState } from "react";
 const steps = [
   {
     id: "answer",
-    status: "Answering the call",
-    title: "Never miss a call",
-    body: "Hub answers calls 24/7, handles the inquiry, and captures the lead.",
+    status: "Answered",
+    title: "Answered",
+    body: "Retainer Pro answers calls, texts, and web forms around the clock, handles the inquiry, and captures the lead.",
+    aside: "Your team still owns the phone numbers and when calls forward.",
     icon: PhoneIncoming,
   },
   {
     id: "capture",
-    status: "Capturing the inquiry",
-    title: "The lead is on the record",
-    body: "The prospective client and the bankruptcy inquiry are saved with the call.",
+    status: "Captured",
+    title: "Captured",
+    body: "The prospective client and the bankruptcy inquiry are saved with the conversation.",
+    aside: "Handled by Donna · Intake",
     icon: ClipboardList,
   },
   {
     id: "qualify",
-    status: "Qualifying the lead",
-    title: "Turn leads into clients",
-    body: "Hub qualifies by your firm’s criteria and follows up until the lead is ready.",
+    status: "Qualified",
+    title: "Qualified",
+    body: "Retainer Pro qualifies by your firm’s criteria and follows up until the lead is ready to book.",
+    aside: "Your team still sets and can change the criteria.",
     icon: ListChecks,
   },
   {
     id: "book",
-    status: "Booking the consultation",
-    title: "The consultation is on the calendar",
-    body: "Hub schedules the consultation and keeps the inquiry attached to that appointment.",
+    status: "Consult booked",
+    title: "Consult booked",
+    body: "The consultation is on the calendar with the inquiry attached. Before the meeting, Donna gathers a few details so the attorney can prepare — including weighing Chapter 7 against other options. That prep is for the attorney, not a substitute for legal judgment. If someone misses or no-shows, Nikki follows up and books a new time.",
+    aside: "Your team still runs the consultation.",
     icon: CalendarCheck,
   },
   {
     id: "retained",
-    status: "Retaining the client",
-    title: "The client signs with your firm",
-    body: "The consultation happens with the full inquiry in hand, and the lead becomes a retained client.",
+    status: "Retained",
+    title: "Retained",
+    body: "The consultation happens with the inquiry in hand. Your staff meets the client and decides who the firm retains.",
+    aside: "Your team still handles retention and the law.",
     icon: UserCheck,
   },
 ] as const;
@@ -133,7 +138,7 @@ function Scene({ step }: { step: Step }) {
                 </li>
                 <li>
                   <span>Handled by</span>
-                  <strong>Hub intake</strong>
+                  <strong>Donna · Intake</strong>
                 </li>
               </ul>
             </div>
@@ -305,6 +310,7 @@ function Copy({ step }: { step: Step }) {
       <motion.p className="zigzag-body" {...reveal}>
         {step.body}
       </motion.p>
+      <p className="zigzag-still">{step.aside}</p>
     </>
   );
 }

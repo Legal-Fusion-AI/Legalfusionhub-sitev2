@@ -15,7 +15,7 @@ export function Brand() {
 }
 
 const links = [
-  { href: "/#products", label: "Products" },
+  { href: "/#meet-ais", label: "Meet the AIs" },
   { href: "/how-it-works", label: "How it works" },
   { href: "/about", label: "About" },
 ];
