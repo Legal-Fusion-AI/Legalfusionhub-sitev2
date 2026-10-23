@@ -132,7 +132,7 @@ export function HomePage() {
               Your demo shows how your firm turns inquiries into retained
               clients. Bring one recent inquiry.
             </p>
-            <DemoCta lead="Bring one recent inquiry." />
+            <DemoCta />
           </div>
           <div className="faq-list">
             {faqs.map((faq, index) => (
