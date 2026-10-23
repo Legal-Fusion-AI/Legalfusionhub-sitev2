@@ -14,8 +14,8 @@ const stageTone: Record<JourneyStage, string> = {
 };
 
 const employeeLabel = {
-  donna: "Donna · Intake",
-  nikki: "Nikki · Follow-up",
+  donna: "Donna · Phone",
+  nikki: "Nikki · Texts and follow-up",
 } as const;
 
 function whoLabel(who: JourneyWho): string {

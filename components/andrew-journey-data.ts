@@ -34,14 +34,14 @@ export const journeyBeats: JourneyBeat[] = [
     id: "new",
     stage: "New",
     time: "Sep 27, 4:15 a.m.",
-    by: "donna",
-    note: "Andrew finds the firm overnight and fills out the web form. Donna captures the lead before anyone is in the office.",
+    by: "nikki",
+    note: "Andrew finds the firm overnight and fills out the web form. Nikki captures the lead before anyone is in the office.",
   },
   {
     id: "booked",
     stage: "Consultation booked",
     time: "Sep 27, 4:29 a.m.",
-    by: "donna",
+    by: "nikki",
     note: "Still before office hours, he books a consultation through the online scheduler. A confirmation and reminder go out automatically.",
   },
   {
@@ -166,7 +166,7 @@ export const threadItems: ThreadItem[] = journeyBeats.flatMap((beat): ThreadItem
     {
       kind: "event",
       stage: beat.stage,
-      who: beat.by ?? "donna",
+      who: beat.by ?? "nikki",
       text: beat.note ?? "",
     },
   ];

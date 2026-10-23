@@ -491,16 +491,14 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  /* On phones the labels collide, so the caption below carries the story. */
   .call-line-track {
-    height: 120px;
+    height: 84px;
+    --rail-y: 30px;
   }
 
   .call-line-label {
-    max-width: 110px;
-  }
-
-  .call-line-label b {
-    font-size: 0.78rem;
+    display: none;
   }
 
   .call-line-ticks span:nth-child(even) {
@@ -1449,4 +1447,13 @@
   .closing-actions .button {
     width: 100%;
   }
+}
+
+/* Case studies: the Andrew journey sits on the page ground before the closing band */
+.examples-section {
+  padding-block: 72px 40px;
+}
+
+.examples-section .lower-head {
+  margin-bottom: 28px;
 }

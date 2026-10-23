@@ -6,10 +6,10 @@ import { BuiltForBankruptcy } from "@/components/built-for-bankruptcy";
 import { CallLine } from "@/components/call-line";
 import { CallAudio } from "@/components/call-audio";
 import { CallTranscript } from "@/components/call-transcript";
+import { ClosingBand } from "@/components/closing-band";
 import { DemoCta } from "@/components/demo-cta";
 import { FounderBand } from "@/components/founder-band";
 import { HeroActions } from "@/components/hero-actions";
-import { Phone } from "lucide-react";
 import { JourneyBoard } from "@/components/journey-board";
 import { JourneyProcess } from "@/components/journey-process";
 import { JsonLd } from "@/components/json-ld";
@@ -24,7 +24,7 @@ import { demoCall, demoCallTurns } from "@/lib/demo-call";
 import { faqs } from "@/lib/faqs";
 import { morrisonProof } from "@/lib/proof";
 import { audioObjectJsonLd, faqPageJsonLd } from "@/lib/seo";
-import { phoneTelHref, siteConfig } from "@/lib/site-config";
+import { siteConfig } from "@/lib/site-config";
 
 export function HomePage() {
   return (
@@ -222,30 +222,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="closing-band" aria-labelledby="closing-heading">
-        <div className="shell closing-band-inner">
-          <Reveal>
-            <p className="closing-kicker">The whole promise</p>
-            <h2 id="closing-heading">Every call answered. More clients retained.</h2>
-            <p className="closing-sub">
-              See how we take a bankruptcy inquiry from the first call to a
-              retained client. Or skip the demo and call Donna yourself.
-            </p>
-            <div className="closing-actions">
-              <Link className="button" href={siteConfig.bookPath}>
-                Book a demo <ArrowRight size={17} aria-hidden="true" />
-              </Link>
-              <a className="button button-outline" href={phoneTelHref(siteConfig.DEMO_LINE)}>
-                <Phone size={17} aria-hidden="true" />
-                Try Donna now
-              </a>
-            </div>
-            <p className="closing-line">
-              Or call {siteConfig.DEMO_LINE.replace(/^\+1 /, "")} from your phone.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <ClosingBand />
       <JsonLd data={faqPageJsonLd()} />
       <JsonLd data={audioObjectJsonLd(demoCallTurns)} />
     </main>

@@ -1,12 +1,10 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { AndrewJourney } from "@/components/andrew-journey";
 import { CaseStudiesBoard } from "@/components/case-studies-board";
-import { DemoCta } from "@/components/demo-cta";
+import { ClosingBand } from "@/components/closing-band";
 import { RealProblem } from "@/components/real-problem";
+import { Reveal } from "@/components/reveal";
 import { publishedCaseStudies } from "@/lib/case-studies";
 import { pageMetadata, routeMeta } from "@/lib/seo";
-import { siteConfig } from "@/lib/site-config";
 
 export const metadata = pageMetadata(routeMeta.caseStudies);
 
@@ -35,26 +33,18 @@ export default function CaseStudiesPage() {
       <RealProblem />
       <section className="section examples-section" id="see-it-in-action">
         <div className="shell">
-          <div className="section-heading section-heading-wide">
-            <h2>See it in action.</h2>
+          <Reveal className="lower-head">
+            <h2>See Nikki in action.</h2>
             <p>
               One real lead, start to finish. A Morrison Law Group client we
-              will call Andrew found us at 4 a.m. and retained the firm the next
-              day. Names and details are anonymized.
+              will call Andrew found the firm at 4 a.m. and retained it the
+              next day. Names and details are anonymized.
             </p>
-          </div>
+          </Reveal>
           <AndrewJourney />
-          <DemoCta lead="Bring one recent call or text to the demo. We will show it answered." />
         </div>
       </section>
-      <section className="page-cta">
-        <div className="shell page-cta-inner">
-          <h2>Every call answered. More clients retained.</h2>
-          <Link className="button" href={siteConfig.bookPath}>
-            Book a demo <ArrowRight size={17} aria-hidden="true" />
-          </Link>
-        </div>
-      </section>
+      <ClosingBand lead="See how a text at 4 a.m. becomes a retained client. Or skip the demo and call Donna yourself." />
     </main>
   );
 }
