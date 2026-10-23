@@ -201,7 +201,6 @@ export function HomePage() {
                 The ones firms ask us first. Bring one recent inquiry to the
                 demo and we&apos;ll walk through exactly how it would have gone.
               </p>
-              <DemoCta />
             </div>
           </Reveal>
           <Reveal className="faq-list faq-columns" delay={0.1}>
