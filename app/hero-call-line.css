@@ -601,10 +601,8 @@
   justify-content: space-between;
   gap: 8px 16px;
   color: rgba(255, 255, 255, 0.72);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .call-audio-time {
@@ -675,10 +673,8 @@
 
 .call-audio-now small {
   color: rgba(255, 255, 255, 0.62);
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   white-space: nowrap;
 }
 

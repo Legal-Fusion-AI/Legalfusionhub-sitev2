@@ -101,7 +101,7 @@ export function HomePage() {
               captions={demoCall.captions}
               turns={demoCallTurns}
               durationSeconds={demoCall.durationSeconds}
-              tag={`Real call. No human touched it. ${demoCall.durationLabel}.`}
+              tag={`Real call · ${demoCall.durationLabel}`}
             />
             <CallTranscript turns={demoCallTurns} />
           </div>
