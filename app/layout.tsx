@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "@fontsource-variable/open-sans";
 import "@fontsource-variable/montserrat";
 import "./globals.css";
@@ -38,6 +39,13 @@ export default function RootLayout({
         <SiteHeader />
         <div id="main-content">{children}</div>
         <SiteFooter />
+        {/* LeadConnector (GHL) chat widget. Added 2026-10-26. */}
+        <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="693c4abaf258cf0f6649aed0"
+          strategy="lazyOnload"
+        />
         <JsonLd data={organizationGraph()} />
       </body>
     </html>
