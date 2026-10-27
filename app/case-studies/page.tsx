@@ -24,8 +24,8 @@ export default function CaseStudiesPage() {
             politely, accurately, and without missed steps.
           </p>
           <p className="case-studies-note">
-            Sage and Samantha are Morrison Law Group&apos;s AI assistants, shown
-            with permission.
+            Listen to real AI calls from Morrison Law Group, shared with
+            permission.
           </p>
         </div>
       </section>
