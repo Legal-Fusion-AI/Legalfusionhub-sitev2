@@ -1,10 +1,10 @@
 export const caseStudyFilters = [
   "All Cases",
-  "Reception",
-  "Follow-up",
-  "Returning Client",
   "New Lead",
+  "Follow-up",
   "After-Hours",
+  "Reception",
+  "Returning Client",
   "Routed",
   "Message Taken",
 ] as const;
@@ -43,6 +43,51 @@ export type CaseStudy = PublishedCaseStudy | UpcomingCaseStudy;
 export const caseStudies: CaseStudy[] = [
   {
     status: "published",
+    id: "after-hours-zoom-consult",
+    title: "After-hours call: never miss another client.",
+    summary:
+      "The office is closed. The receptionist answers, hands the caller to the intake assistant, and she books a free Zoom consultation for Tuesday at noon.",
+    tags: ["New Lead", "After-Hours", "Routed"],
+    roles: ["Receptionist", "Intake assistant", "Caller"],
+    media: {
+      src: "/media/after-hours-zoom-consult.mp4",
+      captions: "/media/after-hours-zoom-consult.vtt",
+      poster: "/media/after-hours-zoom-consult-poster.jpg",
+      square: true,
+    },
+  },
+  {
+    status: "published",
+    id: "spanish-caller-consult",
+    title: "Spanish-speaking caller books a consult.",
+    summary:
+      "A first-time caller asks for Spanish. The receptionist routes the call to a Spanish-speaking assistant, who books a free Zoom consultation entirely in Spanish.",
+    tags: ["New Lead", "Reception", "Routed"],
+    roles: ["Receptionist", "Intake assistant", "Caller"],
+    media: {
+      src: "/media/spanish-caller-consult.mp4",
+      captions: "/media/spanish-caller-consult.vtt",
+      poster: "/media/spanish-caller-consult-poster.jpg",
+      square: true,
+    },
+  },
+  {
+    status: "published",
+    id: "new-lead-zoom-consult",
+    title: "New lead books a Zoom consultation.",
+    summary:
+      "The intake assistant asks the qualifying questions, works around the caller's Thursday-after-3 window, and books the consultation on Zoom.",
+    tags: ["New Lead"],
+    roles: ["Intake assistant", "Caller"],
+    media: {
+      src: "/media/new-lead-zoom-consult.mp4",
+      captions: "/media/new-lead-zoom-consult.vtt",
+      poster: "/media/new-lead-zoom-consult-poster.jpg",
+      square: true,
+    },
+  },
+  {
+    status: "published",
     id: "new-lead-warm-handoff",
     title: "New lead: intake to warm handoff.",
     summary:
@@ -71,20 +116,6 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     status: "published",
-    id: "returning-client-routed",
-    title: "Returning client routed to case manager.",
-    summary:
-      "The receptionist routes a past client to his office's case manager.",
-    tags: ["Returning Client", "Routed"],
-    roles: ["Receptionist", "Caller"],
-    media: {
-      src: "/media/returning-client-routed.mp4",
-      poster: "/media/returning-client-routed-poster.jpg",
-      square: true,
-    },
-  },
-  {
-    status: "published",
     id: "returning-client-books-consult",
     title: "Returning client books a consult.",
     summary:
@@ -94,20 +125,6 @@ export const caseStudies: CaseStudy[] = [
     media: {
       src: "/media/returning-client-books-consult.mp4",
       poster: "/media/returning-client-books-consult-poster.jpg",
-      square: true,
-    },
-  },
-  {
-    status: "published",
-    id: "new-lead-cost-question",
-    title: "Cost question from a new lead.",
-    summary:
-      "The intake assistant answers the intake questions and starts the transfer to staff.",
-    tags: ["New Lead", "Routed"],
-    roles: ["Intake assistant", "Caller"],
-    media: {
-      src: "/media/new-lead-cost-question.mp4",
-      poster: "/media/new-lead-cost-question-poster.jpg",
       square: true,
     },
   },
