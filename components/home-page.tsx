@@ -12,6 +12,7 @@ import { FounderBand } from "@/components/founder-band";
 import { HeroActions } from "@/components/hero-actions";
 import { JourneyBoard } from "@/components/journey-board";
 import { JourneyProcess } from "@/components/journey-process";
+import { NikkiChats } from "@/components/nikki-chats";
 import { JsonLd } from "@/components/json-ld";
 import BlurText from "@/components/react-bits/BlurText";
 import { Reveal } from "@/components/reveal";
@@ -98,6 +99,7 @@ export function HomePage() {
 
       <div className="shell hero-stage">
         <JourneyBoard />
+        <NikkiChats />
       </div>
 
       <section className="section call-section" id="hear-a-real-call">

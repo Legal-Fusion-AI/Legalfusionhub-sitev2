@@ -19,8 +19,8 @@ const steps = [
   {
     id: "answer",
     label: "Answered",
-    title: "Never miss a call, text, or lead form that comes in.",
-    body: "Retainer Pro answers calls, texts, and web forms 24/7, handles the inquiry, and captures the lead.",
+    title: "Never miss a call, text, or online inquiry.",
+    body: "Retainer Pro answers calls, texts, and online inquiries 24/7, handles the inquiry, and captures the lead.",
     icon: PhoneIncoming,
   },
   {
@@ -124,7 +124,7 @@ function Scene({ step }: { step: Step }) {
                 </li>
                 <li>
                   <span>Handled by</span>
-                  <strong>Donna · Intake</strong>
+                  <strong>Retainer Pro</strong>
                 </li>
               </ul>
             </div>

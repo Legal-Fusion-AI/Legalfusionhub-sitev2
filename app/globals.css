@@ -6558,3 +6558,168 @@ h3 {
     display: block;
   }
 }
+
+/* Nikki chat transcripts, under the journey board on the homepage */
+.nikki-chats {
+  margin-top: 28px;
+}
+
+.nikki-chats-head {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.nikki-chats-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+}
+
+.nikki-chats-head h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  color: var(--ink);
+}
+
+.nikki-chats-head p {
+  margin: 4px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.nikki-chats-body {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) 1fr;
+  min-height: 420px;
+}
+
+.nikki-chats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border-right: 1px solid var(--line);
+  background: var(--gray-soft);
+}
+
+.nikki-chat-tab {
+  display: grid;
+  gap: 2px;
+  padding: 12px 14px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 160ms var(--ease-out), border-color 160ms var(--ease-out);
+}
+
+.nikki-chat-tab:hover {
+  background: var(--white);
+}
+
+.nikki-chat-tab.is-active {
+  background: var(--white);
+  border-color: var(--line-dark);
+  box-shadow: var(--shadow-small);
+}
+
+.nikki-chat-tab:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.nikki-chat-tab strong {
+  font-size: 0.95rem;
+}
+
+.nikki-chat-tab em {
+  font-style: normal;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.nikki-chat-tab span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--blue-dark);
+}
+
+.nikki-chat-thread {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 460px;
+  padding: 18px;
+  overflow-y: auto;
+  background: var(--white);
+}
+
+.nikki-bubble {
+  display: grid;
+  gap: 3px;
+  max-width: min(78%, 520px);
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 0.93rem;
+  line-height: 1.45;
+}
+
+.nikki-bubble.is-client {
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  background: var(--gray);
+  color: var(--ink);
+}
+
+.nikki-bubble.is-nikki {
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.nikki-bubble-who {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+@media (max-width: 760px) {
+  .nikki-chats-body {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .nikki-chats-list {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nikki-chat-tab {
+    flex: 0 0 210px;
+  }
+
+  .nikki-chat-thread {
+    max-height: 420px;
+  }
+
+  .nikki-bubble {
+    max-width: 88%;
+  }
+}
