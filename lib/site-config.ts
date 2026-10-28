@@ -29,7 +29,7 @@ export const siteConfig = {
   bookPath: "/demo#contact-options",
   // TODO: Confirm the published contact number.
   PHONE_NUMBER: "+1 (435) 999-2539",
-  /** Live demo line answered by Donna. Shown in the hero as "Try Donna now". */
+  /** Live demo line: Donna answers calls, Nikki answers texts. Hero shows "Try Donna now" and "Text Nikki now". */
   DEMO_LINE: "+1 (435) 363-3201",
   embedScriptSrc: "https://link.legalfusionhub.com/js/form_embed.js",
   booking: {
