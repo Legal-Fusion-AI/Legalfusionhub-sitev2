@@ -20,7 +20,7 @@ export const nikkiChats: NikkiChat[] = [
       { from: "client", text: "hello, I'm being sued for creditor debt" },
       {
         from: "nikki",
-        text: "Got it. Filing bankruptcy can stop that lawsuit. We offer free consultations to go over your situation. Where are you located?",
+        text: "Got it. Bankruptcy may be able to help with that. We offer free consultations to go over your situation. Where are you located?",
       },
       { from: "client", text: "located in farmington" },
       {
