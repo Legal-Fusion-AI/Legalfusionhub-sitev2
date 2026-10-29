@@ -21,9 +21,13 @@ export function ContactWays() {
         <div className="shell contact-split">
           <article className="contact-card contact-card-form">
             <header className="contact-card-head">
-              <p className="contact-kicker">Inquiry</p>
-              <h2 id="inquiry-heading">Send an inquiry</h2>
-              <p>Tell us about your firm.</p>
+              <p className="contact-kicker">Try it yourself</p>
+              <h2 id="inquiry-heading">Fill it out like a client would.</h2>
+              <p>
+                Pretend you need help with bankruptcy. Use your real cell
+                number, and Nikki will text you. This is a demo, so nothing
+                goes to a real firm.
+              </p>
             </header>
             <InquiryEmbed />
           </article>

@@ -37,11 +37,16 @@ export const siteConfig = {
     embedSrc: "https://link.legalfusionhub.com/widget/booking/VIkP0t3qGITBDSeHxeGs",
     iframeId: "VIkP0t3qGITBDSeHxeGs_booking",
   },
+  /**
+   * Demo bankruptcy intake form in the Retainer Pro Demo sub-account. A new
+   * contact from it gets the new-lead tag, and Nikki texts them.
+   * Swapped in 2026-10-29; the old law-firm inquiry form was bPMjXE5PcK5rRHyn0Oh4.
+   */
   inquiry: {
-    formId: "bPMjXE5PcK5rRHyn0Oh4",
-    embedSrc: "https://link.legalfusionhub.com/widget/form/bPMjXE5PcK5rRHyn0Oh4",
-    iframeId: "inline-bPMjXE5PcK5rRHyn0Oh4",
-    name: "Retainer Pro Inquiry",
+    formId: "E3YVSLZYxDCZAiL8cpou",
+    embedSrc: "https://link.legalfusionhub.com/widget/form/E3YVSLZYxDCZAiL8cpou",
+    iframeId: "inline-E3YVSLZYxDCZAiL8cpou",
+    name: "A. Bankruptcy Demo Form",
   },
   forms: {
     demo: {
