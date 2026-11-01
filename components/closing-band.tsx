@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
-import { phoneTelHref, siteConfig } from "@/lib/site-config";
+import { TryDonnaButton } from "@/components/try-donna-button";
+import { siteConfig } from "@/lib/site-config";
 
 type ClosingBandProps = {
   /** Supporting sentence under the headline. */
@@ -26,10 +27,7 @@ export function ClosingBand({
             <Link className="button" href={siteConfig.bookPath}>
               Book a demo <ArrowRight size={17} aria-hidden="true" />
             </Link>
-            <a className="button button-outline" href={phoneTelHref(siteConfig.DEMO_LINE)}>
-              <Phone size={17} aria-hidden="true" />
-              Try Donna now
-            </a>
+            <TryDonnaButton />
           </div>
           <p className="closing-line">
             Or call {siteConfig.DEMO_LINE.replace(/^\+1 /, "")} from your phone.

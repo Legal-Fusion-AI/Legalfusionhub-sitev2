@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { MessageSquare, Phone } from "lucide-react";
+import { MessageSquare } from "lucide-react";
+import { TryDonnaButton } from "@/components/try-donna-button";
 import { phoneTelHref, siteConfig } from "@/lib/site-config";
 
 export function HeroActions() {
@@ -21,10 +22,7 @@ export function HeroActions() {
         >
           Book a demo
         </Link>
-        <a className="button button-outline" href={phoneTelHref(demoLine)}>
-          <Phone size={17} aria-hidden="true" />
-          Try Donna now
-        </a>
+        <TryDonnaButton />
         <a className="button button-outline" href={smsHref}>
           <MessageSquare size={17} aria-hidden="true" />
           Text Nikki now
