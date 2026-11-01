@@ -1,16 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { MessageSquare } from "lucide-react";
+import { TextNikkiButton } from "@/components/text-nikki-button";
 import { TryDonnaButton } from "@/components/try-donna-button";
 import { phoneTelHref, siteConfig } from "@/lib/site-config";
 
 export function HeroActions() {
   const demoLine = siteConfig.DEMO_LINE;
-  // "?&body=" is the form both iOS and Android Messages accept.
-  const smsHref = `sms:${demoLine.replace(/[^\d+]/g, "")}?&body=${encodeURIComponent(
-    "Hi Nikki, I'd like to see how you work.",
-  )}`;
 
   return (
     <div className="hero-actions-wrap">
@@ -23,10 +19,7 @@ export function HeroActions() {
           Book a demo
         </Link>
         <TryDonnaButton />
-        <a className="button button-outline" href={smsHref}>
-          <MessageSquare size={17} aria-hidden="true" />
-          Text Nikki now
-        </a>
+        <TextNikkiButton />
       </div>
       <p className="hero-demo-line">
         Or call or text{" "}

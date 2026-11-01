@@ -32,6 +32,14 @@ export const siteConfig = {
   /** Live demo line: Donna answers calls, Nikki answers texts. Hero shows "Try Donna now" and "Text Nikki now". */
   DEMO_LINE: "+1 (435) 363-3201",
   embedScriptSrc: "https://link.legalfusionhub.com/js/form_embed.js",
+  /**
+   * CloseBot chat widget "Nikki - Website" on the Retainer Pro Demo source.
+   * The script mounts the chat inside #cb-widget-container. Created 2026-11-01.
+   */
+  closebot: {
+    scriptSrc: "https://api.closebot.com/scripts/cb.js?source=cuvU2FtwUP1dWlak",
+    containerId: "cb-widget-container",
+  },
   booking: {
     calendarId: "VIkP0t3qGITBDSeHxeGs",
     embedSrc: "https://link.legalfusionhub.com/widget/booking/VIkP0t3qGITBDSeHxeGs",

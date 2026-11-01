@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./hero-call-line.css";
+@import "./nikki-chat.css";
 
 :root {
   color-scheme: light;

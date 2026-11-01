@@ -1,6 +1,7 @@
 "use client";
 
 import { Phone } from "lucide-react";
+import { prefersPhone } from "@/lib/device";
 import { phoneTelHref, siteConfig } from "@/lib/site-config";
 
 /**
@@ -25,14 +26,6 @@ type ChatWidgetApi = { openWidget?: () => void; isActive?: () => boolean };
 function chatWidgetApi(): ChatWidgetApi | undefined {
   return (window as unknown as { leadConnector?: { chatWidget?: ChatWidgetApi } })
     .leadConnector?.chatWidget;
-}
-
-/** Phones dial the demo line; everything else talks to Donna in the browser. */
-function prefersPhoneCall(): boolean {
-  const uaData = (navigator as Navigator & { userAgentData?: { mobile?: boolean } })
-    .userAgentData;
-  if (uaData?.mobile) return true;
-  return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
 }
 
 /** Polls until `find` returns something or the time runs out. */
@@ -92,7 +85,8 @@ export function TryDonnaButton({ className = "button button-outline" }: TryDonna
   const telHref = phoneTelHref(siteConfig.DEMO_LINE);
 
   async function handleClick(event: React.MouseEvent<HTMLAnchorElement>) {
-    if (prefersPhoneCall()) return;
+    // Phones dial the demo line; everything else talks to Donna in the browser.
+    if (prefersPhone()) return;
     event.preventDefault();
     const started = await startBrowserCall();
     if (!started) window.location.href = telHref;
