@@ -26,11 +26,12 @@ export const morrisonProof = {
   range: "June 12 to September 9, 2026",
   rangeShort: "June 12 to Sept 9, 2026",
   heroLine:
-    "Morrison Law Group, June 12 to September 9, 2026: 4,679 calls answered, 2.4 second average pickup, 1,719 client calls sent to their case team, 114 consultations booked.",
+    "Morrison Law Group, June 12 to September 9, 2026: 999 calls answered after hours and at lunch, 2.4 second average pickup, 1,719 client calls sent to their case team, 114 consultations booked.",
   sentence:
-    "From June 12 to September 9, 2026, Retainer Pro answered 4,679 calls for Morrison Law Group with a 2.4 second average pickup, sent 1,719 client calls straight to the team or staff member on their case, and booked 114 consultations from new callers.",
+    "From June 12 to September 9, 2026, Retainer Pro answered 4,679 calls for Morrison Law Group, 999 of them after hours or at lunch, with a 2.4 second average pickup. It sent 1,719 client calls straight to the team or staff member on their case and booked 114 consultations from new callers.",
   stats: [
-    { stat: "4,679", label: "calls answered" },
+    // Samantha (after-hours agent) 545 + Sage lunch agent 454.
+    { stat: "999", label: "calls answered after hours and at lunch" },
     { stat: "2.4 sec", label: "average pickup" },
     { stat: "1,719", label: "client calls sent to their case team" },
     { stat: "114", label: "consultations booked" },
