@@ -27,6 +27,8 @@ const CB = {
   send: ".cb-send",
   visitorMessage: ".cb-msg-item.lead",
   formActions: ".cb-form-actions",
+  formCard: ".cb-form-card",
+  formSubmitted: ".cb-form-submitted",
 } as const;
 
 /**
@@ -130,8 +132,8 @@ export function TextNikkiButton({ className = "button button-outline" }: TextNik
     if (open) loadCloseBot();
   }, [open]);
 
-  // Adds the consent line to the form, and shows the starters once CloseBot enables
-  // its text box (the form is done) until the visitor's first message.
+  // Adds the consent line to the form, and shows the starters once the form is
+  // submitted until the visitor's first message.
   useEffect(() => {
     if (!mounted) return;
     const container = document.getElementById(siteConfig.closebot.containerId);
@@ -139,8 +141,14 @@ export function TextNikkiButton({ className = "button button-outline" }: TextNik
     const update = () => {
       addConsentLine(container);
       const input = container.querySelector<HTMLInputElement>(CB.input);
+      // CloseBot keeps its text box enabled while the form is up, so check the form too.
+      const formPending =
+        !!container.querySelector(CB.formCard) && !container.querySelector(CB.formSubmitted);
       setShowStarters(
-        !!input && !input.disabled && !container.querySelector(CB.visitorMessage),
+        !!input &&
+          !input.disabled &&
+          !formPending &&
+          !container.querySelector(CB.visitorMessage),
       );
     };
     const observer = new MutationObserver(update);
