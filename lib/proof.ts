@@ -12,7 +12,9 @@ export const practiceEvidence = [
 /**
  * Counted from Morrison's GHL Voice AI call logs, June 12 to September 9, 2026 (pulled 2026-11-01):
  * 4,679 live calls from 1,486 unique contacts; 3,651 calls transferred to staff queues or named
- * staff; 48 unique contacts booked by the AI (APPOINTMENT_BOOKING action or "Booked" outcome).
+ * staff. Matched against the Ogden, Orem, Sandy and Zoom consultation calendars: 114 new callers
+ * got a consultation booked after their first AI-answered call (48 on the call by the AI, the rest
+ * by staff or the booking widget), and 68 of them showed. Not "booked by AI": that is only 48.
  * The old 2.4 sec pickup, 390 staff hours and "no voicemail" claims had no source and were dropped.
  * [DRAFT, needs Theron's written OK on exact wording before production]
  */
@@ -21,14 +23,14 @@ export const morrisonProof = {
   range: "June 12 to September 9, 2026",
   rangeShort: "June 12 to Sept 9, 2026",
   heroLine:
-    "Morrison Law Group, June 12 to September 9, 2026: 1,486 callers answered, 3,651 calls routed to the right team, 48 consultations booked by AI.",
+    "Morrison Law Group, June 12 to September 9, 2026: 1,486 callers answered, 3,651 client calls routed to the right team, 114 consultations booked, 68 showed.",
   sentence:
-    "From June 12 to September 9, 2026, Retainer Pro answered 4,679 calls from 1,486 callers for Morrison Law Group, routed 3,651 calls straight to the right team, and booked 48 consultations with no staff involved.",
+    "From June 12 to September 9, 2026, Retainer Pro answered 1,486 callers for Morrison Law Group, routed 3,651 client calls straight to the right team, and turned new callers into 114 booked consultations, 68 of whom showed.",
   stats: [
     { stat: "1,486", label: "callers answered" },
-    { stat: "3,651", label: "calls routed to the right team" },
-    { stat: "48", label: "consultations booked by AI" },
-    { stat: "24/7", label: "nights and lunch hours included" },
+    { stat: "3,651", label: "client calls routed to the right team" },
+    { stat: "114", label: "consultations booked" },
+    { stat: "68", label: "showed for their consultation" },
   ],
-  footnote: "4,679 calls in 90 days. Existing clients went straight to their team.",
+  footnote: "Existing clients went straight to their team. New callers got booked.",
 } as const;
