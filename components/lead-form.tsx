@@ -56,7 +56,7 @@ export function LeadForm() {
         `Notes: ${values.notes || "None"}`,
       ].join("\n");
       window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(
-        "Legal Fusion Hub demo request",
+        "Retainer Pro demo request",
       )}&body=${encodeURIComponent(body)}`;
       setStatus("success");
       setMessage("Your email app should open with the request ready to send.");

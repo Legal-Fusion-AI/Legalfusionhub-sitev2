@@ -1,0 +1,154 @@
+/* Nikki chat popup: "Text Nikki now" on desktop. The chat inside is CloseBot's widget. */
+.nikki-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(11, 33, 63, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.nikki-overlay[hidden] {
+  display: none;
+}
+
+.nikki-card {
+  position: relative;
+  display: flex;
+  width: min(560px, 100%);
+  max-height: min(88vh, 720px);
+  flex-direction: column;
+  gap: 14px;
+  border: 2px solid transparent;
+  border-radius: 24px;
+  background:
+    linear-gradient(160deg, #f7fbfa 0%, #fdf6f3 100%) padding-box,
+    linear-gradient(135deg, var(--ink), var(--blue) 55%, var(--coral)) border-box;
+  box-shadow: 0 30px 80px -30px rgba(11, 33, 63, 0.6);
+  padding: 26px 24px 16px;
+}
+
+.nikki-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.nikki-close:hover {
+  background: var(--gray-soft);
+}
+
+.nikki-prompt {
+  min-height: 2.8em;
+  margin: 0;
+  padding-right: 40px;
+  color: var(--ink-soft);
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.nikki-topic {
+  background: linear-gradient(90deg, var(--blue-dark), var(--coral));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.nikki-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  margin-left: 2px;
+  background: var(--coral);
+  vertical-align: -0.15em;
+  animation: nikki-blink 1s steps(1) infinite;
+}
+
+@keyframes nikki-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nikki-caret {
+    animation: none;
+  }
+}
+
+.nikki-chat {
+  height: min(460px, 62vh);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+}
+
+/* The card already names Nikki and has a close button, so CloseBot's header goes. */
+.nikki-chat .cb-header {
+  display: none !important;
+}
+
+/* SMS consent under CloseBot's "Start chatting" button. */
+.nikki-chat .nikki-consent {
+  margin: 4px 2px 0;
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.nikki-chat .nikki-consent a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.nikki-starters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.nikki-starter {
+  border: 1px solid var(--coral);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--coral-dark);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 7px 14px;
+  transition:
+    background 150ms var(--ease-out),
+    color 150ms var(--ease-out);
+}
+
+.nikki-starter:hover,
+.nikki-starter:focus-visible {
+  background: var(--coral);
+  color: var(--white);
+}
+
+.nikki-note {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  text-align: center;
+}

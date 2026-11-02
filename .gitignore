@@ -27,3 +27,6 @@ next-env.d.ts
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
+
+# Private source screenshots (not committed)
+/andrew/

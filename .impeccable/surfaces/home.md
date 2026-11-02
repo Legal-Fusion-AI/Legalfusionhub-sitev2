@@ -3,14 +3,14 @@
 ## Job and audience
 
 - Persuade law-firm owners and intake leaders who need every call answered and more of those calls to become retained clients.
-- Make the product map clear: Legal Fusion Hub engages the call, then acquires the client. The public story stops when the client is retained.
+- Make the product map clear: Retainer Pro engages the call, then acquires the client. The public story stops when the client is retained.
 
 ## Outcome and proof
 
 - Primary action: **Book a demo**. The header and hero buttons are larger than body text so the action is easy to find.
 - Prove the mechanism by showing one inquiry move from Engage to Acquire, then to a retained client.
 - Company lines: Technology for a stronger practice. One company. From first call to retained client. Every call answered. More clients retained.
-- Practice evidence (8,000+ cases, 24+ years) appears in the homepage proof band and on About.
+- Practice evidence (10,000+ cases, 24+ years) appears in the homepage proof band and on About.
 - A recorded bankruptcy intake call sits on the homepage, with a play control, waveform, and the full transcript.
 
 ## Selected direction
@@ -22,7 +22,7 @@
 
 ## Scope and boundaries
 
-- Routes: `/`, `/demo`, `/how-it-works`, `/about`, `/privacy`, `/terms`. `/portal` redirects to `/`.
+- Routes: `/`, `/demo`, `/how-it-works`, `/about`, `/case-studies`, `/privacy`, `/terms`. `/portal` redirects to `/`.
 - Light-only and heavily white. No stock photography, generated atmosphere, dark hero, bento grid, dollar pricing, testimonials, or customer logos.
 - Do not mention a client portal, questionnaires, case files, forms, or work after retention.
 

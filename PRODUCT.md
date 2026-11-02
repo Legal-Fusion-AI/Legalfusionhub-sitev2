@@ -1,4 +1,4 @@
-# Legal Fusion Hub
+# Retainer Pro
 
 <!-- impeccable:product-schema 1 -->
 
@@ -16,28 +16,42 @@ Owners, attorneys, intake leaders, and firm administrators at US law firms, espe
 
 ## Product Purpose
 
-Legal Fusion Hub takes a bankruptcy inquiry from the first call to a retained client. The public lines are:
+Retainer Pro takes a bankruptcy inquiry from the first call to a retained client. The positioning line is:
 
-- Technology for a stronger practice.
+- We automate the moments that matter so your firm stays human where it counts.
+
+Supporting lines:
+
 - One company. From first call to retained client.
 - Every call answered. More clients retained.
 
 The site presents two parts of that path:
 
-- **Legal Fusion Hub — Engage.** Calls and inquiries get an immediate response 24/7. Hub answers, handles the inquiry, and captures the lead.
-- **Legal Fusion Hub — Acquire.** Hub qualifies by the firm’s criteria, follows up, schedules consultations, and helps convert bankruptcy leads into retained clients.
+- **Retainer Pro — Engage.** Calls and inquiries get an immediate response 24/7. Retainer Pro answers, handles the inquiry, and captures the lead.
+- **Retainer Pro — Acquire.** Retainer Pro qualifies by the firm’s criteria, follows up, schedules consultations, and helps convert bankruptcy leads into retained clients.
 
 The primary website outcome is a qualified firm visitor booking a demo.
 
 ## Positioning
 
-Legal Fusion Hub is the company and the system that answers the call and turns the lead into a retained client. The company was built from experience inside a bankruptcy practice that has filed more than 8,000 cases across more than 24 years of legal practice. That evidence appears on the homepage proof band and on About.
+Retainer Pro is the public brand for the system that answers the call and turns the lead into a retained client. Legal Fusion Hub, LLC is the legal owner. The company was built from experience inside a bankruptcy practice that has filed more than 10,000 cases across more than 24 years of legal practice. That evidence appears on the homepage proof band and on About.
 
 ## Product Family
 
-- **Legal Fusion Hub:** the company, this site, and the Engage and Acquire stages. The public site stops at a retained client.
+- **Retainer Pro:** the public product brand on this site. Customer-facing copy, titles, and CTAs use this name.
+- **Legal Fusion Hub, LLC:** the legal owner. Footer and About state "Retainer Pro by Legal Fusion Hub, LLC". Canonical URLs and contact email stay on legalfusionhub.com.
 
-The former public name “Legal Fusion AI” is retired. Do not publish Client Booker, AI Receptionist, Additional Products, Closebot, or GHL Voice AI. Those names stay internal.
+The former public names “Legal Fusion Hub” (as the product brand) and “Legal Fusion AI” are retired from customer-facing copy. Do not publish Client Booker, AI Receptionist, Additional Products, Closebot, or GHL Voice AI. Those names stay internal.
+
+## AI Employees
+
+AI employees are named as a brand. Use the name only, never a title from any show.
+
+- **Donna** handles the phone: answers every call, handles the inquiry, captures the lead, and books the consultation. Donna does not text. The name is a nod to the legal TV show; the show title is never used.
+- **Nikki** handles texts, web inquiries, and follow-up: responds instantly, confirms the appointment, follows up, and nurtures missed appointments and no-shows.
+- Both Donna and Nikki speak English and Spanish. There is no separate Spanish-language employee (Sofia is retired; confirmed by Mara 2026-10-23).
+
+Never promise unlimited voice minutes. Never claim the product replaces attorneys or staff.
 
 ## Core Capabilities
 
@@ -48,18 +62,15 @@ The former public name “Legal Fusion AI” is retired. Do not publish Client B
 
 ## Evidence
 
-- Built inside a real bankruptcy practice.
-- More than 8,000 cases filed.
-- More than 24 years of legal practice.
-- Prior internal system evidence includes 500 automated actions in one week.
+- Built inside a real bankruptcy practice, from more than 24 years of legal practice.
+- Morrison Law Group 90-day pilot (June 12 to September 9, 2026), counted from the GHL Voice AI call logs on 2026-11-01: 4,679 calls from 1,486 callers answered by AI; 3,651 calls routed straight to staff, of which 1,719 calls from 698 clients went to their case-specific team or staff member (petition prep and doc collection, post-filing, billing, named staff; generic call queue and new-intake queue excluded); 114 new callers got a consultation booked after their first AI-answered call, and 68 of them showed (matched against the consultation calendars). Only 48 were booked by the AI on the call, so never say "booked by AI" about the 114, and don't publish a booking or show percentage. This leads the homepage and needs Theron's written OK on exact wording before production. The homepage card counts people and must add up: 1,486 callers = 889 existing clients routed to their team (567 to their case team, 322 to the general queue or front desk) + 363 new callers (114 booked a consultation) + 234 hang-ups or no conversation. Never mix people and calls on the same card. Other verified call counts for other uses: 999 of the 4,679 calls were after hours or at lunch (Samantha 545, Sage lunch 454). 2.4 second average pickup is owner-supplied, not in the call logs, and not shown on the site. Retired claims, do not reuse without a source: 4,681 calls, 56 consultations, 390 staff hours, "no call went to voicemail."
+- Success stories and reviews from the 10 founding firms are coming. The homepage reserves a clearly marked, empty placeholder for them.
 
-Do not invent customer logos, testimonials, pricing, certifications, conversion rates, or performance benchmarks.
+Do not invent customer logos, testimonials, pricing, certifications, conversion rates, or performance benchmarks beyond the owner-vouched Morrison pilot above. Do not invent testimonials for the founding-firm placeholder.
 
 ## Primary Action
 
-Use the exact label **Book a demo** throughout the site. It leads to `/demo`.
-
-The demo request captures name, work email, firm, role, and optional notes. It sends to a configured GoHighLevel endpoint when available and otherwise opens a pre-addressed email.
+Use the exact label **Book a demo** throughout the site. It leads to the three-option contact section on Contact (`/demo#contact-options`): send an inquiry, call us, or book a live demo. Do not name the booking vendor in visible copy.
 
 ## Brand Commitments
 
@@ -73,13 +84,15 @@ The demo request captures name, work email, firm, role, and optional notes. It s
 
 ## Voice
 
-Direct, specific, calm, and commercially clear. Use the owner’s product language: calls, leads, consultations, retained clients, and the stages Engage and Acquire. The closer is “Every call answered. More clients retained.” Avoid startup hype, vague AI claims, and claims that automation replaces the firm’s human judgment. Do not describe work after the client is retained.
+We speak as "we". Lead with proof and numbers. Warm and plain. Short sentences. No hype words (game-changing, seamless, leverage, unlock, supercharge, cutting-edge). No em dashes in copy. Use the owner’s product language: calls, texts, leads, consultations, retained clients, and the pipeline stages New, Qualified, Consultation booked, Retained, and Nurture. The closer is “Every call answered. More clients retained.” Avoid vague AI claims and claims that automation replaces the firm’s attorneys or staff. Do not describe work after the client is retained.
 
 ## Constraints
 
 - Public copy is for law firms, not debtors seeking legal advice.
 - The website does not provide legal advice.
-- Do not mention a client portal, questionnaires, case files, or bankruptcy forms. The public story ends when the client is retained. `/portal` redirects to `/`.
-- Do not publish dollar amounts. The FAQ may say pricing is a monthly subscription or pay per retained client, with the details covered on the demo.
+- Setup may be described as a light questionnaire (firm name, greeting, slogan). Keep the exact phrase "qualifies bankruptcy leads by your criteria".
+- Make clear that information gathered before the consultation helps the attorney weigh Chapter 7 against other options. It is to help the attorney, not to qualify the lead.
+- Do not mention a client portal, case files, or bankruptcy forms. The public story ends when the client is retained. `/portal` redirects to `/`.
+- No pricing anywhere on the public site: no dollar amounts, no plan names, no pricing structures (not even "subscription" or "pay per retained client"). Pricing is only discussed on the demo. The FAQ may say pricing is walked through on the demo and link to Book a demo.
 - Accessibility, responsive behavior, reduced-motion support, and production-ready form states are required.
-- Do not publish vendor or retired product names. The public name is Legal Fusion Hub.
+- Do not publish vendor or retired product names. The public brand is Retainer Pro. The legal owner is Legal Fusion Hub, LLC.

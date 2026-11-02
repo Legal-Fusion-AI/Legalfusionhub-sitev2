@@ -1,49 +1,52 @@
 import type { Metadata } from "next";
-import "@fontsource-variable/manrope";
-import "@fontsource-variable/bricolage-grotesque";
+import Script from "next/script";
+import "@fontsource-variable/open-sans";
+import "@fontsource-variable/montserrat";
 import "./globals.css";
+import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { VoiceDemoWidget } from "@/components/voice-demo-widget";
+import { organizationGraph } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | ${siteConfig.tagline}`,
+    default: "AI Receptionist for Bankruptcy Law Firms, 24/7 | Retainer Pro",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  openGraph: {
+    type: "website",
+    siteName: siteConfig.name,
+    locale: "en_US",
+  },
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const organization = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: siteConfig.name,
-    url: siteConfig.url,
-    email: siteConfig.email,
-    description: siteConfig.description,
-    logo: new URL("/logo-wordmark.png", siteConfig.url).toString(),
-  };
-
   return (
     <html lang="en">
+      <head>
+        {/* Analytics pixel (lspxl). Vendor asks for it in <head> on every page, before other scripts. Added 2026-10-23. */}
+        <script async src="https://px.lspxl.com/c/6977f114-62dd-4fe9-9bb6-dbd0c338520a" />
+      </head>
       <body>
-        {/* THESIS: One company takes a bankruptcy inquiry from the first call to a retained client. OWN-WORLD: white operational field, ink type, blue routing, coral action, green completion. STORY: engage the call, acquire the client, book a demo. FIRST VIEWPORT: centered serif headline, subheadline, and demo CTA on a pale abstract field, with the live journey board beneath. */}
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>
         <SiteHeader />
         <div id="main-content">{children}</div>
         <SiteFooter />
-        <VoiceDemoWidget />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
+        {/* LeadConnector (GHL) chat widget. Added 2026-10-26. */}
+        <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="693c4abaf258cf0f6649aed0"
+          strategy="lazyOnload"
         />
+        <JsonLd data={organizationGraph()} />
       </body>
     </html>
   );

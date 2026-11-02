@@ -7,32 +7,31 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="shell footer-main">
         <div className="footer-brand">
-          <Brand />
+          <Brand plated />
           <p>
             {siteConfig.tagline}. From the first call to a retained client.
           </p>
         </div>
         <div>
           <h2>Explore</h2>
-          <Link href="/#products">Products</Link>
+          <Link href="/#hear-a-real-call">See a real call</Link>
           <Link href="/how-it-works">How it works</Link>
-          <Link href="/about">About</Link>
-          <Link href="/demo">Book a demo</Link>
+          <Link href="/about">Team + Vision</Link>
+          <Link href={siteConfig.bookPath}>Book a demo</Link>
         </div>
         <div>
           <h2>Products</h2>
-          <Link href="/#products">Legal Fusion Hub</Link>
-          <span>Engage and acquire</span>
+          <Link href="/">{siteConfig.name}</Link>
         </div>
         <div>
           <h2>Legal</h2>
           <Link href="/privacy">Privacy</Link>
           <Link href="/terms">Terms</Link>
-          <a href="mailto:info@legalfusion.ai">info@legalfusion.ai</a>
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
         </div>
       </div>
       <div className="shell footer-bottom">
-        <span>© {new Date().getFullYear()} Legal Fusion Hub</span>
+        <span>© {new Date().getFullYear()} {siteConfig.ownerLine}</span>
         <span>For law firms. We do not provide legal advice.</span>
       </div>
     </footer>

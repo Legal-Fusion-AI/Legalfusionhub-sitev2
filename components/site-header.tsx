@@ -4,20 +4,36 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { useEffect, useState } from "react";
-import blackLogo from "@/blacklogo.png";
+import wordmark from "@/public/brand/retainer-pro-wordmark.png";
+import { siteConfig } from "@/lib/site-config";
 
-export function Brand() {
+export function Brand({ plated = false }: { plated?: boolean }) {
   return (
-    <Link className="brand" href="/" aria-label="Legal Fusion Hub home">
-      <Image className="brand-logo" src={blackLogo} alt="" priority />
+    <Link
+      className={plated ? "brand brand-plated" : "brand"}
+      href="/"
+      aria-label="Retainer Pro home"
+    >
+      <Image
+        className="brand-logo"
+        src={wordmark}
+        alt=""
+        width={146}
+        height={48}
+        priority={!plated}
+        quality={100}
+        unoptimized
+        sizes="180px"
+      />
     </Link>
   );
 }
 
 const links = [
-  { href: "/#products", label: "Products" },
-  { href: "/how-it-works", label: "How it works" },
-  { href: "/about", label: "About" },
+  { href: "/#why-use-ai", label: "Why Use AI" },
+  { href: "/case-studies", label: "Case Studies" },
+  { href: "/about", label: "Team + Vision" },
+  { href: "/demo", label: "Contact" },
 ];
 
 export function SiteHeader() {
@@ -43,7 +59,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="header-actions">
-          <Link className="button button-accent button-small" href="/demo">
+          <Link className="button button-accent button-small" href={siteConfig.bookPath}>
             Book a demo
           </Link>
         </div>
@@ -57,7 +73,7 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
-            <Link className="button button-accent" href="/demo">
+            <Link className="button button-accent" href={siteConfig.bookPath}>
               Book a demo
             </Link>
           </nav>

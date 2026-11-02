@@ -1,6 +1,6 @@
-# Legal Fusion Hub marketing site
+# Retainer Pro marketing site
 
-Public marketing site for Legal Fusion Hub. Hub answers the call, qualifies the lead, and books the consultation that turns a bankruptcy inquiry into a retained client.
+Public marketing site for Retainer Pro, owned by Legal Fusion Hub, LLC. Retainer Pro answers the call, qualifies the lead, and books the consultation that turns a bankruptcy inquiry into a retained client.
 
 ## Stack
 
@@ -30,16 +30,9 @@ npm run typecheck
 npm run build
 ```
 
-## Demo form
+## Book a demo
 
-The demo form posts JSON to GoHighLevel when these public environment variables are configured:
-
-```bash
-NEXT_PUBLIC_GHL_DEMO_ENDPOINT=
-NEXT_PUBLIC_GHL_DEMO_FORM_ID=
-```
-
-Without an endpoint, the form opens a pre-addressed email to `info@legalfusion.ai` with the submitted fields.
+**Book a demo** CTAs go to the three-option contact section on Contact (`/demo#contact-options`): send an inquiry, call us, or book a live demo. The Contact nav item still opens `/demo`.
 
 ## Product and design authority
 

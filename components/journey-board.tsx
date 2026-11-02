@@ -2,10 +2,27 @@
 
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { CalendarCheck, Check, PhoneIncoming } from "lucide-react";
+import {
+  Calendar,
+  CalendarCheck,
+  Check,
+  MessageSquare,
+  Phone,
+  PhoneIncoming,
+  UserRound,
+  UserRoundCheck,
+} from "lucide-react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { Avatar, MacWindow } from "@/components/mac-window";
-import coloredLogo from "@/coloredlogo.png";
+import { MacWindow } from "@/components/mac-window";
+import logoMark from "@/public/logo-mark.png";
+
+const sourceIcons = {
+  phone: Phone,
+  chat: MessageSquare,
+  calendar: Calendar,
+  calendarCheck: CalendarCheck,
+  retained: UserRoundCheck,
+} as const;
 
 const sources = [
   { label: "Phone calls", glyph: "phone", stage: 0, tone: "teal" },
@@ -19,21 +36,21 @@ const stages = [
   {
     id: "engage",
     short: "Engage",
-    title: "Never miss a call.",
-    body: "Hub answers calls 24/7, handles inquiries, and captures the lead.",
-    meta: "24/7",
-    detail: "New inquiry captured",
-    owner: "Hub intake",
+    title: "Someone calls your firm. Donna picks up on the first ring.",
+    body: "She answers the phone around the clock, finds out what the person needs, and makes sure nothing gets lost before your team sees it. Nikki picks up the texts and web forms.",
+    meta: "Any hour",
+    detail: "Donna answered and listened",
+    owner: "Finding a time that works",
     icon: PhoneIncoming,
   },
   {
     id: "acquire",
     short: "Acquire",
-    title: "Turn the lead into a client.",
-    body: "Hub qualifies by the firm’s criteria, follows up, and schedules the consultation.",
+    title: "Then she turns the call into a client.",
+    body: "Donna qualifies bankruptcy leads by your criteria and books the consultation. Nikki follows up so the appointment doesn't go cold.",
     meta: "Qualified",
-    detail: "Consultation scheduled",
-    owner: "Hub intake",
+    detail: "Qualified and booked",
+    owner: "Consultation, Thursday at 4 PM",
     icon: CalendarCheck,
   },
 ];
@@ -57,27 +74,6 @@ function elbowPath(x: number, center: number, height: number, rail: number) {
     `Q ${center} ${rail} ${center} ${rail + radius}`,
     `L ${center} ${height}`,
   ].join(" ");
-}
-
-const solidGlyphs = {
-  phone: "M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z",
-  chat: "M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z",
-  calendar: "M8 3.1V1.2h2.2V3.1h3.6V1.2H16V3.1h3.2a2 2 0 0 1 2 2V19.2a2 2 0 0 1-2 2H4.8a2 2 0 0 1-2-2V5.1a2 2 0 0 1 2-2H8zm-.6 9.2h2.15v2.15H7.4V12.3zm3.7 0h2.15v2.15h-2.15V12.3zm3.7 0h2.15v2.15H14.8V12.3zM7.4 15.7h2.15v2.15H7.4V15.7zm3.7 0h2.15v2.15h-2.15V15.7zm3.7 0h2.15v2.15H14.8V15.7z",
-  calendarCheck: "M8 3.1V1.2h2.2V3.1h3.6V1.2H16V3.1h3.2a2 2 0 0 1 2 2V19.2a2 2 0 0 1-2 2H4.8a2 2 0 0 1-2-2V5.1a2 2 0 0 1 2-2H8zm1.1 9.3 1.9 1.9 4.7-4.6 1.5 1.5-6.2 6.1-3.4-3.4 1.5-1.5z",
-  retained: "M8.2 11.1a2.85 2.85 0 1 0 0-5.7 2.85 2.85 0 0 0 0 5.7zM2.4 18.7v-.75c0-1.95 2.6-3.5 5.8-3.5s5.8 1.55 5.8 3.5v.75H2.4zm12.15-4.15 1.25-1.25 2.15 2.15 3.55-3.55 1.25 1.25-4.8 4.8-3.4-3.4z",
-} as const;
-
-function SolidGlyph({ name }: { name: keyof typeof solidGlyphs }) {
-  const punched = name === "calendar" || name === "calendarCheck";
-  return (
-    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-      <path
-        d={solidGlyphs[name]}
-        fill="currentColor"
-        fillRule={punched ? "evenodd" : "nonzero"}
-      />
-    </svg>
-  );
 }
 
 function JourneyWires({
@@ -225,6 +221,7 @@ export function JourneyBoard({ compact = false }: JourneyBoardProps) {
           <div className="journey-sources">
             {sources.map((source, index) => {
               const on = lit && index === activeSource;
+              const SourceIcon = sourceIcons[source.glyph];
               return (
                 <button
                   className={`journey-source journey-source-${source.tone}${
@@ -234,12 +231,12 @@ export function JourneyBoard({ compact = false }: JourneyBoardProps) {
                   type="button"
                   aria-label={source.label}
                   aria-pressed={on}
+                  title={source.label}
                   onClick={() => selectSource(index)}
                 >
                   <span className="journey-source-icon">
-                    <SolidGlyph name={source.glyph} />
+                    <SourceIcon size={18} strokeWidth={2.15} aria-hidden="true" />
                   </span>
-                  <span className="journey-source-label">{source.label}</span>
                 </button>
               );
             })}
@@ -265,12 +262,12 @@ export function JourneyBoard({ compact = false }: JourneyBoardProps) {
                 style={{ animationDelay: `${TRAVEL_MS}ms` }}
               />
             )}
-            <Image src={coloredLogo} alt="" width={36} height={36} />
+            <Image src={logoMark} alt="" width={36} height={36} />
           </div>
         )}
 
         <MacWindow
-          title="Client journey"
+          title="One caller's path"
           aside={
             <span className="mac-pill">
               <span className="live-dot" />
@@ -327,26 +324,28 @@ export function JourneyBoard({ compact = false }: JourneyBoardProps) {
 
               <div className="mac-card">
                 <div className="mac-card-head">
-                  <Avatar who="jordan" />
+                  <span className="mac-avatar mac-avatar-icon" aria-hidden="true">
+                    <UserRound size={14} strokeWidth={2.2} />
+                  </span>
                   <span>
-                    <strong>New prospective client</strong>
-                    <em>Bankruptcy inquiry</em>
+                    <strong>A first-time caller</strong>
+                    <em>Wants to talk to someone about bankruptcy</em>
                   </span>
                   <span className="mac-pill">{stage.short}</span>
                 </div>
                 <ul className="mac-rows">
                   <li>
-                    <span>Current action</span>
+                    <span>What happened</span>
                     <strong>{stage.detail}</strong>
                   </li>
                   <li>
-                    <span>Handled by</span>
+                    <span>What&apos;s next</span>
                     <strong>{stage.owner}</strong>
                   </li>
                 </ul>
                 <div className="mac-card-foot">
                   <Check size={14} aria-hidden="true" />
-                  From first call to retained client.
+                  From the first call to a retained client.
                 </div>
               </div>
             </div>

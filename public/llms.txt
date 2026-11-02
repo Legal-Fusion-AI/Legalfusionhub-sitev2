@@ -1,0 +1,22 @@
+# Retainer Pro
+
+> Retainer Pro is the AI front desk for consumer bankruptcy law firms, owned by Legal Fusion Hub, LLC, a Utah limited liability company. Its AI employees, Donna (intake) and Nikki (follow-up), answer calls, texts, and web forms 24/7, qualify leads by each firm's criteria, book consultations, and follow up through to a retained client. Sofia answers Spanish-language intake.
+
+## Key facts
+- Public brand: Retainer Pro.
+- Legal owner: Retainer Pro by Legal Fusion Hub, LLC. Legal name: Legal Fusion Hub LLC, a Utah limited liability company.
+- Founders: Mara Ream and Theron Morrison.
+- Who it serves: consumer bankruptcy law firms in the United States.
+- What it does: answers every call and text, qualifies, books the consultation, confirms, and works no-shows in a Nurture stage. Attorneys and staff meet the client and decide who the firm retains.
+- AI disclosure: callers are told they are speaking with an AI assistant.
+- Setup: the firm keeps its numbers; calls route by conditional call forwarding. Setup timing is covered on a demo.
+- Result: Morrison Law Group, June 12 to September 9, 2026: 4,681 calls answered, 2.4 second average pickup, 56 consultations booked, 390 staff hours reclaimed.
+- Pricing: not published; covered on a demo.
+- Contact: jeff@legalfusionhub.com. Demo: https://www.legalfusionhub.com/demo
+
+## Pages
+- [Home](https://www.legalfusionhub.com/): overview, real call recording with transcript, FAQ
+- [How it works](https://www.legalfusionhub.com/how-it-works)
+- [Team + Vision](https://www.legalfusionhub.com/about)
+- [Case studies](https://www.legalfusionhub.com/case-studies)
+- [Book a demo](https://www.legalfusionhub.com/demo)

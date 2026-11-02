@@ -1,25 +1,27 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { DemoCta } from "@/components/demo-cta";
 import { JourneyBoard } from "@/components/journey-board";
+import { pageMetadata, routeMeta } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
-  title: "How it works",
-  description:
-    "How Legal Fusion Hub answers the call, qualifies the lead, and books the consultation that turns it into a retained client.",
-};
+export const metadata = pageMetadata(routeMeta.howItWorks);
 
 const phases = [
   {
-    title: "Hub answers the call.",
-    text: "Calls and inquiries get an immediate, professional response 24/7. Hub answers, handles the inquiry, and captures the lead.",
-    points: ["24/7 call answering", "Inquiry handling", "New lead capture"],
+    title: "We answer the call.",
+    text: "Donna answers calls and texts day or night, handles the inquiry, and captures the lead.",
+    points: ["Calls and texts answered 24/7", "Inquiry handled", "New lead captured"],
   },
   {
-    title: "Hub turns the lead into a client.",
-    text: "Hub qualifies by your firm’s criteria, follows up, schedules consultations, and helps convert bankruptcy leads into retained clients.",
-    points: ["Qualification", "Follow up", "Scheduled consultations", "Retained bankruptcy clients"],
+    title: "We book the consultation.",
+    text: "We qualify bankruptcy leads by your criteria, follow up, and book the consultation. Before the meeting we gather a few details so the attorney can weigh Chapter 7 against other options. That is to help the attorney, not to qualify the lead.",
+    points: ["Qualified by your criteria", "Follow up", "Consultation booked", "Details ready for the attorney"],
+  },
+  {
+    title: "We nurture the misses.",
+    text: "When someone misses a consultation or does not show, Nikki follows up, keeps the lead warm, and books a new time.",
+    points: ["No-show follow-up", "Lead kept warm", "New time booked"],
   },
 ];
 
@@ -30,11 +32,11 @@ export default function HowItWorksPage() {
         <div className="shell narrow-hero">
           <h1>From first call to retained client.</h1>
           <p>
-            Legal Fusion Hub answers the call, qualifies the lead, and books
-            the consultation that turns a bankruptcy inquiry into a retained
-            client.
+            We answer the call, qualify bankruptcy leads by your criteria, and
+            book the consultation. Setup is light. We start with your firm name,
+            a greeting, and your slogan.
           </p>
-          <Link className="button" href="/demo">
+          <Link className="button" href={siteConfig.bookPath}>
             Book a demo <ArrowRight size={17} aria-hidden="true" />
           </Link>
         </div>
@@ -65,13 +67,13 @@ export default function HowItWorksPage() {
           ))}
         </div>
         <div className="shell">
-          <DemoCta lead="Hub answers, qualifies, and books. The demo shows it on your matters." />
+          <DemoCta lead="We answer, qualify, and book. The demo shows it on your matters." />
         </div>
       </section>
       <section className="page-cta">
         <div className="shell page-cta-inner">
           <h2>Every call answered. More clients retained.</h2>
-          <Link className="button" href="/demo">
+          <Link className="button" href={siteConfig.bookPath}>
             Book a demo <ArrowRight size={17} aria-hidden="true" />
           </Link>
         </div>
