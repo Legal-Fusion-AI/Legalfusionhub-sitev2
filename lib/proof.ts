@@ -39,4 +39,6 @@ export const morrisonProof = {
     { stat: "889", label: "existing clients routed to their team" },
     { stat: "114", label: "consultations booked" },
   ],
+  footnote:
+    "Clients went to petition prep, post-filing, billing, or the staff member on their case. New callers got booked.",
 } as const;
