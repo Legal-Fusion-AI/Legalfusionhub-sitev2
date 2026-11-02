@@ -89,7 +89,6 @@ export function HomePage() {
                   </li>
                 ))}
               </ul>
-              <p>{morrisonProof.footnote}</p>
             </div>
           </div>
           <CallLine />

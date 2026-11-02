@@ -17,8 +17,8 @@ export const practiceEvidence = [
  * (the generic call queue and new-intake queue are excluded). Matched against the Ogden, Orem, Sandy and Zoom consultation calendars: 114 new callers
  * got a consultation booked after their first AI-answered call (48 on the call by the AI, the rest
  * by staff or the booking widget), and 68 of them showed. Not "booked by AI": that is only 48.
- * 2.4 sec average pickup is owner-supplied (Mara, 2026-11-01); it is not in the call logs, so keep
- * its source on file. The old 390 staff hours and "no voicemail" claims had no source and were dropped.
+ * Not on the site: 2.4 sec average pickup (owner-supplied, not in the call logs), 390 staff hours
+ * and "no voicemail" (no source).
  * [DRAFT, needs Theron's written OK on exact wording before production]
  */
 export const morrisonProof = {
@@ -28,7 +28,7 @@ export const morrisonProof = {
   heroLine:
     "Morrison Law Group, June 12 to September 9, 2026: 1,486 callers answered. 889 existing clients routed to their team, 363 new callers, 114 consultations booked.",
   sentence:
-    "From June 12 to September 9, 2026, Retainer Pro answered 1,486 callers for Morrison Law Group with a 2.4 second average pickup. It routed 889 existing clients to their team and booked 114 consultations from 363 new callers.",
+    "From June 12 to September 9, 2026, Retainer Pro answered 1,486 callers for Morrison Law Group. It routed 889 existing clients to their team and booked 114 consultations from 363 new callers.",
   /**
    * People, not calls, so the card adds up: 889 + 363 + 234 = 1,486. Each caller is counted once:
    * 363 new callers (any new-caller signal), 567 clients sent to their case team + 322 other clients
@@ -40,5 +40,4 @@ export const morrisonProof = {
     { stat: "363", label: "new callers" },
     { stat: "114", label: "consultations booked" },
   ],
-  footnote: "The other 234 were hang-ups or no conversation. Average pickup: 2.4 seconds.",
 } as const;
