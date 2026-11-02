@@ -63,7 +63,7 @@ Never promise unlimited voice minutes. Never claim the product replaces attorney
 ## Evidence
 
 - Built inside a real bankruptcy practice, from more than 24 years of legal practice.
-- Morrison Law Group 90-day pilot (June 12 to September 9, 2026): 4,681 calls answered with none sent to voicemail; 2.4 second average pickup versus 25 to 35 seconds for a person; 56 consultations booked by the AI; 390 staff hours reclaimed. This is the owner-vouched proof set and leads the homepage and About.
+- Morrison Law Group 90-day pilot (June 12 to September 9, 2026), counted from the GHL Voice AI call logs on 2026-11-01: 4,679 calls from 1,486 callers answered by AI; 3,651 calls routed straight to staff (billing, petition prep, post-filing, intake, named staff); 48 consultations booked by the AI with no staff involved. This leads the homepage and needs Theron's written OK on exact wording before production. Retired claims, do not reuse without a source: 4,681 calls, 56 consultations, 2.4 second pickup, 390 staff hours, "no call went to voicemail."
 - Success stories and reviews from the 10 founding firms are coming. The homepage reserves a clearly marked, empty placeholder for them.
 
 Do not invent customer logos, testimonials, pricing, certifications, conversion rates, or performance benchmarks beyond the owner-vouched Morrison pilot above. Do not invent testimonials for the founding-firm placeholder.

@@ -76,7 +76,7 @@ export function HomePage() {
                 <Image src={theronPortrait} alt="" width={44} height={44} sizes="44px" />
                 <div>
                   <b>{morrisonProof.firm}</b>
-                  <span>Donna&apos;s first 90 days, {morrisonProof.range}</span>
+                  <span>First 90 days, {morrisonProof.range}</span>
                 </div>
               </div>
               <ul>
@@ -89,7 +89,7 @@ export function HomePage() {
                   </li>
                 ))}
               </ul>
-              <p>Not one call went to voicemail.</p>
+              <p>{morrisonProof.footnote}</p>
             </div>
           </div>
           <CallLine />

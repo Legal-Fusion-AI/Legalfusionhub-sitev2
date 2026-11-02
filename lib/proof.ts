@@ -9,18 +9,26 @@ export const practiceEvidence = [
   { stat: "24/7", label: "calls and texts answered" },
 ] as const;
 
+/**
+ * Counted from Morrison's GHL Voice AI call logs, June 12 to September 9, 2026 (pulled 2026-11-01):
+ * 4,679 live calls from 1,486 unique contacts; 3,651 calls transferred to staff queues or named
+ * staff; 48 unique contacts booked by the AI (APPOINTMENT_BOOKING action or "Booked" outcome).
+ * The old 2.4 sec pickup, 390 staff hours and "no voicemail" claims had no source and were dropped.
+ * [DRAFT, needs Theron's written OK on exact wording before production]
+ */
 export const morrisonProof = {
   firm: "Morrison Law Group",
   range: "June 12 to September 9, 2026",
   rangeShort: "June 12 to Sept 9, 2026",
   heroLine:
-    "Morrison Law Group, June 12 to September 9, 2026: 4,681 calls answered, 2.4 second average pickup, 56 consultations booked, 390 staff hours reclaimed.",
+    "Morrison Law Group, June 12 to September 9, 2026: 1,486 callers answered, 3,651 calls routed to the right team, 48 consultations booked by AI.",
   sentence:
-    "From June 12 to September 9, 2026, Retainer Pro answered 4,681 calls for Morrison Law Group with a 2.4 second average pickup, booked 56 consultations, and reclaimed 390 staff hours.",
+    "From June 12 to September 9, 2026, Retainer Pro answered 4,679 calls from 1,486 callers for Morrison Law Group, routed 3,651 calls straight to the right team, and booked 48 consultations with no staff involved.",
   stats: [
-    { stat: "4,681", label: "calls answered" },
-    { stat: "2.4 sec", label: "average pickup" },
-    { stat: "56", label: "consultations booked" },
-    { stat: "390", label: "staff hours reclaimed" },
+    { stat: "1,486", label: "callers answered" },
+    { stat: "3,651", label: "calls routed to the right team" },
+    { stat: "48", label: "consultations booked by AI" },
+    { stat: "24/7", label: "nights and lunch hours included" },
   ],
+  footnote: "4,679 calls in 90 days. Existing clients went straight to their team.",
 } as const;
