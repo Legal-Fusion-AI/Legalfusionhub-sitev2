@@ -103,6 +103,34 @@
   display: none !important;
 }
 
+.nikki-starters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.nikki-starter {
+  border: 1px solid var(--coral);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--coral-dark);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 7px 14px;
+  transition:
+    background 150ms var(--ease-out),
+    color 150ms var(--ease-out);
+}
+
+.nikki-starter:hover,
+.nikki-starter:focus-visible {
+  background: var(--coral);
+  color: var(--white);
+}
+
 .nikki-note {
   margin: 0;
   color: var(--ink-soft);

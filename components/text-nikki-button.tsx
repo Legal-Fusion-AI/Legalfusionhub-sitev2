@@ -13,6 +13,21 @@ const TOPICS = [
   "help in Spanish",
 ];
 
+// [DRAFT, needs Mara OK] One-click first questions, shown after the form and before
+// the visitor's first message.
+const STARTERS = [
+  "How does the demo work?",
+  "Book a free consultation",
+  "What should I bring?",
+];
+
+/** CloseBot widget internals used for the starter buttons. Checked 2026-11-01. */
+const CB = {
+  input: ".cb-input",
+  send: ".cb-send",
+  visitorMessage: ".cb-msg-item.lead",
+} as const;
+
 const TYPE_MS = 45;
 const HOLD_MS = 1800;
 
@@ -72,6 +87,7 @@ export function TextNikkiButton({ className = "button button-outline" }: TextNik
   const closeRef = useRef<HTMLButtonElement>(null);
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
+  const [showStarters, setShowStarters] = useState(false);
   const typed = useRotatingTopic(open);
 
   const demoLine = siteConfig.DEMO_LINE;
@@ -83,6 +99,39 @@ export function TextNikkiButton({ className = "button button-outline" }: TextNik
   useEffect(() => {
     if (open) loadCloseBot();
   }, [open]);
+
+  // Starters show once CloseBot enables its text box (the form is done) and hide
+  // after the visitor's first message.
+  useEffect(() => {
+    if (!mounted) return;
+    const container = document.getElementById(siteConfig.closebot.containerId);
+    if (!container) return;
+    const update = () => {
+      const input = container.querySelector<HTMLInputElement>(CB.input);
+      setShowStarters(
+        !!input && !input.disabled && !container.querySelector(CB.visitorMessage),
+      );
+    };
+    const observer = new MutationObserver(update);
+    observer.observe(container, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["disabled"],
+    });
+    update();
+    return () => observer.disconnect();
+  }, [mounted]);
+
+  function sendStarter(text: string) {
+    const container = document.getElementById(siteConfig.closebot.containerId);
+    const input = container?.querySelector<HTMLInputElement>(CB.input);
+    const send = container?.querySelector<HTMLButtonElement>(CB.send);
+    if (!input || !send) return;
+    input.value = text;
+    send.click();
+    setShowStarters(false);
+  }
 
   useEffect(() => {
     if (!open) return;
@@ -136,6 +185,20 @@ export function TextNikkiButton({ className = "button button-outline" }: TextNik
               <span className="sr-only">your bankruptcy questions</span>
             </p>
             <div id={siteConfig.closebot.containerId} className="nikki-chat" />
+            {showStarters ? (
+              <div className="nikki-starters" aria-label="Quick questions for Nikki">
+                {STARTERS.map((text) => (
+                  <button
+                    key={text}
+                    type="button"
+                    className="nikki-starter"
+                    onClick={() => sendStarter(text)}
+                  >
+                    {text}
+                  </button>
+                ))}
+              </div>
+            ) : null}
             {/* [DRAFT, needs Mara OK] disclosure line. */}
             <p className="nikki-note">
               Nikki is an AI assistant. This is a sample demo, so nothing goes to a real firm.
