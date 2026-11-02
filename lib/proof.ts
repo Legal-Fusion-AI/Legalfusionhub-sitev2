@@ -17,7 +17,8 @@ export const practiceEvidence = [
  * (the generic call queue and new-intake queue are excluded). Matched against the Ogden, Orem, Sandy and Zoom consultation calendars: 114 new callers
  * got a consultation booked after their first AI-answered call (48 on the call by the AI, the rest
  * by staff or the booking widget), and 68 of them showed. Not "booked by AI": that is only 48.
- * The old 2.4 sec pickup, 390 staff hours and "no voicemail" claims had no source and were dropped.
+ * 2.4 sec average pickup is owner-supplied (Mara, 2026-11-01); it is not in the call logs, so keep
+ * its source on file. The old 390 staff hours and "no voicemail" claims had no source and were dropped.
  * [DRAFT, needs Theron's written OK on exact wording before production]
  */
 export const morrisonProof = {
@@ -25,14 +26,14 @@ export const morrisonProof = {
   range: "June 12 to September 9, 2026",
   rangeShort: "June 12 to Sept 9, 2026",
   heroLine:
-    "Morrison Law Group, June 12 to September 9, 2026: 1,486 callers answered, 1,719 client calls sent to their case team, 114 consultations booked, 68 showed.",
+    "Morrison Law Group, June 12 to September 9, 2026: 4,679 calls answered, 2.4 second average pickup, 1,719 client calls sent to their case team, 114 consultations booked.",
   sentence:
-    "From June 12 to September 9, 2026, Retainer Pro answered 1,486 callers for Morrison Law Group, sent 1,719 client calls straight to the team or staff member on their case, and turned new callers into 114 booked consultations, 68 of whom showed.",
+    "From June 12 to September 9, 2026, Retainer Pro answered 4,679 calls for Morrison Law Group with a 2.4 second average pickup, sent 1,719 client calls straight to the team or staff member on their case, and booked 114 consultations from new callers.",
   stats: [
-    { stat: "1,486", label: "callers answered" },
+    { stat: "4,679", label: "calls answered" },
+    { stat: "2.4 sec", label: "average pickup" },
     { stat: "1,719", label: "client calls sent to their case team" },
     { stat: "114", label: "consultations booked" },
-    { stat: "68", label: "showed for their consultation" },
   ],
   footnote:
     "Clients went to petition prep, post-filing, billing, or the staff member on their case. New callers got booked.",

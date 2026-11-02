@@ -5,7 +5,7 @@ import CountUp from "@/components/react-bits/CountUp";
 const STAT = /^([\d,]+(?:\.\d+)?)(.*)$/;
 
 type StatCountProps = {
-  /** A published stat string such as "1,486", "24/7", or "10,000+". */
+  /** A published stat string such as "4,679", "2.4 sec", or "10,000+". */
   value: string;
   delay?: number;
   className?: string;
