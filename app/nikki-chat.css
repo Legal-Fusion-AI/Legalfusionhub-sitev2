@@ -103,6 +103,21 @@
   display: none !important;
 }
 
+/* SMS consent under CloseBot's "Start chatting" button. */
+.nikki-chat .nikki-consent {
+  margin: 4px 2px 0;
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.nikki-chat .nikki-consent a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .nikki-starters {
   display: flex;
   flex-wrap: wrap;

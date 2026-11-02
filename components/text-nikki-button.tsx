@@ -21,12 +21,42 @@ const STARTERS = [
   "What should I bring?",
 ];
 
-/** CloseBot widget internals used for the starter buttons. Checked 2026-11-01. */
+/** CloseBot widget internals used for the starter buttons and consent line. Checked 2026-11-01. */
 const CB = {
   input: ".cb-input",
   send: ".cb-send",
   visitorMessage: ".cb-msg-item.lead",
+  formActions: ".cb-form-actions",
 } as const;
+
+/**
+ * SMS consent shown under CloseBot's submit button, which has no consent setting of its own.
+ * [DRAFT, needs Mara OK and compliance review] wording.
+ */
+function addConsentLine(container: HTMLElement) {
+  const actions = container.querySelector(CB.formActions);
+  if (!actions || actions.querySelector(".nikki-consent")) return;
+  const link = (href: string, text: string) => {
+    const a = document.createElement("a");
+    a.href = href;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = text;
+    return a;
+  };
+  const line = document.createElement("p");
+  line.className = "nikki-consent";
+  line.append(
+    "By clicking Start chatting, you agree to receive text messages from Retainer Pro " +
+      "(Legal Fusion Hub LLC) about your inquiry at the number above. Message frequency " +
+      "varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. See our ",
+    link("/privacy", "Privacy Policy"),
+    " and ",
+    link("/terms", "Terms"),
+    ".",
+  );
+  actions.append(line);
+}
 
 const TYPE_MS = 45;
 const HOLD_MS = 1800;
@@ -100,13 +130,14 @@ export function TextNikkiButton({ className = "button button-outline" }: TextNik
     if (open) loadCloseBot();
   }, [open]);
 
-  // Starters show once CloseBot enables its text box (the form is done) and hide
-  // after the visitor's first message.
+  // Adds the consent line to the form, and shows the starters once CloseBot enables
+  // its text box (the form is done) until the visitor's first message.
   useEffect(() => {
     if (!mounted) return;
     const container = document.getElementById(siteConfig.closebot.containerId);
     if (!container) return;
     const update = () => {
+      addConsentLine(container);
       const input = container.querySelector<HTMLInputElement>(CB.input);
       setShowStarters(
         !!input && !input.disabled && !container.querySelector(CB.visitorMessage),
