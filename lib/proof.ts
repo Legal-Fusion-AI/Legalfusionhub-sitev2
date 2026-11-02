@@ -26,9 +26,9 @@ export const morrisonProof = {
   range: "June 12 to September 9, 2026",
   rangeShort: "June 12 to Sept 9, 2026",
   heroLine:
-    "Morrison Law Group, June 12 to September 9, 2026: 1,486 callers answered. 889 existing clients routed to their team, 363 new callers, 114 consultations booked.",
+    "Morrison Law Group, June 12 to September 9, 2026: 1,486 callers answered, 889 existing clients routed to their team, 114 consultations booked.",
   sentence:
-    "From June 12 to September 9, 2026, Retainer Pro answered 1,486 callers for Morrison Law Group. It routed 889 existing clients to their team and booked 114 consultations from 363 new callers.",
+    "From June 12 to September 9, 2026, Retainer Pro answered 1,486 callers for Morrison Law Group. It routed 889 existing clients to their team and booked 114 consultations.",
   /**
    * People, not calls, so the card adds up: 889 + 363 + 234 = 1,486. Each caller is counted once:
    * 363 new callers (any new-caller signal), 567 clients sent to their case team + 322 other clients
@@ -37,7 +37,6 @@ export const morrisonProof = {
   stats: [
     { stat: "1,486", label: "callers answered" },
     { stat: "889", label: "existing clients routed to their team" },
-    { stat: "363", label: "new callers" },
     { stat: "114", label: "consultations booked" },
   ],
 } as const;

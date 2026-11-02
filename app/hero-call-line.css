@@ -767,6 +767,11 @@
   list-style: none;
 }
 
+/* With three stats, the total spans the row and the two parts sit under it. */
+.hero-proof-card li:first-child:nth-last-child(3) {
+  grid-column: 1 / -1;
+}
+
 .hero-proof-card li strong {
   display: block;
   font-family: var(--font-display);
