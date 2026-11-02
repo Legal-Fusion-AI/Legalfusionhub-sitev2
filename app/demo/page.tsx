@@ -13,7 +13,7 @@ export default function DemoPage() {
             clients.
           </h1>
           <p>
-            Try Nikki with the form below, call us, or book a live demo with
+            Call us, try the intake form, or book a live demo with
             Jeff.
           </p>
         </div>

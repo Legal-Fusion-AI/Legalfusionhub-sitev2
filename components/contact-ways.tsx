@@ -1,97 +1,191 @@
+"use client";
+
 import Script from "next/script";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, CalendarDays, ClipboardList, Phone, X } from "lucide-react";
+import { useCallback, useEffect, useId, useRef, useState, type ReactNode } from "react";
 import { BookingWidget } from "@/components/booking-widget";
 import { InquiryEmbed } from "@/components/inquiry-form";
 import { phoneTelHref, siteConfig } from "@/lib/site-config";
 
-const demoSteps = [
-  "See how we answer calls and capture leads.",
-  "See how we qualify leads by your criteria and book consultations.",
-  "Meet Donna on intake and Nikki on follow-up.",
-] as const;
+type WayKey = "call" | "form" | "calendar";
+
+type Way = {
+  key: WayKey;
+  icon: ReactNode;
+  label: string;
+  title: string;
+  blurb: string;
+};
+
+const ways: Way[] = [
+  {
+    key: "call",
+    icon: <Phone size={22} strokeWidth={2} aria-hidden="true" />,
+    label: "Phone",
+    title: "Prefer to talk?",
+    blurb: "Call us and we will help you take the next step.",
+  },
+  {
+    key: "form",
+    icon: <ClipboardList size={22} strokeWidth={2} aria-hidden="true" />,
+    label: "Try it yourself",
+    title: "Fill out the form",
+    blurb: "Fill it out like a client would, and Nikki will text you.",
+  },
+  {
+    key: "calendar",
+    icon: <CalendarDays size={22} strokeWidth={2} aria-hidden="true" />,
+    label: "Live demo",
+    title: "Book a live demo with Jeff",
+    blurb: "Pick a time that works for you. A real person follows up.",
+  },
+];
+
+/** Old in-page anchors still open the matching popup. */
+const hashToWay: Record<string, WayKey> = {
+  "#book-a-live-demo": "calendar",
+  "#inquiry": "form",
+  "#call": "call",
+};
+
+type ContactModalProps = {
+  open: boolean;
+  wide?: boolean;
+  title: string;
+  onClose: () => void;
+  children: ReactNode;
+};
+
+function ContactModal({ open, wide = false, title, onClose, children }: ContactModalProps) {
+  const titleId = useId();
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    closeRef.current?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    const { overflow } = document.body.style;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = overflow;
+    };
+  }, [open, onClose]);
+
+  return (
+    <div className="contact-modal-overlay" hidden={!open} onClick={onClose}>
+      <div
+        className={`contact-modal${wide ? " contact-modal-wide" : ""}`}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={titleId}
+        onClick={(event) => event.stopPropagation()}
+      >
+        <button
+          ref={closeRef}
+          type="button"
+          className="contact-modal-close"
+          aria-label="Close"
+          onClick={onClose}
+        >
+          <X size={18} aria-hidden="true" />
+        </button>
+        <h2 id={titleId} className="contact-modal-title">
+          {title}
+        </h2>
+        {children}
+      </div>
+    </div>
+  );
+}
 
 export function ContactWays() {
+  const [open, setOpen] = useState<WayKey | null>(null);
+  // Embeds stay mounted after their first open so a half-filled form or calendar survives closing.
+  const [mounted, setMounted] = useState<Set<WayKey>>(() => new Set());
+
+  function show(key: WayKey) {
+    setMounted((prev) => (prev.has(key) ? prev : new Set(prev).add(key)));
+    setOpen(key);
+  }
+
+  const close = useCallback(() => setOpen(null), []);
+
+  useEffect(() => {
+    const fromHash = () => {
+      const key = hashToWay[window.location.hash];
+      if (key) show(key);
+    };
+    fromHash();
+    window.addEventListener("hashchange", fromHash);
+    return () => window.removeEventListener("hashchange", fromHash);
+  }, []);
+
   return (
     <div className="contact-body">
-      <section
-        className="contact-split-wrap"
-        id="contact-options"
-        aria-labelledby="inquiry-heading"
-      >
-        <div className="shell contact-split">
-          <article className="contact-card contact-card-form">
-            <header className="contact-card-head">
-              <p className="contact-kicker">Try it yourself</p>
-              <h2 id="inquiry-heading">Fill it out like a client would.</h2>
-              <p>
-                Pretend you need help with bankruptcy. Use your real cell
-                number, and Nikki will text you. This is a demo, so nothing
-                goes to a real firm.
-              </p>
-            </header>
-            <InquiryEmbed />
-          </article>
-
-          <aside className="contact-aside">
-            <article className="contact-card contact-card-call">
-              <div className="contact-card-head">
-                <p className="contact-kicker">Phone</p>
-                <h3>Prefer to talk?</h3>
-                <p>Call us and we will help you take the next step.</p>
-              </div>
-              <a className="contact-phone" href={phoneTelHref()}>
-                <Phone size={18} strokeWidth={2} aria-hidden="true" />
-                {siteConfig.PHONE_NUMBER}
-              </a>
-            </article>
-
-            <article className="contact-card contact-card-expect">
-              <div className="contact-card-head">
-                <p className="contact-kicker">Live demo</p>
-                <h3>What to expect</h3>
-                <p>A real person follows up.</p>
-              </div>
-              <ol className="contact-steps">
-                {demoSteps.map((step, index) => (
-                  <li key={step}>
-                    <span className="contact-step-num" aria-hidden="true">
-                      {index + 1}
-                    </span>
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ol>
-              <a className="contact-calendar-link" href="#book-a-live-demo">
-                Book a live demo with Jeff
-                <ArrowRight size={16} aria-hidden="true" />
-              </a>
-            </article>
-          </aside>
+      <section className="contact-ways-wrap" id="contact-options" aria-label="Ways to reach us">
+        <div className="shell contact-ways">
+          {ways.map((way) => (
+            <button
+              key={way.key}
+              type="button"
+              className={`contact-way contact-way-${way.key}`}
+              aria-haspopup="dialog"
+              onClick={() => show(way.key)}
+            >
+              <span className="contact-way-icon">{way.icon}</span>
+              <span className="contact-kicker">{way.label}</span>
+              <span className="contact-way-title">{way.title}</span>
+              <span className="contact-way-blurb">{way.blurb}</span>
+              <span className="contact-way-go" aria-hidden="true">
+                <ArrowRight size={18} />
+              </span>
+            </button>
+          ))}
         </div>
       </section>
 
-      <section
-        className="contact-calendar"
-        id="book-a-live-demo"
-        aria-labelledby="calendar-heading"
-      >
-        <div className="shell">
-          <header className="contact-calendar-head">
-            <p className="contact-kicker">Calendar</p>
-            <h2 id="calendar-heading">Book a live demo with Jeff</h2>
-            <p>Pick a time that works for you.</p>
-          </header>
-          <div className="contact-card contact-card-calendar">
+      <ContactModal open={open === "call"} title="Prefer to talk?" onClose={close}>
+        <p className="contact-modal-lead">Call us and we will help you take the next step.</p>
+        <a className="contact-modal-phone" href={phoneTelHref()}>
+          <Phone size={22} strokeWidth={2} aria-hidden="true" />
+          {siteConfig.PHONE_NUMBER}
+        </a>
+        <a className="button button-accent contact-modal-action" href={phoneTelHref()}>
+          Call now
+        </a>
+      </ContactModal>
+
+      {mounted.has("form") ? (
+        <ContactModal open={open === "form"} title="Fill it out like a client would." onClose={close}>
+          <p className="contact-modal-lead">
+            Pretend you need help with bankruptcy. Use your real cell number, and Nikki will text
+            you. This is a demo, so nothing goes to a real firm.
+          </p>
+          <div className="contact-modal-embed">
+            <InquiryEmbed />
+          </div>
+        </ContactModal>
+      ) : null}
+
+      {mounted.has("calendar") ? (
+        <ContactModal
+          open={open === "calendar"}
+          wide
+          title="Book a live demo with Jeff"
+          onClose={close}
+        >
+          <p className="contact-modal-lead">Pick a time that works for you.</p>
+          <div className="contact-modal-embed">
             <BookingWidget />
           </div>
-        </div>
-      </section>
+        </ContactModal>
+      ) : null}
 
-      <Script
-        id="ghl-form-embed"
-        src={siteConfig.embedScriptSrc}
-        strategy="lazyOnload"
-      />
+      <Script id="ghl-form-embed" src={siteConfig.embedScriptSrc} strategy="lazyOnload" />
     </div>
   );
 }

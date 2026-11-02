@@ -3005,44 +3005,15 @@ h3 {
   padding-bottom: 96px;
 }
 
-.contact-split-wrap {
+.contact-ways-wrap {
   scroll-margin-top: 92px;
 }
 
-.contact-split {
+.contact-ways {
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(280px, 0.88fr);
-  align-items: start;
-  gap: 28px;
-}
-
-.contact-split > * {
-  min-width: 0;
-}
-
-.contact-card {
-  border: 1px solid rgba(11, 33, 63, 0.08);
-  border-radius: 18px;
-  background: var(--white);
-  box-shadow: 0 18px 40px -32px rgba(11, 33, 63, 0.35);
-}
-
-.contact-card-head {
-  padding: 28px 28px 0;
-}
-
-.contact-card-head h2,
-.contact-card-head h3 {
-  margin: 0 0 8px;
-  color: #0b213f;
-  font-size: 1.45rem;
-  letter-spacing: -0.03em;
-}
-
-.contact-card-head p {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 0.95rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1040px;
 }
 
 .contact-kicker {
@@ -3055,125 +3026,183 @@ h3 {
   text-transform: uppercase;
 }
 
-.contact-card-form {
-  padding-bottom: 12px;
-}
-
-.contact-card-form .inquiry-embed {
-  margin: 18px 12px 8px;
-}
-
-.contact-aside {
+.contact-way {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  position: sticky;
-  top: 88px;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 26px 26px 24px;
+  border: 1px solid rgba(11, 33, 63, 0.08);
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: 0 18px 40px -32px rgba(11, 33, 63, 0.35);
+  color: #0b213f;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition:
+    transform 180ms var(--ease-out),
+    box-shadow 180ms var(--ease-out),
+    border-color 180ms var(--ease-out);
 }
 
-.contact-card-call {
-  padding-bottom: 28px;
+.contact-way:hover,
+.contact-way:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(51, 184, 159, 0.55);
+  box-shadow: 0 24px 46px -30px rgba(11, 33, 63, 0.45);
 }
 
-.contact-phone {
-  display: inline-flex;
+.contact-way:focus-visible {
+  outline: 2px solid #33b89f;
+  outline-offset: 3px;
+}
+
+.contact-way-icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 16px;
+  place-items: center;
+  border-radius: 14px;
+  background: #e5f6f3;
+  color: #0c6a5c;
+}
+
+.contact-way-calendar .contact-way-icon {
+  background: #fde8e2;
+  color: #c3330f;
+}
+
+.contact-way-title {
+  margin-bottom: 6px;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.contact-way-blurb {
+  padding-right: 28px;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.contact-way-go {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  color: #33b89f;
+  transition: transform 180ms var(--ease-out);
+}
+
+.contact-way:hover .contact-way-go {
+  transform: translateX(3px);
+}
+
+/* Popups opened by the contact buttons. */
+.contact-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(11, 33, 63, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.contact-modal-overlay[hidden] {
+  display: none;
+}
+
+.contact-modal {
+  position: relative;
+  width: min(460px, 100%);
+  max-height: min(90vh, 900px);
+  overflow-y: auto;
+  border-radius: 22px;
+  background: var(--white);
+  box-shadow: 0 30px 80px -30px rgba(11, 33, 63, 0.6);
+  padding: 30px 28px 26px;
+}
+
+.contact-modal:has(.contact-modal-embed) {
+  width: min(620px, 100%);
+}
+
+.contact-modal-wide {
+  width: min(880px, 100%) !important;
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.contact-modal-close:hover {
+  background: var(--gray-soft);
+}
+
+.contact-modal-title {
+  margin: 0 0 8px;
+  padding-right: 40px;
+  color: #0b213f;
+  font-size: 1.45rem;
+  letter-spacing: -0.03em;
+}
+
+.contact-modal-lead {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.contact-modal-phone {
+  display: flex;
   align-items: center;
   gap: 10px;
-  margin: 22px 28px 0;
+  margin: 22px 0 20px;
   color: #0b213f;
   font-family: var(--font-display);
-  font-size: clamp(1.28rem, 1.8vw, 1.62rem);
+  font-size: clamp(1.4rem, 4vw, 1.75rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   text-decoration: none;
 }
 
-.contact-phone svg {
+.contact-modal-phone svg {
   color: #33b89f;
 }
 
-.contact-phone:hover {
+.contact-modal-phone:hover {
   color: #0c6a5c;
 }
 
-.contact-card-expect {
-  padding-bottom: 24px;
+.contact-modal-action {
+  width: 100%;
+  justify-content: center;
 }
 
-.contact-steps {
-  display: grid;
-  gap: 14px;
-  margin: 22px 28px 0;
-  padding: 0;
-  list-style: none;
-  counter-reset: contact-step;
+.contact-modal-embed {
+  margin-top: 18px;
 }
 
-.contact-steps li {
-  display: grid;
-  grid-template-columns: 28px minmax(0, 1fr);
-  gap: 12px;
-  align-items: start;
-  color: #0b213f;
-  font-size: 0.92rem;
-  line-height: 1.45;
-}
-
-.contact-step-num {
-  display: grid;
-  width: 28px;
-  height: 28px;
-  place-items: center;
-  border-radius: 999px;
-  background: #e5f6f3;
-  color: #0c6a5c;
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.contact-calendar-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin: 22px 28px 0;
-  color: #0b213f;
-  font-size: 0.92rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.contact-calendar-link:hover {
-  color: #f2421b;
-}
-
-.contact-calendar {
-  margin-top: 12px;
-  scroll-margin-top: 92px;
-}
-
-.contact-calendar-head {
-  max-width: 36rem;
-  margin-bottom: 22px;
-}
-
-.contact-calendar-head h2 {
-  margin: 0 0 8px;
-  color: #0b213f;
-  font-size: clamp(1.7rem, 3vw, 2.35rem);
-  letter-spacing: -0.03em;
-}
-
-.contact-calendar-head p {
-  margin: 0;
-  color: var(--ink-soft);
-}
-
-.contact-card-calendar {
-  padding: 8px;
-}
-
-.contact-card-calendar .booking-panel {
+.contact-modal-embed .booking-panel {
   border: 0;
   box-shadow: none;
 }
@@ -3908,13 +3937,10 @@ h3 {
     gap: 35px;
   }
 
-  .contact-split {
+  .contact-ways {
     grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .contact-aside {
-    position: static;
+    max-width: 560px;
+    gap: 14px;
   }
 }
 
@@ -6461,8 +6487,7 @@ h3 {
   }
 
   .bankruptcy-grid,
-  .problem-cards,
-  .contact-split {
+  .problem-cards {
     grid-template-columns: 1fr;
   }
 
@@ -6483,38 +6508,16 @@ h3 {
     padding-bottom: 64px;
   }
 
-  .contact-card-head,
-  .contact-phone,
-  .contact-steps,
-  .contact-calendar-link {
-    margin-left: 22px;
-    margin-right: 22px;
+  .contact-way {
+    padding: 22px 22px 20px;
   }
 
-  .contact-card-head {
-    padding: 22px 22px 0;
-    margin-left: 0;
-    margin-right: 0;
+  .contact-modal-overlay {
+    padding: 10px;
   }
 
-  .contact-phone {
-    margin-left: 22px;
-    margin-right: 22px;
-    font-size: 1.28rem;
-  }
-
-  .contact-steps {
-    margin-left: 22px;
-    margin-right: 22px;
-  }
-
-  .contact-calendar-link {
-    margin-left: 22px;
-    margin-right: 22px;
-  }
-
-  .contact-card-form .inquiry-embed {
-    margin-inline: 8px;
+  .contact-modal {
+    padding: 24px 18px 20px;
   }
 
   .inquiry-embed,
