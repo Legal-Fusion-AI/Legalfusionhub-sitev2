@@ -26,16 +26,19 @@ export const morrisonProof = {
   range: "June 12 to September 9, 2026",
   rangeShort: "June 12 to Sept 9, 2026",
   heroLine:
-    "Morrison Law Group, June 12 to September 9, 2026: 999 calls answered after hours and at lunch, 2.4 second average pickup, 1,719 client calls sent to their case team, 114 consultations booked.",
+    "Morrison Law Group, June 12 to September 9, 2026: 1,486 callers answered. 889 existing clients routed to their team, 363 new callers, 114 consultations booked.",
   sentence:
-    "From June 12 to September 9, 2026, Retainer Pro answered 4,679 calls for Morrison Law Group, 999 of them after hours or at lunch, with a 2.4 second average pickup. It sent 1,719 client calls straight to the team or staff member on their case and booked 114 consultations from new callers.",
+    "From June 12 to September 9, 2026, Retainer Pro answered 1,486 callers for Morrison Law Group with a 2.4 second average pickup. It routed 889 existing clients to their team and booked 114 consultations from 363 new callers.",
+  /**
+   * People, not calls, so the card adds up: 889 + 363 + 234 = 1,486. Each caller is counted once:
+   * 363 new callers (any new-caller signal), 567 clients sent to their case team + 322 other clients
+   * (general queue or front desk) = 889, and 234 hang-ups or no conversation.
+   */
   stats: [
-    // Samantha (after-hours agent) 545 + Sage lunch agent 454.
-    { stat: "999", label: "calls answered after hours and at lunch" },
-    { stat: "2.4 sec", label: "average pickup" },
-    { stat: "1,719", label: "client calls sent to their case team" },
+    { stat: "1,486", label: "callers answered" },
+    { stat: "889", label: "existing clients routed to their team" },
+    { stat: "363", label: "new callers" },
     { stat: "114", label: "consultations booked" },
   ],
-  footnote:
-    "Clients went to petition prep, post-filing, billing, or the staff member on their case. New callers got booked.",
+  footnote: "The other 234 were hang-ups or no conversation. Average pickup: 2.4 seconds.",
 } as const;
