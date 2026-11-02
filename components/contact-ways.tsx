@@ -36,7 +36,7 @@ const ways: Way[] = [
     key: "calendar",
     icon: <CalendarDays size={22} strokeWidth={2} aria-hidden="true" />,
     label: "Live demo",
-    title: "Book a live demo with Jeff",
+    title: "Book a demo",
     blurb: "Pick a time that works for you. A real person follows up.",
   },
 ];
@@ -175,7 +175,7 @@ export function ContactWays() {
         <ContactModal
           open={open === "calendar"}
           wide
-          title="Book a live demo with Jeff"
+          title="Book a demo"
           onClose={close}
         >
           <p className="contact-modal-lead">Pick a time that works for you.</p>
