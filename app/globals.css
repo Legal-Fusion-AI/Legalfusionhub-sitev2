@@ -3135,7 +3135,7 @@ h3 {
 }
 
 .contact-modal-wide {
-  width: min(880px, 100%) !important;
+  width: min(960px, 100%) !important;
 }
 
 .contact-modal-close {
@@ -3205,6 +3205,12 @@ h3 {
 .contact-modal-embed .booking-panel {
   border: 0;
   box-shadow: none;
+}
+
+/* GHL sizes the booking frame for the calendar step only, so the details form and its
+   consent error can push "Schedule meeting" below the frame. Leave room for it. */
+.contact-modal-embed .booking-panel iframe {
+  min-height: 1120px !important;
 }
 
 .inquiry-embed {
@@ -6528,6 +6534,10 @@ h3 {
   .booking-panel iframe {
     height: 880px;
     min-height: 880px;
+  }
+
+  .contact-modal-embed .booking-panel iframe {
+    min-height: 1320px !important;
   }
 
   .real-problem-compare {
